@@ -1,0 +1,5771 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<title></title>
+	<style>
+	<!--
+	.m_td_set_001{
+		padding				: 5px;
+		color				: white;
+		font-size			: 9pt;
+		text-align			: center;
+		vertical-align		: middle;
+		border				: .5pt solid windowtext;
+		background			: black;
+	}
+
+	.m_td_set_002{
+		padding				: 5px;
+		font-size			: 11pt;
+		text-align			: justify;
+		vertical-align		: middle;
+		border				: .5pt solid windowtext;
+	}
+
+	.m_td_set_003{
+		padding				: 5px;
+		font-size			: 11pt;
+		text-align			: center;
+		vertical-align		: middle;
+		border				: .5pt solid windowtext;
+		background			: #808080;
+	}
+	-->
+	</style>
+</head>
+
+<body>
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle">
+				<p class = "g_p_0001">
+					Environment (SYSTem)
+				</p>
+			</td>
+		</tr>
+	</table>
+
+	<p class="MsoNormal"><br></p>
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":ADDDate">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the trigger date addition for manual save file name.</b>
+						</span>
+					</a>
+					<a id=":ADDDate?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SYSTem:ADDDate A$<br><br>
+						:SYSTem:ADDDate?<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = OFF, ON
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the trigger date addition for manual save file name.<br>
+					Returns the current trigger date addition for manual save file name as character data.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SYSTem:ADDDate ON<br>:SYSTem:ADDDate?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:SYSTEM:ADDDATE ON</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":BATT?">
+						<span class = "g_HeadTitle">
+							<b>Queries power supply state.</b>
+						</span>
+					</a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SYSTem:BATT? unit$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						unit$,A$<br>
+					</span>
+					<br>
+					unit$ = REMOTE1 to REMOTE7, MAIN1, MAIN2<br>
+					<b>[unit$ = REMOTE1 to REMOTE7]</b><br>
+					A$ = EMPTY, LEVEL_L, LEVEL_M, LEVEL_H, AC<br>
+					<b>[unit$ = MAIN1, MAIN2]</b><br>
+					A$ = EMPTY, LEVEL_L, LEVEL_M, LEVEL_H, NOBATTERY, AC, CHARGE
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					 Returns the power supply state as character data.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>REMOTE1 to REMOTE7</b></td><td class="g_td_0013">&nbsp;Wireless Unit1 to 7</td></tr><tr><td class="g_td_0013"><b>MAIN1</b></td><td class="g_td_0013">&nbsp;Main unit 1</td></tr><tr><td class="g_td_0013"><b>MAIN2</b></td><td class="g_td_0013">&nbsp;Main unit 2</td></tr>
+
+				</table>
+				<br>The relationship between the argument A$ and the main unit screen icon is as follows.<br>
+				<!--<blockquote>-->
+					<table style="border:0; border-collapse:collapse">
+						<tr>
+							<td class="m_td_set_001" style="border-right:.5pt solid white">A$</td>
+							<td class="m_td_set_001" style="border-left:none;border-right:.5pt solid white">Icon</td>
+							<td class="m_td_set_001" style="border-left:none;border-right:.5pt solid white">Description</td>
+						</tr>
+						<tr>
+							<td class="m_td_set_002" >AC</td>
+							<td class="m_td_set_003" ><img height="40" src="./PNG/status_charge_L.png"></td>
+							<td class="m_td_set_002">Powered by AC adapter.</td>
+						</tr>
+						<tr>
+							<td class="m_td_set_002" >LEVEL_H</td>
+							<td class="m_td_set_003" ><img height="40" src="./PNG/status_battery3.png"></td>
+							<td class="m_td_set_002">Battery powered. (full charge)</td>
+						</tr>
+						<tr>
+							<td class="m_td_set_002">LEVEL_M</td>
+							<td class="m_td_set_003"><img height="40" src="./PNG/status_battery2.png"></td>
+							<td class="m_td_set_002">Battery powered.</td>
+						</tr>
+						<tr>
+							<td class="m_td_set_002" >LEVEL_L</td>
+							<td class="m_td_set_003" ><img height="40" src="./PNG/status_battery1.png"></td>
+							<td class="m_td_set_002">Battery powered. (low level)<br>Connect the AC adapter and charge the battery.</td>
+						</tr>
+						<tr>
+							<td class="m_td_set_002" >EMPTY</td>
+							<td class="m_td_set_003" ><img height="40" src="./PNG/status_battery0.png"></td>
+							<td class="m_td_set_002">Battery powered. (empty)<br>Connect the AC adapter and charge the battery.</td>
+						</tr>
+						<tr>
+							<td class="m_td_set_002" >CHARGE</td>
+							<td class="m_td_set_003" ><img height="40" src="./PNG/status_batteryCharge.png"></td>
+							<td class="m_td_set_002">Powered by AC adapter.<br>Battery charging.</td>
+						</tr>
+						<tr>
+							<td class="m_td_set_002" >NOBATTERY</td>
+							<td class="m_td_set_003" >NO ICON</td>
+							<td class="m_td_set_002">Powered by AC adapter.<br>No battery.</td>
+						</tr>
+					</table>
+				<!--</blockquote>-->
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SYSTem:BATT? MAIN1<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:SYSTEM:BATT MAIN1,LEVEL_H</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":BEEP">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the beep sound.</b>
+						</span>
+					</a>
+					<a id=":BEEP?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SYSTem:BEEP A$<br><br>
+						:SYSTem:BEEP? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = OFF, ON
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the beep sound according to character data.<br>
+					Returns the current beep sound setting as character data.<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SYSTem:BEEP ON<br>:SYSTem:BEEP?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:SYSTEM:BEEP ON</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":BRIGhtness">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the backlight brightness.</b>
+						</span>
+					</a>
+					<a id=":BRIGhtness?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SYSTem:BRIGhtness A$<br><br>
+						:SYSTem:BRIGhtness? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = LV1, LV2, LV3, LV4, LV5
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the backlight brightness as character data.<br>
+					Returns the current back light brightness setting as character data.<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SYSTem:BRIGhtness LV1<br>:SYSTem:BRIGhtness?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:SYSTEM:BRIGHTNESS LV1</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":CHECk">
+						<span class = "g_HeadTitle">
+							<b>Executes the ROM/RAM check and queries the result.</b>
+						</span>
+					</a>
+					<a id=":CHECk?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SYSTem:CHECk<br><br>
+						:SYSTem:CHECk? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = NONE, RUN, PASS, FAIL
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Executes the ROM/RAM check.<br>
+					Returns the ROM/RAM check result as character data.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SYSTem:CHECk<br>:SYSTem:CHECk?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:SYSTEM:CHECk PASS</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>NONE</b></td><td class="g_td_0013">&nbsp;Not running</td></tr>
+					<tr><td class="g_td_0013"><b>RUN</b></td><td class="g_td_0013">&nbsp;Running</td></tr>
+					<tr><td class="g_td_0013"><b>PASS</b></td><td class="g_td_0013">&nbsp;Normal</td></tr>
+					<tr><td class="g_td_0013"><b>FAIL</b></td><td class="g_td_0013">&nbsp;Failure</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					The ROM/RAM check takes about 15 minutes to complete.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":CRTOff">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the backlight saver function.</b>
+						</span>
+					</a>
+					<a id=":CRTOff?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SYSTem:CRTOff A$<br><br>
+						:SYSTem:CRTOff? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = OFF, 30S, 1MIN, 2MIN, 5MIN, 10MIN
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the backlight saver function as character data.<br>
+					Returns the current backlight saver function as character data.<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SYSTem:CRTOff 30S<br>:SYSTem:CRTOff?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:SYSTEM:CRTOFF 30S</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":DATAClear">
+						<span class = "g_HeadTitle">
+							<b>Clearing waveform data.</b>
+						</span>
+					</a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SYSTem:DATAClear<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007"></td>
+			<td class = "g_td_0008" colspan = "2">
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Clear the waveform data.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SYSTem:DATAClear<br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Clearing the waveform data takes a few seconds.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":DATE">
+						<span class = "g_HeadTitle">
+							<b>Sets the calendar date, and queries the current calendar date.</b>
+						</span>
+					</a>
+					<a id=":DATE?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SYSTem:DATE year,month,day<br><br>
+						:SYSTem:DATE? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						year&lt;NR1&gt;,month&lt;NR1&gt;,day&lt;NR1&gt;<br>
+					</span>
+					<br>
+					year = 0 to 99 (year)<br>month = 1 to 12 (month)<br>day = 1 to 31 (day)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the date on the internal calendar.<br>
+					Returns the current date.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SYSTem:DATE 20,1,2<br>:SYSTem:DATE?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:SYSTEM:DATE 20,1,2</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":FILEName">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the file name for manual save.</b>
+						</span>
+					</a>
+					<a id=":FILEName?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SYSTem:FILEName "A$"<br><br>
+						:SYSTem:FILEName? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						"A$"<br>
+					</span>
+					<br>
+					A$ = file name (up to 8 characters)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the file name for manual save.<br>
+					Returns a string of current file name for manual save.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SYSTem:FILEName "MANUAL"<br>:SYSTem:FILEName?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:SYSTEM:FILENAME "MANUAL"</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Characters exceeding the maximum number of characters are not set.<br>
+					The characters that can be used in the file name are the same as those of the main unit.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+<!-- 1.20
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":KEYMap">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the key map.</b>
+						</span>
+					</a>
+					<a id=":KEYMap?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SYSTem:KEYMap A$<br><br>
+						:SYSTem:KEYMap? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = JP ,US, CN ,FR ,ES ,DE ,IT
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the key map.<br>
+					Returns the current key map as character data.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>JP</b></td><td class="g_td_0013">&nbsp;Japanese</td></tr>
+					<tr><td class="g_td_0013"><b>US</b></td><td class="g_td_0013">&nbsp;English</td></tr>
+					<tr><td class="g_td_0013"><b>CN</b></td><td class="g_td_0013">&nbsp;Chinese</td></tr>
+					<tr><td class="g_td_0013"><b>FR</b></td><td class="g_td_0013">&nbsp;French</td></tr>
+					<tr><td class="g_td_0013"><b>ES</b></td><td class="g_td_0013">&nbsp;Spanish</td></tr>
+					<tr><td class="g_td_0013"><b>DE</b></td><td class="g_td_0013">&nbsp;German</td></tr>
+					<tr><td class="g_td_0013"><b>IT</b></td><td class="g_td_0013">&nbsp;Italian</td></tr
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SYSTem:KEYMap JP<br>:SYSTem:KEYMap?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:SYSTEM:KEYMAP JP</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					This setting will be applied at the next startup.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+-->
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":LANGuage">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the language.</b>
+						</span>
+					</a>
+					<a id=":LANGuage?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SYSTem:LANGuage A$<br><br>
+						:SYSTem:LANGuage? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = JAPANese, ENGlish<!--, CHINese, KORean-->
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the language.<br>
+					Returns the current language setting as character data.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>JAPAnese</b></td><td class="g_td_0013">&nbsp;Japanese</td></tr>
+					<tr><td class="g_td_0013"><b>ENGlish</b></td><td class="g_td_0013">&nbsp;English</td></tr>
+					<!--<tr><td class="g_td_0013"><b>CHINese</b></td><td class="g_td_0013">&nbsp;Chinese</td></tr>
+					<tr><td class="g_td_0013"><b>KORean</b></td><td class="g_td_0013">&nbsp;Korean</td></tr>-->
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SYSTem:LANGuage JAPANese<br>:SYSTem:LANGuage?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:SYSTEM:LANGUAGE JAPANESE</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					This setting will be applied at the next startup.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":MARK">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the event mark at alarm.</b>
+						</span>
+					</a>
+					<a id=":MARK?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SYSTem:MARK A$<br><br>
+						:SYSTem:MARK? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = OFF, ON
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the event mark at alarm.<br>
+					Returns the event mark at alarm as character data.<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SYSTem:MARK ON<br>:SYSTem:MARK?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:SYSTEM:MARK ON</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":RSSI?">
+						<span class = "g_HeadTitle">
+							<b>Queries radio field strength.</b>
+						</span>
+					</a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SYSTem:RSSI? unit$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						unit$,A<br>
+					</span>
+					<br>
+					unit$ = REMOTE1 to REMOTE7<br>
+					A = Radio field strength by the side of a main unit (db)<br>
+					<!--B = Radio field strength by the side of a unit (db)<br>-->
+					(Radio field strength range：20  to  -128 [20 = radio wave state is good. -128 = radio wave state is bad], -300 is not connected.)
+
+					<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Returns the radio field strength by the side of a main unit and unit as character data.<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SYSTem:RSSI? REMOTE1<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:SYSTEM:RSSI REMOTE1,-10</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					The radio unit must be registered.
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":SAVEFormat">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the save format for manual save.</b>
+						</span>
+					</a>
+					<a id=":SAVEFormat?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SYSTem:SAVEFormat A$<br><br>
+						:SYSTem:SAVEFormat? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = BINARY, CSV
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the save format for manual save.<br>
+					Returns the save format for manual save as character data.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>BINARY</b></td><td class="g_td_0013">&nbsp;Binary</td></tr>
+					<tr><td class="g_td_0013"><b>CSV</b></td><td class="g_td_0013">&nbsp;Text</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SYSTem:SAVEFormat BINARY<br>:SYSTem:SAVEFormat?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:SYSTEM:SAVEFORMAT BINARY</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":SAVEKey">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the save key.</b>
+						</span>
+					</a>
+					<a id=":SAVEKey?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SYSTem:SAVEKey A$<br><br>
+						:SYSTem:SAVEKey? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = SELECT, QUICK
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the save key.<br>
+					Returns the save key as character data.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>SELECT</b></td><td class="g_td_0013">&nbsp;Select &amp; Save: Pressing SAVE key will show you a dialog to choose how to save.</td></tr>
+					<tr><td class="g_td_0013"><b>QUICK</b></td><td class="g_td_0013">&nbsp;Quick save： Pressing the SAVE key will save the file immediately.</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SYSTem:SAVEKey SELECT<br>:SYSTem:SAVEKey?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:SYSTEM:SAVEKEY SELECT</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":SAVEPri">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the quick save priority.</b>
+						</span>
+					</a>
+					<a id=":SAVEPri?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SYSTem:SAVEPri A$<br><br>
+						:SYSTem:SAVEPri? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = SD, USB
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the quick save priority as character data.<br>
+					Returns the current setting of the quick save priority as character data.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>SD</b></td><td class="g_td_0013">&nbsp;SD card</td></tr>
+					<tr><td class="g_td_0013"><b>USB</b></td><td class="g_td_0013">&nbsp;USB flash drive</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SYSTem:SAVEPri SD<br>:SYSTem:SAVEPri?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:SYSTEM:SAVEPRI SD</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":SAVESpan">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the save span.</b>
+						</span>
+					</a>
+					<a id=":SAVESpan?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SYSTem:SAVESpan A$<br><br>
+						:SYSTem:SAVESpan? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = ALL, A-B, START-A, START-B, A-END, B-END
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the save span for manual save.<br>
+					Returns the save span for manual save as character data.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>ALL</b></td><td class="g_td_0013">&nbsp;Whole waveform</td></tr>
+					<tr><td class="g_td_0013"><b>A-B</b></td><td class="g_td_0013">&nbsp;Waveform between A/B cursors</td></tr>
+					<tr><td class="g_td_0013"><b>START-A</b></td><td class="g_td_0013">&nbsp;Waveform from the start to the A cursor</td></tr>
+					<tr><td class="g_td_0013"><b>START-B</b></td><td class="g_td_0013">&nbsp;Waveform from the start to the B cursor</td></tr>
+					<tr><td class="g_td_0013"><b>A-END</b></td><td class="g_td_0013">&nbsp;Waveform from the A cursor to end</td></tr><tr>
+					<td class="g_td_0013"><b>B-END</b></td><td class="g_td_0013">&nbsp;Waveform from the B cursor to end</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SYSTem:SAVESpan ALL<br>:SYSTem:SAVESpan?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:SYSTEM:SAVESPAN ALL</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":SAVEType">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the save type.</b>
+						</span>
+					</a>
+					<a id=":SAVEType?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SYSTem:SAVEType A$<br><br>
+						:SYSTem:SAVEType? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = WAVE, IMAGE, SET, CALC
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the save type for manual save.<br>
+					Returns the save type for manual save as character data.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>WAVE</b></td><td class="g_td_0013">&nbsp;Waveform file</td></tr>
+					<tr><td class="g_td_0013"><b>IMAGE</b></td><td class="g_td_0013">&nbsp;Captured screen image</td></tr>
+					<tr><td class="g_td_0013"><b>SET</b></td><td class="g_td_0013">&nbsp;Settings file</td></tr>
+					<tr><td class="g_td_0013"><b>CALC</b></td><td class="g_td_0013">&nbsp;Calculation results</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SYSTem:SAVEType WAVE<br>:SYSTem:SAVEType?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:SYSTEM:SAVETYPE WAVE</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":SMESS">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the operation error prevention function of the START/STOP key.</b>
+						</span>
+					</a>
+					<a id=":SMESS?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SYSTem:SMESS A$<br><br>
+						:SYSTem:SMESS? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = OFF, ON
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the operation error prevention function of the START/STOP key.<br>
+					Returns the current operation error prevention function of the START/STOP key as character data.<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SYSTem:SMESS ON<br>:SYSTem:SMESS?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:SYSTEM:SMESS ON</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":STARt">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the start backup function.</b>
+						</span>
+					</a>
+					<a id=":STARt?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SYSTem:STARt A$<br><br>
+						:SYSTem:STARt? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = OFF, ON
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Enables and disables the start backup function.<br>
+					Returns the current enablement state of the start backup function as character data.<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SYSTem:STARt ON<br>:SYSTem:STARt?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:SYSTEM:START ON</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+<!-- v2.0
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":SYNC">
+						<span class = "g_HeadTitle">
+							<b>同期運転の設定と問い合わせ</b>
+						</span>
+					</a>
+					<a id=":SYNC?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SYSTem:SYNC A$<br><br>
+						:SYSTem:SYNC? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = OFF, MASTer, SLAVe
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					同期運転機能を設定します。<br>現在の同期運転機能の設定を返します。<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>OFF</b></td><td class="g_td_0013">&nbsp;</td></tr><tr><td class="g_td_0013"><b>MASTer</b></td><td class="g_td_0013">&nbsp;マスター</td></tr><tr><td class="g_td_0013"><b>SLAVe</b></td><td class="g_td_0013">&nbsp;スレーブ</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SYSTem:SYNC MASTer<br>:SYSTem:SYNC?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:SYSTEM:SYNC MASTer</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					V2.00以降
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+-->
+
+
+
+<!-- v2.0
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":THINData">
+						<span class = "g_HeadTitle">
+							<b>手動保存の間引き保存データの設定と問い合わせ</b>
+						</span>
+					</a>
+					<a id=":THINData?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SYSTem:THINData A$<br><br>
+						:SYSTem:THINData? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = SIMPLE, MAX, MIN, AVE
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					手動保存の間引き保存データを設定します。<br>現在の手動保存の間引き保存データの設定を返します。<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>SIMPLE</b></td><td class="g_td_0013">&nbsp;単純</td></tr><tr><td class="g_td_0013"><b>MAX</b></td><td class="g_td_0013">&nbsp;最大値</td></tr><tr><td class="g_td_0013"><b>MIN</b></td><td class="g_td_0013">&nbsp;最小値</td></tr><tr><td class="g_td_0013"><b>AVE</b></td><td class="g_td_0013">&nbsp;平均値</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SYSTem:THINData SIMPLE<br>:SYSTem:THINData?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:SYSTEM:THINDATA SIMPLE</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					V2.00以降
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+-->
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":THINOut">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the decimation factor for manual save.</b>
+						</span>
+					</a>
+					<a id=":THINOut?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SYSTem:THINOut A<br><br>
+						:SYSTem:THINOut? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A&lt;NR1&gt;<br>
+					</span>
+					<br>
+					A = 1(OFF) to 100000
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the decimation factor for manual save.<br>
+					Returns the currently set value of the decimation factor as an NR1 numerical value.<br><br>
+					If A=1, downsampling is off.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SYSTem:THINOut 5<br>:SYSTem:THINOut?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:SYSTEM:THINOUT 5</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":TIME">
+						<span class = "g_HeadTitle">
+							<b>Sets the time, and queries the current time.</b>
+						</span>
+					</a>
+					<a id=":TIME?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SYSTem:TIME h,m,s<br><br>
+						:SYSTem:TIME? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						h&lt;NR1&gt;,m&lt;NR1&gt;,s&lt;NR1&gt;<br>
+					</span>
+					<br>
+					h = 0 to 23 (hour)<br>m = 0 to 59 (min)<br>s = 0 to 59 (sec)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the time.<br>
+					Returns the current time as an NR1 numerical value.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SYSTem:TIME 12,34,56<br>:SYSTem:TIME?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:SYSTEM:TIME 12,34,56</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":TIMEZone">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the time zone.</b>
+						</span>
+					</a>
+					<a id=":TIMEZone?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SYSTem:TIMEZone hour(,min)<br><br>
+						:SYSTem:TIMEZone? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						hour&lt;NR1&gt;(,min&lt;NR1&gt;)<br>
+					</span>
+					<br>
+					hour = -12 to +14 (hour)<br>min = 30, 45 (min) (0 min when omitted)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the time zone.<br>
+					Returns the current time zone as an NR1 numerical value.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SYSTem:TIMEZone 9<br>:SYSTem:TIMEZone?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:SYSTEM:TIMEZone +9</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					When you change the time zone, the time on the clock changes accordingly.<br>
+					When the combination of hours and minutes cannot be set will result in an error.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":TMAXis">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the time axis display.</b>
+						</span>
+					</a>
+					<a id=":TMAXis?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SYSTem:TMAXis A$<br><br>
+						:SYSTem:TMAXis? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = TIME, DATE, SCALe
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the time axis display as character data.<br>
+					Returns the current time axis display setting as character data.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>TIME</b></td><td class="g_td_0013">&nbsp;Time</td></tr>
+					<tr><td class="g_td_0013"><b>DATE</b></td><td class="g_td_0013">&nbsp;Date</td></tr>
+					<tr><td class="g_td_0013"><b>SCALe</b></td><td class="g_td_0013">&nbsp;Data points</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SYSTem:TMAXis TIME<br>:SYSTem:TMAXis?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:SYSTEM:TMAXIS TIME</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":UNITCheck?">
+						<span class = "g_HeadTitle">
+							<b>Execute the unit SRAM check and query the result.</b>
+						</span>
+					</a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SYSTem:UNITCheck? A$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+				[A$ = DIRECT]<br>
+					<span style="color:#0000cc;font-weight:bold">
+					u1u2u3u4<br>
+					</span>
+					<br>
+					[A$ = WIRELESS]<br>
+					<span style="color:#0000cc;font-weight:bold">
+					u5u6u7u8u9u10u11<br>
+					</span>
+					<br>
+				 u1 to u11 = 0(success),1(failed),*(disconnected)<br>
+				 A$ = DIRECT,WIRELESS<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Execute the unit SRAM check and query the result.<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SYSTem:UNITCheck? DIRECT<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:SYSTEM:UNITCHECK 010*</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Only LR8450-01 can use the wireless unit.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+<!--
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":UNITLed?">
+						<span class = "g_HeadTitle">
+							<b>ユニットのLEDチェックの実行と結果の問い合わせ</b>
+						</span>
+					</a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SYSTem:UNITLed? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						未定<br>
+					</span>
+					<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					ユニットのLEDチェックを実行し、結果を返します。<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SYSTem:UNITLed?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:SYSTEM:UNITLED </b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					LR8450-01のみ
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+-->
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":VOUT">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the voltage output</b>
+						</span>
+					</a>
+					<a id=":VOUT?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SYSTem:VOUT out$,A$<br><br>
+						:SYSTem:VOUT? out$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						out$,A$<br>
+					</span>
+					<br>
+					out$ = OUT1, OUT2<br>A$ = OFF, 5V, 12V, 24V
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the voltage output.<br>
+					Returns the current voltage output as character data.<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SYSTem:VOUT OUT1,5V<br>:SYSTem:VOUT? OUT1<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:SYSTEM:VOUT OUT1,5V</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					A$ = 24V can be set only for OUT1.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":WAVEBackcolor">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the waveform background color.</b>
+						</span>
+					</a>
+					<a id=":WAVEBackcolor?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SYSTem:WAVEBackcolor A$<br><br>
+						:SYSTem:WAVEBackcolor? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = DARK, LIGHT
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the waveform background color.<br>
+					Returns the current waveform background color as character data.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SYSTem:WAVEBackcolor DARK<br>:SYSTem:WAVEBackcolor?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:SYSTEM:WAVEBACKCOLOR DARK</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>DARK</b></td><td class="g_td_0013">&nbsp;Dark</td></tr>
+					<tr><td class="g_td_0013"><b>LIGHT</b></td><td class="g_td_0013">&nbsp;Light</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":EXT:IO1:KIND">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the input kind of external input terminal 1.</b>
+						</span>
+					</a>
+					<a id=":EXT:IO1:KIND?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SYSTem:EXT:IO1:KIND A$<br><br>
+						:SYSTem:EXT:IO1:KIND? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = OFF, STARTIN, STOPIN, S_SIN, EVENTIN
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the input kind of external input terminal 1.<br>
+					Returns the current input kind of external input terminal 1 as character data.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>OFF</b></td><td class="g_td_0013">&nbsp;</td></tr>
+					<tr><td class="g_td_0013"><b>STARTIN</b></td><td class="g_td_0013">&nbsp;Start</td></tr>
+					<tr><td class="g_td_0013"><b>STOPIN</b></td><td class="g_td_0013">&nbsp;Stop</td></tr>
+					<tr><td class="g_td_0013"><b>S_SIN</b></td><td class="g_td_0013">&nbsp;Start & Stop</td></tr>
+					<tr><td class="g_td_0013"><b>EVENTIN</b></td><td class="g_td_0013">&nbsp;Event input</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SYSTem:EXT:IO1:KIND STARTIN<br>:SYSTem:EXT:IO1:KIND?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:SYSTEM:EXT:IO1:KIND STARTIN</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					- <!-- v2.0 <a href="#:SYNC">同期運転</a>がONの時は、設定がスタートおよびストップ固定となります。-->
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":EXT:IO1:SLOPe:STARt">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the start slope of external input terminal 1.</b>
+						</span>
+					</a>
+					<a id=":EXT:IO1:SLOPe:STARt?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SYSTem:EXT:IO1:SLOPe:STARt A$<br><br>
+						:SYSTem:EXT:IO1:SLOPe:STARt? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = UP, DOWN
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the start slope of external input terminal 1.<br>
+					Returns the current start slope of external input terminal 1 as character data.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>UP</b></td><td class="g_td_0013">&nbsp;Rising</td></tr>
+					<tr><td class="g_td_0013"><b>DOWN</b></td><td class="g_td_0013">&nbsp;Falling</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SYSTem:EXT:IO1:SLOPe:STARt UP<br>:SYSTem:EXT:IO1:SLOPe:STARt?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:SYSTEM:EXT:IO1:SLOPe:STARt UP</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":EXT:IO1:SLOPe:STOP">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the stop slope of external input terminal 1.</b>
+						</span>
+					</a>
+					<a id=":EXT:IO1:SLOPe:STOP?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SYSTem:EXT:IO1:SLOPe:STOP A$<br><br>
+						:SYSTem:EXT:IO1:SLOPe:STOP? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = UP, DOWN
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the stop slope of external input terminal 1.<br>
+					Returns the current stop slope of external input terminal 1 as character data.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>UP</b></td><td class="g_td_0013">&nbsp;Rising</td></tr>
+					<tr><td class="g_td_0013"><b>DOWN</b></td><td class="g_td_0013">&nbsp;Falling</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SYSTem:EXT:IO1:SLOPe:STOP UP<br>:SYSTem:EXT:IO1:SLOPe:STOP?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:SYSTEM:EXT:IO1:SLOPe:STOP UP</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":EXT:IO2:KIND">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the input kind of external input terminal 2.</b>
+						</span>
+					</a>
+					<a id=":EXT:IO2:KIND?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SYSTem:EXT:IO2:KIND A$<br><br>
+						:SYSTem:EXT:IO2:KIND? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = OFF, STARTIN, STOPIN, S_SIN, EVENTIN
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the input kind of external input terminal 2.<br>
+					Returns the current input kind of external input terminal 2 as character data.<br>
+				</p>
+				<table>
+				   <tr><td class="g_td_0013"><b>OFF</b></td><td class="g_td_0013">&nbsp;</td></tr>
+				   <tr><td class="g_td_0013"><b>STARTIN</b></td><td class="g_td_0013">&nbsp;Start</td></tr>
+				   <tr><td class="g_td_0013"><b>STOPIN</b></td><td class="g_td_0013">&nbsp;Stop</td></tr>
+				   <tr><td class="g_td_0013"><b>S_SIN</b></td><td class="g_td_0013">&nbsp;Start & Stop</td></tr>
+				   <tr><td class="g_td_0013"><b>EVENTIN</b></td><td class="g_td_0013">&nbsp;Event input</td></tr>
+	  	  </table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SYSTem:EXT:IO2:KIND STARTIN<br>:SYSTem:EXT:IO2:KIND?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:SYSTEM:EXT:IO2:KIND STARTIN</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					- <!-- v2.0 <a href="#:SYNC">同期運転</a>がONの時は、設定がスタートおよびストップ固定となります。-->
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":EXT:IO2:SLOPe:STARt">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the start slope of external input terminal 2.</b>
+						</span>
+					</a>
+					<a id=":EXT:IO2:SLOPe:STARt?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SYSTem:EXT:IO2:SLOPe:STARt A$<br><br>
+						:SYSTem:EXT:IO2:SLOPe:STARt? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = UP, DOWN
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the start slope of external input terminal 2.<br>
+					Returns the current start slope of external input terminal 2 as character data.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>UP</b></td><td class="g_td_0013">&nbsp;Rising</td></tr>
+					<tr><td class="g_td_0013"><b>DOWN</b></td><td class="g_td_0013">&nbsp;Falling</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SYSTem:EXT:IO2:SLOPe:STARt UP<br>:SYSTem:EXT:IO2:SLOPe:STARt?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:SYSTEM:EXT:IO2:SLOPe:STARt UP</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":EXT:IO2:SLOPe:STOP">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the stop slope of external input terminal 2.</b>
+						</span>
+					</a>
+					<a id=":EXT:IO2:SLOPe:STOP?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SYSTem:EXT:IO2:SLOPe:STOP A$<br><br>
+						:SYSTem:EXT:IO2:SLOPe:STOP? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = UP, DOWN
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the stop slope of external input terminal 2.<br>
+					Returns the current stop slope of external input terminal 2 as character data.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>UP</b></td><td class="g_td_0013">&nbsp;Rising</td></tr>
+					<tr><td class="g_td_0013"><b>DOWN</b></td><td class="g_td_0013">&nbsp;Falling</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SYSTem:EXT:IO2:SLOPe:STOP UP<br>:SYSTem:EXT:IO2:SLOPe:STOP?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:SYSTEM:EXT:IO2:SLOPe:STOP UP</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":EXT:IO3:KIND">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the input kind of external input terminal 3.</b>
+						</span>
+					</a>
+					<a id=":EXT:IO3:KIND?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SYSTem:EXT:IO3:KIND A$<br><br>
+						:SYSTem:EXT:IO3:KIND? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = OFF, TRIGIN, EVENTIN
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the input kind of external input terminal 3.<br>
+					Returns the current input kind of external input terminal 3 as character data.<br>
+				</p>
+				<table>
+				  <tr><td class="g_td_0013"><b>OFF</b></td><td class="g_td_0013">&nbsp;</td></tr>
+				  <tr><td class="g_td_0013"><b>TRIGIN</b></td><td class="g_td_0013">&nbsp;Trigger input</td></tr>
+				  <tr><td class="g_td_0013"><b>EVENTIN</b></td><td class="g_td_0013">&nbsp;Event input</td></tr>
+			  </table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SYSTem:EXT:IO3:KIND TRIGIN<br>:SYSTem:EXT:IO3:KIND?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:SYSTEM:EXT:IO3:KIND TRIGIN</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<!-- v2.0 <a href="#:SYNC">同期運転</a>がONの時は、設定がスタートおよびストップ固定となります。<br>-->
+					When the <a href="../03/Right08.htm#:EXTernal:STARt:KIND" target="_self">external trigger setting</a> is ON, the setting cannot be changed except for the trigger input.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":EXT:IO3:SLOPe:STARt">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the start slope of external input terminal 3.</b>
+						</span>
+					</a>
+					<a id=":EXT:IO3:SLOPe:STARt?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SYSTem:EXT:IO3:SLOPe:STARt A$<br><br>
+						:SYSTem:EXT:IO3:SLOPe:STARt? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = UP, DOWN
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the start slope of external input terminal 3.<br>
+					Returns the current start slope of external input terminal 3 as character data.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>UP</b></td><td class="g_td_0013">&nbsp;Rising</td></tr>
+					<tr><td class="g_td_0013"><b>DOWN</b></td><td class="g_td_0013">&nbsp;Falling</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SYSTem:EXT:IO3:SLOPe:STARt UP<br>:SYSTem:EXT:IO3:SLOPe:STARt?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:SYSTEM:EXT:IO3:SLOPe:STARt UP</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":EXT:IO3:SLOPe:STOP">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the stop slope of external input terminal 3.</b>
+						</span>
+					</a>
+					<a id=":EXT:IO3:SLOPe:STOP?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SYSTem:EXT:IO3:SLOPe:STOP A$<br><br>
+						:SYSTem:EXT:IO3:SLOPe:STOP? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = UP, DOWN
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the stop slope of external input terminal 3.<br>
+					Returns the current stop slope of external input terminal 3 as character data.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>UP</b></td><td class="g_td_0013">&nbsp;Rising</td></tr>
+					<tr><td class="g_td_0013"><b>DOWN</b></td><td class="g_td_0013">&nbsp;Falling</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SYSTem:EXT:IO3:SLOPe:STOP UP<br>:SYSTem:EXT:IO3:SLOPe:STOP?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:SYSTEM:EXT:IO3:SLOPe:STOP UP</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":EXT:IO4:KIND">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the output kind of external output terminal.</b>
+						</span>
+					</a>
+					<a id=":EXT:IO4:KIND?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SYSTem:EXT:IO4:KIND A$<br><br>
+						:SYSTem:EXT:IO4:KIND? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = OFF, TRIGOUT <!--v2.0, EVENTOUT-->
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the output kind of external output terminal.<br>
+					Returns the current output kind of external output terminal as character data.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>OFF</b></td><td class="g_td_0013">&nbsp;</td></tr>
+					<tr><td class="g_td_0013"><b>TRIGOUT</b></td><td class="g_td_0013">&nbsp;Trigger output</td></tr>
+					<!--v2.0<tr><td class="g_td_0013"><b>EVENTOUT</b></td><td class="g_td_0013">&nbsp;イベント出力</td></tr>-->
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SYSTem:EXT:IO4:KIND TRIGOUT<br>:SYSTem:EXT:IO4:KIND?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:SYSTEM:EXT:IO4:KIND TRIGOUT</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-<!--v2.0 <a href="#:SYNC">同期運転</a>がONの時は、設定がトリガ出力固定となります。-->
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":NTP:KIND">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the NTP client function.</b>
+						</span>
+					</a>
+					<a id=":NTP:KIND?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SYSTem:NTP:KIND A$<br><br>
+						:SYSTem:NTP:KIND? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = OFF, ON
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the NTP client function.<br>
+					Returns the NTP client function.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>OFF</b></td>
+					<td class="g_td_0013">&nbsp;Disable</td></tr>
+					<tr><td class="g_td_0013"><b>ON</b></td>
+					<td class="g_td_0013">&nbsp;Enable</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SYSTem:NTP:KIND ON<br>:SYSTem:NTP:KIND?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:SYSTEM:NTP:KIND ON</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":NTP:SYNC">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the timing of NTP synchronization.</b>
+						</span>
+					</a>
+					<a id=":NTP:SYNC?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SYSTem:NTP:SYNC A$<br><br>
+						:SYSTem:NTP:SYNC? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = OFF, HOUR, DAY<!-- ,EXEC-->
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the timing of NTP synchronization.<br>
+					Returns the timing of NTP synchronization.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>OFF</b></td>
+					<td class="g_td_0013">&nbsp;No Sync</td></tr>
+					<tr><td class="g_td_0013"><b>HOUR</b></td>
+					<td class="g_td_0013">&nbsp;Sync Every Hour</td></tr>
+					<tr><td class="g_td_0013"><b>DAY</b></td>
+					<td class="g_td_0013">&nbsp;Sync Every Day</td></tr>
+					<!--<tr><td class="g_td_0013"><b>EXEC</b></td>
+					<td class="g_td_0013">&nbsp;Executing Synchronization</td></tr>-->
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SYSTem:NTP:SYNC HOUR<br>:SYSTem:NTP:SYNC?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:SYSTEM:NTP:SYNC HOUR</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<!--A$=EXEC is valid only when the <a href="../03/Right10.htm#:NTP:KIND" target="_self">NTP client function</a> is set to ON.-->
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":NTP:STARt">
+						<span class = "g_HeadTitle">
+							<b>Sets and queriesthe NTP synchronization before start measuring</b>
+						</span>
+					</a>
+					<a id=":NTP:STARt?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SYSTem:NTP:STARt A$<br><br>
+						:SYSTem:NTP:STARt? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = OFF, ON
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the the NTP synchronization before start measuring.<br>
+					Returns the the NTP synchronization before start measuring.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>OFF</b></td>
+					<td class="g_td_0013">&nbsp;Disable</td></tr>
+					<tr><td class="g_td_0013"><b>ON</b></td>
+					<td class="g_td_0013">&nbsp;Enable</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SYSTem:NTP:STARt ON<br>:SYSTem:NTP:STARt?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:SYSTEM:NTP:STARt ON</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":NTP:ADDRess">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries NTP server address</b>
+						</span>
+					</a>
+					<a id=":NTP:ADDRess?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SYSTem:NTP:ADDRess "A$"<br><br>
+						:SYSTem:NTP:ADDRess? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						"A$"<br>
+					</span>
+					<br>
+					A$ = NTP server address(64 characters)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the server address for NTP synchronization.<br>
+					Returns the server address for NTP synchronization.<br>
+				</p>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SYSTem:NTP:ADDRess "abcdef.com"<br>:SYSTem:NTP:ADDRess?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:SYSTEM:NTP:ADDRess "abcdef.com"</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					If maximum number of characters is exceeded, a command error occurs.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+	<!-- 1.20
+			<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+				<tr style="height:25pt">
+					<td class = "g_HeadTitle" colspan = "4">
+						<p class="g_p_0002">
+							<a id=":FTP:ADDRess">
+								<span class = "g_HeadTitle">
+									<b>データ自動送信先FTPサーバーアドレスの設定と問い合わせ</b>
+								</span>
+							</a>
+							<a id=":FTP:ADDRess?"></a>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0004" rowspan = "2">
+						<p class = "g_p_0003">構文</p>
+					</td>
+					<td class = "g_td_0005">
+						<p class="MsoNormal">(コマンド)<br><br>(クエリ)</p>
+					</td>
+					<td class = "g_td_0006" colspan = "2">
+						<p class="MsoNormal">
+							<span style="color:red;font-weight:bold">
+								<br>
+								:SYSTem:FTP:ADDRess "A$"<br><br>
+								:SYSTem:FTP:ADDRess? <br><br>
+							</span>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0007">
+						<p class="MsoNormal">(応答)</p>
+					</td>
+					<td class = "g_td_0008" colspan = "2">
+						<p class="MsoNormal" style="margin-bottom:12pt">
+							<span style="color:#0000cc;font-weight:bold">
+								"A$"<br>
+							</span>
+							<br>
+							A$ = 送信先FTPサーバーアドレス(半角45文字まで)
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0009">
+						<p class = "g_p_0003">解説</p>
+					</td>
+					<td class = "g_td_0010" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							FTPデータ自動送信機能における、送信先FTPサーバーアドレスを設定します。<br>
+							現在の自動送信先FTPサーバーアドレスを返します。<br>
+						</p>
+						<br>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0011">
+						<p class = "g_p_0003">例</p>
+					</td>
+					<td class = "g_td_0012" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							<span style="color:#00582a">
+								:SYSTem:FTP:ADDRess "abcdef"<br>:SYSTem:FTP:ADDRess?<br>
+							</span>
+							(応答)&nbsp;&nbsp;<b>:SYSTEM:FTP:ADDRESS "abcdef"</b>&nbsp;&nbsp;(ヘッダがONの場合)
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0009">
+						<p class = "g_p_0003">注記</p>
+					</td>
+					<td class = "g_td_0010" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							最大文字数以上の文字列を入力した場合、コマンドエラーになります。
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0011">
+						<p class = "g_p_0003">使用可能<br>条件</p>
+					</td>
+					<td class = "g_td_0012" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							-
+						</p>
+					</td>
+				</tr>
+			</table>
+			<p class="MsoNormal"><br><br><br></p>
+
+
+
+			<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+				<tr style="height:25pt">
+					<td class = "g_HeadTitle" colspan = "4">
+						<p class="g_p_0002">
+							<a id=":FTP:AUTODell">
+								<span class = "g_HeadTitle">
+									<b>送信済みファイル消去機能のONOFFの設定と問い合わせ</b>
+								</span>
+							</a>
+							<a id=":FTP:AUTODell?"></a>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0004" rowspan = "2">
+						<p class = "g_p_0003">構文</p>
+					</td>
+					<td class = "g_td_0005">
+						<p class="MsoNormal">(コマンド)<br><br>(クエリ)</p>
+					</td>
+					<td class = "g_td_0006" colspan = "2">
+						<p class="MsoNormal">
+							<span style="color:red;font-weight:bold">
+								<br>
+								:SYSTem:FTP:AUTODell A$<br><br>
+								:SYSTem:FTP:AUTODell? <br><br>
+							</span>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0007">
+						<p class="MsoNormal">(応答)</p>
+					</td>
+					<td class = "g_td_0008" colspan = "2">
+						<p class="MsoNormal" style="margin-bottom:12pt">
+							<span style="color:#0000cc;font-weight:bold">
+								A$<br>
+							</span>
+							<br>
+							A$ = OFF, ON
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0009">
+						<p class = "g_p_0003">解説</p>
+					</td>
+					<td class = "g_td_0010" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							FTPデータ自動送信機能における、送信済みファイル削除機能のONOFFを設定します。<br>
+							現在の送信済みファイル削除機能の設定を返します。<br>
+						</p>
+						<table>
+							<tr><td class="g_td_0013"><b>OFF</b></td>
+							<td class="g_td_0013">&nbsp;送信済みファイル削除OFF</td></tr>
+							<tr><td class="g_td_0013"><b>ON</b></td>
+							<td class="g_td_0013">&nbsp;送信済みファイル削除ON</td></tr>
+						</table>
+						<br>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0011">
+						<p class = "g_p_0003">例</p>
+					</td>
+					<td class = "g_td_0012" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							<span style="color:#00582a">
+								:SYSTem:FTP:AUTODell ON<br>:SYSTem:FTP:AUTODell?<br>
+							</span>
+							(応答)&nbsp;&nbsp;<b>:SYSTEM:FTP:AUTPDELL ON</b>&nbsp;&nbsp;(ヘッダがONの場合)
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0009">
+						<p class = "g_p_0003">注記</p>
+					</td>
+					<td class = "g_td_0010" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							-
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0011">
+						<p class = "g_p_0003">使用可能<br>条件</p>
+					</td>
+					<td class = "g_td_0012" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							-
+						</p>
+					</td>
+				</tr>
+			</table>
+			<p class="MsoNormal"><br><br><br></p>
+
+
+
+			<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+				<tr style="height:25pt">
+					<td class = "g_HeadTitle" colspan = "4">
+						<p class="g_p_0002">
+							<a id=":FTP:CHECk?">
+								<span class = "g_HeadTitle">
+									<b>FTPデータ自動送信テストの実行と結果の問い合わせ</b>
+								</span>
+							</a>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0004" rowspan = "2">
+						<p class = "g_p_0003">構文</p>
+					</td>
+					<td class = "g_td_0005">
+						<p class="MsoNormal">(クエリ)</p>
+					</td>
+					<td class = "g_td_0006" colspan = "2">
+						<p class="MsoNormal">
+							<span style="color:red;font-weight:bold">
+								<br>
+								:SYSTem:FTP:CHECk?<br><br>
+							</span>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0007">
+						<p class="MsoNormal">(応答)</p>
+					</td>
+					<td class = "g_td_0008" colspan = "2">
+						<p class="MsoNormal" style="margin-bottom:12pt">
+							<span style="color:#0000cc;font-weight:bold">
+								A<br>
+							</span>
+							<br>
+						 	A = 0(成功), 1(失敗)<br>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0009">
+						<p class = "g_p_0003">解説</p>
+					</td>
+					<td class = "g_td_0010" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							FTPデータ自動送信テストを実行し、結果を返します。<br>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0011">
+						<p class = "g_p_0003">例</p>
+					</td>
+					<td class = "g_td_0012" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							<span style="color:#00582a">
+								:SYSTem:FTP:CHECk?<br>
+							</span>
+							(応答)&nbsp;&nbsp;<b>:SYSTEM:FTP:CHECK 0</b>&nbsp;&nbsp;(ヘッダがONの場合)
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0009">
+						<p class = "g_p_0003">注記</p>
+					</td>
+					<td class = "g_td_0010" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							-
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0011">
+						<p class = "g_p_0003">使用可能<br>条件</p>
+					</td>
+					<td class = "g_td_0012" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							-
+						</p>
+					</td>
+				</tr>
+			</table>
+			<p class="MsoNormal"><br><br><br></p>
+
+
+
+			<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+				<tr style="height:25pt">
+					<td class = "g_HeadTitle" colspan = "4">
+						<p class="g_p_0002">
+							<a id=":FTP:DIR">
+								<span class = "g_HeadTitle">
+									<b>データ自動送信先ディレクトリの設定と問い合わせ</b>
+								</span>
+							</a>
+							<a id=":FTP:DIR?"></a>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0004" rowspan = "2">
+						<p class = "g_p_0003">構文</p>
+					</td>
+					<td class = "g_td_0005">
+						<p class="MsoNormal">(コマンド)<br><br>(クエリ)</p>
+					</td>
+					<td class = "g_td_0006" colspan = "2">
+						<p class="MsoNormal">
+							<span style="color:red;font-weight:bold">
+								<br>
+								:SYSTem:FTP:DIR "A$"<br><br>
+								:SYSTem:FTP:DIR? <br><br>
+							</span>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0007">
+						<p class="MsoNormal">(応答)</p>
+					</td>
+					<td class = "g_td_0008" colspan = "2">
+						<p class="MsoNormal" style="margin-bottom:12pt">
+							<span style="color:#0000cc;font-weight:bold">
+								"A$"<br>
+							</span>
+							<br>
+							A$ = 送信先ディレクトリ(半角45文字まで)
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0009">
+						<p class = "g_p_0003">解説</p>
+					</td>
+					<td class = "g_td_0010" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							FTPデータ自動送信機能における、送信先ディレクトリを設定します。<br>
+							現在の自動送信先ディレクトリを返します。<br>
+						</p>
+						<br>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0011">
+						<p class = "g_p_0003">例</p>
+					</td>
+					<td class = "g_td_0012" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							<span style="color:#00582a">
+								:SYSTem:FTP:DIR "/abc/def/"<br>:SYSTem:FTP:DIR?<br>
+							</span>
+							(応答)&nbsp;&nbsp;<b>:SYSTEM:FTP:DIR "/abc/def/"</b>&nbsp;&nbsp;(ヘッダがONの場合)
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0009">
+						<p class = "g_p_0003">注記</p>
+					</td>
+					<td class = "g_td_0010" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							最大文字数以上の文字列を入力した場合、コマンドエラーになります。
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0011">
+						<p class = "g_p_0003">使用可能<br>条件</p>
+					</td>
+					<td class = "g_td_0012" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							-
+						</p>
+					</td>
+				</tr>
+			</table>
+			<p class="MsoNormal"><br><br><br></p>
+
+
+
+			<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+				<tr style="height:25pt">
+					<td class = "g_HeadTitle" colspan = "4">
+						<p class="g_p_0002">
+							<a id=":FTP:FILE:HOST">
+								<span class = "g_HeadTitle">
+									<b>送信ファイル識別子(ホスト名)の設定と問い合わせ</b>
+								</span>
+							</a>
+							<a id=":FTP:FILE:HOST?"></a>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0004" rowspan = "2">
+						<p class = "g_p_0003">構文</p>
+					</td>
+					<td class = "g_td_0005">
+						<p class="MsoNormal">(コマンド)<br><br>(クエリ)</p>
+					</td>
+					<td class = "g_td_0006" colspan = "2">
+						<p class="MsoNormal">
+							<span style="color:red;font-weight:bold">
+								<br>
+								:SYSTem:FTP:FILE:HOST A$<br><br>
+								:SYSTem:FTP:FILE:HOST? <br><br>
+							</span>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0007">
+						<p class="MsoNormal">(応答)</p>
+					</td>
+					<td class = "g_td_0008" colspan = "2">
+						<p class="MsoNormal" style="margin-bottom:12pt">
+							<span style="color:#0000cc;font-weight:bold">
+								A$<br>
+							</span>
+							<br>
+							A$ = OFF, ON
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0009">
+						<p class = "g_p_0003">解説</p>
+					</td>
+					<td class = "g_td_0010" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							FTPデータ自動送信機能において、送信ファイル識別子としてホスト名を付与するかを設定します。<br>
+							現在の送信ファイル識別子(ホスト名)の設定を返します。<br>
+						</p>
+						<table>
+							<tr><td class="g_td_0013"><b>OFF</b></td>
+							<td class="g_td_0013">&nbsp;ファイル識別子としてホスト名を付加しない</td></tr>
+							<tr><td class="g_td_0013"><b>ON</b></td>
+							<td class="g_td_0013">&nbsp;ファイル識別子としてホスト名を付加する</td></tr>
+						</table>
+						<br>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0011">
+						<p class = "g_p_0003">例</p>
+					</td>
+					<td class = "g_td_0012" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							<span style="color:#00582a">
+								:SYSTem:FTP:FILE:HOST ON<br>:SYSTem:FTP:FILE:HOST?<br>
+							</span>
+							(応答)&nbsp;&nbsp;<b>:SYSTEM:FTP:FILE:HOST ON</b>&nbsp;&nbsp;(ヘッダがONの場合)
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0009">
+						<p class = "g_p_0003">注記</p>
+					</td>
+					<td class = "g_td_0010" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							-
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0011">
+						<p class = "g_p_0003">使用可能<br>条件</p>
+					</td>
+					<td class = "g_td_0012" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							-
+						</p>
+					</td>
+				</tr>
+			</table>
+			<p class="MsoNormal"><br><br><br></p>
+
+
+
+			<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+				<tr style="height:25pt">
+					<td class = "g_HeadTitle" colspan = "4">
+						<p class="g_p_0002">
+							<a id=":FTP:FILE:IP">
+								<span class = "g_HeadTitle">
+									<b>送信ファイル識別子(IPアドレス)の設定と問い合わせ</b>
+								</span>
+							</a>
+							<a id=":FTP:FILE:IP?"></a>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0004" rowspan = "2">
+						<p class = "g_p_0003">構文</p>
+					</td>
+					<td class = "g_td_0005">
+						<p class="MsoNormal">(コマンド)<br><br>(クエリ)</p>
+					</td>
+					<td class = "g_td_0006" colspan = "2">
+						<p class="MsoNormal">
+							<span style="color:red;font-weight:bold">
+								<br>
+								:SYSTem:FTP:FILE:IP A$<br><br>
+								:SYSTem:FTP:FILE:IP? <br><br>
+							</span>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0007">
+						<p class="MsoNormal">(応答)</p>
+					</td>
+					<td class = "g_td_0008" colspan = "2">
+						<p class="MsoNormal" style="margin-bottom:12pt">
+							<span style="color:#0000cc;font-weight:bold">
+								A$<br>
+							</span>
+							<br>
+							A$ = OFF, ON
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0009">
+						<p class = "g_p_0003">解説</p>
+					</td>
+					<td class = "g_td_0010" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							FTPデータ自動送信機能において、送信ファイル識別子としてIPアドレスを付与するかを設定します。<br>
+							現在の送信ファイル識別子(IPアドレス)の設定を返します。<br>
+						</p>
+						<table>
+							<tr><td class="g_td_0013"><b>OFF</b></td>
+							<td class="g_td_0013">&nbsp;ファイル識別子としてIPアドレスを付加しない</td></tr>
+							<tr><td class="g_td_0013"><b>ON</b></td>
+							<td class="g_td_0013">&nbsp;ファイル識別子としてIPアドレスを付加する</td></tr>
+						</table>
+						<br>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0011">
+						<p class = "g_p_0003">例</p>
+					</td>
+					<td class = "g_td_0012" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							<span style="color:#00582a">
+								:SYSTem:FTP:FILE:IP ON<br>:SYSTem:FTP:FILE:IP?<br>
+							</span>
+							(応答)&nbsp;&nbsp;<b>:SYSTEM:FTP:FILE:IP ON</b>&nbsp;&nbsp;(ヘッダがONの場合)
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0009">
+						<p class = "g_p_0003">注記</p>
+					</td>
+					<td class = "g_td_0010" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							-
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0011">
+						<p class = "g_p_0003">使用可能<br>条件</p>
+					</td>
+					<td class = "g_td_0012" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							-
+						</p>
+					</td>
+				</tr>
+			</table>
+			<p class="MsoNormal"><br><br><br></p>
+
+
+
+			<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+				<tr style="height:25pt">
+					<td class = "g_HeadTitle" colspan = "4">
+						<p class="g_p_0002">
+							<a id=":FTP:FILE:TIME">
+								<span class = "g_HeadTitle">
+									<b>送信ファイル識別子(時刻)の設定と問い合わせ</b>
+								</span>
+							</a>
+							<a id=":FTP:FILE:TIME?"></a>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0004" rowspan = "2">
+						<p class = "g_p_0003">構文</p>
+					</td>
+					<td class = "g_td_0005">
+						<p class="MsoNormal">(コマンド)<br><br>(クエリ)</p>
+					</td>
+					<td class = "g_td_0006" colspan = "2">
+						<p class="MsoNormal">
+							<span style="color:red;font-weight:bold">
+								<br>
+								:SYSTem:FTP:FILE:TIME A$<br><br>
+								:SYSTem:FTP:FILE:TIME? <br><br>
+							</span>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0007">
+						<p class="MsoNormal">(応答)</p>
+					</td>
+					<td class = "g_td_0008" colspan = "2">
+						<p class="MsoNormal" style="margin-bottom:12pt">
+							<span style="color:#0000cc;font-weight:bold">
+								A$<br>
+							</span>
+							<br>
+							A$ = OFF, ON
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0009">
+						<p class = "g_p_0003">解説</p>
+					</td>
+					<td class = "g_td_0010" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							FTPデータ自動送信機能において、送信ファイル識別子として時刻を付与するかを設定します。<br>
+							現在の送信ファイル識別子(時刻)の設定を返します。<br>
+						</p>
+						<table>
+							<tr><td class="g_td_0013"><b>OFF</b></td>
+							<td class="g_td_0013">&nbsp;ファイル識別子として時刻を付加しない</td></tr>
+							<tr><td class="g_td_0013"><b>ON</b></td>
+							<td class="g_td_0013">&nbsp;ファイル識別子として時刻を付加する</td></tr>
+						</table>
+						<br>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0011">
+						<p class = "g_p_0003">例</p>
+					</td>
+					<td class = "g_td_0012" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							<span style="color:#00582a">
+								:SYSTem:FTP:FILE:TIME ON<br>:SYSTem:FTP:FILE:TIME?<br>
+							</span>
+							(応答)&nbsp;&nbsp;<b>:SYSTEM:FTP:FILE:TIME ON</b>&nbsp;&nbsp;(ヘッダがONの場合)
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0009">
+						<p class = "g_p_0003">注記</p>
+					</td>
+					<td class = "g_td_0010" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							-
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0011">
+						<p class = "g_p_0003">使用可能<br>条件</p>
+					</td>
+					<td class = "g_td_0012" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							-
+						</p>
+					</td>
+				</tr>
+			</table>
+			<p class="MsoNormal"><br><br><br></p>
+
+
+
+			<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+				<tr style="height:25pt">
+					<td class = "g_HeadTitle" colspan = "4">
+						<p class="g_p_0002">
+							<a id=":FTP:PASSword">
+								<span class = "g_HeadTitle">
+									<b>FTPデータ自動送信機能パスワードの設定と照合結果の問い合わせ</b>
+								</span>
+							</a>
+							<a id=":FTP:PASSword?"></a>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0004" rowspan = "2">
+						<p class = "g_p_0003">構文</p>
+					</td>
+					<td class = "g_td_0005">
+						<p class="MsoNormal">(コマンド)<br><br>(クエリ)</p>
+					</td>
+					<td class = "g_td_0006" colspan = "2">
+						<p class="MsoNormal">
+							<span style="color:red;font-weight:bold">
+								<br>
+								:SYSTem:FTP:PASSword "A$"<br><br>
+								:SYSTem:FTP:PASSword? "A$"<br><br>
+							</span>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0007">
+						<p class="MsoNormal">(応答)</p>
+					</td>
+					<td class = "g_td_0008" colspan = "2">
+						<p class="MsoNormal" style="margin-bottom:12pt">
+							<span style="color:#0000cc;font-weight:bold">
+							B$<br>
+							</span>
+							<br>
+							A$ = パスワード(半角32文字まで)<br>
+							B$ = PASS,FAIL<br>
+							<table>
+								<tr><td class="g_td_0013"><b>PASS</b></td>
+								<td class="g_td_0013">&nbsp;入力したパスワードが正しい</td></tr>
+								<tr><td class="g_td_0013"><b>FAIL</b></td>
+								<td class="g_td_0013">&nbsp;入力したパスワードが間違っている</td></tr>
+							</table>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0009">
+						<p class = "g_p_0003">解説</p>
+					</td>
+					<td class = "g_td_0010" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							FTPデータ自動送信機能における、パスワードを設定します。<br>
+							入力したパスワードと、現在設定されているパスワードを照合し、結果を返します。<br>
+						</p>
+						<br>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0011">
+						<p class = "g_p_0003">例</p>
+					</td>
+					<td class = "g_td_0012" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							<span style="color:#00582a">
+								:SYSTem:FTP:PASSword "abcd"<br>:SYSTem:FTP:PASSword? "abcd"<br>
+							</span>
+							(応答)&nbsp;&nbsp;<b>:SYSTEM:FTP:PASSWORD PASS</b>&nbsp;&nbsp;(ヘッダがONの場合)
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0009">
+						<p class = "g_p_0003">注記</p>
+					</td>
+					<td class = "g_td_0010" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							最大文字数以上の文字列を入力した場合、コマンドエラーになります。
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0011">
+						<p class = "g_p_0003">使用可能<br>条件</p>
+					</td>
+					<td class = "g_td_0012" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							-
+						</p>
+					</td>
+				</tr>
+			</table>
+			<p class="MsoNormal"><br><br><br></p>
+
+
+
+			<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+				<tr style="height:25pt">
+					<td class = "g_HeadTitle" colspan = "4">
+						<p class="g_p_0002">
+							<a id=":FTP:PASV">
+								<span class = "g_HeadTitle">
+									<b>FTPデータ自動送信機能パッシブモードの設定と問い合わせ</b>
+								</span>
+							</a>
+							<a id=":FTP:PASV?"></a>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0004" rowspan = "2">
+						<p class = "g_p_0003">構文</p>
+					</td>
+					<td class = "g_td_0005">
+						<p class="MsoNormal">(コマンド)<br><br>(クエリ)</p>
+					</td>
+					<td class = "g_td_0006" colspan = "2">
+						<p class="MsoNormal">
+							<span style="color:red;font-weight:bold">
+								<br>
+								:SYSTem:FTP:PASV A$<br><br>
+								:SYSTem:FTP:PASV? <br><br>
+							</span>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0007">
+						<p class="MsoNormal">(応答)</p>
+					</td>
+					<td class = "g_td_0008" colspan = "2">
+						<p class="MsoNormal" style="margin-bottom:12pt">
+							<span style="color:#0000cc;font-weight:bold">
+								A$<br>
+							</span>
+							<br>
+							A$ = OFF, ON
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0009">
+						<p class = "g_p_0003">解説</p>
+					</td>
+					<td class = "g_td_0010" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							FTPデータ自動送信機能における、パッシブモードのONOFFを設定します。<br>
+							現在のパッシブモードの設定を返します。<br>
+						</p>
+						<table>
+							<tr><td class="g_td_0013"><b>OFF</b></td>
+							<td class="g_td_0013">&nbsp;パッシブモードOFF</td></tr>
+							<tr><td class="g_td_0013"><b>ON</b></td>
+							<td class="g_td_0013">&nbsp;パッシブモードON</td></tr>
+						</table>
+						<br>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0011">
+						<p class = "g_p_0003">例</p>
+					</td>
+					<td class = "g_td_0012" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							<span style="color:#00582a">
+								:SYSTem:FTP:PASV ON<br>:SYSTem:FTP:PASV?<br>
+							</span>
+							(応答)&nbsp;&nbsp;<b>:SYSTEM:FTP:PASV ON</b>&nbsp;&nbsp;(ヘッダがONの場合)
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0009">
+						<p class = "g_p_0003">注記</p>
+					</td>
+					<td class = "g_td_0010" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							-
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0011">
+						<p class = "g_p_0003">使用可能<br>条件</p>
+					</td>
+					<td class = "g_td_0012" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							-
+						</p>
+					</td>
+				</tr>
+			</table>
+			<p class="MsoNormal"><br><br><br></p>
+
+
+			<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+				<tr style="height:25pt">
+					<td class = "g_HeadTitle" colspan = "4">
+						<p class="g_p_0002">
+							<a id=":FTP:PORT">
+								<span class = "g_HeadTitle">
+									<b>データ自動送信先FTPサーバーポート番号の設定と問い合わせ</b>
+								</span>
+							</a>
+							<a id=":FTP:PORT?"></a>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0004" rowspan = "2">
+						<p class = "g_p_0003">構文</p>
+					</td>
+					<td class = "g_td_0005">
+						<p class="MsoNormal">(コマンド)<br><br>(クエリ)</p>
+					</td>
+					<td class = "g_td_0006" colspan = "2">
+						<p class="MsoNormal">
+							<span style="color:red;font-weight:bold">
+								<br>
+								:SYSTem:FTP:PORT A<br><br>
+								:SYSTem:FTP:PORT?<br><br>
+							</span>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0007">
+						<p class="MsoNormal">(応答)</p>
+					</td>
+					<td class = "g_td_0008" colspan = "2">
+						<p class="MsoNormal" style="margin-bottom:12pt">
+							<span style="color:#0000cc;font-weight:bold">
+							A&lt;NR1&gt;<br>
+							</span>
+							<br>
+							A = ポート番号(0~65535)<br>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0009">
+						<p class = "g_p_0003">解説</p>
+					</td>
+					<td class = "g_td_0010" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							FTPデータ自動送信機能における、送信先サーバーのポート番号を設定します。<br>
+							現在の送信先サーバーポート番号を返します。<br>
+						</p>
+						<br>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0011">
+						<p class = "g_p_0003">例</p>
+					</td>
+					<td class = "g_td_0012" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							<span style="color:#00582a">
+								:SYSTem:FTP:PORT 1234<br>:SYSTem:FTP:PORT?<br>
+							</span>
+							(応答)&nbsp;&nbsp;<b>:SYSTEM:FTP:PORT 1234</b>&nbsp;&nbsp;(ヘッダがONの場合)
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0009">
+						<p class = "g_p_0003">注記</p>
+					</td>
+					<td class = "g_td_0010" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							-
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0011">
+						<p class = "g_p_0003">使用可能<br>条件</p>
+					</td>
+					<td class = "g_td_0012" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							-
+						</p>
+					</td>
+				</tr>
+			</table>
+			<p class="MsoNormal"><br><br><br></p>
+
+
+
+			<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+				<tr style="height:25pt">
+					<td class = "g_HeadTitle" colspan = "4">
+						<p class="g_p_0002">
+							<a id=":FTP:PROG?">
+								<span class = "g_HeadTitle">
+									<b>未送信ファイル有無の問い合わせ</b>
+								</span>
+							</a>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0004" rowspan = "2">
+						<p class = "g_p_0003">構文</p>
+					</td>
+					<td class = "g_td_0005">
+						<p class="MsoNormal">(クエリ)</p>
+					</td>
+					<td class = "g_td_0006" colspan = "2">
+						<p class="MsoNormal">
+							<span style="color:red;font-weight:bold">
+								<br>
+								:SYSTem:FTP:PROG?<br><br>
+							</span>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0007">
+						<p class="MsoNormal">(応答)</p>
+					</td>
+					<td class = "g_td_0008" colspan = "2">
+						<p class="MsoNormal" style="margin-bottom:12pt">
+							<span style="color:#0000cc;font-weight:bold">
+								A$<br>
+							</span>
+							<br>
+						 	A$ = YES, NO<br>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0009">
+						<p class = "g_p_0003">解説</p>
+					</td>
+					<td class = "g_td_0010" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							FTPデータ自動送信機能におおいて、未送信ファイルの有無を判定し結果を返します。<br>
+							<table>
+								<tr><td class="g_td_0013"><b>YES</b></td>
+								<td class="g_td_0013">&nbsp;未送信ファイル有り</td></tr>
+								<tr><td class="g_td_0013"><b>NO</b></td>
+								<td class="g_td_0013">&nbsp;未送信ファイル無し</td></tr>
+							</table>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0011">
+						<p class = "g_p_0003">例</p>
+					</td>
+					<td class = "g_td_0012" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							<span style="color:#00582a">
+								:SYSTem:FTP:PROG?<br>
+							</span>
+							(応答)&nbsp;&nbsp;<b>:SYSTEM:FTP:PROG YES</b>&nbsp;&nbsp;(ヘッダがONの場合)
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0009">
+						<p class = "g_p_0003">注記</p>
+					</td>
+					<td class = "g_td_0010" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							-
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0011">
+						<p class = "g_p_0003">使用可能<br>条件</p>
+					</td>
+					<td class = "g_td_0012" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							-
+						</p>
+					</td>
+				</tr>
+			</table>
+			<p class="MsoNormal"><br><br><br></p>
+
+
+
+			<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+				<tr style="height:25pt">
+					<td class = "g_HeadTitle" colspan = "4">
+						<p class="g_p_0002">
+							<a id=":FTP:STATe?">
+								<span class = "g_HeadTitle">
+									<b>FTPデータ自動送信機能通信状況の問い合わせ</b>
+								</span>
+							</a>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0004" rowspan = "2">
+						<p class = "g_p_0003">構文</p>
+					</td>
+					<td class = "g_td_0005">
+						<p class="MsoNormal">(クエリ)</p>
+					</td>
+					<td class = "g_td_0006" colspan = "2">
+						<p class="MsoNormal">
+							<span style="color:red;font-weight:bold">
+								<br>
+								:SYSTem:FTP:STATe?<br><br>
+							</span>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0007">
+						<p class="MsoNormal">(応答)</p>
+					</td>
+					<td class = "g_td_0008" colspan = "2">
+						<p class="MsoNormal" style="margin-bottom:12pt">
+							<span style="color:#0000cc;font-weight:bold">
+							A&lt;NR1&gt;, B&lt;NR1&gt;, C&lt;NR1&gt;, D&lt;NR1&gt;<br>
+							</span>
+							<br>
+							A = 総ファイル数<br>
+							B = 送信済みファイル数<br>
+							C = 送信失敗ファイル数<br>
+							D = 未送信ファイル数<br>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0009">
+						<p class = "g_p_0003">解説</p>
+					</td>
+					<td class = "g_td_0010" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							FTPデータ自動送信機能の通信状況を返します。<br>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0011">
+						<p class = "g_p_0003">例</p>
+					</td>
+					<td class = "g_td_0012" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							<span style="color:#00582a">
+								:SYSTem:FTP:STATe?<br>
+							</span>
+							(応答)&nbsp;&nbsp;<b>:SYSTEM:FTP:STATE 10,1,5,4</b>&nbsp;&nbsp;(ヘッダがONの場合)
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0009">
+						<p class = "g_p_0003">注記</p>
+					</td>
+					<td class = "g_td_0010" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							-
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0011">
+						<p class = "g_p_0003">使用可能<br>条件</p>
+					</td>
+					<td class = "g_td_0012" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							-
+						</p>
+					</td>
+				</tr>
+			</table>
+			<p class="MsoNormal"><br><br><br></p>
+
+
+			<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+				<tr style="height:25pt">
+					<td class = "g_HeadTitle" colspan = "4">
+						<p class="g_p_0002">
+							<a id=":FTP:USE">
+								<span class = "g_HeadTitle">
+									<b>FTPデータ自動送信機能ONOFFの設定と問い合わせ</b>
+								</span>
+							</a>
+							<a id=":FTP:USE?"></a>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0004" rowspan = "2">
+						<p class = "g_p_0003">構文</p>
+					</td>
+					<td class = "g_td_0005">
+						<p class="MsoNormal">(コマンド)<br><br>(クエリ)</p>
+					</td>
+					<td class = "g_td_0006" colspan = "2">
+						<p class="MsoNormal">
+							<span style="color:red;font-weight:bold">
+								<br>
+								:SYSTem:FTP:USE A$<br><br>
+								:SYSTem:FTP:USE? <br><br>
+							</span>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0007">
+						<p class="MsoNormal">(応答)</p>
+					</td>
+					<td class = "g_td_0008" colspan = "2">
+						<p class="MsoNormal" style="margin-bottom:12pt">
+							<span style="color:#0000cc;font-weight:bold">
+								A$<br>
+							</span>
+							<br>
+							A$ = OFF, ON
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0009">
+						<p class = "g_p_0003">解説</p>
+					</td>
+					<td class = "g_td_0010" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							FTPデータ自動送信機能のONOFFを設定します。<br>
+							現在のFTPデータ自動送信機能のONOFFを返します。<br>
+						</p>
+						<table>
+							<tr><td class="g_td_0013"><b>OFF</b></td>
+							<td class="g_td_0013">&nbsp;FTPデータ自動送信機能OFF</td></tr>
+							<tr><td class="g_td_0013"><b>ON</b></td>
+							<td class="g_td_0013">&nbsp;FTPデータ自動送信機能ON</td></tr>
+						</table>
+						<br>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0011">
+						<p class = "g_p_0003">例</p>
+					</td>
+					<td class = "g_td_0012" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							<span style="color:#00582a">
+								:SYSTem:FTP:USE ON<br>:SYSTem:FTP:USE?<br>
+							</span>
+							(応答)&nbsp;&nbsp;<b>:SYSTEM:FTP:USE ON</b>&nbsp;&nbsp;(ヘッダがONの場合)
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0009">
+						<p class = "g_p_0003">注記</p>
+					</td>
+					<td class = "g_td_0010" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							-
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0011">
+						<p class = "g_p_0003">使用可能<br>条件</p>
+					</td>
+					<td class = "g_td_0012" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							-
+						</p>
+					</td>
+				</tr>
+			</table>
+			<p class="MsoNormal"><br><br><br></p>
+
+
+			<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+				<tr style="height:25pt">
+					<td class = "g_HeadTitle" colspan = "4">
+						<p class="g_p_0002">
+							<a id=":FTP:USER">
+								<span class = "g_HeadTitle">
+									<b>FTPデータ自動送信機能ユーザー名の設定と問い合わせ</b>
+								</span>
+							</a>
+							<a id=":FTP:USER?"></a>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0004" rowspan = "2">
+						<p class = "g_p_0003">構文</p>
+					</td>
+					<td class = "g_td_0005">
+						<p class="MsoNormal">(コマンド)<br><br>(クエリ)</p>
+					</td>
+					<td class = "g_td_0006" colspan = "2">
+						<p class="MsoNormal">
+							<span style="color:red;font-weight:bold">
+								<br>
+								:SYSTem:FTP:USER "A$"<br><br>
+								:SYSTem:FTP:USER? <br><br>
+							</span>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0007">
+						<p class="MsoNormal">(応答)</p>
+					</td>
+					<td class = "g_td_0008" colspan = "2">
+						<p class="MsoNormal" style="margin-bottom:12pt">
+							<span style="color:#0000cc;font-weight:bold">
+								"A$"<br>
+							</span>
+							<br>
+							A$ = ユーザー名(半角32文字まで)
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0009">
+						<p class = "g_p_0003">解説</p>
+					</td>
+					<td class = "g_td_0010" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							FTPデータ自動送信機能における、ユーザー名を設定します。<br>
+							現在のユーザー名を返します。<br>
+						</p>
+						<br>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0011">
+						<p class = "g_p_0003">例</p>
+					</td>
+					<td class = "g_td_0012" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							<span style="color:#00582a">
+								:SYSTem:FTP:USER "LR8450"<br>:SYSTem:FTP:USER?<br>
+							</span>
+							(応答)&nbsp;&nbsp;<b>:SYSTEM:FTP:USER "LR8450"</b>&nbsp;&nbsp;(ヘッダがONの場合)
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0009">
+						<p class = "g_p_0003">注記</p>
+					</td>
+					<td class = "g_td_0010" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							最大文字数以上の文字列を入力した場合、コマンドエラーになります。
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class = "g_td_0011">
+						<p class = "g_p_0003">使用可能<br>条件</p>
+					</td>
+					<td class = "g_td_0012" colspan = "3">
+						<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+							-
+						</p>
+					</td>
+				</tr>
+			</table>
+			<p class="MsoNormal"><br><br><br></p>
+	-->
+
+
+</body>
+</html>

@@ -1,0 +1,345 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="Content-Style-Type" content="text/css">
+		<link rel="stylesheet" href="style.css" type="text/css">
+		<title></title>
+		<style>
+			<!--
+				.m_td_01{
+					border-top		: none;
+					border-left		: none;
+					border-bottom	: solid windowtext .75pt;
+					border-right	: solid windowtext .75pt;
+					padding			: 5pt;
+					vertical-align	: top;
+				}
+
+				.m_td_02{
+					border			: solid windowtext .75pt;
+					border-top		: none;
+					padding			: 5pt;
+					vertical-align	: top;
+				}
+			-->
+		</style>
+	</head>
+
+	<body>
+		<table class="MsoNormalTable" style ="width:100%; border-collapse:collapse">
+			<tr style="height:25pt">
+				<td style ="background:#3d60af">
+					<p class="MsoNormal" style="margin-left:9pt;text-align:justify;">
+						<span style='color:white'>Command Description Method and Terminology</span>
+					</p>
+				</td>
+			</tr>
+		</table>
+
+		<p class="MsoNormal" style="margin-right:24pt;">
+			<span style="font-size:10pt"><br>Following lists are examples of the command table.<br><br></span>
+		</p>
+
+		<table class="MsoNormalTable" style ="width:100%; border-collapse:collapse">
+			<tr style="height:40pt">
+				<td style="border:solid #A3A19E 2pt;border-bottom:solid windowtext 1pt;padding:.75pt .75pt 0mm .75pt">
+					<p class="g_p0010">
+						Command or query program message
+					</p>
+				</td>
+				<td style="border:solid #A3A19E 2pt;border-bottom:solid windowtext 1pt;padding:.75pt .75pt 0mm .75pt">
+					<p class="g_p0010">
+						Command or response data
+					</p>
+				</td>
+				<td style="border:solid #A3A19E 2pt;border-bottom:solid windowtext 1pt;padding:.75pt .75pt 0mm .75pt">
+					<p class="g_p0010">
+						Workings of the command program message<br> or query program message
+					</p>
+				</td>
+			</tr>
+			<tr style="height:40pt">
+				<td style="border-top:none;border-left:solid #A3A19E 2pt;border-bottom:solid windowtext 1pt;border-right:solid white 2pt;background:#3d60af;padding:.75pt .75pt 0mm .75pt">
+					<p class="g_p0010">
+						<span style="color:white">Command</span>
+					</p>
+				</td>
+				<td style="border-top:none;border-left:none;border-bottom:solid windowtext 1pt;border-right:solid white 2pt;background:#3d60af;padding:.75pt .75pt 0mm .75pt">
+					<p class="g_p0010">
+						<span style="color:white">Data<br>(for a query, response data)</span>
+					</p>
+				</td>
+				<td style="border-top:none;border-left:none;border-bottom:solid windowtext 1pt;border-right:solid #A3A19E 2pt;background:#3d60af;padding:.75pt .75pt 0mm .75pt">
+					<p class="g_p0010">
+						<span style="color:white">Explanation</span>
+					</p>
+				</td>
+			</tr>
+			<tr style="height:25pt">
+				<td class = "g_p0006">
+					<p class="g_p0011">
+						<span style='color:blue'><b>:HEADer A$</b></span>
+					</p>
+				</td>
+				<td class = "g_p0007">
+					<p class="g_p0011">
+						A$ = ON, OFF
+					</p>
+				</td>
+				<td class = "g_p0008" rowspan="2">
+					<p class="g_p0011">
+						Enables/disables headers<br>
+						Queries
+					</p>
+				</td>
+			</tr>
+			<tr style="height:25pt">
+				<td class = "g_p0012">
+					<p class="g_p0011">
+						<span style='color:blue'><b>:HEADer?</b></span>
+					</p>
+				</td>
+				<td class = "g_p0013">
+					<p class="g_p0011">
+						A$
+					</p>
+				</td>
+			</tr>
+		</table>
+
+		<p class="MsoNormal">
+			<span style="font-size:10pt"><br><br>Each notation in the data column is as follows.<br></span>
+		</p>
+
+		<table style="border:1; border-collapse:collapse; border:none;">
+	<tr>
+		<td style="border-left: .75pt solid windowtext; border-top: .75pt solid windowtext; border-bottom: .75pt solid windowtext; border-right: .75pt solid white; background: black; padding: 0mm 4.95pt; height: 30px;">
+			<p class="MsoNormal" align="center">
+				<span style='font-size:10pt;color:white'>Notation</span>
+			</p>
+		</td>
+		<td style="border-top:solid windowtext .75pt;border-bottom:solid windowtext .75pt;border-right:solid white .75pt;background:black;padding:0mm 4.95pt 0mm 4.95pt; height: 30px; border-left-style: none; border-left-color: inherit; border-left-width: medium;">
+			<p class="MsoNormal" align="center">
+				<span style='font-size:10pt;color:white'>Meaning</span>
+			</p>
+		</td>
+		<td style="border-right: .75pt solid windowtext; border-top: .75pt solid windowtext; border-bottom: .75pt solid windowtext; background: black; padding: 0mm 4.95pt; height: 30px; border-left-style: none; border-left-color: inherit; border-left-width: medium;">
+			<p class="MsoNormal" align="center">
+				<span style='font-size:10pt;color:white'>Example</span>
+			</p>
+		</td>
+	</tr>
+
+	<tr>
+		<td class="m_td_02">
+			<p class="MsoNormal">
+				<span style="font-size:10pt">A$</span>
+			</p>
+		</td>
+		<td class="m_td_01">
+			<p class="MsoNormal">
+				<span style="font-size:10pt">Character string data</span>
+			</p>
+		</td>
+		<td class="m_td_01">
+			<p class="MsoNormal">
+				<span style="font-size:10pt">OFF, ON</span>
+			</p>
+		</td>
+	</tr>
+
+	<tr>
+		<td class="m_td_02">
+			<p class="MsoNormal">
+				<span style="font-size:10pt">unit$</span>
+			</p>
+		</td>
+		<td class="m_td_01">
+			<p class="MsoNormal">
+				<span style="font-size:10pt">
+					Unit string data<br>
+				</span>
+			</p>
+		</td>
+		<td class="m_td_01">
+			<p class="MsoNormal">
+				<span style="font-size:10pt">
+					UNIT1 to UNIT4<br>
+					REMOTE1 to REMOTE7<br>
+				</span>
+			</p>
+		</td>
+	</tr>
+
+	<tr>
+		<td class="m_td_02">
+			<p class="MsoNormal">
+				<span style="font-size:10pt">ch$</span>
+			</p>
+		</td>
+		<td class="m_td_01">
+			<p class="MsoNormal">
+				<span style="font-size:10pt">
+					Channel string data<br>
+				</span>
+			</p>
+		</td>
+		<td class="m_td_01">
+			<p class="MsoNormal">
+				<span style="font-size:10pt">
+					CH1_1 to CH4_30<br>
+					R1_1 to R7_30<br>
+					PLS1 to PLS8<br>
+					ALM1 to ALM8<br>
+					W1 to W30<br>
+				</span>
+			</p>
+		</td>
+	</tr>
+
+	<tr>
+		<td class="m_td_02">
+			<p class="MsoNormal">
+				<span style="font-size:10pt">pls$</span>
+			</p>
+		</td>
+		<td class="m_td_01">
+			<p class="MsoNormal">
+				<span style="font-size:10pt">
+					Pulse Channel string data<br>
+				</span>
+			</p>
+		</td>
+		<td class="m_td_01">
+			<p class="MsoNormal">
+				<span style="font-size:10pt">
+					PLS1 to PLS8<br>
+				</span>
+			</p>
+		</td>
+	</tr>
+
+	<tr>
+		<td class="m_td_02">
+			<p class="MsoNormal">
+				<span style="font-size:10pt">alm$</span>
+			</p>
+		</td>
+		<td class="m_td_01">
+			<p class="MsoNormal">
+				<span style="font-size:10pt">
+					Alarm Channel string data<br>
+				</span>
+			</p>
+		</td>
+		<td class="m_td_01">
+			<p class="MsoNormal">
+				<span style="font-size:10pt">
+					ALM1 to ALM8<br>
+				</span>
+			</p>
+		</td>
+	</tr>
+
+	<tr>
+		<td class="m_td_02">
+			<p class="MsoNormal">
+				<span style="font-size:10pt">w$</span>
+			</p>
+		</td>
+		<td class="m_td_01">
+			<p class="MsoNormal">
+				<span style="font-size:10pt">
+					Wave Calculate Channel string data<br>
+				</span>
+			</p>
+		</td>
+		<td class="m_td_01">
+			<p class="MsoNormal">
+				<span style="font-size:10pt">
+					W1 to W30<br>
+				</span>
+			</p>
+		</td>
+	</tr>
+
+	<tr>
+		<td class="m_td_02">
+			<p class="MsoNormal">
+				<span style="font-size:10pt">A, B, C,...</span>
+			</p>
+		</td>
+		<td class="m_td_01">
+			<p class="MsoNormal">
+				<span style="font-size:10pt">Numerical value</span>
+			</p>
+		</td>
+		<td class="m_td_01">
+			<p class="MsoNormal">
+				<span style="font-size:10pt">10, -20, 1.5E+05, 0.1</span>
+			</p>
+		</td>
+	</tr>
+
+	<tr>
+		<td class="m_td_02">
+			<p class="MsoNormal">
+				<span style="font-size:10pt">A&lt;NR1&gt;</span>
+			</p>
+		</td>
+		<td class="m_td_01">
+			<p class="MsoNormal">
+				<span style="font-size:10pt">Integer data</span>
+			</p>
+		</td>
+		<td class="m_td_01">
+			<p class="MsoNormal">
+				<span style="font-size:10pt">+15, -20, 25</span>
+			</p>
+		</td>
+	</tr>
+
+	<tr>
+		<td class="m_td_02">
+			<p class="MsoNormal">
+				<span style="font-size:10pt">A&lt;NR2&gt;</span>
+			</p>
+		</td>
+		<td class="m_td_01">
+			<p class="MsoNormal">
+				<span style="font-size:10pt">Fixed point numbers</span>
+			</p>
+		</td>
+		<td class="m_td_01">
+			<p class="MsoNormal">
+				<span style="font-size:10pt">+1.23, -4.57, 7.89</span>
+			</p>
+		</td>
+	</tr>
+
+	<tr>
+		<td class="m_td_02">
+			<p class="MsoNormal">
+				<span style="font-size:10pt">A&lt;NR3&gt;</span>
+			</p>
+		</td>
+		<td class="m_td_01">
+			<p class="MsoNormal">
+				<span style="font-size:10pt">Floating point numbers</span>
+			</p>
+		</td>
+		<td class="m_td_01">
+			<p class="MsoNormal">
+				<span style="font-size:10pt">+10.0E-03, -2.3E+03, 5E+03</span>
+			</p>
+		</td>
+	</tr>
+</table>
+
+		<p class="MsoNormal">
+			<span style="font-size:10pt;"><br>All formats &lt;NR1 to 3&gt; for the numerical setting are accepted.</span>
+		</p>
+
+	</body>
+</html>

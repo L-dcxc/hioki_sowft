@@ -1,0 +1,543 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<title></title>
+</head>
+
+<body>
+	<table class="MsoNormalTable" style="border:0; border-collapse:collapse; width:100%">
+		<tr style="height:25pt">
+			<td style ="background:#3d60af">
+				<p class="MsoNormal" style="margin-left:9pt;text-align:justify">
+					<span style="color:white;font-weight:bold">Reservation setting(RESERve)</span>
+				</p>
+			</td>
+		</tr>
+	</table>
+
+	<p class="MsoNormal">&nbsp;</p>
+
+	<table class="MsoNormalTable" style="border:0; border-collapse:collapse; width:100%">
+		<tr style="height:40pt">
+			<td class = "g_p0001">
+				<p class="g_p0010"><span style="color:white">Command</span></p>
+			</td>
+			<td class = "g_p0002">
+				<p class="g_p0010"><span style="color:white">Data<br>(for a query, response data)</span></p>
+			</td>
+			<td class = "g_p0009">
+				<p class="g_p0010"><span style="color:white">Explanation</span></p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right15.htm#:ACCUmu" target="_self">:ACCUmu A$,B$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = W1 to W16<br>B$ = SUM, ABS, POS, NEG</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Set an integration processing</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right15.htm#:ACCUmu?" target="_self">:ACCUmu? A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$,B$</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Query an integration processing</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right15.htm#:COEFf" target="_self">:COEFf A$,B$,C</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = W1 to W16<br>B$ = A to E<br>C = Constant</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Set calculation factor (constant) A to E</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right15.htm#:COEFf?" target="_self">:COEFf? A$,B$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$,B$,C</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Query calculation factor (constant) A to E</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right15.htm#:DIFF" target="_self">:DIFF A$,B</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = W1 to W16<br>B = 1 to 3200 (Differential interval)</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Set a differential calculation interval</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right15.htm#:DIFF?" target="_self">:DIFF? A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$,B&lt;NR1&gt;</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Query a differential calculation interval</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right15.htm#:ENABle" target="_self">:ENABle A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = OFF, ON</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Enables/disables DSP calculation</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right15.htm#:ENABle?" target="_self">:ENABle?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Query DSP calculation enablement</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right15.htm#:FLEN" target="_self">:FLEN A$,B</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = W1 to W16<br>B = 0, 10, 20, 50, 100, 200, 500, 1000, 2000, 5000, 10000 (point)</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Set a filtering data length</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right15.htm#:FLEN?" target="_self">:FLEN? A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$,B&lt;NR1&gt;</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Query a filtering data length</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right15.htm#:OPERator" target="_self">:OPERator A$,B$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = W1 to W16<br>B$ = PLUS, MINUs, MULT, DIV</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Set an arithmetic operator</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right15.htm#:OPERator?" target="_self">:OPERator? A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$,B$</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Query an arithmetic operator</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right15.htm#:RNEGative" target="_self">:RNEGative A$,B</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = W1 to W16<br>B = Reset value</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Set a reset value (negative side)</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right15.htm#:RNEGative?" target="_self">:RNEGative? A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$,B</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Query a reset value (negative side)</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right15.htm#:RPOSitive" target="_self">:RPOSitive A$,B</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = W1 to W16<br>B = Reset value</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Set a reset value (positive side)</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right15.htm#:RPOSitive?" target="_self">:RPOSitive? A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$,B</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Query a reset value (positive side)</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right15.htm#:RTIMing" target="_self">:RTIMing A$,B$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = W1 to W16<br>B$ = STARt, OVER, RISE, FALL, EDGE</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Set a reset timing</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right15.htm#:RTIMing?" target="_self">:RTIMing? A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$,B$</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Query a reset timing</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right15.htm#:SOURce" target="_self">:SOURce A$,B$,C$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = W1 to W16<br>B$ = S1 to S6 (Calculation source)<br>C$ = CH1_1 to CH8_4, W1 to W16</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Set a operation source</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right15.htm#:SOURce?" target="_self">:SOURce? A$,B$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$,B$,C$</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Query a operation source</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right15.htm#:TIMEbase" target="_self">:TIMEbase A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A = 1 to 1E+8</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Set the calculation update interval</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right15.htm#:TIMEbase?" target="_self">:TIMEbase?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Query the calculation update interval</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right15.htm#:TYPE" target="_self">:TYPE A$,B$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = W1 to W16<br>B$ = BOA4, CBOA, POLYnomial, MONOmial, POADd, DIFFerential, INTEgral, ACCUmulation, MOVE, FLPF, FHPF, FBPF, FBSF, ILPF, IHPF, IBPF, IBSF, DLY<!--, RMS, EPOWer, RPOWer, APOWer, PACCum, EP3P, RP3P, RM3P, FREQuency, PERIod, FMOVe, ROTAngle, DAC, LOG, SQRT, SIN, COS, ATAN, EANGle, KNOCking, EDGE, RESOlver, PWM, CAN, TORQue, IAVE, DSAMpling--></p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Set a operation type</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right15.htm#:TYPE?" target="_self">:TYPE? A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$,B$</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Query a operation type</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right15.htm#:UNITs" target="_self">:UNITs A$,"B$"</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = W1 to W16<br>B$ = Unit name (up to 7 characters)</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Set the unit name</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right15.htm#:UNITs?" target="_self">:UNITs? A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$,&quot;B$&quot;</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Query the unit name</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right15.htm#:DF:CUTOff" target="_self">:DF:CUTOff A$,B</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = CH1_1 to CH8_4, W1 to W16<br>B = 0.2 to 30 (%)</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Set the cutoff frequency or center frequency for calculation update interval</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right15.htm#:DF:CUTOff?" target="_self">:DF:CUTOff? A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$,B&lt;NR2&gt;</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Query the cutoff frequency or center frequency for calculation update interval</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right15.htm#:DF:ENABle" target="_self">:DF:ENABle A$,B$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = CH1_1 to CH8_4<br>B$ = OFF, ON</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Set the digital filter ON / OFF status</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right15.htm#:DF:ENABle?" target="_self">:DF:ENABle? A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$,B$</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Query the digital filter ON / OFF status</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right15.htm#:DF:TAP" target="_self">:DF:TAP A$,B</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = CH1_1 to CH8_4, W1 to W16<br>B = 0 to 200 (Tap length)</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Set the tap length of the digital filter</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right15.htm#:DF:TAP?" target="_self">:DF:TAP? A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$,B&lt;NR1&gt;</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Query the tap length of the digital filter</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right15.htm#:DF:TYPE" target="_self">:DF:TYPE A$,B$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = CH1_1 to CH8_4<br>B$ = AVE, FLPF, FHPF, FBPF, FBSF, ILPF, IHPF, IBPF, IBSF, <!--HIL, FDIFf,--> DELAy</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Set a digital filter type</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right15.htm#:DF:TYPE?" target="_self">:DF:TYPE? A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$,B$</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Query a digital filter type</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right15.htm#:DF:WIDTh" target="_self">:DF:WIDTh A$,B</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = CH1_1 to CH8_4, W1 to W16<br>B = 2 to 20 (%)</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Set the frequency bandwidth for operation update interval</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right15.htm#:DF:WIDTh?" target="_self">:DF:WIDTh? A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$,B&lt;NR1&gt;</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Query the frequency bandwidth for operation update interval</p>
+			</td>
+		</tr>
+
+	</table>
+</body>
+</html>

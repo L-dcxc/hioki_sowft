@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<title></title>
+	<style>
+	<!--
+	-->
+	</style>
+</head>
+
+<body>
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle">
+				<p class = "g_p_0001">
+					Comments (COMMent)
+				</p>
+			</td>
+		</tr>
+	</table>
+
+	<p class="MsoNormal"><br></p>
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":ALMCH">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the comment characters for alarm channel.</b>
+						</span>
+					</a>
+					<a id=":ALMCH?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:COMMent:ALMCH alm$,"A$"<br><br>
+						:COMMent:ALMCH? alm$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						alm$,&quot;A$&quot;<br>
+					</span>
+					<br>
+					alm$ = <span class="ch_alarm"></span><br>A$ = comment characters (up to 40 characters)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets a string of comment characters for the alarm channel specified by alm$.<br>
+					Returns a string of comment characters for the alarm channel specified by alm$ as character data.<br><br>
+					Single quotation marks (') can be used instead of double quotation marks(&quot;).<br>
+					Entry of the special characters is as follows.<br>
+				</p>
+				<table style="border:1; border-collapse:collapse; border:none;">
+					<tr style="height:18.0pt">
+						<td class="g_td_com01">
+							<p class="g_p_com01"><b>PC</b></p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">^2</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">^3</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~u</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~o</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~e</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~c</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~+</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~,</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~;</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">^^</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~~</p>
+						</td>
+					</tr>
+					<tr style="height:18.0pt">
+						<td class="g_td_com03">
+							<p class="g_p_com01"><b>LR8450<br>LR8450-01</b></p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01"><sup>2</sup></p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01"><sup>3</sup></p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">&mu;</p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">&Omega;</p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">&epsilon;</p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">&deg;</p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">&plusmn;</p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">'</p>
+						</td>
+						<td class="g_td_com03">
+							<p class="g_p_com01">&quot;</p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">^</p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">~</p>
+						</td>
+					</tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:COMMent:ALMCH ALM1,"ABCDEFG"<br>:COMMent:ALMCH? ALM1<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:COMMENT:ALMCH ALM1,"ABCDEFG"</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Characters exceeding the maximum number of characters are not set.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":CH">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the comment characters for each channel.</b>
+						</span>
+					</a>
+					<a id=":CH?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:COMMent:CH ch$,"A$" <br><br>
+						:COMMent:CH? ch$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						ch$,&quot;A$&quot;<br>
+					</span>
+					<br>
+					ch$ = <span class="ch_analog"></span>, <span class="ch_pulse"></span><br>A$ = comment characters (up to 40 characters)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets a string of comment characters for the channel specified by ch$.<br>
+					Returns a string of comment characters for the channel specified by ch$ as character data.<br><br>
+					Single quotation marks (') can be used instead of double quotation marks(&quot;).<br>
+					Entry of the special characters is as follows.<br>
+				</p>
+				<table style="border:1; border-collapse:collapse; border:none;">
+					<tr style="height:18.0pt">
+						<td class="g_td_com01">
+							<p class="g_p_com01"><b>PC</b></p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">^2</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">^3</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~u</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~o</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~e</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~c</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~+</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~,</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~;</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">^^</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~~</p>
+						</td>
+					</tr>
+					<tr style="height:18.0pt">
+						<td class="g_td_com03">
+							<p class="g_p_com01"><b>LR8450<br>LR8450-01</b></p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01"><sup>2</sup></p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01"><sup>3</sup></p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">&mu;</p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">&Omega;</p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">&epsilon;</p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">&deg;</p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">&plusmn;</p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">'</p>
+						</td>
+						<td class="g_td_com03">
+							<p class="g_p_com01">&quot;</p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">^</p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">~</p>
+						</td>
+					</tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:COMMent:CH CH1_1,"ABCDEFG"<br>:COMMent:CH? CH1_1<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:COMMENT:CH CH1_1,"ABCDEFG"</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Characters exceeding the maximum number of characters are not set.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":TITLe">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the title comments, and inputs comment characters.</b>
+						</span>
+					</a>
+					<a id=":TITLe?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:COMMent:TITLe "A$"<br><br>
+						:COMMent:TITLe? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						&quot;A$&quot;<br>
+					</span>
+					<br>
+					A$ = comment characters (up to 40 characters)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets a string of title comment characters.<br>
+					Returns a string of title comment characters as character data.<br><br>
+					Single quotation marks (') can be used instead of double quotation marks(&quot;).<br>
+					Entry of the special characters is as follows.<br>
+				</p>
+				<table style="border:1; border-collapse:collapse; border:none;">
+					<tr style="height:18.0pt">
+						<td class="g_td_com01">
+							<p class="g_p_com01"><b>PC</b></p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">^2</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">^3</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~u</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~o</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~e</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~c</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~+</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~,</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~;</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">^^</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~~</p>
+						</td>
+					</tr>
+					<tr style="height:18.0pt">
+						<td class="g_td_com03">
+							<p class="g_p_com01"><b>LR8450<br>LR8450-01</b></p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01"><sup>2</sup></p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01"><sup>3</sup></p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">&mu;</p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">&Omega;</p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">&epsilon;</p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">&deg;</p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">&plusmn;</p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">'</p>
+						</td>
+						<td class="g_td_com03">
+							<p class="g_p_com01">&quot;</p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">^</p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">~</p>
+						</td>
+					</tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:COMMent:TITLe "HIOKI"<br>:COMMent:TITLe?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:COMMENT:TITLE "HIOKI"</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Characters exceeding the maximum number of characters are not set.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":UNIT">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the identifier characters for each unit.</b>
+						</span>
+					</a>
+					<a id=":UNIT?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:COMMent:UNIT unit$,"A$" <br><br>
+						:COMMent:UNIT? unit$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						unit$,&quot;A$&quot;<br>
+					</span>
+					<br>
+					unit$ = <span class="unit"></span><br>A$ = identifier characters (up to 16 characters)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets a string of identifier characters for the each unit specified by unit$.<br>
+					Returns a string of identifier characters for the each unit specified by unit$ as character data.<br><br>
+					Single quotation marks (') can be used instead of double quotation marks(&quot;).<br>
+					Entry of the special characters is as follows.<br>
+				</p>
+				<table style="border:1; border-collapse:collapse; border:none;">
+					<tr style="height:18.0pt">
+						<td class="g_td_com01">
+							<p class="g_p_com01"><b>PC</b></p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">^2</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">^3</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~u</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~o</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~e</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~c</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~+</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~,</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~;</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">^^</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~~</p>
+						</td>
+					</tr>
+					<tr style="height:18.0pt">
+						<td class="g_td_com03">
+							<p class="g_p_com01"><b>LR8450<br>LR8450-01</b></p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01"><sup>2</sup></p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01"><sup>3</sup></p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">&mu;</p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">&Omega;</p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">&epsilon;</p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">&deg;</p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">&plusmn;</p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">'</p>
+						</td>
+						<td class="g_td_com03">
+							<p class="g_p_com01">&quot;</p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">^</p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">~</p>
+						</td>
+					</tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:COMMent:UNIT UNIT1,"ABCDEFG"<br>:COMMent:UNIT? UNIT1<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:COMMENT:UNIT UNIT1,"ABCDEFG"</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Characters exceeding the maximum number of characters are not set.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+</body>
+</html>

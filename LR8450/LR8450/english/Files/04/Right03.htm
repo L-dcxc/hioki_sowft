@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<style>
+			<!--
+				body{
+				    background-color	: white;
+				}
+
+				p.MsoNormal, li.MsoNormal, div.MsoNormal{
+					margin				: 0pt;
+					font-size			: 10pt;
+					font-family			: "Verdana";
+				}
+			-->
+		</style>
+		<title></title>
+	</head>
+
+	<body>
+		<table class="MsoNormalTable" style ="width:100%; border-collapse:collapse">
+			<tr style="height:25pt">
+				<td style ="background:#3d60af">
+					<p class="MsoNormal" style="font-size:12pt;margin-left:9pt;text-align:justify;">
+						<span style="color:white;font-weight:bold">
+							<a name="PGM02">Sample Program 2</a>
+						</span>
+					</p>
+				</td>
+			</tr>
+		</table>
+		<p class="MsoNormal">
+			<br>
+			This program establishes a connection with the instrument and performs the acquisition of measurement data.<br>
+			The number of data objects stored in instrument memory is first obtained by the &quot;:MEMORY:MAXPOINT?&quot; query.<br>
+			When this query returns 0, the program is ready to receive measurement data.<br>
+			Then specify the channel and point of the measurement data you want to output with the:MEMORY:POINT command.<br>
+			Use the :MEMORY:ADATA? query for ASCII format and :MEMORY:VDATA? query for voltage value format.<br>
+			Pressing the Execute button then causes the instrument to start measuring and sending the measured values.<br>
+			<br>
+			<img src="FIG/Lan02.PNG" height="268" width="358">
+			<br>
+			<br>
+			<a href="src/Sample2/samp2_lan" target="_blank">
+				<img src="FIG/FigFolder.gif" border="0">
+				<span style="font-size:16pt">LAN Example program</span>
+			</a>
+			<br><br>
+
+			<a href="src/Sample2/samp2_usb" target="_blank">
+				<img src="FIG/FigFolder.gif" border="0">
+				<span style="font-size:16pt">USB Example program</span>
+			</a>
+			<br><br><br>
+		</p>
+	</body>
+</html>

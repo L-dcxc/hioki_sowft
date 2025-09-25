@@ -1,0 +1,2422 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<title></title>
+	<style>
+	<!--
+	-->
+	</style>
+</head>
+
+<body>
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle">
+				<p class = "g_p_0001">
+					Calculations (CALCulate)
+				</p>
+			</td>
+		</tr>
+	</table>
+
+	<p class="MsoNormal"><br></p>
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":MEAS:SURE">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the numerical calculation.</b>
+						</span>
+					</a>
+					<a id=":MEAS:SURE?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:CALCulate:MEASure A$<br><br>
+						:CALCulate:MEASure?<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = OFF, ON, EXEC
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the numerical calculation.<br>
+					Returns the current setting of the numerical calculation as character data.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>OFF</b></td><td class="g_td_0013">&nbsp;Disabled</td></tr>
+					<tr><td class="g_td_0013"><b>ON</b></td><td class="g_td_0013">&nbsp;Enabled</td></tr>
+					<tr><td class="g_td_0013"><b>EXEC</b></td><td class="g_td_0013">&nbsp;Execute numerical calculation</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:CALCulate:MEASure ON<br>:CALCulate:MEASure?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:CALCULATE:MEASURE ON</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					A$=EXEC is valid only when the numerical calculation is set to ON.
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":MEAS:ANSWer?">
+						<span class = "g_HeadTitle">
+							<b>Queries result of a numerical calculation.</b>
+						</span>
+					</a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:CALCulate:MEAS:ANSWer? no$,ch$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						no$,ch$,A&lt;NR3&gt; (5 decimal places)<br>
+					</span>
+					<br>
+					no$ = NO1 to NO10<br>ch$ = <span class="ch_analog"></span>, <span class="ch_pulse"></span>, <span class="ch_wcalc"></span><br>A = calculation result
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Returns the calculation result for the numerical calculation number and channel specified by no$, ch$.<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:CALCulate:MEAS:ANSWer? NO1,CH1_1<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:CALCULATE:MEAS:ANSWER NO1,CH1_1,+1.23456E-03</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Returns A=NONE for the following conditions:<br>
+					&nbsp;&nbsp;&bull;<a href="../03/Right14.htm#:MEAS:SURE" target="_self">Numerical calculation</a> is OFF<br>
+					&nbsp;&nbsp;&bull;<a href="../03/Right14.htm#:MEAS:SET" target="_self">Numerical calculation item</a> for the specified numerical calculation number is OFF<br>
+					&nbsp;&nbsp;&bull;Calculation result does not exist or is not obtained<br><br>
+					It is also possible to query using conventional commands. (:CALCulate:ANSWer? no$,ch$)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":MEAS:AREA">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the calculation area when performing manual numerical calculation.</b>
+						</span>
+					</a>
+					<a id=":MEAS:AREA?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:CALCulate:MEAS:AREA A$<br><br>
+						:CALCulate:MEAS:AREA?<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = ALL, AB, TOP_A, TOP_B, A_END, B_END
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the calculation area when performing manual numerical calculation.<br>
+					Returns the current setting of the calculation area when performing manual numerical calculation as character data.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>ALL</b></td><td class="g_td_0013">&nbsp;Whole waveform</td></tr>
+					<tr><td class="g_td_0013"><b>TOP_A</b></td><td class="g_td_0013">&nbsp;Waveform from the start to the A cursor</td></tr>
+					<tr><td class="g_td_0013"><b>TOP_B</b></td><td class="g_td_0013">&nbsp;Waveform from the start to the B cursor</td></tr>
+					<tr><td class="g_td_0013"><b>A_END</b></td><td class="g_td_0013">&nbsp;Waveform from the A cursor to end</td></tr>
+					<tr><td class="g_td_0013"><b>B_END</b></td><td class="g_td_0013">&nbsp;Waveform from the B cursor to end</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:CALCulate:MEAS:AREA ALL<br>:CALCulate:MEAS:AREA?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:CALCULATE:MEAS:AREA ALL</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					It is also possible to set and query using the following conventional commands.<br>
+					:CALCulate:MEASArea A$ / :CALCulate:MEASArea?
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":MEAS:DISP">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the calculation result display kind.</b>
+						</span>
+					</a>
+					<a id=":MEAS:DISP?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:CALCulate:MEAS:DISP A$<br><br>
+						:CALCulate:MEAS:DISP?<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = USUAL, SPLIT
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the calculation result display kind.<br>
+					Returns the current setting of the calculation result display kind as character data.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>USUAL</b></td><td class="g_td_0013">&nbsp;Usual</td></tr>
+					<tr><td class="g_td_0013"><b>SPLIT</b></td><td class="g_td_0013">&nbsp;Split</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:CALCulate:MEAS:DISP USUAL<br>:CALCulate:MEAS:DISP?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:CALCULATE:MEAS:DISP USUAL</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					It is also possible to set and query using the following conventional commands.<br>
+					:CALCulate:MEASDisp A$ / :CALCulate:MEASDisp?
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":MEAS:FILE">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the calculation file division.</b>
+						</span>
+					</a>
+					<a id=":MEAS:FILE?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:CALCulate:MEAS:FILE A$<br><br>
+						:CALCulate:MEAS:FILE?<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = OFF, ON
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the calculation file division.<br>
+					Returns the current setting of the calculation file division as character data.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>OFF</b></td><td class="g_td_0013">&nbsp;Single file</td></tr>
+					<tr><td class="g_td_0013"><b>ON</b></td><td class="g_td_0013">&nbsp;Split save</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:CALCulate:MEAS:FILE ON<br>:CALCulate:MEAS:FILE?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:CALCULATE:MEAS:FILE ON</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					It is also possible to set and query using the following conventional commands.<br>
+					:CALCulate:MEASFile A$ / :CALCulate:MEASFile?
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":MEAS:INTegra">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the accumulation/integrations method.</b>
+						</span>
+					</a>
+					<a id=":MEAS:INTegra?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:CALCulate:MEAS:INTegra no$,A$<br><br>
+						:CALCulate:MEAS:INTegra? no$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						no$,A$<br>
+					</span>
+					<br>
+					no$ = NO1 to NO10<br>A$ = TOTAL, POSitive, NEGative, ABSolute
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the accumulation/integrations method.<br>
+					Returns the current accumulation/integrations method as character data.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>TOTAL</b></td><td class="g_td_0013">&nbsp;Add all values</td></tr>
+					<tr><td class="g_td_0013"><b>POSitive</b></td><td class="g_td_0013">&nbsp;Add only positive values</td></tr>
+					<tr><td class="g_td_0013"><b>NEGative</b></td><td class="g_td_0013">&nbsp;Add only negative values</td></tr>
+					<tr><td class="g_td_0013"><b>ABSolute</b></td><td class="g_td_0013">&nbsp;Add absolute values</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:CALCulate:MEAS:INTegra NO1,TOTAL<br>:CALCulate:MEAS:INTegra? NO1<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:CALCULATE:MEAS:INTEGRA NO1,TOTAL</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Only the following types of calculation can be set.<br><br>
+					Accumulation (ACC)<br>
+					Integration (INT)<br>
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":MEAS:KIND">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the time split calculation kind.</b>
+						</span>
+					</a>
+					<a id=":MEAS:KIND?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:CALCulate:MEAS:KIND A$<br><br>
+						:CALCulate:MEAS:KIND?<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = OFF, DIVide <!--, REGulary -->
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the time split calculation kind.<br>
+					Returns the current setting of the time split calculation kind as character data.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>OFF</b></td><td class="g_td_0013">&nbsp;No split</td></tr>
+					<tr><td class="g_td_0013"><b>DIVide</b></td><td class="g_td_0013">&nbsp;With split</td></tr>
+					<!-- <tr><td class="g_td_0013"><b>REGulary</b></td><td class="g_td_0013">&nbsp;定時分割</td></tr> -->
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:CALCulate:MEAS:KIND DIVide<br>:CALCulate:MEAS:KIND?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:CALCULATE:MEAS:KIND DIVIDE</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					It is also possible to set and query using the following conventional commands.<br>
+					:CALCulate:MEASKind A$ / :CALCulate:MEASKind?
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":MEAS:LEN">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the split calculation division length.</b>
+						</span>
+					</a>
+					<a id=":MEAS:LEN?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:CALCulate:MEAS:LEN day,hour,min<br><br>
+						:CALCulate:MEAS:LEN?<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						day&lt;NR1&gt;,hour&lt;NR1&gt;,min&lt;NR1&gt;<br>
+					</span>
+					<br>
+					day = 0 to 30(day)<br>hour = 0 to 23(hour)<br>min = 0 to 59(min)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the split calculation division length to a numerical value.<br>
+					Returns the currently set value of the split calculation division length as an NR1 numerical value.<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:CALCulate:MEAS:LEN 0,1,30<br>:CALCulate:MEAS:LEN?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:CALCULATE:MEAS:LEN 0,1,30</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					The setting of division length might be limited by a set value of interval.<br>
+					It is also possible to set and query using the following conventional commands.<br>
+					:CALCulate:MEASLen day,hour,min / :CALCulate:MEASLen?
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":MEAS:LEVEl">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the thresholds for numerical calculation.</b>
+						</span>
+					</a>
+					<a id=":MEAS:LEVEl?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:CALCulate:MEAS:LEVEl ch$,A<br><br>
+						:CALCulate:MEAS:LEVEl? ch$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						ch$,A&lt;NR3&gt; (4 decimal places)<br>
+					</span>
+					<br>
+					ch$ = <span class="ch_analog"></span>, <span class="ch_pulse"></span>, <span class="ch_wcalc"></span><br>A = -9.9999E+29 to +9.9999E+29
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the thresholds for numerical calculation.<br>
+					Returns the current setting of numerical calculation threshold as an NR3 numerical value.<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:CALCulate:MEAS:LEVEl CH1_1,0.123<br>:CALCulate:MEAS:LEVEl? CH1_1<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:CALCULATE:MEAS:LEVEl CH1_1,+1.2340E-01</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Only the following types of calculation can be set.<br><br>
+					Usage ratio (OPE)<br>ON time (ONT)<br>OFF time (OFFT)<br>ON count (ONC)<br>OFF count (OFFC)<br><br>
+					If you enter a value greater than the configurable limit, the maximum value is set.<br>
+					If you enter a value less than the configurable lower limit, the minimum value is set.<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+<!-- 定時分割はv02
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":MEAS:REG">
+						<span class = "g_HeadTitle">
+							<b>時間分割演算定時分割の基準時間の設定と問い合わせ</b>
+						</span>
+					</a>
+					<a id=":MEAS:REG?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:CALCulate:MEAS:REG hour,min<br><br>
+						:CALCulate:MEAS:REG?<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						hour&lt;NR1&gt;,min&lt;NR1&gt;<br>
+					</span>
+					<br>
+					hour = 0 to 23(時)<br>min = 0 to 59(分)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					時間区切り演算の区切り時間の設定を行います。<br>現在の時間区切り演算の区切り時間の設定を返します。<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:CALCulate:MEAS:REG 1,30<br>:CALCulate:MEAS:REG?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:CALCULATE:MEAS:REG 1,30</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					従来コマンド(:CALCulate:MEASReg hour,min / :CALCulate:MEASReg?)による設定、問い合わせも可能。
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+	-->
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":MEAS:SET">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the numerical calculations item.</b>
+						</span>
+					</a>
+					<a id=":MEAS:SET?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:CALCulate:MEAS:SET no$,A$<br><br>
+						:CALCulate:MEAS:SET? no$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						no$,A$<br>
+					</span>
+					<br>
+					no$ = NO1 to NO10<br>A$ = OFF, AVE, PP, MAX, MIN, MAXT, MINT, ACC, INT, OPE, ONT, OFFT, ONC, OFFC
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the calculation item of the numerical calculation designated by no$.<br>
+					Returns the calculation item of the numerical calculation designated by no$ as character data.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>OFF</b></td><td class="g_td_0013">&nbsp;No calculation performed</td></tr>
+					<tr><td class="g_td_0013"><b>AVE</b></td><td class="g_td_0013">&nbsp;Average value</td></tr>
+					<tr><td class="g_td_0013"><b>PP</b></td><td class="g_td_0013">&nbsp;Peak-to-peak value</td></tr>
+					<tr><td class="g_td_0013"><b>MAX</b></td><td class="g_td_0013">&nbsp;Maximum value</td></tr>
+					<tr><td class="g_td_0013"><b>MIN</b></td><td class="g_td_0013">&nbsp;Minimum value</td></tr>
+					<tr><td class="g_td_0013"><b>MAXT</b></td><td class="g_td_0013">&nbsp;Time to maximum value</td></tr>
+					<tr><td class="g_td_0013"><b>MINT</b></td><td class="g_td_0013">&nbsp;Time to minimum value</td></tr>
+					<tr><td class="g_td_0013"><b>ACC</b></td><td class="g_td_0013">&nbsp;Accumulation</td></tr>
+					<tr><td class="g_td_0013"><b>INT</b></td><td class="g_td_0013">&nbsp;Integration</td></tr>
+					<tr><td class="g_td_0013"><b>OPE</b></td><td class="g_td_0013">&nbsp;Usage ratio</td></tr>
+					<tr><td class="g_td_0013"><b>ONT</b></td><td class="g_td_0013">&nbsp;ON time</td></tr>
+					<tr><td class="g_td_0013"><b>OFFT</b></td><td class="g_td_0013">&nbsp;OFF time</td></tr>
+					<tr><td class="g_td_0013"><b>ONC</b></td><td class="g_td_0013">&nbsp;ON count</td></tr>
+					<tr><td class="g_td_0013"><b>OFFC</b></td><td class="g_td_0013">&nbsp;OFF count</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:CALCulate:MEAS:SET NO1,AVE<br>:CALCulate:MEAS:SET? NO1<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:CALCULATE:MEAS:SET NO1,AVE</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					It is also possible to set and query using the following conventional commands.<br>
+					:CALCulate:MEASSet no$,A$ / :CALCulate:MEASSet? no$
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":MEAS:TARGet">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the calculation target channel.</b>
+						</span>
+					</a>
+					<a id=":MEAS:TARGet?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:CALCulate:MEAS:TARGet no$,ch$<br><br>
+						:CALCulate:MEAS:TARGet? no$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						no$,ch$<br>
+					</span>
+					<br>
+					no$ = NO1 to NO10<br>ch$ = ALL, <span class="ch_analog"></span>, <span class="ch_pulse"></span>, <span class="ch_wcalc"></span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the numerical calculation target channel designated by no$.<br>
+					Returns the numerical calculation target channel designated by no$ as character data.<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:CALCulate:MEAS:TARGet NO1,CH1_1<br>:CALCulate:MEAS:TARGet? NO1<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:CALCULATE:MEAS:TARGET NO1,CH1_1</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+<!-- 定時分割はv02
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":MEAS:TIME">
+						<span class = "g_HeadTitle">
+							<b>時間分割演算定時分割の分割時間の設定と問い合わせ</b>
+						</span>
+					</a>
+					<a id=":MEAS:TIME?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:CALCulate:MEAS:TIME A<br><br>
+						:CALCulate:MEAS:TIME?<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A&lt;NR1&gt;<br>
+					</span>
+					<br>
+					A = 1, 2, 5, 10, 15, 20, 30, 60, 120, 180, 240, 360, 480, 720, 1440 (単位min)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					時間区切り演算の分割時間を設定します。<br>現在の時間区切り演算の分割時間を返します。<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:CALCulate:MEAS:TIME 1<br>:CALCulate:MEAS:TIME?<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:CALCULATE:MEAS:TIME 1</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					設定にない値を指定した場合、設定しようとした値よりも長い時間が存在するときは、最も近い時間に設定されます。<br>
+					従来コマンド(:CALCulate:MEASTime A / :CALCulate:MEASTime? A)による設定、問い合わせも可能。
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+-->
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":WAVE:KIND">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the wave calculation kind.</b>
+						</span>
+					</a>
+					<a id=":WAVE:KIND?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:CALCulate:WAVE:KIND w$,A$<br><br>
+						:CALCulate:WAVE:KIND? w$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						w$,A$<br>
+					</span>
+					<br>
+					w$ = <span class="ch_wcalc"></span><br>A$ = OPE, SUM, AVE, MOV, INT
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the wave calculation kind designated  by w$.<br>
+					Returns the wave calculation kind designated by w$ as character data.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>OPE</b></td><td class="g_td_0013">&nbsp;Four arithmetic</td></tr>
+					<tr><td class="g_td_0013"><b>SUM</b></td><td class="g_td_0013">&nbsp;Accumulation</td></tr>
+					<tr><td class="g_td_0013"><b>AVE</b></td><td class="g_td_0013">&nbsp;Simple average</td></tr>
+					<tr><td class="g_td_0013"><b>MOV</b></td><td class="g_td_0013">&nbsp;Moving average</td></tr>
+					<tr><td class="g_td_0013"><b>INT</b></td><td class="g_td_0013">&nbsp;Integration</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:CALCulate:WAVE:KIND W1,OPE<br>:CALCulate:WAVE:KIND? W1<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:CALCULATE:WAVE:KIND W1,OPE</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					It is also possible to set and query using the following conventional commands.<br>
+					:CALCulate:HTKINd w$,A$ / :CALCulate:HTKINd? w$
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":WAVE:STR">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the wave calculation unit.</b>
+						</span>
+					</a>
+					<a id=":WAVE:STR?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:CALCulate:WAVE:STR w$,"A$"<br><br>
+						:CALCulate:WAVE:STR? w$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						w$,"A$"<br>
+					</span>
+					<br>
+					w$ = <span class="ch_wcalc"></span><br>A$ = scaling unit (up to 7 characters)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the wave calculation unit for the channel designated by w$.<br>
+					Returns the current wave calculation unit for the channel designated by w$ as character data.<br><br>
+					Single quotation marks (') can be used instead of double quotation marks(&quot;).<br>
+					Entry of the special characters is as follows.<br>
+				</p>
+				<table style="border:1; border-collapse:collapse; border:none;">
+					<tr style="height:18.0pt">
+						<td class="g_td_com01">
+							<p class="g_p_com01"><b>PC</b></p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">^2</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">^3</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~u</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~o</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~e</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~c</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~+</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~,</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~;</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">^^</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~~</p>
+						</td>
+					</tr>
+					<tr style="height:18.0pt">
+						<td class="g_td_com03">
+							<p class="g_p_com01"><b>LR8450<br>LR8450-01</b></p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01"><sup>2</sup></p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01"><sup>3</sup></p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">&mu;</p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">&Omega;</p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">&epsilon;</p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">&deg;</p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">&plusmn;</p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">'</p>
+						</td>
+						<td class="g_td_com03">
+							<p class="g_p_com01">&quot;</p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">&circ;</p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">&tilde;</p>
+						</td>
+					</tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:CALCulate:WAVE:STR W1,"mA"<br>:CALCulate:WAVE:STR? W1<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:CALCULATE:WAVE:STR W1,"mA"</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Characters exceeding the maximum number of characters are not set.<br>
+					It is also possible to set and query using the following conventional commands.<br>
+					:CALCulate:WVSTR w$,"A$" / :CALCulate:WVSTR? w$
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":WAVE:ARIThmetic:COEF:A">
+						<span class = "g_HeadTitle">
+							<b>Wave calculate : Sets and queries the four arithmetic coefficient.</b>
+						</span>
+					</a>
+					<a id=":WAVE:ARIThmetic:COEF:A?"></a>
+					<a id=":WAVE:ARIThmetic:COEF:B"></a><a id=":WAVE:ARIThmetic:COEF:B?"></a>
+					<a id=":WAVE:ARIThmetic:COEF:C"></a><a id=":WAVE:ARIThmetic:COEF:C?"></a>
+					<a id=":WAVE:ARIThmetic:COEF:D"></a><a id=":WAVE:ARIThmetic:COEF:D?"></a>
+					<a id=":WAVE:ARIThmetic:COEF:E"></a><a id=":WAVE:ARIThmetic:COEF:E?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br><br><br><br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:CALCulate:WAVE:ARIThmetic:COEF:A w$,A (coefficient A)<br>
+						:CALCulate:WAVE:ARIThmetic:COEF:B w$,A (coefficient B)<br>
+						:CALCulate:WAVE:ARIThmetic:COEF:C w$,A (coefficient C)<br>
+						:CALCulate:WAVE:ARIThmetic:COEF:D w$,A (coefficient D)<br>
+						:CALCulate:WAVE:ARIThmetic:COEF:E w$,A (coefficient E)<br><br>
+						:CALCulate:WAVE:ARIThmetic:COEF:A? w$ (coefficient A)<br>
+						:CALCulate:WAVE:ARIThmetic:COEF:B? w$ (coefficient B)<br>
+						:CALCulate:WAVE:ARIThmetic:COEF:C? w$ (coefficient C)<br>
+						:CALCulate:WAVE:ARIThmetic:COEF:D? w$ (coefficient D)<br>
+						:CALCulate:WAVE:ARIThmetic:COEF:E? w$ (coefficient E)<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						w$,A&lt;NR3&gt; (4 decimal places)<br>
+					</span>
+					<br>
+					w$ = <span class="ch_wcalc"></span><br>A = -9.9999E+29 to 9.9999E+29
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the four arithmetic coefficient of the channel specified by w$.<br>
+					Returns the four arithmetic coefficient of the channel specified by w$ as an NR3 number.<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:CALCulate:WAVE:ARIThmetic:COEF:A W1,1<br>:CALCulate:WAVE:ARIThmetic:COEF:A? W1<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:CALCULATE:WAVE:ARITHMETIC:COEF:A W1,+1.0000E+00</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					It is also possible to set and query using the following conventional commands.<br>
+					:CALCulate:WVCOE1 w$,A / :CALCulate:WVCOE1? w$ (coefficient A)<br>
+					:CALCulate:WVCOE2 w$,A / :CALCulate:WVCOE2? w$ (coefficient B)<br>
+					:CALCulate:WVCOE3 w$,A / :CALCulate:WVCOE3? w$ (coefficient E)<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":WAVE:ARIThmetic:OPERator:A">
+						<span class = "g_HeadTitle">
+							<b>Wave calculate : Sets and queries the four arithmetic operator.</b>
+						</span>
+					</a>
+					<a id=":WAVE:ARIThmetic:OPERator:A?"></a>
+					<a id=":WAVE:ARIThmetic:OPERator:B"></a><a id=":WAVE:ARIThmetic:OPERator:B?"></a>
+					<a id=":WAVE:ARIThmetic:OPERator:C"></a><a id=":WAVE:ARIThmetic:OPERator:C?"></a>
+					<a id=":WAVE:ARIThmetic:OPERator:D"></a><a id=":WAVE:ARIThmetic:OPERator:D?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br><br><br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:CALCulate:WAVE:ARIThmetic:OPERator:A w$,A$ (Operator A)<br>
+						:CALCulate:WAVE:ARIThmetic:OPERator:B w$,A$ (Operator B)<br>
+						:CALCulate:WAVE:ARIThmetic:OPERator:C w$,A$ (Operator C)<br>
+						:CALCulate:WAVE:ARIThmetic:OPERator:D w$,A$ (Operator D)<br><br>
+						:CALCulate:WAVE:ARIThmetic:OPERator:A? w$ (Operator A)<br>
+						:CALCulate:WAVE:ARIThmetic:OPERator:B? w$ (Operator B)<br>
+						:CALCulate:WAVE:ARIThmetic:OPERator:C? w$ (Operator C)<br>
+						:CALCulate:WAVE:ARIThmetic:OPERator:D? w$ (Operator D)<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						w$,A$<br>
+					</span>
+					<br>
+					w$ = <span class="ch_wcalc"></span><br>A$ = OFF, PLUS, MINUS, MULTI, DIV (Operator A, B, C)<br>A$ = OFF, PLUS, MINUS, MULTI, DIV, EXP (Operator D)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the four arithmetic operator of the channel specified by w$.<br>
+					Returns the four arithmetic operator of the channel specified by w$ as character data.<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:CALCulate:WAVE:ARIThmetic:OPERator:A W1,PLUS<br>:CALCulate:WAVE:ARIThmetic:OPERator:A? W1<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:CALCULATE:WAVE:ARITHMETIC:OPERator:A W1,PLUS</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					It is also possible to set and query using the following conventional commands.<br>
+					:CALCulate:WVKINd w$,A$ / :CALCulate:WVKINd? w$  (Operator A)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Operator B can be set if Operator A is not OFF.<br>
+					Operator C can be set if operators A and B are not OFF.
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":WAVE:MOVe:POINt">
+						<span class = "g_HeadTitle">
+							<b>Wave calculate : Sets and queries the moving average point.</b>
+						</span>
+					</a>
+					<a id=":WAVE:MOVe:POINt?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:CALCulate:WAVE:MOVe:POINt w$,A<br><br>
+						:CALCulate:WAVE:MOVe:POINt? w$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						w$,A&lt;NR1&gt;<br>
+					</span>
+					<br>
+					w$ = <span class="ch_wcalc"></span><br>A = 1 to 600 (point)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the moving average point of the channel specified by w$.<br>
+					Returns the moving average point of the channel specified by w$ as an NR1 number.<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:CALCulate:WAVE:MOVe:POINt W1,10<br>:CALCulate:WAVE:MOVe:POINt? W1<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:CALCULATE:WAVE:MOVE:POINT W1,10</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					It is also possible to set and query using the following conventional commands.<br>
+					:CALCulate:HTMVPoint w$,A / :CALCulate:HTMVPoint? w$
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":WAVE:RESet:BASE">
+						<span class = "g_HeadTitle">
+							<b>Wave calculate : Sets and queries the reset reference time for integral, simple average.</b>
+						</span>
+					</a>
+					<a id=":WAVE:RESet:BASE?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:CALCulate:WAVE:RESet:BASE w$,hour,min<br><br>
+						:CALCulate:WAVE:RESet:BASE? w$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						w$,hour&lt;NR1&gt;,min&lt;NR1&gt;<br>
+					</span>
+					<br>
+					w$ = <span class="ch_wcalc"></span><br>hour = 0 to 23(hour)<br>min = 0 to 59(min)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the reset reference time of the channel specified by w$.<br>
+					Returns the reset reference time of the channel specified by w$ as an NR1 number.<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:CALCulate:WAVE:RESet:BASE W1,0,0<br>:CALCulate:WAVE:RESet:BASE? W1<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:CALCULATE:WAVE:MOVE:POINT W1,0,0</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					It is also possible to set and query using the following conventional commands.<br>
+					:CALCulate:HTBASE w$,hour,min / :CALCulate:HTBASE? w$
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":WAVE:RESet:INT">
+						<span class = "g_HeadTitle">
+							<b>Wave calculate : Sets and queries the reset interval for integral, simple average.</b>
+						</span>
+					</a>
+					<a id=":WAVE:RESet:INT?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:CALCulate:WAVE:RESet:INT w$,day,hour,min<br><br>
+						:CALCulate:WAVE:RESet:INT? w$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						w$,day&lt;NR1&gt;,hour&lt;NR1&gt;,min&lt;NR1&gt;<br>
+					</span>
+					<br>
+					w$ = <span class="ch_wcalc"></span><br>day = 0 to 30(day)<br>hour = 0 to 23(hour)<br>min = 0 to 59(min)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the reset interval of the channel specified by w$.<br>
+					Returns the reset interval of the channel specified by w$ as an NR1 number.<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:CALCulate:WAVE:RESet:INT W1,0,0,1<br>:CALCulate:WAVE:RESet:INT? W1<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:CALCULATE:WAVE:MOVE:INT W1,0,0,1</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					It is also possible to set and query using the following conventional commands.<br>
+					:CALCulate:HTINT w$,day,hour,min / :CALCulate:HTINT? w$
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":WAVE:RESet:KIND">
+						<span class = "g_HeadTitle">
+							<b>Wave calculate : Sets and queries the reset timing for integral, simple average.</b>
+						</span>
+					</a>
+					<a id=":WAVE:RESet:KIND?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:CALCulate:WAVE:RESet:KIND w$,A$<br><br>
+						:CALCulate:WAVE:RESet:KIND? w$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						w$,A$<br>
+					</span>
+					<br>
+					w$ = <span class="ch_wcalc"></span><br>A$ = OFF, TRIG
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the reset timing of the channel specified by w$.<br>
+					Returns the reset timing of the channel specified by w$ as character data.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>OFF</b></td><td class="g_td_0013">&nbsp;</td></tr><tr><td class="g_td_0013"><b>TRIG</b></td><td class="g_td_0013">&nbsp;Trigger position</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:CALCulate:WAVE:RESet:KIND W1,OFF<br>:CALCulate:WAVE:RESet:KIND? W1<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:CALCULATE:WAVE:MOVE:KIND W1,OFF</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					It is also possible to set and query using the following conventional commands.<br>
+					:CALCulate:HTRESet w$,A$ / :CALCulate:HTRESet? w$
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":WAVE:RESet:TIME">
+						<span class = "g_HeadTitle">
+							<b>Wave calculate : Sets and queries the reset time for integral, simple average.</b>
+						</span>
+					</a>
+					<a id=":WAVE:RESet:TIME?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:CALCulate:WAVE:RESet:TIME w$,A$<br><br>
+						:CALCulate:WAVE:RESet:TIME? w$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						w$,A$<br>
+					</span>
+					<br>
+					w$ = <span class="ch_wcalc"></span><br>A$ = OFF, ON, ONTIME
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the reset time of the channel specified by w$.<br>
+					Returns the reset time of the channel specified by w$ as character data.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>OFF</b></td><td class="g_td_0013">&nbsp;No split</td></tr>
+					<tr><td class="g_td_0013"><b>ON</b></td><td class="g_td_0013">&nbsp;With split</td></tr>
+					<tr><td class="g_td_0013"><b>ONTIME</b></td><td class="g_td_0013">&nbsp;With split (Fix time)</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:CALCulate:WAVE:RESet:TIME W1,OFF<br>:CALCulate:WAVE:RESet:TIME? W1<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:CALCULATE:WAVE:MOVE:TIME W1,OFF</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					It is also possible to set and query using the following conventional commands.<br>
+					:CALCulate:HTRSTTime w$,A$ / :CALCulate:HTRSTTime? w$
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":WAVE:SOURce:SR1">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the wave calculation source.</b>
+						</span>
+					</a>
+					<a id=":WAVE:SOURce:SR1?"></a>
+					<a id=":WAVE:SOURce:SR2"></a><a id=":WAVE:SOURce:SR2?"></a>
+					<a id=":WAVE:SOURce:SR3"></a><a id=":WAVE:SOURce:SR3?"></a>
+					<a id=":WAVE:SOURce:SR4"></a><a id=":WAVE:SOURce:SR4?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br><br><br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:CALCulate:WAVE:SOURce:SR1 w$,ch$ (Source A)<br>
+						:CALCulate:WAVE:SOURce:SR2 w$,ch$ (Source B)<br>
+						:CALCulate:WAVE:SOURce:SR3 w$,ch$ (Source C)<br>
+						:CALCulate:WAVE:SOURce:SR4 w$,ch$ (Source D)<br><br>
+						:CALCulate:WAVE:SOURce:SR1? w$ (Source A)<br>
+						:CALCulate:WAVE:SOURce:SR2? w$ (Source B)<br>
+						:CALCulate:WAVE:SOURce:SR3? w$ (Source C)<br>
+						:CALCulate:WAVE:SOURce:SR4? w$ (Source D)<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						w$,ch$<br>
+					</span>
+					<br>
+					w$ = <span class="ch_wcalc"></span><br>ch$ = <span class="ch_analog"></span>, <span class="ch_pulse"></span>, <span class="ch_wcalc"></span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the wave calculation source of the channel specified by w$.<br>
+					Returns the wave calculation source of the channel specified by w$ as character data.<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:CALCulate:WAVE:SOURce:SR1 W1,CH1_1<br>:CALCulate:WAVE:SOURce:SR1? W1<br>
+					</span>
+					(Response)&nbsp;&nbsp;<b>:CALCULATE:WAVE:SOURCE:SR1 W1,CH1_1</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					It is also possible to set and query using the following conventional commands.<br>
+					:CALCulate:WVSRC1 w$,ch$ / :CALCulate:WVSRC1? w$ (Source A)<br>
+					:CALCulate:WVSRC2 w$,ch$ / :CALCulate:WVSRC2? w$ (Source B)<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+</body>
+</html>

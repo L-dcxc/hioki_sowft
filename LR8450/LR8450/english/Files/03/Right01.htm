@@ -1,0 +1,416 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<title></title>
+	<style>
+		<!--
+			.m_td_01{
+				border          : solid windowtext .75pt;
+				border-top      : none;
+				padding         : 5pt;
+			}
+
+			.m_td_02{
+				border-top      : none;
+				border-left     : none;
+				border-bottom   : solid windowtext .75pt;
+				border-right    : solid windowtext .75pt;
+				padding         : 5pt;
+			}
+		-->
+	</style>
+</head>
+
+<body>
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle">
+				<p class = "g_p_0001">
+					Command Description Method and Terminology
+				</p>
+			</td>
+		</tr>
+	</table>
+
+	<br><br>
+
+	<table class="MsoNormalTable" style="border-collapse:collapse; border:0;width:100%;">
+		<tr>
+			<td colspan="4" style="background:#3d60af;width:70%; height: 32px;">
+				<p class = "g_HeadTitle">
+					Enable or disable header prefixes on query responses, or query the current setting
+				</p>
+			</td>
+			<td style = "width:10%; height: 32px;">
+				<p class="MsoNormal" style="text-align :center"><b><a href="#(1)" target="_self">...(1)</a></b></p>
+			</td>
+		</tr>
+
+		<tr>
+			<td rowspan="2" style="border:none;border-bottom:solid silver 1pt;width:20%;vertical-align:top">
+				<p class="MsoNormal" style="padding:10pt;text-align:center;">
+					Syntax
+				</p>
+			</td>
+			<td style="width:20%;vertical-align:top">
+				<p class="MsoNormal" style="padding:10pt 10pt 0 10pt;">
+					(Command)<br><br>(Query)
+				</p>
+			</td>
+			<td colspan="2" style="width:50%;vertical-align:top">
+				<p class="MsoNormal" style="padding:10pt 10pt 0 10pt;">
+					<span style="color:red">
+						<b>
+							:HEADer A$<br><br>
+							:HEADer?
+						</b>
+					</span>
+				</p>
+			</td>
+			<td style="width:10%">
+				<p class="MsoNormal" style="text-align :center"><b><a href="#(2)" target="_self">...(2)</a></b></p>
+			</td>
+		</tr>
+
+		<tr>
+			<td style="border:none;border-bottom:solid silver 1pt;width:20%;vertical-align:top">
+				<br>
+				<p class="MsoNormal" style="padding:0 10pt 10pt 10pt;">(Response)</p>
+			</td>
+			<td colspan="2" style="border:none;border-bottom:solid silver 1pt;width:50%;vertical-align:top">
+				<br>
+				<p class="MsoNormal" style="margin:0 10pt 10pt 10pt">
+					<span style="color:#0000CC">
+						<b>A$<br></b>
+					</span>
+					<br>
+					A$:OFF,ON
+				</p>
+			</td>
+			<td style="border:none;width:10%">
+				<p class="MsoNormal" style="text-align :center"><b><a href="#(3)" target="_self">...(3)</a></b></p>
+			</td>
+		</tr>
+
+		<tr>
+			<td style="border:none;border-bottom:solid silver 1pt;width:20%;vertical-align:top">
+				<p class="MsoNormal" style="margin:10pt;text-align:center">
+					Details
+				</p>
+			</td>
+			<td colspan="3" style="border:none;border-bottom:solid silver 1pt;width:70%;vertical-align:top">
+				<p class="MsoNormal" style="margin:10pt">
+					Enables and disables headers.<br>
+					When enabled, responses to queries include header prefixes; and when disabled, responses have no prefix.<br>
+					Returns a text string indicating whether or not the headers are enabled.<br>
+				</p>
+			</td>
+			<td style="border:none;width:10%">
+				<p class="MsoNormal" style="text-align:center"><b><a href="#(4)" target="_self">...(4)</a></b></p>
+			</td>
+		</tr>
+
+		<tr>
+			<td style="border:none;border-bottom:solid silver 1pt; width:20%;vertical-align:top">
+				<p class="MsoNormal" style="margin:10pt;text-align:center">
+					Example
+				</p>
+			</td>
+			<td colspan="3" style="border:none;border-bottom:solid silver 1pt;width:70%;vertical-align:top">
+				<p class="MsoNormal" style="margin:10pt">
+					<span style="color:#008040">
+						<b>:HEADer ON;:HEADer?</b>
+					</span>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Response)&nbsp;&nbsp;<b>:HEADER ON</b><br>
+					<span style="color:#008040">
+						<b>:HEADer OFF;:HEADer?</b>
+					</span>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Response)&nbsp;&nbsp;<b>OFF</b><br>
+				</p>
+			</td>
+			<td style="border:none;width:10%">
+				<p class="MsoNormal" style="text-align:center"><b><a href="#(5)" target="_self">...(5)</a></b></p>
+			</td>
+		</tr>
+
+		<tr>
+			<td style="border:none;border-bottom:solid silver 1pt;width:20%;vertical-align:top">
+				<p class="MsoNormal" style="margin:10pt;text-align:center">
+					Note
+				</p>
+			</td>
+			<td colspan="3" style="border:none;border-bottom:solid silver 1pt;width:70%;vertical-align:top">
+				<p class="MsoNormal" style="margin:10pt">
+					-
+				</p>
+			</td>
+			<td style="border:none;width:10%">
+				<p class="MsoNormal" style="text-align :center"><b><a href="#(6)" target="_self">...(6)</a></b></p>
+			</td>
+		</tr>
+
+		<tr>
+			<td style="border:none;border-bottom:solid silver 1pt;width:20%;vertical-align:top">
+				<p class="MsoNormal" style="margin:10pt;text-align:center">
+					Usage<br>Conditions
+				</p>
+			</td>
+			<td colspan="3" style="border:none;border-bottom:solid silver 1pt;width:70%;vertical-align:top">
+				<p class="MsoNormal" style="margin:10pt">
+					-
+				</p>
+			</td>
+			<td style="width:10%">
+				<p class="MsoNormal" style="text-align :center"><b><a href="#(7)" target="_self">...(7)</a></b></p>
+			</td>
+		</tr>
+	</table>
+
+	<p class = "MsoNormal">
+		<br><br>
+		<span style="color:red; font-weight:bold"><a name="(1)"></a>(1) Functional description of command or query<br></span>
+		This is a brief description of the function of the command or query.<br>
+		The model numbers indicate compatible Memory HiLoggers.<br><br><br>
+
+		<b><font color="#CC0000"><a name="(2)"></a>(2) Syntax<br></font></b>
+		This is the syntax of the command or query.<br>
+		A header can be attached to the response if desired.<br>
+		<br><br>
+
+		<b><font color="#CC0000"><a name="(3)"></a>(3) Arguments<br></font></b>
+		The following symbols may appear in the argument descriptions.<br>
+		<br>
+	</p>
+
+	<table style=" border:1; border-collapse:collapse; border:none">
+		<tr>
+			<td style="border:solid windowtext .75pt;border-right:solid white .75pt;background:black;vertical-align:top">
+				<p class="MsoNormal" style="text-align:center">
+					<span style='font-size:10pt;color:white'>Symbol</span>
+				</p>
+			</td>
+			<td style="border-top:solid windowtext .75pt;border-left:none;border-bottom:solid windowtext .75pt;border-right:solid white .75pt;background:black;vertical-align:top">
+				<p class="MsoNormal" style="text-align:center">
+					<span style='font-size:10pt;color:white'>Definition</span>
+				</p>
+			</td>
+			<td style="border:solid windowtext .75pt;border-left:none;background:black;vertical-align:top">
+				<p class="MsoNormal" style="text-align:center">
+					<span style='font-size:10pt;color:white'>Example</span>
+				</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="m_td_01" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">A$</span>
+				</p>
+			</td>
+			<td class="m_td_02" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">Text Data</span>
+				</p>
+			</td>
+			<td class="m_td_02" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">OFF, ON</span>
+				</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="m_td_01" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">unit$</span>
+				</p>
+			</td>
+			<td class="m_td_02" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">Unit Data</span>
+				</p>
+			</td>
+			<td class="m_td_02" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt"><b>UNIT1</b> to <b>UNIT4</b><br><b>REMOTE1</b> to <b>REMOTE7</b></span>
+				</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="m_td_01" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">ch$</span>
+				</p>
+			</td>
+			<td class="m_td_02" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">Channel Data</span>
+				</p>
+			</td>
+			<td class="m_td_02" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">
+						<b>CH1_1</b> to <b>CH4_30</b>&nbsp;&nbsp;(Wired Analog Channels)<br>
+						<b>R1_1</b> to <b>R7_30</b>&nbsp;&nbsp;(Wireless Analog Channels)<br>
+						<b>PLS1</b> to <b>PLS8</b>&nbsp;&nbsp;&nbsp;(Pulse Channels)<br>
+						<b>ALM1</b> to <b>ALM8</b>&nbsp;&nbsp;&nbsp;(Alarm Channels)<br>
+						<b>W1</b> to <b>W30</b>&nbsp;&nbsp;&nbsp;(Waveform Calculation Channels)<br>
+					</span>
+				</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="m_td_01" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">pls$</span>
+				</p>
+			</td>
+			<td class="m_td_02" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">Pulse Channel Data</span>
+				</p>
+			</td>
+			<td class="m_td_02" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt"><b>PLS1</b> to <b>PLS8</b></span>
+				</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="m_td_01" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">alm$</span>
+				</p>
+			</td>
+			<td class="m_td_02" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">Alarm Channel Data</span>
+				</p>
+			</td>
+			<td class="m_td_02" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt"><b>ALM1</b> to <b>ALM8</b></span>
+				</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="m_td_01" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">w$</span>
+				</p>
+			</td>
+			<td class="m_td_02" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">Waveform Calculation Channel Data</span>
+				</p>
+			</td>
+			<td class="m_td_02" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt"><b>W1</b> to <b>W30</b></span>
+				</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="m_td_01" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">A, B, C,...</span>
+				</p>
+			</td>
+			<td class="m_td_02" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">Numerical Data</span>
+				</p>
+			</td>
+			<td class="m_td_02" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">10, -20, 1.5E+05, 0.1</span>
+				</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="m_td_01" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">A&lt;NR1&gt;</span><span style="font-size:8pt"><sup>(note1)</sup></span>
+				</p>
+			</td>
+			<td class="m_td_02" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">Integer Data</span>
+				</p>
+			</td>
+			<td class="m_td_02" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">+15, -20, 25</span>
+				</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="m_td_01" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">A&lt;NR2&gt;</span><span style="font-size:8pt"><sup>(note1)</sup></span>
+				</p>
+			</td>
+			<td class="m_td_02" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">Fixed-point Data</span>
+				</p>
+			</td>
+			<td class="m_td_02" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">+1.23, -4.57, 7.89</span>
+				</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="m_td_01" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">A&lt;NR3&gt;</span><span style="font-size:8pt"><sup>(note1)</sup></span>
+				</p>
+			</td>
+			<td class="m_td_02" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">Floating-point Data</span>
+				</p>
+			</td>
+			<td class="m_td_02" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">+10.0E-03, -2.3E+03, 5E+03</span>
+				</p>
+			</td>
+		</tr>
+	</table>
+
+	<p class="MsoNormal">
+		<br>
+		(note 1)
+		NR1, NR2 and NR3 formats are collectively referred to as NRf format.
+		All commands and queries accept NRf data as arguments. However, responses are returned in the prespecified format.<br>
+		<br><br>
+
+		<b><font color="#CC0000"><a name="(4)"></a>(4) Details<br></font></b>
+		These are functional details of the command/query.<br>
+		<br><br>
+
+		<b><font color="#CC0000"><a name="(5)"></a>(5) Example<br></font></b>
+		Concrete examples of the command/query.<br>
+		<br><br>
+
+		<b><font color="#CC0000"><a name="(6)"></a>(6) Note<br></font></b>
+		Supplemental notes regarding the command/query.<br>
+		<br><br>
+
+		<b><font color="#CC0000"><a name="(7)"></a>(7) Usage Conditions<br></font></b>
+		Conditions required to use the command/query.<br>
+	</p>
+</body>
+</html>

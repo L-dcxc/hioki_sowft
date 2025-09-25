@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<title></title>
+</head>
+
+<body>
+	<table class="MsoNormalTable" style="border:0; border-collapse:collapse; width:100%; max-width:1200px;">
+		<tr style="height:25pt">
+			<td style ="background:#3d60af">
+				<p class="MsoNormal" style="margin-left:9pt;text-align:justify">
+					<span style="color:white;font-weight:bold">IEEE 488.2 Standard Commands</span>
+				</p>
+			</td>
+		</tr>
+	</table>
+
+	<p class="MsoNormal">&nbsp;</p>
+
+	<table class="MsoNormalTable" style="border:solid #A3A19E 2pt; border-collapse:collapse; width:100%; max-width:1200px;">
+		<tr style="height:40pt">
+			<td class = "g_p0001">
+				<p class="g_p0010"><span style="color:white">Command</span></p>
+			</td>
+			<td class = "g_p0002">
+				<p class="g_p0010"><span style="color:white">Data<br>(for a query, response data)</span></p>
+			</td>
+			<td class = "g_p0009">
+				<p class="g_p0010"><span style="color:white">Explanation</span></p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right02.htm#*CLS" target="_self">*CLS</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">-</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Clear the status byte and associated queues</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right02.htm#*ESR?" target="_self">*ESR?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A&lt;NR1&gt; = 0 to 255</p>
+			</td>
+			<td class = "g_p0008" >
+				<p class="g_p0011">Query and clear SESR</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right02.htm#*IDN?" target="_self">*IDN?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A$,B$,C$,D$<br><br>A$ = Manufacturer's name<br>B$ = Model name<br>C$ = Serial number<br>D$ = Software version</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Query device ID.</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right02.htm#*OPC" target="_self">*OPC</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">-</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Set the LSB of SESR when finished processing</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right02.htm#*OPC?" target="_self">*OPC?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A&lt;NR1&gt;</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Return an ASCII 1 when finished processing</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right02.htm#*OPT?" target="_self">*OPT?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A1,A2,A3,..,A11&lt;NR1&gt; = 0 to 10</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Query device option provision</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right02.htm#*RST" target="_self">*RST</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">-</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Initialize instrument settings</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right02.htm#*STB?" target="_self">*STB?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A&lt;NR1&gt; = 0 to 255</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Read the STB</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right02.htm#*TST?" target="_self">*TST?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A&lt;NR1&gt; = 0, 1</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Query the result of a memory check</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right02.htm#*WAI" target="_self">*WAI</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">-</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Execute the following command when finished processing</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right02.htm#:ESR0?" target="_self">:ESR0?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A&lt;NR1&gt; = 0 to 255</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Query ESR0</p>
+			</td>
+		</tr>
+
+	</table>
+</body>
+</html>

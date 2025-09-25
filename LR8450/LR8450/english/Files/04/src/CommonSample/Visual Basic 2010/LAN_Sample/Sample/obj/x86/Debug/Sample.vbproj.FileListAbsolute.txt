@@ -1,0 +1,9 @@
+C:\aa\xc797_comm_manual\japanese\Files\04\src\CommonSample\Visual Basic 2010\LAN_Sample\Sample\bin\Debug\Sample.exe
+C:\aa\xc797_comm_manual\japanese\Files\04\src\CommonSample\Visual Basic 2010\LAN_Sample\Sample\bin\Debug\Sample.pdb
+C:\aa\xc797_comm_manual\japanese\Files\04\src\CommonSample\Visual Basic 2010\LAN_Sample\Sample\bin\Debug\Sample.xml
+C:\aa\xc797_comm_manual\japanese\Files\04\src\CommonSample\Visual Basic 2010\LAN_Sample\Sample\obj\x86\Debug\WindowsApplication1.Form1.resources
+C:\aa\xc797_comm_manual\japanese\Files\04\src\CommonSample\Visual Basic 2010\LAN_Sample\Sample\obj\x86\Debug\WindowsApplication1.Resources.resources
+C:\aa\xc797_comm_manual\japanese\Files\04\src\CommonSample\Visual Basic 2010\LAN_Sample\Sample\obj\x86\Debug\Sample.vbproj.GenerateResource.Cache
+C:\aa\xc797_comm_manual\japanese\Files\04\src\CommonSample\Visual Basic 2010\LAN_Sample\Sample\obj\x86\Debug\Sample.exe
+C:\aa\xc797_comm_manual\japanese\Files\04\src\CommonSample\Visual Basic 2010\LAN_Sample\Sample\obj\x86\Debug\Sample.xml
+C:\aa\xc797_comm_manual\japanese\Files\04\src\CommonSample\Visual Basic 2010\LAN_Sample\Sample\obj\x86\Debug\Sample.pdb

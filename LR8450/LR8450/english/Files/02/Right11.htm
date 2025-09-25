@@ -1,0 +1,435 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<title></title>
+</head>
+
+<body>
+	<table class="MsoNormalTable" style="border:0; border-collapse:collapse; width:100%; max-width:1200px;">
+		<tr style="height:25pt">
+			<td style ="background:#3d60af">
+				<p class="MsoNormal" style="margin-left:9pt;text-align:justify">
+					<span style="color:white;font-weight:bold">Instrument memory (MEMory)</span>
+				</p>
+			</td>
+		</tr>
+	</table>
+
+	<p class="MsoNormal">&nbsp;</p>
+
+	<table class="MsoNormalTable" style="border:solid #A3A19E 2pt; border-collapse:collapse; width:100%; max-width:1200px;">
+		<tr style="height:40pt">
+			<td class = "g_p0001">
+				<p class="g_p0010"><span style="color:white">Command</span></p>
+			</td>
+			<td class = "g_p0002">
+				<p class="g_p0010"><span style="color:white">Data<br>(for a query, response data)</span></p>
+			</td>
+			<td class = "g_p0009">
+				<p class="g_p0010"><span style="color:white">Explanation</span></p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right11.htm#:ADATa?" target="_self">:ADATa? A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">B1,B2,..&lt;NR1&gt;(Wave Calc Result = &lt;NR3&gt;)<br><br>A = 1 to 2000(amount of output data)<br>Bi = -32768 to 32767(Analog)<br>Bi = 0 to 1000000000(Count, Revolve)<br>Bi = 0 to 255(Logic)<br>Bi = 0 to 255(Alarm)<br>Bi = Wave Calc Result(Wave Calc)</p>
+			</td>
+			<td class = "g_p0008" >
+				<p class="g_p0011">Output data from memory (ASCII)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right11.htm#:AFETch?" target="_self">:AFETch? ch$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A&lt;NR1&gt;(Wave Calc = &lt;NR3&gt;)<br><br>ch$ = <span class="ch_analog"></span>, <span class="ch_pulse"></span>, LOG, ALARM, <span class="ch_wcalc"></span><br>A = -32768 to 32767(Analog)<br>A = 0 to 1000000000(Pulse)<br>A = 0 to 255(Logic)<br>A = 0 to 255(Alarm)<br>A = Wave Calc Result(Wave Calc)</p>
+			</td>
+			<td class = "g_p0008" >
+				<p class="g_p0011">Output hold data (ASCII)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right11.htm#:AMAXPoint?" target="_self">:AMAXPoint?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A&lt;NR1&gt;<br><br>A = End data number</p>
+			</td>
+			<td class = "g_p0008" >
+				<p class="g_p0011">Queries the end of data stored<br>(when longer data is stored than the inside memory)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right11.htm#:APOINt" target="_self">:APOINT ch$,A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">ch$ = <span class="ch_analog"></span>, <span class="ch_pulse"></span>, LOG, ALARM, <span class="ch_wcalc"></span><br>A = 0 to </p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets point in memory for output<br>(when longer data is stored than the inside memory)<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right11.htm#:APOINt" target="_self">:APOINT?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">ch$,A&lt;NR1&gt;</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right11.htm#:AREAL?" target="_self">:AREAL? ch$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A&lt;NR1&gt;(Wave Calc = &lt;NR3&gt;)<br><br>ch$ = <span class="ch_analog"></span>, <span class="ch_pulse"></span>, LOG, ALARM, <span class="ch_wcalc"></span><br>A = -32768 to 32767(Analog)<br>A = 0 to 1000000000(Pulse)<br>A = 0 to 255(Logic)<br>A = 0 to 255(Alarm)<br>A = Wave Calc Result(Wave Calc)</p>
+			</td>
+			<td class = "g_p0008" >
+				<p class="g_p0011">Output real time data (ASCII)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right11.htm#:BDATa?" target="_self">:BDATa? A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">#0&lt;binary,integer data&gt;<br><br>A = 1 to 5000(amount of output data)</p>
+			</td>
+			<td class = "g_p0008" >
+				<p class="g_p0011">Performs binary transfer for stored data</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right11.htm#:BFETch?" target="_self">:BFETch? ch$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A<br><br>ch$ = <span class="ch_analog"></span>, <span class="ch_pulse"></span>, LOG, ALARM, <span class="ch_wcalc"></span><br>A = binary,integer data</p>
+			</td>
+			<td class = "g_p0008" >
+				<p class="g_p0011">Output hold data (Binary)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right11.htm#:BREAL?" target="_self">:BREAL? ch$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A<br><br>ch$ = <span class="ch_analog"></span>, <span class="ch_pulse"></span>, LOG, ALARM, <span class="ch_wcalc"></span><br>A = binary,integer data</p>
+			</td>
+			<td class = "g_p0008" >
+				<p class="g_p0011">Output real time data (Binary)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right11.htm#:CHSTore?" target="_self">:CHSTore? ch$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">ch$,A$<br><br>ch$ = <span class="ch_analog"></span>, <span class="ch_pulse"></span>, LOG, ALARM, <span class="ch_wcalc"></span><br>A$ = OFF, ON</p>
+			</td>
+			<td class = "g_p0008" >
+				<p class="g_p0011">Queries storage data existence for each channel</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right11.htm#:FCHSTore?" target="_self">:FCHSTore? ch$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">ch$,A$<br><br>ch$ = <span class="ch_analog"></span>, <span class="ch_pulse"></span>, LOG, ALARM, <span class="ch_wcalc"></span><br>A$ = OFF, ON</p>
+			</td>
+			<td class = "g_p0008" >
+				<p class="g_p0011">Queries hold data existence for each channel</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right11.htm#:GETReal" target="_self">:GETReal</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">-</p>
+			</td>
+			<td class = "g_p0008" >
+				<p class="g_p0011">Captures hold data</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right11.htm#:MAXPoint?" target="_self">:MAXPoint?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A&lt;NR1&gt;<br><br>A = number of data samples</p>
+			</td>
+			<td class = "g_p0008" >
+				<p class="g_p0011">Queries the amount of data stored</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right11.htm#:POINt" target="_self">:POINt ch$,A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">ch$ = <span class="ch_analog"></span>, <span class="ch_pulse"></span>, LOG, ALARM, <span class="ch_wcalc"></span><br>
+					A = 0 to 268435456(ch1_1 MAX)</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets point in memory for output<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right11.htm#:POINt?" target="_self">:POINt?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">ch$,A&lt;NR1&gt;</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right11.htm#:TAFETch?" target="_self">:TAFETch? unit$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A1,A2,...&lt;NR1&gt;(Wave Calc = &lt;NR3&gt;)<br><br>unit$ = <span class="unit"></span>, PLS&ALM, CALC1, CALC2<br>Ax = -32768 to 32767(Analog)<br>Ax = 0 to 1000000000(pulse)<br>Ax = 0 to 255(Logic)<br>Ax = 0 to 255(Alarm)<br>Ax = Wave Calc Result(Wave Calc)</p>
+			</td>
+			<td class = "g_p0008" >
+				<p class="g_p0011">Output hold data (ASCII)<br>(ALL storage channels in the Unit)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right11.htm#:TARCH?" target="_self">:TARCH? unit$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">ch1$,ch2$,...<br><br>unit$ = <span class="unit"></span>, PLS&ALM, CALC1, CALC2<br>chx$ = <span class="ch_analog"></span>, <span class="ch_pulse"></span>, LOG, ALARM, <span class="ch_wcalc"></span></p>
+			</td>
+			<td class = "g_p0008" >
+				<p class="g_p0011">Queries real time store channel (ASCII)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right11.htm#:TAREAl?" target="_self">:TAREAl? unit$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A1,A2,...&lt;NR1&gt;(Wave Calc = &lt;NR3&gt;)<br><br>unit$ = <span class="unit"></span>, PLS&ALM, CALC1, CALC2<br>Ax = -32768 to 32767(Analog)<br>Ax = 0 to 1000000000(Pulse)<br>Ax = 0 to 255(Logic)<br>Ax = 0 to 255(Alarm)<br>Ax = Wave Calc Result(Wave Calc)</p>
+			</td>
+			<td class = "g_p0008" >
+				<p class="g_p0011">Output real time data (ASCII)<br>(ALL storage channels in the Unit)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right11.htm#:TCHSTore?" target="_self">:TCHSTore? unit$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">ch1$,ch2$,...<br><br>unit$ = <span class="unit"></span>, PLS&ALM, CALC1, CALC2<br>chx$ = <span class="ch_analog"></span>, <span class="ch_pulse"></span>, LOG, ALARM, <span class="ch_wcalc"></span></p>
+			</td>
+			<td class = "g_p0008" >
+				<p class="g_p0011">Queries storage data existence for each unit<br>(ALL storage channels in the Unit)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right11.htm#:TFCHSTore?" target="_self">:TFCHSTore? unit$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">ch1$,ch2$,...<br><br>unit$ = <span class="unit"></span>, PLS&ALM, CALC1, CALC2<br>chx$ = <span class="ch_analog"></span>, <span class="ch_pulse"></span>, LOG, ALARM, <span class="ch_wcalc"></span></p>
+			</td>
+			<td class = "g_p0008" >
+				<p class="g_p0011">Queries hold data existence for each unit<br>(ALL storage channels in the Unit)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0012">
+				 <p class="g_p0011">
+					 <b><a href="../03/Right11.htm#:TOPPoint?" target="_self">:TOPPoint?</a></b>
+				 </p>
+			 </td>
+		 <td class = "g_p0013">
+			 <p class="g_p0011">A&lt;NR1&gt;<br><br>A = Top Data Number</p>
+		 </td>
+		 <td class = "g_p0008" >
+			 <p class="g_p0011">Queries the top of data stored<br>(when longer data is stored than the inside memory)</p>
+	 </td>
+
+
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right11.htm#:TVFETch?" target="_self">:TVFETch? unit$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A1,A2,...&lt;NR3&gt;<br><br>unit$ = <span class="unit"></span>, PLS&ALM, CALC1, CALC2<br>Ax = measured value</p>
+			</td>
+			<td class = "g_p0008" >
+				<p class="g_p0011">Output hold data (measured value)<br>(ALL storage channels in the Unit)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right11.htm#:TVRCH?" target="_self">:TVRCH? unit$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">ch1$,ch2$,...<br><br>unit$ = <span class="unit"></span>, PLS&ALM, CALC1, CALC2<br>chx$ = <span class="ch_analog"></span>, <span class="ch_pulse"></span>, LOG, ALARM, <span class="ch_wcalc"></span></p>
+			</td>
+			<td class = "g_p0008" >
+				<p class="g_p0011">Queries real time store channel (measured value)<br>(ALL storage channels in the Unit)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right11.htm#:TVREAl?" target="_self">:TVREAl? unit$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A1,A2,...&lt;NR3&gt;<br><br>unit$ = <span class="unit"></span>, PLS&ALM, CALC1, CALC2<br>Ax = measured value</p>
+			</td>
+			<td class = "g_p0008" >
+				<p class="g_p0011">Output real time data (measured value)<br>(ALL storage channels in the Unit)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right11.htm#:VDATa?" target="_self">:VDATa? A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">B1,B2,..&lt;NR3&gt;<br><br>A = 1 to 1000(amount of output data)<br>Bi = measured value</p>
+			</td>
+			<td class = "g_p0008" >
+				<p class="g_p0011">Output storage data (measured value)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right11.htm#:VFETch?" target="_self">:VFETch? ch$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A&lt;NR3&gt;<br><br>ch$ = <span class="ch_analog"></span>, <span class="ch_pulse"></span>, LOG, ALARM, <span class="ch_wcalc"></span><br>A = measured value</p>
+			</td>
+			<td class = "g_p0008" >
+				<p class="g_p0011">Output hold data (measured value)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right11.htm#:VREAl?" target="_self">:VREAL? ch$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A&lt;NR3&gt;<br><br>ch$ = <span class="ch_analog"></span>, <span class="ch_pulse"></span>, LOG, ALARM, <span class="ch_wcalc"></span><br>A = measured value</p>
+			</td>
+			<td class = "g_p0008" >
+				<p class="g_p0011">Output real time data (measured value)</p>
+			</td>
+		</tr>
+
+
+	</table>
+</body>
+</html>

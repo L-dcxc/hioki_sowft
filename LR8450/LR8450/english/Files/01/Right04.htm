@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<style>
+		<!--
+		    body{
+				background-color	: white
+			}
+
+			p.MsoNormal, li.MsoNormal, div.MsoNormal{
+				margin				: 0mm;
+				font-size			: 11pt;
+				font-family			: "Verdana";
+			}
+
+			.m_p01{
+				margin				: 0mm;
+			 	font-size			: 10pt;
+			 	font-family			: "Verdana";
+			 	text-align			: justify;
+				text-justify		: inter-ideograph;
+			}
+		-->
+	</style>
+	<title></title>
+</head>
+
+<body>
+	<table class="MsoNormalTable" style ="width:100%; border-collapse:collapse">
+		<tr style="height:25pt">
+			<td style ="background:#3d60af">
+				<p class="MsoNormal" style="margin-left:9pt;text-align:justify;">
+					<span style="font-size:14pt;color:white">The input buffer and the output queue</span>
+				</p>
+			</td>
+		</tr>
+	</table>
+
+	<p class="m_p01"><br></p>
+
+	<table class="MsoNormalTable" style ="width:100%; border-collapse:collapse">
+		<tr>
+			<td style="background:#bac6d8">
+				<p class="MsoNormal" style="margin:5pt;">Input buffer</p>
+			</td>
+		</tr>
+	</table>
+
+	<p class="m_p01">
+		<br>
+		The instrument has a 200KB input buffer.<br>
+		Received messages are put into this buffer and executed in order.<br>
+		However, <b>&quot;ABORT&quot;</b> commands are executed immediately when received.<br>
+		<br>
+	</p>
+
+	<table class="MsoNormalTable" style ="width:100%; border-collapse:collapse">
+		<tr>
+			<td style="background:#bac6d8">
+				<p class="MsoNormal" style="margin:5pt;">Output queue</p>
+			</td>
+		</tr>
+	</table>
+
+	<p class="m_p01">
+		<br>
+		The instrument has a 200KB output queue.<br>
+		Response messages accumulate in this queue until read out by the controller (PC).<br>
+		A query error occurs if the length of a response message exceeds 200KB.<br>
+		<br>
+		The following events clear the output queue:<br>
+		<br>
+		&nbsp;&nbsp;1. When the controller has read out the entire contents.<br>
+		&nbsp;&nbsp;2. When power is turned off and on again.<br>
+		&nbsp;&nbsp;3. Upon receipt of the next message.<br>
+	</p>
+
+</body>
+</html>

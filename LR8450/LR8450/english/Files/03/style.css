@@ -1,0 +1,180 @@
+﻿body{
+    background-color		: white;
+}
+
+p.MsoNormal, li.MsoNormal, div.MsoNormal{
+	margin					: 0mm;
+	font-size				: 10pt;
+	font-family				: "Verdana";
+}
+
+.g_HeadTitle{
+	font-size				: 11pt;
+	font-family				: "Verdana";
+	color					: white;
+	margin-left				: 9pt;
+	text-align				: justify;
+	font-weight				: bold;
+	background				: #3d60af;
+    margin                  : 5pt;
+}
+
+.g_td_0004{
+	width					: 12%;
+	border					: none;
+	border-bottom			: solid silver 1pt;
+	background				: white;
+	padding					: 0pt 5pt 0pt 5pt;
+	vertical-align          : top;
+}
+
+.g_td_0005{
+	width					: 11%;
+	background				: white;
+	padding                 : 12pt 5pt 12pt 5pt;
+	vertical-align          : top;
+}
+
+.g_td_0006{
+	width					: 76%;
+	background				: white;
+	padding					: 0pt 5pt 0pt 5pt;
+	vertical-align          : top;
+}
+
+.g_td_0007{
+	width					: 11%;
+	border					: none;
+	border-bottom			: solid silver 1pt;
+	background				: white;
+	padding					: 0pt 5pt 0pt 5pt;
+	vertical-align          : top;
+}
+
+.g_td_0008{
+	width					: 76%;
+	border					: none;
+	border-bottom			: solid silver 1pt;
+	background				: white;
+	padding					: 0pt 5pt 0pt 5pt;
+	vertical-align          : top;
+}
+
+.g_td_0009{
+	width					: 12%;
+	border					: none;
+	border-bottom			: solid silver 1pt;
+	padding					: 0pt 5pt 0pt 5pt;
+	vertical-align          : top;
+}
+
+.g_td_0010{
+	width					: 88%;
+	border					: none;
+	border-bottom			: solid silver 1pt;
+	padding					: 0pt 5pt 0pt 5pt;
+	vertical-align          : top;
+}
+
+.g_td_0011{
+	width					: 12%;
+	border					: none;
+	border-bottom			: solid silver 1pt;
+	background				: white;
+	padding					: 0pt 5pt 0pt 5pt;
+	vertical-align          : top;
+}
+
+.g_td_0012{
+	width					: 88%;
+	border					: none;
+	border-bottom			: solid silver 1pt;
+	background				: white;
+	padding					: 0pt 5pt 0pt 5pt;
+	vertical-align          : top;
+}
+
+.g_td_0013{
+	border					: none;
+	background				: white;
+	vertical-align			: top;
+	font-family				: "Verdana";
+	font-size				: 10pt;
+}
+
+.g_p_0001{
+	margin					: 0mm;
+	margin-left				: 9pt;
+	font-size				: 14pt;
+	font-family				: "Verdana";
+	text-align				: justify;
+}
+
+.g_p_0002{
+	margin					: 0mm;
+	margin-left				: 9pt;
+	font-family				: "Verdana";
+	font-size				: 10pt;
+	text-align				: justify;
+}
+
+.g_p_0003{
+	margin                  : 12pt 0 12pt 0;
+	font-size				: 10pt;
+	font-family				: "Verdana";
+	text-align				: center;
+}
+
+
+
+
+.g_td_com01{
+	border					: solid windowtext .5pt;
+	padding					: 0pt 5pt 0pt 5pt;
+}
+
+.g_td_com02{
+	border					: solid windowtext .5pt;
+	border-left				: none;
+	padding					: 0pt 5pt 0pt 5pt;
+}
+
+.g_td_com03{
+	border					: solid windowtext .5pt;
+	border-top				: none;
+	padding					: 0pt 5pt 0pt 5pt;
+}
+
+.g_td_com04{
+	border-top				: none;
+	border-left				: none;
+	border-bottom			: solid windowtext .5pt;
+	border-right			: solid windowtext .5pt;
+	padding					: 0pt 5pt 0pt 5pt;
+}
+
+.g_p_com01{
+	margin					: 0pt;
+	font-size				: 11pt;
+	text-align				: center;
+}
+
+span.unit:after{
+	content					: "UNIT1 to UNIT4, REMOTE1 to REMOTE7";
+}
+
+span.ch_analog:before{
+	content					: "CH1_1 to CH4_30, R1_1 to R7_30";
+}
+
+span.ch_pulse:before{
+	content					: "PLS1 to PLS8";
+}
+
+span.ch_alarm:before{
+	content					: "ALM1 to ALM8";
+}
+
+span.ch_wcalc:before{
+	content					: "W1 to W30";
+}

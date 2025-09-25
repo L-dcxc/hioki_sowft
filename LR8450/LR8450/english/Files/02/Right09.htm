@@ -1,0 +1,882 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<title></title>
+</head>
+
+<body>
+	<table class="MsoNormalTable" style="border:0; border-collapse:collapse; width:100%; max-width:1200px;">
+		<tr style="height:25pt">
+			<td style ="background:#3d60af">
+				<p class="MsoNormal" style="margin-left:9pt;text-align:justify">
+					<span style="color:white;font-weight:bold">Alarm (ALARm)</span>
+				</p>
+			</td>
+		</tr>
+	</table>
+
+	<p class="MsoNormal">&nbsp;</p>
+
+	<table class="MsoNormalTable" style="border:solid #A3A19E 2pt; border-collapse:collapse; width:100%; max-width:1200px;">
+		<tr style="height:40pt">
+			<td class = "g_p0001">
+				<p class="g_p0010"><span style="color:white">Command</span></p>
+			</td>
+			<td class = "g_p0002">
+				<p class="g_p0010"><span style="color:white">Data<br>(for a query, response data)</span></p>
+			</td>
+			<td class = "g_p0009">
+				<p class="g_p0010"><span style="color:white">Explanation</span></p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:ACTive" target="_self">:ACTive alm$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">alm$ = <span class="ch_alarm"></span><br>A$ = LOW, HIGH</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets alarm output terminal<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:ACTive?" target="_self">:ACTive? alm$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">alm$,A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:ARCD?" target="_self">:ARCD? NO</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">NO,ALM$,CH$,ERR$,STR$,END$<br><br>NO = alarm history num<br>ALM$ = <span class="ch_alarm"></span>, -<br>CH$ = <span class="ch_analog"></span>, <span class="unit"></span><br>
+				ERR$ = -, BURN_OUT, BATT_LOW, BURN/BATT, DISCONNECT<br>STR$ = alarm start time<br>END$ = alarm stop time</p>
+			</td>
+			<td class = "g_p0008" >
+				<p class="g_p0011">Queries the alarm history details</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:ARCDNum?" target="_self">:ARCDNum?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A&lt;NR1&gt; = 0 to 100 (0 = none)<br></p>
+			</td>
+			<td class = "g_p0008" >
+				<p class="g_p0011">Queries the alarm history num</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:BATT" target="_self">:BATT alm$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">alm$ = <span class="ch_alarm"></span><br>A$ = OFF, ON</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets alarm at low battery<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:BATT?" target="_self">:BATT? alm$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">alm$,A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:BEEP" target="_self">:BEEP A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = OFF, ON</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets alarm beep sound<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:BEEP?" target="_self">:BEEP?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:BURN" target="_self">:BURN alm$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">alm$ = <span class="ch_alarm"></span><br>A$ = OFF, ON</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets alarm at burn out<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:BURN?" target="_self">:BURN? alm$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">alm$,A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:DISCon" target="_self">:DISCon alm$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">alm$ = <span class="ch_alarm"></span><br>A$ = OFF, ON, DELAY</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets alarm at communication disconnect<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:DISCon?" target="_self">:DISCon? alm$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">alm$,A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:FILTer" target="_self">:FILTer alm$,A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">alm$ = <span class="ch_alarm"></span><br>A = 0(OFF), 2, 5, 10, 20, 50, 100, 200, 500, 1000</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets alarm filter<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:FILTer?" target="_self">:FILTer? alm$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">alm$,A&lt;NR1&gt;</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:HOLD" target="_self">:HOLD A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = OFF, ON, CLEAR</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets alarm hold<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:HOLD?" target="_self">:HOLD?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:SOURce" target="_self">:SOURce alm$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">alm$ = <span class="ch_alarm"></span><br>A$ = AND, OR</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets alarm source AND/OR<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:SOURce?" target="_self">:SOURce? alm$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">alm$,A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0014" colspan="3">
+				<p class="MsoNormal" style="margin-left:9pt;text-align:justify">
+					<span style="color:white;font-weight:bold">Analog Channel Alarm (:ALARm:ANALog)</span>
+				</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:ANALog:KIND" target="_self">:KIND alm$,ch$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">alm$ = <span class="ch_alarm"></span><br>ch$ = <span class="ch_analog"></span><br>A$ = OFF, LEVEl, WINDow, SLOPe</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets type of alarm<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:ANALog:KIND?" target="_self">:KIND? alm$,ch$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">alm$,ch$,A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:ANALog:LEVEl" target="_self">:LEVEl alm$,ch$,A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">alm$ = <span class="ch_alarm"></span><br>ch$ = <span class="ch_analog"></span><br>A = alarm level</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets the alarm level of the level alarm<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:ANALog:LEVEl?" target="_self">:LEVEl? ch$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">alm$,ch$,A&lt;NR3&gt; (3 decimal places)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:ANALog:LOWEr" target="_self">:LOWEr alm$,ch$,A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">alm$ = <span class="ch_alarm"></span><br>ch$ = <span class="ch_analog"></span><br>A = lower limit level</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets lower limit level of window-in/-out alarm<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:ANALog:LOWEr?" target="_self">:LOWEr? alm$,ch$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">alm$,ch$,A&lt;NR3&gt; (3 decimal places)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:ANALog:SIDE" target="_self">:SIDE alm$,ch$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">alm$ = <span class="ch_alarm"></span><br>ch$ = <span class="ch_analog"></span><br>A$ = IN, OUT</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets the alarm side(window alarm)<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:ANALog:SIDE?" target="_self">:SIDE? alm$,ch$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">alm$,ch$,A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:ANALog:SLOPe" target="_self">:SLOPe alm$,ch$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">alm$ = <span class="ch_alarm"></span><br>ch$ = <span class="ch_analog"></span><br>A$ = HIGH, LOW</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets the alarm slope(level alarm)<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:ANALog:SLOPe?" target="_self">:SLOPe? alm$,ch$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">alm$,ch$,A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:ANALog:STIMe" target="_self">:STIMe alm$,ch$,hour,min,sec</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">alm$ = <span class="ch_alarm"></span><br>ch$ = <span class="ch_analog"></span><br>hour = 0 to 6(hour)<br>min = 0 to 59(min)<br>sec = 0 to 59(sec)</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets time width of slope alarm<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:ANALog:STIMe?" target="_self">:STIMe? alm$,ch$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">alm$,ch$,hour&lt;NR1&gt;,min&lt;NR1&gt;,sec&lt;NR1&gt;</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:ANALog:UPPEr" target="_self">:UPPEr alm$,ch$,A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">alm$ = <span class="ch_alarm"></span><br>ch$ = <span class="ch_analog"></span><br>A = upper limit level</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets upper limit level of window-in/-out alarm<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:ANALog:UPPEr?" target="_self">:UPPEr? alm$,ch$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">alm$,ch$,A&lt;NR3&gt; (3 decimal places)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0014" colspan="3">
+				<p class="MsoNormal" style="margin-left:9pt;text-align:justify">
+					<span style="color:white;font-weight:bold">Waveform Calculation Alarm (:ALARm:CALCulate)</span>
+				</p>
+			</tr>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:CALCulate:KIND" target="_self">:KIND alm$,w$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">alm$ = <span class="ch_alarm"></span><br>w$ = <span class="ch_wcalc"></span><br>A$ = OFF, LEVEl, WINDow, SLOPe</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets type of alarm<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:CALCulate:KIND?" target="_self">:KIND? alm$,w$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">alm$,w$,A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:CALCulate:LEVEl" target="_self">:LEVEl alm$,w$,A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">alm$ = <span class="ch_alarm"></span><br>w$ = <span class="ch_wcalc"></span><br>A = alarm level(-9.9999E+29 to 9.9999E+29)</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets the alarm level of the level alarm<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:CALCulate:LEVEl?" target="_self">:LEVEl? alm$,w$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">alm$,w$,A&lt;NR3&gt; (4 decimal places)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:CALCulate:LOWEr" target="_self">:LOWEr alm$,w$,A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">alm$ = <span class="ch_alarm"></span><br>w$ = <span class="ch_wcalc"></span><br>A = lower limit level(-9.9999E+29 to 9.9999E+29)</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets lower limit level of window-in/-out alarm<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:CALCulate:LOWEr?" target="_self">:LOWEr? alm$,w$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">alm$,w$,A&lt;NR3&gt; (4 decimal places)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:CALCulate:SIDE" target="_self">:SIDE alm$,w$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">alm$ = <span class="ch_alarm"></span><br>w$ = <span class="ch_wcalc"></span><br>A$ = IN, OUT</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets the alarm side(window alarm)<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:CALCulate:SIDE?" target="_self">:SIDE? alm$,w$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">alm$,w$,A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:CALCulate:SLOPe" target="_self">:SLOPe alm$,w$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">alm$ = <span class="ch_alarm"></span><br>w$ = <span class="ch_wcalc"></span><br>A$ = HIGH, LOW</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets the alarm slope(level alarm)<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:CALCulate:SLOPe?" target="_self">:SLOPe? alm$,w$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">alm$,w$,A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:CALCulate:STIMe" target="_self">:STIMe alm$,w$,hour,min,sec</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">alm$ = <span class="ch_alarm"></span><br>w$ = <span class="ch_wcalc"></span><br>hour = 0 to 6(hour)<br>min = 0 to 59(min)<br>sec = 0 to 59(sec)</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets time width of slope alarm<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:CALCulate:STIMe?" target="_self">:STIMe? alm$,w$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">alm$,w$,hour&lt;NR1&gt;,min&lt;NR1&gt;,sec&lt;NR1&gt;</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:CALCulate:UPPEr" target="_self">:UPPEr alm,w$,A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">alm$ = <span class="ch_alarm"></span><br>w$ = <span class="ch_wcalc"></span><br>A = upper limit level(-9.9999E+29 to 9.9999E+29)</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets upper limit level of window-in/-out alarm</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:CALCulate:UPPEr?" target="_self">:UPPEr? alm$,w$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">alm$,w$,A&lt;NR3&gt; (4 decimal places)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0014" colspan="3">
+				<p class="MsoNormal" style="margin-left:9pt;text-align:justify">
+					<span style="color:white;font-weight:bold">Pulse Channel Alarm (:ALARm:PULSe)</span>
+				</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:PULSe:KIND" target="_self">:KIND alm$,pls$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">alm$ = <span class="ch_alarm"></span><br>pls$ = <span class="ch_pulse"></span><br>A$ = OFF, LEVEl, WINDow, SLOPe</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets type of alarm<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:PULSe:KIND?" target="_self">:KIND? alm$,pls$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">alm$,pls$,A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:PULSe:LEVEl" target="_self">:LEVEl alm$,pls$,A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">alm$ = <span class="ch_alarm"></span><br>pls$ = <span class="ch_pulse"></span><br>A = 0 to 1000000000(COUNT)<br>0 to 15000(r/s)<br>0 to 900000(r/min)</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets the alarm level of the level alarm<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:PULSe:LEVEl?" target="_self">:LEVEl? pls$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">pls$,A&lt;NR3&gt; (9 decimal places)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:PULSe:LOWEr" target="_self">:LOWEr alm$,pls$,A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">alm$ = <span class="ch_alarm"></span><br>pls$ = <span class="ch_pulse"></span><br>A = 0 to 1000000000(COUNT)<br>0 to 15000(r/s)<br>0 to 900000(r/min)</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets lower limit level of window-in/-out alarm<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:PULSe:LOWEr?" target="_self">:LOWEr? alm$,pls$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">alm$,pls$,A&lt;NR3&gt; (9 decimal places)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:PULSe:SIDE" target="_self">:SIDE alm$,pls$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">alm$ = <span class="ch_alarm"></span><br>pls$ = <span class="ch_pulse"></span><br>A$ = IN, OUT</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets the alarm side(window alarm)<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:PULSe:SIDE?" target="_self">:SIDE? alm$,pls$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">alm$,pls$,A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:PULSe:SLOPe" target="_self">:SLOPe alm$,pls$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">alm$ = <span class="ch_alarm"></span><br>pls$ = <span class="ch_pulse"></span><br>A$ = HIGH, LOW</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets the alarm slope(level alarm)<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:PULSe:SLOPe?" target="_self">:SLOPe? alm$,pls$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">alm$,pls$,A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:PULSe:STIMe" target="_self">:STIMe alm$,pls$,hour,min,sec</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">alm$ = <span class="ch_alarm"></span><br>pls$ = <span class="ch_pulse"></span><br>hour = 0 to 6(hour)<br>min = 0 to 59(min)<br>sec = 0 to 59(sec)</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets time width of slope alarm<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:PULSe:STIMe?" target="_self">:STIMe? alm$,pls$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">alm$,pls$,hour&lt;NR1&gt;,min&lt;NR1&gt;,sec&lt;NR1&gt;</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:PULSe:UPPEr" target="_self">:UPPEr alm,pls$,A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">alm$ = <span class="ch_alarm"></span><br>pls$ = <span class="ch_pulse"></span><br>A = 0 to 1000000000(COUNT)<br>0 to 15000(r/s)<br>0 to 900000(r/min)</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets upper limit level of window-in/-out alarm<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:PULSe:UPPEr?" target="_self">:UPPEr? alm$,pls$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">alm$,pls$,A&lt;NR3&gt; (9 decimal places)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0014" colspan="3">
+				<p class="MsoNormal" style="margin-left:9pt;text-align:justify">
+						 <span style="color:white;font-weight:bold">Logic Channel Alarm (:ALARm:LOGic)</span>
+				</p>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:LOGic:ANDOR" target="_self">:ANDOR alm$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">alm$ = <span class="ch_alarm"></span><br>A$ = OFF, OR, AND</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets AND/OR for the logic alarm pattern<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:LOGic:ANDOR?" target="_self">:ANDOR? alm$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">alm$,A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:LOGic:PATTern" target="_self">:PATTern alm$,"A$"</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">alm$ = <span class="ch_alarm"></span><br>A$ = xxxxxxxx<br>alarm pattern(X, 0, 1)</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets the pattern for a logic alarm</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right09.htm#:LOGic:PATTern?" target="_self">:PATTern? alm$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">alm$,"A$"</p>
+			</td>
+		</tr>
+
+
+	</table>
+
+</body>
+</html>
