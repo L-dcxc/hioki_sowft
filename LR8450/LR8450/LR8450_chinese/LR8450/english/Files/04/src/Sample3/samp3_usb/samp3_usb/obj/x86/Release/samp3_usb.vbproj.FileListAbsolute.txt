@@ -1,0 +1,27 @@
+C:\Users\tomita0105\Documents\Visual Studio 2010\Projects\samp3_usb\samp3_usb\bin\Release\samp3_usb.exe
+C:\Users\tomita0105\Documents\Visual Studio 2010\Projects\samp3_usb\samp3_usb\bin\Release\samp3_usb.pdb
+C:\Users\tomita0105\Documents\Visual Studio 2010\Projects\samp3_usb\samp3_usb\bin\Release\samp3_usb.xml
+C:\Users\tomita0105\Documents\Visual Studio 2010\Projects\samp3_usb\samp3_usb\obj\x86\Release\WindowsApplication1.Form1.resources
+C:\Users\tomita0105\Documents\Visual Studio 2010\Projects\samp3_usb\samp3_usb\obj\x86\Release\WindowsApplication1.Resources.resources
+C:\Users\tomita0105\Documents\Visual Studio 2010\Projects\samp3_usb\samp3_usb\obj\x86\Release\samp3_usb.vbproj.GenerateResource.Cache
+C:\Users\tomita0105\Documents\Visual Studio 2010\Projects\samp3_usb\samp3_usb\obj\x86\Release\samp3_usb.exe
+C:\Users\tomita0105\Documents\Visual Studio 2010\Projects\samp3_usb\samp3_usb\obj\x86\Release\samp3_usb.xml
+C:\Users\tomita0105\Documents\Visual Studio 2010\Projects\samp3_usb\samp3_usb\obj\x86\Release\samp3_usb.pdb
+C:\aa\xc797_comm_manual\japanese\Files\04\src\Sample3\samp3_usb\samp3_usb\obj\x86\Release\samp3_usb.exe
+C:\aa\xc797_comm_manual\japanese\Files\04\src\Sample3\samp3_usb\samp3_usb\obj\x86\Release\samp3_usb.xml
+C:\aa\xc797_comm_manual\japanese\Files\04\src\Sample3\samp3_usb\samp3_usb\obj\x86\Release\samp3_usb.pdb
+C:\aa\xc797_comm_manual\japanese\Files\04\src\Sample3\samp3_usb\samp3_usb\bin\Release\samp3_usb.exe
+C:\aa\xc797_comm_manual\japanese\Files\04\src\Sample3\samp3_usb\samp3_usb\obj\x86\Release\WindowsApplication1.Form1.resources
+C:\aa\xc797_comm_manual\japanese\Files\04\src\Sample3\samp3_usb\samp3_usb\obj\x86\Release\WindowsApplication1.Resources.resources
+C:\aa\xc797_comm_manual\japanese\Files\04\src\Sample3\samp3_usb\samp3_usb\obj\x86\Release\samp3_usb.vbproj.GenerateResource.Cache
+C:\aa\xc797_comm_manual\japanese\Files\04\src\Sample3\samp3_usb\samp3_usb\bin\Release\samp3_usb.pdb
+C:\aa\xc797_comm_manual\japanese\Files\04\src\Sample3\samp3_usb\samp3_usb\bin\Release\samp3_usb.xml
+C:\Users\tomita0105\Desktop\tmp\xc797_comm_manual\english\Files\04\src\Sample3\samp3_usb\samp3_usb\bin\Release\samp3_usb.exe
+C:\Users\tomita0105\Desktop\tmp\xc797_comm_manual\english\Files\04\src\Sample3\samp3_usb\samp3_usb\bin\Release\samp3_usb.pdb
+C:\Users\tomita0105\Desktop\tmp\xc797_comm_manual\english\Files\04\src\Sample3\samp3_usb\samp3_usb\bin\Release\samp3_usb.xml
+C:\Users\tomita0105\Desktop\tmp\xc797_comm_manual\english\Files\04\src\Sample3\samp3_usb\samp3_usb\obj\x86\Release\WindowsApplication1.Form1.resources
+C:\Users\tomita0105\Desktop\tmp\xc797_comm_manual\english\Files\04\src\Sample3\samp3_usb\samp3_usb\obj\x86\Release\WindowsApplication1.Resources.resources
+C:\Users\tomita0105\Desktop\tmp\xc797_comm_manual\english\Files\04\src\Sample3\samp3_usb\samp3_usb\obj\x86\Release\samp3_usb.vbproj.GenerateResource.Cache
+C:\Users\tomita0105\Desktop\tmp\xc797_comm_manual\english\Files\04\src\Sample3\samp3_usb\samp3_usb\obj\x86\Release\samp3_usb.exe
+C:\Users\tomita0105\Desktop\tmp\xc797_comm_manual\english\Files\04\src\Sample3\samp3_usb\samp3_usb\obj\x86\Release\samp3_usb.xml
+C:\Users\tomita0105\Desktop\tmp\xc797_comm_manual\english\Files\04\src\Sample3\samp3_usb\samp3_usb\obj\x86\Release\samp3_usb.pdb

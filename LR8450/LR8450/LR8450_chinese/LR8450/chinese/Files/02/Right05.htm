@@ -1,0 +1,636 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<title></title>
+</head>
+
+<body>
+	<table class="MsoNormalTable" style="border:0; border-collapse:collapse; width:100%; max-width:1200px;">
+		<tr style="height:25pt">
+			<td style ="background:#3d60af">
+				<p class="MsoNormal" style="margin-left:9pt;text-align:justify">
+					<span style="color:white;font-weight:bold">通道设置（UNIT）</span>
+				</p>
+			</td>
+		</tr>
+	</table>
+
+		<p class="MsoNormal">&nbsp;</p>
+
+		<table class="MsoNormalTable" style="border:solid #A3A19E 2pt; border-collapse:collapse; width:100%; max-width:1200px;">
+			<tr style="height:40pt">
+				<td class = "g_p0001">
+					<p class="g_p0010"><span style="color:white">Command</span></p>
+				</td>
+				<td class = "g_p0002">
+					<p class="g_p0010"><span style="color:white">Data<br>(for a query, response data)</span></p>
+				</td>
+				<td class = "g_p0009">
+					<p class="g_p0010"><span style="color:white">Explanation</span></p>
+				</td>
+			</tr>
+
+
+			<tr>
+				<td class = "g_p0012">
+					<p class="g_p0011">
+						<b><a href="../03/Right05.htm#:ADJUST?" target="_self">:ADJUST?</a></b>
+					</p>
+				</td>
+				<td class = "g_p0013">
+					<p class="g_p0011">A&lt;NR1&gt;<br><br>A = 1, 0</p>
+				</td>
+				<td class = "g_p0008">
+					<p class="g_p0011">Executes zero adjustment of input modules and queries the result</p>
+				</td>
+			</tr>
+
+
+			<tr>
+				<td class = "g_p0012">
+					<p class="g_p0011">
+						<b><a href="../03/Right05.htm#:BALance?" target="_self">:BALance? unit$,ch$</a></b>
+					</p>
+				</td>
+				<td class = "g_p0013">
+					<p class="g_p0011">unit$,ch$,A&lt;NR1&gt; (ch$ = CH1 to CH5)<br>unit$,ch$,A1,A2,A3,A4,A5&lt;NR1&gt; (ch$ = ALL)<br><br>unit$ = <span class="unit"></span><br>ch$ = ALL, CH1 to CH5<br>A = 1, 0</p>
+				</td>
+				<td class = "g_p0008">
+					<p class="g_p0011">Executes auto balance of input modules and queries the result</p>
+				</td>
+			</tr>
+
+
+			<tr>
+				<td class = "g_p0006">
+					<p class="g_p0011">
+						<b><a href="../03/Right05.htm#:DATARate" target="_self">:DATARate unit$,A</a></b>
+					</p>
+				</td>
+				<td class = "g_p0007">
+					<p class="g_p0011">unit$ = <span class="unit"></span><br>A = Update rate(unit s)<br>A = 0(Auto)</p>
+				</td>
+				<td class = "g_p0008" rowspan="2">
+					<p class="g_p0011">Set data update Rate for unit<br>Queries</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_p0012">
+					<p class="g_p0011">
+						<b><a href="../03/Right05.htm#:DATARate?" target="_self">:DATARate? unit$</a></b>
+					</p>
+				</td>
+				<td class = "g_p0013">
+					<p class="g_p0011">unit$,A&lt;NR3&gt; (1 decimal places)</p>
+				</td>
+			</tr>
+
+
+			<tr>
+				<td class = "g_p0006">
+					<p class="g_p0011">
+						<b><a href="../03/Right05.htm#:FILTer" target="_self">:FILTer A$</a></b>
+					</p>
+				</td>
+				<td class = "g_p0007">
+					<p class="g_p0011">A$ = 50HZ, 60HZ</p>
+				</td>
+				<td class = "g_p0008" rowspan="2">
+					<p class="g_p0011">Sets power frequency filter<br>Queries</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_p0012">
+					<p class="g_p0011">
+						<b><a href="../03/Right05.htm#:FILTer?" target="_self">:FILTer?</a></b>
+					</p>
+				</td>
+				<td class = "g_p0013">
+					<p class="g_p0011">A$</p>
+				</td>
+			</tr>
+
+
+			<tr>
+				<td class = "g_p0012">
+					<p class="g_p0011">
+						<b><a href="../03/Right05.htm#:IDN?" target="_self">:IDN? unit$</a></b>
+					</p>
+				</td>
+				<td class = "g_p0013">
+					<p class="g_p0011">unit$,A$,B$,C$<br><br>unit$ = <span class="unit"></span><br>A$ = model number<br>B$ = serial number<br>C$ = software version</p>
+				</td>
+				<td class = "g_p0008">
+					<p class="g_p0011">Queries unit ID</p>
+				</td>
+			</tr>
+
+
+			<tr>
+				<td class = "g_p0006">
+					<p class="g_p0011">
+						<b><a href="../03/Right05.htm#:INMOde" target="_self">:INMOde ch$,A$</a></b>
+					</p>
+				</td>
+				<td class = "g_p0007">
+					<p class="g_p0011">ch$ = <span class="ch_analog"></span><br>A$ = VOLTAGE, TC, RTD, HUMIDITY, RESIST, STRAIN</p>
+				</td>
+				<td class = "g_p0008" rowspan="2">
+					<p class="g_p0011">Sets input channel mode<br>Queries</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_p0012">
+					<p class="g_p0011">
+						<b><a href="../03/Right05.htm#:INMOde?" target="_self">:INMOde? ch$</a></b>
+					</p>
+				</td>
+				<td class = "g_p0013">
+					<p class="g_p0011">ch$,A$</p>
+				</td>
+			</tr>
+
+
+			<tr>
+				<td class = "g_p0006">
+					<p class="g_p0011">
+						<b><a href="../03/Right05.htm#:LPF" target="_self">:LPF unit$,A$</a></b>
+					</p>
+				</td>
+				<td class = "g_p0007">
+					<p class="g_p0011">unit$ = <span class="unit"></span><br>A$ = AUTO, 4HZ, 8HZ, 15HZ, 30HZ, 60HZ, 120HZ</p>
+				</td>
+				<td class = "g_p0008" rowspan="2">
+					<p class="g_p0011">Sets low pass filter for strain unit<br>Queries</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_p0012">
+					<p class="g_p0011">
+						<b><a href="../03/Right05.htm#:LPF?" target="_self">:LPF? unit$</a></b>
+					</p>
+				</td>
+				<td class = "g_p0013">
+					<p class="g_p0011">unit$,A$</p>
+				</td>
+			</tr>
+
+
+			<tr>
+				<td class = "g_p0006">
+					<p class="g_p0011">
+						<b><a href="../03/Right05.htm#:PCOMOde" target="_self">:PCOMOde pls$,A$</a></b>
+					</p>
+				</td>
+				<td class = "g_p0007">
+					<p class="g_p0011">pls$ = <span class="ch_pulse"></span><br>A$ = ADD, INST</p>
+				</td>
+				<td class = "g_p0008" rowspan="2">
+					<p class="g_p0011">Sets input pulse count mode<br>Queries</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_p0012">
+					<p class="g_p0011">
+						<b><a href="../03/Right05.htm#:PCOMOde?" target="_self">:PCOMOde? pls$</a></b>
+					</p>
+				</td>
+				<td class = "g_p0013">
+					<p class="g_p0011">pls$,A$</p>
+				</td>
+			</tr>
+
+
+			<tr>
+				<td class = "g_p0006">
+					<p class="g_p0011">
+						<b><a href="../03/Right05.htm#:PCOSTart" target="_self">:PCOSTart pls$,A$</a></b>
+					</p>
+				</td>
+				<td class = "g_p0007">
+					<p class="g_p0011">pls$ = <span class="ch_pulse"></span><br>A$ = STARt, TRIGger</p>
+				</td>
+				<td class = "g_p0008" rowspan="2">
+					<p class="g_p0011">Sets pulse counting start timing<br>Queries</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_p0012">
+					<p class="g_p0011">
+						<b><a href="../03/Right05.htm#:PCOSTart?" target="_self">:PCOSTart? pls$</a></b>
+					</p>
+				</td>
+				<td class = "g_p0013">
+					<p class="g_p0011">pls$,A$</p>
+				</td>
+			</tr>
+
+
+			<tr>
+				<td class = "g_p0006">
+					<p class="g_p0011">
+						<b><a href="../03/Right05.htm#:PCOUnt" target="_self">:PCOUnt pls$,A</a></b>
+					</p>
+				</td>
+				<td class = "g_p0007">
+					<p class="g_p0011">pls$ = <span class="ch_pulse"></span><br>A = 1 to 1000</p>
+				</td>
+				<td class = "g_p0008" rowspan="2">
+					<p class="g_p0011">Sets pulse num per revolve<br>Queries</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_p0012">
+					<p class="g_p0011">
+						<b><a href="../03/Right05.htm#:PCOUnt?" target="_self">:PCOUnt? pls$</a></b>
+					</p>
+				</td>
+				<td class = "g_p0013">
+					<p class="g_p0011">pls$,A&lt;NR1&gt;</p>
+				</td>
+			</tr>
+
+
+			<tr>
+				<td class = "g_p0006">
+					<p class="g_p0011">
+						<b><a href="../03/Right05.htm#:PFILTer" target="_self">:PFILTer pls$,A$</a></b>
+					</p>
+				</td>
+				<td class = "g_p0007">
+					<p class="g_p0011">pls$ = <span class="ch_pulse"></span><br>A$ = OFF, ON</p>
+				</td>
+				<td class = "g_p0008" rowspan="2">
+					<p class="g_p0011">Sets input pulse channel filter<br>Queries</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_p0012">
+					<p class="g_p0011">
+						<b><a href="../03/Right05.htm#:PFILTer?" target="_self">:PFILTer? pls$</a></b>
+					</p>
+				</td>
+				<td class = "g_p0013">
+					<p class="g_p0011">pls$,A$</p>
+				</td>
+			</tr>
+
+
+			<tr>
+				<td class = "g_p0006">
+					<p class="g_p0011">
+						<b><a href="../03/Right05.htm#:PINMOde" target="_self">:PINMOde pls$,A$</a></b>
+					</p>
+				</td>
+				<td class = "g_p0007">
+					<p class="g_p0011">pls$ = <span class="ch_pulse"></span><br>A$ = COUNT, REVOLVE, LOGIC</p>
+				</td>
+				<td class = "g_p0008" rowspan="2">
+					<p class="g_p0011">Sets input pulse channel mode<br>Queries</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_p0012">
+					<p class="g_p0011">
+						<b><a href="../03/Right05.htm#:PINMOde?" target="_self">:PINMOde? pls$</a></b>
+					</p>
+				</td>
+				<td class = "g_p0013">
+					<p class="g_p0011">pls$,A$</p>
+				</td>
+			</tr>
+
+
+			<tr>
+				<td class = "g_p0006">
+					<p class="g_p0011">
+						<b><a href="../03/Right05.htm#:POSItion" target="_self">:POSItion ch$,A</a></b>
+					</p>
+				</td>
+				<td class = "g_p0007">
+					<p class="g_p0011">ch$ = <span class="ch_analog"></span><br>A = -9950 to 10050</p>
+				</td>
+				<td class = "g_p0008" rowspan="2">
+					<p class="g_p0011">Sets the zero position for an input channel<br>Queries</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_p0012">
+					<p class="g_p0011">
+						<b><a href="../03/Right05.htm#:POSItion?" target="_self">:POSItion? ch$</a></b>
+					</p>
+				</td>
+				<td class = "g_p0013">
+					<p class="g_p0011">ch$,A&lt;NR1&gt;</p>
+				</td>
+			</tr>
+
+
+			<tr>
+				<td class = "g_p0006">
+					<p class="g_p0011">
+						<b><a href="../03/Right05.htm#:PPOSItion" target="_self">:PPOSItion pls$,A</a></b>
+					</p>
+				</td>
+				<td class = "g_p0007">
+					<p class="g_p0011">pls$ = <span class="ch_pulse"></span><br>A = -9950 to 10050</p>
+				</td>
+				<td class = "g_p0008" rowspan="2">
+					<p class="g_p0011">Sets the zero position for an input pulse channel<br>Queries</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_p0012">
+					<p class="g_p0011">
+						<b><a href="../03/Right05.htm#:PPOSItion?" target="_self">:PPOSItion? pls$</a></b>
+					</p>
+				</td>
+				<td class = "g_p0013">
+					<p class="g_p0011">pls$,A&lt;NR1&gt;</p>
+				</td>
+			</tr>
+
+
+			<tr>
+				<td class = "g_p0006">
+					<p class="g_p0011">
+						<b><a href="../03/Right05.htm#:PRANGe" target="_self">:PRANGe pls$,A$</a></b>
+					</p>
+				</td>
+				<td class = "g_p0007">
+					<p class="g_p0011">pls$ = <span class="ch_pulse"></span><br>A$ = RPS, RPM</p>
+				</td>
+				<td class = "g_p0008" rowspan="2">
+					<p class="g_p0011">Sets input pulse channel revolve range<br>Queries</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_p0012">
+					<p class="g_p0011">
+						<b><a href="../03/Right05.htm#:PRANGe?" target="_self">:PRANGe? pls$</a></b>
+					</p>
+				</td>
+				<td class = "g_p0013">
+					<p class="g_p0011">pls$,A$</p>
+				</td>
+			</tr>
+
+
+			<tr>
+				<td class = "g_p0006">
+					<p class="g_p0011">
+						<b><a href="../03/Right05.htm#:PSLOPe" target="_self">:PSLOPe pls$,A$</a></b>
+					</p>
+				</td>
+				<td class = "g_p0007">
+					<p class="g_p0011">pls$ = <span class="ch_pulse"></span><br>A$ = UP, DOWN</p>
+				</td>
+				<td class = "g_p0008" rowspan="2">
+					<p class="g_p0011">Sets input pulse channel slope<br>Queries</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_p0012">
+					<p class="g_p0011">
+						<b><a href="../03/Right05.htm#:PSLOPe?" target="_self">:PSLOPe? pls$</a></b>
+					</p>
+				</td>
+				<td class = "g_p0013">
+					<p class="g_p0011">pls$,A$</p>
+				</td>
+			</tr>
+
+
+			<tr>
+				<td class = "g_p0006">
+					<p class="g_p0011">
+						<b><a href="../03/Right05.htm#:PSMooth" target="_self">:PSMooth pls$,A</a></b>
+					</p>
+				</td>
+				<td class = "g_p0007">
+					<p class="g_p0011">pls$ = <span class="ch_pulse"></span><br>A = 1(OFF) to 60</p>
+				</td>
+				<td class = "g_p0008" rowspan="2">
+					<p class="g_p0011">Sets smoothing for revolve<br>Queries</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_p0012">
+					<p class="g_p0011">
+						<b><a href="../03/Right05.htm#:PSMooth?" target="_self">:PSMooth? pls$</a></b>
+					</p>
+				</td>
+				<td class = "g_p0013">
+					<p class="g_p0011">pls$,A&lt;NR1&gt;</p>
+				</td>
+			</tr>
+
+
+			<tr>
+				<td class = "g_p0006">
+					<p class="g_p0011">
+						<b><a href="../03/Right05.htm#:PTHRe" target="_self">:PTHRe pls$,A$</a></b>
+					</p>
+				</td>
+				<td class = "g_p0007">
+					<p class="g_p0011">pls$ = <span class="ch_pulse"></span><br>A$ = 1V, 4V</p>
+				</td>
+				<td class = "g_p0008" rowspan="2">
+					<p class="g_p0011">Sets pulse threshold level<br>Queries</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_p0012">
+					<p class="g_p0011">
+						<b><a href="../03/Right05.htm#:PTHRe?" target="_self">:PTHRe? pls$</a></b>
+					</p>
+				</td>
+				<td class = "g_p0013">
+					<p class="g_p0011">pls$,A$</p>
+				</td>
+			</tr>
+
+
+			<tr>
+				<td class = "g_p0006">
+					<p class="g_p0011">
+						<b><a href="../03/Right05.htm#:RANGe" target="_self">:RANGe ch$,A</a></b>
+					</p>
+				</td>
+				<td class = "g_p0007">
+					<p class="g_p0011">ch$ = <span class="ch_analog"></span><br>A = voltage axis range</p>
+				</td>
+				<td class = "g_p0008" rowspan="2">
+					<p class="g_p0011">Sets input channel range<br>Queries</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_p0012">
+					<p class="g_p0011">
+						<b><a href="../03/Right05.htm#:RANGe?" target="_self">:RANGe? ch$</a></b>
+					</p>
+				</td>
+				<td class = "g_p0013">
+					<p class="g_p0011">ch$,A&lt;NR3&gt; (1 decimal places)</p>
+				</td>
+			</tr>
+
+
+			<tr>
+				<td class = "g_p0006">
+					<p class="g_p0011">
+						<b><a href="../03/Right05.htm#:RCONnect" target="_self">:RCONnect ch$,A$</a></b>
+					</p>
+				</td>
+				<td class = "g_p0007">
+					<p class="g_p0011">ch$ = <span class="ch_analog"></span><br>A$ = 3LINE, 4LINE</p>
+				</td>
+				<td class = "g_p0008" rowspan="2">
+					<p class="g_p0011">Sets connect kind for rtd mode<br>Queries</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_p0012">
+					<p class="g_p0011">
+						<b><a href="../03/Right05.htm#:RCONnect?" target="_self">:RCONnect? ch$</a></b>
+					</p>
+				</td>
+				<td class = "g_p0013">
+					<p class="g_p0011">ch$,A$</p>
+				</td>
+			</tr>
+
+
+			<tr>
+				<td class = "g_p0006">
+					<p class="g_p0011">
+						<b><a href="../03/Right05.htm#:RJC" target="_self">:RJC ch$,A$</a></b>
+					</p>
+				</td>
+				<td class = "g_p0007">
+					<p class="g_p0011">ch$ = <span class="ch_analog"></span><br>A$ = INT, EXT</p>
+				</td>
+				<td class = "g_p0008" rowspan="2">
+					<p class="g_p0011">Sets point of contact compensation for tc mode<br>Queries</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_p0012">
+					<p class="g_p0011">
+						<b><a href="../03/Right05.htm#:RJC?" target="_self">:RJC? ch$</a></b>
+					</p>
+				</td>
+				<td class = "g_p0013">
+					<p class="g_p0011">ch$,A$</p>
+				</td>
+			</tr>
+
+
+			<tr>
+				<td class = "g_p0006">
+					<p class="g_p0011">
+						<b><a href="../03/Right05.htm#:RTYPe" target="_self">:RTYPe ch$,A$</a></b>
+					</p>
+				</td>
+				<td class = "g_p0007">
+					<p class="g_p0011">ch$ = <span class="ch_analog"></span><br>A$ = PT100, JPT100, PT1000</p>
+				</td>
+				<td class = "g_p0008" rowspan="2">
+					<p class="g_p0011">Sets rtd kind for rtd mode<br>Queries</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_p0012">
+					<p class="g_p0011">
+						<b><a href="../03/Right05.htm#:RTYPe?" target="_self">:RTYPe? ch$</a></b>
+					</p>
+				</td>
+				<td class = "g_p0013">
+					<p class="g_p0011">ch$,A$</p>
+				</td>
+			</tr>
+
+
+			<tr>
+				<td class = "g_p0006">
+					<p class="g_p0011">
+						<b><a href="../03/Right05.htm#:SENSor" target="_self">:SENSor ch$,A$</a></b>
+					</p>
+				</td>
+				<td class = "g_p0007">
+					<p class="g_p0011">ch$ = <span class="ch_analog"></span><br>A$ = K, J, E, T, N, R, S, B, C</p>
+				</td>
+				<td class = "g_p0008" rowspan="2">
+					<p class="g_p0011">Sets sensor kind for tc mode<br>Queries</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_p0012">
+					<p class="g_p0011">
+						<b><a href="../03/Right05.htm#:SENSor?" target="_self">:SENSor? ch$</a></b>
+					</p>
+				</td>
+				<td class = "g_p0013">
+					<p class="g_p0011">ch$,A$</p>
+				</td>
+			</tr>
+
+
+			<tr>
+				<td class = "g_p0006">
+					<p class="g_p0011">
+						<b><a href="../03/Right05.htm#:STORe" target="_self">:STORe ch$,A$</a></b>
+					</p>
+				</td>
+				<td class = "g_p0007">
+					<p class="g_p0011">ch$ = <span class="ch_analog"></span>, <span class="ch_pulse"></span>, LOG, ALARM, <span class="ch_wcalc"></span><br>A$ = OFF, ON</p>
+				</td>
+				<td class = "g_p0008" rowspan="2">
+					<p class="g_p0011">Sets store channel for record data<br>Queries</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_p0012">
+					<p class="g_p0011">
+						<b><a href="../03/Right05.htm#:STORe?" target="_self">:STORe? ch$</a></b>
+					</p>
+				</td>
+				<td class = "g_p0013">
+					<p class="g_p0011">ch$,A$</p>
+				</td>
+			</tr>
+
+
+			<tr>
+				<td class = "g_p0006">
+					<p class="g_p0011">
+						<b><a href="../03/Right05.htm#:WIRE" target="_self">:WIRE unit$,A$</a></b>
+					</p>
+				</td>
+				<td class = "g_p0007">
+					<p class="g_p0011">unit$ = <span class="unit"></span><br>A$ = OFF, ON</p>
+				</td>
+				<td class = "g_p0008" rowspan="2">
+					<p class="g_p0011">Sets disconnection detection for tc mode<br>Queries</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_p0012">
+					<p class="g_p0011">
+						<b><a href="../03/Right05.htm#:WIRE?" target="_self">:WIRE? unit$</a></b>
+					</p>
+				</td>
+				<td class = "g_p0013">
+					<p class="g_p0011">unit$,A$</p>
+				</td>
+			</tr>
+
+
+
+		</table>
+	</body>
+	</html>

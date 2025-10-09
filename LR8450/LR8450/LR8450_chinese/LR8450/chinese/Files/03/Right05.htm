@@ -1,0 +1,2495 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<title></title>
+	<style>
+	.m_td_set_001{
+		padding				: 5px;
+		color				: white;
+		font-size			: 9pt;
+		text-align			: center;
+		vertical-align		: middle;
+		border				: .5pt solid windowtext;
+		background			: black;
+	}
+
+	.m_td_set_002{
+		padding				: 5px;
+		font-size			: 9pt;
+		text-align			: justify;
+		vertical-align		: middle;
+		border				: .5pt solid windowtext;
+	}
+	</style>
+</head>
+
+<body>
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle">
+				<p class = "g_p_0001">
+					通道 settings (UNIT)
+				</p>
+			</td>
+		</tr>
+	</table>
+
+	<p class="MsoNormal"><br></p>
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":ADJust?">
+						<span class = "g_HeadTitle">
+							<b>Execute zero adjustment of input modules and queries the result.</b>
+						</span>
+					</a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:UNIT:ADJUST?<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A&lt;NR1&gt;<br>
+					</span>
+					<br>
+					A = 1, 0
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Executes zero adjustment of input modules and queries the result.<br>
+					Not Execute on strain unit(U8554,LR8534).
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>A = 0</b></td><td class="g_td_0013">&nbsp; Pass</td></tr>
+					<tr><td class="g_td_0013"><b>A = 1</b></td><td class="g_td_0013">&nbsp; Fail</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:UNIT:ADJUST?<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:UNIT:ADJUST 1</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":BALance?">
+						<span class = "g_HeadTitle">
+							<b>Execute auto balance of input modules and queries the result.</b>
+						</span>
+					</a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:UNIT:BALance? unit$,ch$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						unit$,ch$,A&lt;NR1&gt; (ch$ = CH1 to CH5)<br>unit$,ch$,A1,A2,A3,A4,A5&lt;NR1&gt; (ch$ = ALL)<br>
+					</span>
+					<br>
+					unit$ = <span class="unit"></span><br>ch$ = ALL, CH1 to CH5<br>A = 1, 0
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Executes auto balance for the unit and 通道 designated by unit$ and ch$ and queries the result.<br>
+				  If ch$=ALL, executes auto balance on all channel for the unit designated by unit$<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>A = 0</b></td><td class="g_td_0013">&nbsp; Pass</td></tr>
+					<tr><td class="g_td_0013"><b>A = 1</b></td><td class="g_td_0013">&nbsp; Fail</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:UNIT:BALance? UNIT1,CH1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:UNIT:BALANCE UNIT1,CH1,1</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					The strain unit(U8554,LR8534) must be specified.
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":DATARate">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the data update Rate for unit</b>
+						</span>
+					</a>
+					<a id=":DATARate?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:UNIT:DATARate unit$,A<br><br>
+						:UNIT:DATARate? unit$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						unit$,A&lt;NR3&gt; (1 decimal places)<br>
+					</span>
+					<br>
+					unit$ = <span class="unit"></span><br>A = 0(Auto),1.0E-3 to 1.0E+1 (sec)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the data update Rate to a numerical value (unit seconds) for the unit designated by unit$.<br>
+					Returns the value of the data update Rate for the unit designated by unit$ as an NR3 numerical value.<br>
+					if A=0, the data update Rate is automatically.<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:UNIT:DATARate UNIT1,1E-1<br>:UNIT:DATARate? UNIT1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:UNIT:DATARATE UNIT1,1.0E-01</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					If an attempt is made to set the time axis range to a non-permitted value, and there is a range above that value, that range will be selected.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":FILTer">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the power frequency filter.</b>
+						</span>
+					</a>
+					<a id=":FILTer?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:UNIT:FILTer A$<br><br>
+						:UNIT:FILTer?<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = 50HZ, 60HZ
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the power frequency filter.<br>
+					Returns the power frequency filter as character data.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:UNIT:FILTer 50HZ<br>:UNIT:FILTer?<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:UNIT:FILTER 50HZ</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":IDN?">
+						<span class = "g_HeadTitle">
+							<b>Queries the unit ID.</b>
+						</span>
+					</a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:UNIT:IDN? unit$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						unit$,A$,B$,C$<br>
+					</span>
+					<br>
+					unit$ = <span class="unit"></span><br>A$ = model number<br>B$ = serial number<br>C$ = software version
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Returns the unit ID for the unit designated by unit$.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:UNIT:IDN? UNIT1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:UNIT:IDN UNIT1,U8550,100000000,V 100</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":INMOde">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the measurement mode of an input channel.</b>
+						</span>
+					</a>
+					<a id=":INMOde?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:UNIT:INMOde ch$,A$<br><br>
+						:UNIT:INMOde? ch$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						ch$,A$<br>
+					</span>
+					<br>
+					ch$ = <span class="ch_analog"></span><br>A$ = VOLTAGE, TC, RTD, HUMIDITY, RESIST, STRAIN
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the measurement mode for the channel designated by ch$.<br>
+					Returns the current measurement mode for the channel designated by ch$ as character data.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>VOLTAGE</b></td><td class="g_td_0013">&nbsp; Voltage</td></tr>
+					<tr><td class="g_td_0013"><b>TC</b></td><td class="g_td_0013">&nbsp; Thermocouple</td></tr>
+					<tr><td class="g_td_0013"><b>RTD</b></td><td class="g_td_0013">&nbsp; RTD</td></tr>
+					<tr><td class="g_td_0013"><b>HUMIDITY</b></td><td class="g_td_0013">&nbsp; Humidity</td></tr>
+					<tr><td class="g_td_0013"><b>RESIST</b></td><td class="g_td_0013">&nbsp; Resistance</td></tr>
+					<tr><td class="g_td_0013"><b>STRAIN</b></td><td class="g_td_0013">&nbsp; Strain</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:UNIT:INMOde CH1_1,VOLTAGE<br>:UNIT:INMOde? CH1_1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:UNIT:INMODE CH1_1,VOLTAGE</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Input type that can be used is below.
+					<blockquote>
+						<table style="border:0; border-collapse:collapse">
+							<tr>
+								<td class="m_td_set_001" colspan="2" style="border-right:.5pt solid white">Unit</td>
+								<td class="m_td_set_001" style="border-left:none;border-right:.5pt solid white">Input Type</td>
+							</tr>
+							<tr>
+								<td class="m_td_set_002">U8550/LR8530<br>U8552/LR8532</td>
+								<td class="m_td_set_002">Voltage/Temp unit<br>30Ch Voltage/Temp unit</td>
+								<td class="m_td_set_002">VOLTAGE<br>TC<br>HUMIDITY</td>
+							</tr>
+							<tr>
+								<td class="m_td_set_002">U8551/LR8531</td>
+								<td class="m_td_set_002">Universal unit</td>
+								<td class="m_td_set_002">VOLTAGE<br>TC<br>RTD<br>HUMIDITY<br>RESIST</td>
+							</tr>
+							<tr>
+								<td class="m_td_set_002">U8553/LR8533</td>
+								<td class="m_td_set_002">High speed voltage unit</td>
+								<td class="m_td_set_002">VOLTAGE</td>
+							</tr>
+							<tr>
+								<td class="m_td_set_002" >U8554/LR8534</td>
+								<td class="m_td_set_002" >Strain unit</td>
+								<td class="m_td_set_002">VOLTAGE<br>STRAIN</td>
+							</tr>
+						</table>
+					</blockquote>
+
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":LPF">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the low pass filter for strain unit.</b>
+						</span>
+					</a>
+					<a id=":LPF?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:UNIT:LPF unit$,A$<br><br>
+						:UNIT:LPF? unit$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						unit$,A$<br>
+					</span>
+					<br>
+					unit$ = <span class="unit"></span><br>A$ = AUTO, 4HZ, 8HZ, 15HZ, 30HZ, 60HZ, 120HZ
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the low pass filter for the unit designated by unit$.<br>
+					Returns the current setting of low pass filter for the unit designated by unit$.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:UNIT:LPF UNIT1,4HZ<br>:UNIT:LPF? UNIT1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:UNIT:LPF UNIT1,4HZ</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					U8554, LR8534 (Strain Unit)
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":PCOMOde">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the count mode of an input pulse channel.</b>
+						</span>
+					</a>
+					<a id=":PCOMOde?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:UNIT:PCOMOde pls$,A$<br><br>
+						:UNIT:PCOMOde? pls$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						pls$,A$<br>
+					</span>
+					<br>
+					pls$ = <span class="ch_pulse"></span><br>A$ = ADD, INST
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the count mode for the pulse channel designated by pls$.<br>
+					Returns the current count mode for the pulse channel designated by pls$ as character data.
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>ADD</b></td><td class="g_td_0013">&nbsp; Addition</td></tr>
+					<tr><td class="g_td_0013"><b>INST</b></td><td class="g_td_0013">&nbsp; Instant</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:UNIT:PCOMOde PLS1,ADD<br>:UNIT:PCOMOde? PLS1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:UNIT:PCOMODE PLS1,ADD</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":PCOSTart">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the counting start timing of an input pulse channel.</b>
+						</span>
+					</a>
+					<a id=":PCOSTart?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:UNIT:PCOSTart pls$,A$<br><br>
+						:UNIT:PCOSTart? pls$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						pls$,A$<br>
+					</span>
+					<br>
+					pls$ = <span class="ch_pulse"></span><br>A$ = STARt, TRIGger
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the counting start timing for the pulse channel designated by pls$.<br>
+					Returns the current counting start timing for the pulse channel designated by pls$ as character data.
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>STARt</b></td><td class="g_td_0013">&nbsp; Start</td></tr><tr><td class="g_td_0013"><b>TRIGger</b></td><td class="g_td_0013">&nbsp; Trigger</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:UNIT:PCOSTart PLS1,START<br>:UNIT:PCOSTart? PLS1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:UNIT:PCOSTART PLS1,START</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":PCOUnt">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the pulse num per revolve.</b>
+						</span>
+					</a>
+					<a id=":PCOUnt?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:UNIT:PCOUnt pls$,A<br><br>
+						:UNIT:PCOUnt? pls$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						pls$,A&lt;NR1&gt;<br>
+					</span>
+					<br>
+					pls$ = <span class="ch_pulse"></span><br>A = 1 to 1000
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the pulse num per revolve for the pulse channel designated by pls$ in the range to a numerical value.<br>
+					Returns the current pulse num per revolve for the pulse channel designated by pls$ as an NR1 numerical value.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:UNIT:PCOUnt PLS1,1<br>:UNIT:PCOUnt? PLS1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:UNIT:PCOUNT PLS1,1</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":PFILTer">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the input pulse channel filter.</b>
+						</span>
+					</a>
+					<a id=":PFILTer?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:UNIT:PFILTer pls$,A$<br><br>
+						:UNIT:PFILTer? pls$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						pls$,A$<br>
+					</span>
+					<br>
+					pls$ = <span class="ch_pulse"></span><br>A$ = 关, 开
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the filter for the pulse channel designated by pls$.<br>
+					Returns the current filter for the pulse channel designated by pls$ as character data.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:UNIT:PFILTer PLS1,开<br>:UNIT:PFILTer? PLS1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:UNIT:PFILTER PLS1,开</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":PINMOde">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the measurement mode of an input pulse channel.</b>
+						</span>
+					</a>
+					<a id=":PINMOde?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:UNIT:PINMOde pls$,A$<br><br>
+						:UNIT:PINMOde? pls$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						pls$,A$<br>
+					</span>
+					<br>
+					pls$ = <span class="ch_pulse"></span><br>A$ = COUNT, REVOLVE, LOGIC
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the measurement mode for the pulse channel designated by pls$.<br>
+					Returns the current measurement mode for the pulse channel designated by pls$ as character data.
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>COUNT</b></td><td class="g_td_0013">&nbsp; Count</td></tr>
+					<tr><td class="g_td_0013"><b>REVOLVE</b></td><td class="g_td_0013">&nbsp; Revolve</td>
+					</tr><tr><td class="g_td_0013"><b>LOGIC</b></td><td class="g_td_0013">&nbsp; Logic</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:UNIT:PINMOde PLS1,COUNT<br>:UNIT:PINMOde? PLS1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:UNIT:PINMODE PLS1,COUNT</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":POSItion">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the input channel zero position.</b>
+						</span>
+					</a>
+					<a id=":POSItion?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:UNIT:POSItion ch$,A<br><br>
+						:UNIT:POSItion? ch$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						ch$,A&lt;NR1&gt;<br>
+					</span>
+					<br>
+					ch$ = <span class="ch_analog"></span><br>A = -9950 to 10050
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the zero position for the channel designated by ch$ in the range to a numerical value.<br>
+					Returns the current zero position for the channel designated by ch$ as an NR1 numerical value.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:UNIT:POSItion CH1_1,50<br>:UNIT:POSItion? CH1_1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:UNIT:POSITI开 CH1_1,50</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Effective range of A depends on <a href="../03/Right12.htm#:PULSe:YMAG" target="_self">the magnification/compression ratio on the voltage axis</a>.<br>
+					<b>Max value = </b>((magnification/compression ratio)&times;100)+50<br>
+					<b>Min value = </b>((magnification/compression ratio)&times;(-100))+50<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":PPOSItion">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the input pulse channel zero position.</b>
+						</span>
+					</a>
+					<a id=":PPOSItion?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:UNIT:PPOSItion pls$,A<br><br>
+						:UNIT:PPOSItion? pls$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						pls$,A&lt;NR1&gt;<br>
+					</span>
+					<br>
+					pls$ = <span class="ch_pulse"></span><br>A = -9950 to 10050
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the zero position for the pulse channel designated by pls$ in the range to a numerical value.<br>
+					Returns the current zero position for the pulse channel designated by pls$ as an NR1 numerical value.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:UNIT:PPOSItion PLS1,50<br>:UNIT:PPOSItion? PLS1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:UNIT:PPOSITI开 PLS1,50</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Effective range of A depends on <a href="../03/Right12.htm#:PULSe:YMAG" target="_self">the magnification/compression ratio on the voltage axis</a>.<br>
+					<b>Max value = </b>((magnification/compression ratio)&times;100)+50<br>
+					<b>Min value = </b>((magnification/compression ratio)&times;(-100))+50<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":PRANGe">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the input pulse channel revolve range.</b>
+						</span>
+					</a>
+					<a id=":PRANGe?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:UNIT:PRANGe pls$,A$<br><br>
+						:UNIT:PRANGe? pls$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						pls$,A$<br>
+					</span>
+					<br>
+					pls$ = <span class="ch_pulse"></span><br>A$ = RPS, RPM
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the revolve range of the pulse channel specified by pls$.<br>
+					Returns the revolve range of the pulse channel specified by pls$ as character data.
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>RPS</b></td><td class="g_td_0013">&nbsp; 5,000 r/s</td></tr>
+					<tr><td class="g_td_0013"><b>RPM</b></td><td class="g_td_0013">&nbsp; 300,000 r/min</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:UNIT:PRANGe PLS1,RPM<br>:UNIT:PRANGe? PLS1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:UNIT:PRANGE PLS1,RPM</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":PSLOPe">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the pulse channel count slope.</b>
+						</span>
+					</a>
+					<a id=":PSLOPe?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:UNIT:PSLOPe pls$,A$<br><br>
+						:UNIT:PSLOPe? pls$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						pls$,A$<br>
+					</span>
+					<br>
+					pls$ = <span class="ch_pulse"></span><br>A$ = UP, DOWN
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the count slope for the pulse channel designated by pls$.<br>
+					Returns the current count slope for the pulse channel designated by pls$ as character data.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:UNIT:PSLOPe PLS1,UP<br>:UNIT:PSLOPe? PLS1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:UNIT:PSLOPE PLS1,UP</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":PSMooth">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the smoothing for revolve.</b>
+						</span>
+					</a>
+					<a id=":PSMooth?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:UNIT:PSMooth pls$,A<br><br>
+						:UNIT:PSMooth? pls$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						pls$,A&lt;NR1&gt;<br>
+					</span>
+					<br>
+					pls$ = <span class="ch_pulse"></span><br>A = 1(关) to 60
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the smoothing for revolve for the pulse channel designated by pls$.<br>
+					Returns the current smoothing for revolve for the pulse channel designated by pls$ as an NR1 numerical value.<br>
+					<br>If A=1, smoothing is off.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:UNIT:PSMooth PLS1,1<br>:UNIT:PSMooth? PLS1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:UNIT:PSMOOTH PLS1,1</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":PTHRe">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the pulse threshold level.</b>
+						</span>
+					</a>
+					<a id=":PTHRe?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:UNIT:PTHRe pls$,A$<br><br>
+						:UNIT:PTHRe? pls$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						pls$,A$<br>
+					</span>
+					<br>
+					pls$ = <span class="ch_pulse"></span><br>A$ = 1V, 4V
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the pulse threshold level for the pulse channel designated by pls$.<br>
+					Returns the current pulse threshold level for the pulse channel designated by pls$ as character data.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:UNIT:PTHRe PLS1,1V<br>:UNIT:PTHRe? PLS1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:UNIT:PTHRE PLS1,1V</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":RANGe">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the measurement range of an input channel.</b>
+						</span>
+					</a>
+					<a id=":RANGe?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:UNIT:RANGe ch$,A<br><br>
+						:UNIT:RANGe? ch$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						ch$,A&lt;NR3&gt; (1 decimal places)<br>
+					</span>
+					<br>
+					ch$ = <span class="ch_analog"></span><br>A = measurement range
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the measurement range for the channel designated by ch$ to a numerical value.<br>
+					Returns the current measurement range for the channel designated by ch$ as an NR3 numerical value.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:UNIT:RANGe CH1_1,1E-1<br>:UNIT:RANGe? CH1_1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:UNIT:RANGE CH1_1,+1.0E-01</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					If an attempt is made to set the measurement range to a non-permitted value, and there is a range above that value, that range will be selected.<br>
+					Please set up A=15, when it makes the range of 1-5V with voltage.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Temperature Sensor cannot be set B in 100℃ or 500℃ range.
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":RCONnect">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the connect kind for rtd mode.</b>
+						</span>
+					</a>
+					<a id=":RCONnect?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:UNIT:RC开nect ch$,A$<br><br>
+						:UNIT:RC开nect? ch$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						ch$,A$<br>
+					</span>
+					<br>
+					ch$ = <span class="ch_analog"></span><br>A$ = 3LINE, 4LINE
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the rtd connect kind for the channel designated by ch$.<br>
+					Returns the rtd current connect kind for the channel designated by ch$ as character data.
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>3LINE</b></td><td class="g_td_0013">&nbsp; 3-wire</td></tr><tr><td class="g_td_0013"><b>4LINE</b></td><td class="g_td_0013">&nbsp; 4-wire</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:UNIT:RC开nect CH1_1,3LINE<br>:UNIT:RC开nect? CH1_1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:UNIT:RC开NECT CH1_1,3LINE</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":RJC">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the point of contact compensation for tc mode.</b>
+						</span>
+					</a>
+					<a id=":RJC?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:UNIT:RJC ch$,A$<br><br>
+						:UNIT:RJC? ch$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						ch$,A$<br>
+					</span>
+					<br>
+					ch$ = <span class="ch_analog"></span><br>A$ = INT, EXT
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the point of contact compensation for the channel designated by ch$.<br>
+					Returns the current point of contact compensation for the channel designated by ch$ as character data.
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>INT</b></td><td class="g_td_0013">&nbsp;Internal</td></tr>
+					<tr><td class="g_td_0013"><b>EXT</b></td><td class="g_td_0013">&nbsp;External</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:UNIT:RJC CH1_1,INT<br>:UNIT:RJC? CH1_1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:UNIT:RJC CH1_1,INT</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":RTYPe">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the rtd kind for rtd mode.</b>
+						</span>
+					</a>
+					<a id=":RTYPe?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:UNIT:RTYPe ch$,A$<br><br>
+						:UNIT:RTYPe? ch$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						ch$,A$<br>
+					</span>
+					<br>
+					ch$ = <span class="ch_analog"></span><br>A$ = PT100, JPT100, PT1000
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the rtd kind for the channel designated by ch$.<br>
+					Returns the current rtd kind for the channel designated by ch$ as character data.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:UNIT:RTYPe CH1_1,PT100<br>:UNIT:RTYPe? CH1_1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:UNIT:RTYPE CH1_1,PT100</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":SENSor">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the sensor kind for tc mode.</b>
+						</span>
+					</a>
+					<a id=":SENSor?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:UNIT:SENSor ch$,A$<br><br>
+						:UNIT:SENSor? ch$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						ch$,A$<br>
+					</span>
+					<br>
+					ch$ = <span class="ch_analog"></span><br>A$ = K, J, E, T, N, R, S, B, C
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the sensor kind for the channel designated by ch$.<br>
+					Returns the current sensor kind for the channel designated by ch$ as character data.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:UNIT:SENSor CH1_1,K<br>:UNIT:SENSor? CH1_1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:UNIT:SENSOR CH1_1,K</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sensor cannot be set to B at temperature range is 100 or 500.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":STORe">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the store enable or disable for channel data record.</b>
+						</span>
+					</a>
+					<a id=":STORe?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:UNIT:STORe ch$,A$<br><br>
+						:UNIT:STORe? ch$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						ch$,A$<br>
+					</span>
+					<br>
+					ch$ = <span class="ch_analog"></span>, <span class="ch_pulse"></span>, LOG, ALARM, <span class="ch_wcalc"></span><br>A$ = 关, 开
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the store enable or disable for the channel designated by ch$.<br>
+					Returns the current store enable or disable for the channel designated by ch$ as character data.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:UNIT:STORe CH1_1,开<br>:UNIT:STORe? CH1_1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:UNIT:STORE CH1_1,开</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Pulse channels with <a href="../03/Right05.htm#:PINMOde" target="_self">measurement mode</a> set to LOGIC cannot be set.<br>
+					If there is no pulse channel with measurement mode set to LOGIC, it cannot be set with ch$=LOG.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":WIRE">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the disconnection detection for tc mode.</b>
+						</span>
+					</a>
+					<a id=":WIRE?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:UNIT:WIRE unit$,A$<br><br>
+						:UNIT:WIRE? unit$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						unit$,A$<br>
+					</span>
+					<br>
+					unit$ = <span class="unit"></span><br>A$ = 关, 开
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the disconnection detection for the unit designated by unit$.<br>
+					Returns the current disconnection detection for the unit designated by unit$ as character data.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:UNIT:WIRE UNIT1,开<br>:UNIT:WIRE? UNIT1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:UNIT:WIRE UNIT1,开</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+</body>
+</html>

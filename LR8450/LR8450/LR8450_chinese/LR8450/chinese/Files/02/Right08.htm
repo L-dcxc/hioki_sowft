@@ -1,0 +1,1449 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<title></title>
+</head>
+
+<body>
+	<table class="MsoNormalTable" style="border:0; border-collapse:collapse; width:100%; max-width:1200px;">
+		<tr style="height:25pt">
+			<td style ="background:#3d60af">
+				<p class="MsoNormal" style="margin-left:9pt;text-align:justify">
+					<span style="color:white;font-weight:bold">触发（TRIGger）</span>
+				</p>
+			</td>
+		</tr>
+	</table>
+
+	<p class="MsoNormal">&nbsp;</p>
+
+	<table class="MsoNormalTable" style="border:solid #A3A19E 2pt; border-collapse:collapse; width:100%; max-width:1200px;">
+		<tr style="height:40pt">
+			<td class = "g_p0001">
+				<p class="g_p0010"><span style="color:white">Command</span></p>
+			</td>
+			<td class = "g_p0002">
+				<p class="g_p0010"><span style="color:white">Data<br>(for a query, response data)</span></p>
+			</td>
+			<td class = "g_p0009">
+				<p class="g_p0010"><span style="color:white">Explanation</span></p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:DETECTDate?" target="_self">:DETECTDate?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">year&lt;NR1&gt;,month&lt;NR1&gt;,day&lt;NR1&gt;</p>
+			</td>
+			<td class = "g_p0008" >
+				<p class="g_p0011">Queries the date for start trigger detection</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:DETECTTime?" target="_self">:DETECTTime?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">hour&lt;NR1&gt;,min&lt;NR1&gt;,sec&lt;NR1&gt;,ms&lt;NR1&gt;</p>
+			</td>
+			<td class = "g_p0008" >
+				<p class="g_p0011">Queries the time for start trigger detection</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:MODE" target="_self">:MODE A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = SINGle, REPEat</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets repetitive recording<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:MODE?" target="_self">:MODE?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:PRETrig" target="_self">:PRETrig day,hour,min,sec</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">day = 0 to 99(day)<br>hour = 0 to 23(hour)<br>min = 0 to 59(min)<br>sec = 0 to 59(sec)</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets pre-trigger<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:PRETrig?" target="_self">:PRETrig?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">day&lt;NR1&gt;,hour&lt;NR1&gt;,min&lt;NR1&gt;,sec&lt;NR1&gt;</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:SET" target="_self">:SET A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = OFF, ON</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets Trigger use<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:SET?" target="_self">:SET?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:SOURce" target="_self">:SOURce A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = AND, OR</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets start trigger logical operator to AND or OR<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:SOURce?" target="_self">:SOURce?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:SSOURce" target="_self">:SSOURce A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = AND, OR</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets stop trigger logical operator to AND or OR<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:SSOURce?" target="_self">:SSOURce?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:TIMEr" target="_self">:TIMEr A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = OFF, AND, OR</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets interval trigger<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:TIMEr?" target="_self">:TIMEr?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:TIMIng" target="_self">:TIMIng A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = START, STOP, S_S</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets trigger timing<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:TIMIng?" target="_self">:TIMIng?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:TMINTvl" target="_self">:TMINTvl day,hour,min,sec</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">day = 0 to 99(day)<br>hour = 0 to 23(hour)<br>min = 0 to 59(min)<br>sec = 0 to 59(sec)</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets time interval for interval trigger<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:TMINTvl?" target="_self">:TMINTv?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">day&lt;NR1&gt;,hour&lt;NR1&gt;,min&lt;NR1&gt;,sec&lt;NR1&gt;</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0014" colspan="3">
+				<p class="MsoNormal" style="margin-left:9pt;text-align:justify">
+					<span style="color:white;font-weight:bold">Analog Channel Trigger (:TRIGger:ANALog)</span>
+				</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0015" colspan="3">
+				<p class="MsoNormal" style="margin-left:9pt;text-align:justify">
+				 	<span style="color:white;font-weight:bold">Analog Channel Start Trigger (:TRIGger:ANALog:STARt)</span>
+				</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:ANALog:STARt:KIND" target="_self">:KIND ch$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">ch$ = <span class="ch_analog"></span><br>A$ = OFF, LEVEL, WINDOW</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets type of trigger<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:ANALog:STARt:KIND?" target="_self">:KIND? ch$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">ch$,A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:ANALog:STARt:LEVEl" target="_self">:LEVEl ch$,A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">ch$ = <span class="ch_analog"></span><br>A = trigger level</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets the trigger level of the level trigger<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:ANALog:STARt:LEVEl?" target="_self">:LEVEl? ch$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">ch$,A&lt;NR3&gt; (3 decimal places)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:ANALog:STARt:LOWEr" target="_self">:LOWEr ch$,A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">ch$ = <span class="ch_analog"></span><br>A = lower limit level</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets lower limit level of window trigger<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:ANALog:STARt:LOWEr?" target="_self">:LOWEr? ch$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">ch$,A&lt;NR3&gt; (3 decimal places)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:ANALog:STARt:SIDE" target="_self">:SIDE ch$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">ch$ = <span class="ch_analog"></span><br>A$ = IN, OUT</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets the trigger side(window trigger)<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:ANALog:STARt:SIDE?" target="_self">:SIDE? ch$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">ch$,A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:ANALog:STARt:SLOPe" target="_self">:SLOPe ch$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">ch$ = <span class="ch_analog"></span><br>A$ = UP, DOWN</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets the pulse trigger slope(level trigger)<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:ANALog:STARt:SLOPe?" target="_self">:SLOPe? ch$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">ch$,A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:ANALog:STARt:UPPEr" target="_self">:UPPEr ch$,A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">ch$ = <span class="ch_analog"></span><br>A = upper limit level</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets upper limit level of window trigger<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:ANALog:STARt:UPPEr?" target="_self">:UPPEr? ch$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">ch$,A&lt;NR3&gt; (3 decimal places)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0015" colspan="3">
+				<p class="MsoNormal" style="margin-left:9pt;text-align:justify">
+					<span style="color:white;font-weight:bold">Analog Channel Stop Trigger (:TRIGger:ANALog:STOP)</span>
+				</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:ANALog:STOP:KIND" target="_self">:KIND ch$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">ch$ = <span class="ch_analog"></span><br>A$ = OFF, LEVEL, WINDOW</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets type of trigger<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:ANALog:STOP:KIND?" target="_self">:KIND? ch$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">ch$,A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:ANALog:STOP:LEVEl" target="_self">:LEVEl ch$,A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">ch$ = <span class="ch_analog"></span><br>A = trigger level</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets the trigger level of the level trigger<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:ANALog:STOP:LEVEl?" target="_self">:LEVEl? ch$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">ch$,A&lt;NR3&gt; (3 decimal places)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:ANALog:STOP:LOWEr" target="_self">:LOWEr ch$,A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">ch$ = <span class="ch_analog"></span><br>A = lower limit level</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets lower limit level of window trigger<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:ANALog:STOP:LOWEr?" target="_self">:LOWEr? ch$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">ch$,A&lt;NR3&gt; (3 decimal places)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:ANALog:STOP:SIDE" target="_self">:SIDE ch$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">ch$ = <span class="ch_analog"></span><br>A$ = IN, OUT</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets the trigger side(window trigger)<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:ANALog:STOP:SIDE?" target="_self">:SIDE? ch$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">ch$,A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:ANALog:STOP:SLOPe" target="_self">:SLOPe ch$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">ch$ = <span class="ch_analog"></span><br>A$ = UP, DOWN</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets the pulse trigger slope(level trigger)<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:ANALog:STOP:SLOPe?" target="_self">:SLOPe? ch$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">ch$,A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:ANALog:STOP:UPPEr" target="_self">:UPPEr ch$,A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">ch$ = <span class="ch_analog"></span><br>A = upper limit level</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets upper limit level of window trigger<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:ANALog:STOP:UPPEr?" target="_self">:UPPEr? ch$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">ch$,A&lt;NR3&gt; (3 decimal places)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0014" colspan="3">
+				<p class="MsoNormal" style="margin-left:9pt;text-align:justify">
+					<span style="color:white;font-weight:bold">Waveform Calculation Trigger (:TRIGger:CALCulate)</span>
+				</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0015" colspan="3">
+				<p class="MsoNormal" style="margin-left:9pt;text-align:justify">
+					<span style="color:white;font-weight:bold">Waveform Calculation Start Trigger (:TRIGger:CALCulate:STARt)</span>
+				</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:CALCulate:STARt:KIND" target="_self">:KIND w$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">w$ = <span class="ch_wcalc"></span><br>A$ = OFF, LEVEL, WINDOW</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets type of trigger<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:CALCulate:STARt:KIND?" target="_self">:KIND? w$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">w$,A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:CALCulate:STARt:LEVEl" target="_self">:LEVEl w$,A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">w$ = <span class="ch_wcalc"></span><br>A = trigger level(-9.9999E+29 to 9.9999E+29)</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets the trigger level of the level trigger<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:CALCulate:STARt:LEVEl?" target="_self">:LEVEl? w$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">w$,A&lt;NR3&gt; (4 decimal places)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:CALCulate:STARt:LOWEr" target="_self">:LOWEr w$,A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">w$ = <span class="ch_wcalc"></span><br>A = lower limit level(-9.9999E+29 to 9.9999E+29)</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets lower limit level of window trigger<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:CALCulate:STARt:LOWEr?" target="_self">:LOWEr? w$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">w$,A&lt;NR3&gt; (4 decimal places)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:CALCulate:STARt:SIDE" target="_self">:SIDE w$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">w$ = <span class="ch_wcalc"></span><br>A$ = IN, OUT</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets the trigger side(window trigger)<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:CALCulate:STARt:SIDE?" target="_self">:SIDE? w$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">w$,A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:CALCulate:STARt:SLOPe" target="_self">:SLOPe w$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">w$ = <span class="ch_wcalc"></span><br>A$ = UP, DOWN</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets the pulse trigger slope(level trigger)<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:CALCulate:STARt:SLOPe?" target="_self">:SLOPe? w$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">w$,A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:CALCulate:STARt:UPPEr" target="_self">:UPPEr w$,A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">w$ = <span class="ch_wcalc"></span><br>A = upper limit level(-9.9999E+29 to 9.9999E+29)</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets upper limit level of window trigger<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:CALCulate:STARt:UPPEr?" target="_self">:UPPEr? w$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">w$,A&lt;NR3&gt; (4 decimal places)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0015" colspan="3">
+				<p class="MsoNormal" style="margin-left:9pt;text-align:justify">
+					<span style="color:white;font-weight:bold">Waveform Calculation Stop Trigger (:TRIGger:CALCulate:STOP)</span>
+				</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:CALCulate:STOP:KIND" target="_self">:KIND w$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">w$ = <span class="ch_wcalc"></span><br>A$ = OFF, LEVEL, WINDOW</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets type of trigger<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:CALCulate:STOP:KIND?" target="_self">:KIND? w$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">w$,A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:CALCulate:STOP:LEVEl" target="_self">:LEVEl w$,A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">w$ = <span class="ch_wcalc"></span><br>A = trigger level(-9.9999E+29 to 9.9999E+29)</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets the trigger level of the level trigger<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:CALCulate:STOP:LEVEl?" target="_self">:LEVEl? w$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">w$,A&lt;NR3&gt; (4 decimal places)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:CALCulate:STOP:LOWEr" target="_self">:LOWEr w$,A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">w$ = <span class="ch_wcalc"></span><br>A = lower limit level(-9.9999E+29 to 9.9999E+29)</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets lower limit level of window trigger<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:CALCulate:STOP:LOWEr?" target="_self">:LOWEr? w$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">w$,A&lt;NR3&gt; (4 decimal places)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:CALCulate:STOP:SIDE" target="_self">:SIDE w$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">w$ = <span class="ch_wcalc"></span><br>A$ = IN, OUT</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets the trigger side(window trigger)<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:CALCulate:STOP:SIDE?" target="_self">:SIDE? w$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">w$,A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:CALCulate:STOP:SLOPe" target="_self">:SLOPe w$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">w$ = <span class="ch_wcalc"></span><br>A$ = UP, DOWN</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets the pulse trigger slope(level trigger)<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:CALCulate:STOP:SLOPe?" target="_self">:SLOPe? w$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">w$,A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:CALCulate:STOP:UPPEr" target="_self">:UPPEr w$,A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">w$ = <span class="ch_wcalc"></span><br>A = upper limit level(-9.9999E+29 to 9.9999E+29)</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets upper limit level of window trigger<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:CALCulate:STOP:UPPEr?" target="_self">:UPPEr? w$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">w$,A&lt;NR3&gt; (4 decimal places)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0014" colspan="3">
+				<p class="MsoNormal" style="margin-left:9pt;text-align:justify">
+					<span style="color:white;font-weight:bold">Pulse Channel Trigger (:TRIGger:PULSe)</span>
+				</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0015" colspan="3">
+				<p class="MsoNormal" style="margin-left:9pt;text-align:justify">
+					<span style="color:white;font-weight:bold">Pulse Channel Start Trigger (:TRIGger:PULSe:STARt)</span>
+				</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:PULSe:STARt:KIND" target="_self">:KIND pls$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">pls$ = <span class="ch_pulse"></span><br>A$ = OFF, LEVEL, WINDOW</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets type of trigger<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:PULSe:STARt:KIND?" target="_self">:KIND? pls$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">pls$,A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:PULSe:STARt:LEVEl" target="_self">:LEVEl pls$,A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">pls$ = <span class="ch_pulse"></span><br>A = 0 to 1000000000(COUNT)<br>0 to 15000(r/s)<br>0 to 900000(r/min)</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets the trigger level of the level trigger<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:PULSe:STARt:LEVEl?" target="_self">:LEVEl? pls$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">pls$,A&lt;NR3&gt; (9 decimal places)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:PULSe:STARt:LOWEr" target="_self">:LOWEr pls$,A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">pls$ = <span class="ch_pulse"></span><br>A = 0 to 1000000000(COUNT)<br>0 to 15000(r/s)<br>0 to 900000(r/min)</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets lower limit level of window trigger<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:PULSe:STARt:LOWEr?" target="_self">:LOWEr? pls$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">pls$,A&lt;NR3&gt; (9 decimal places)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:PULSe:STARt:SIDE" target="_self">:SIDE pls$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">pls$ = <span class="ch_pulse"></span><br>A$ = IN, OUT</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets the trigger side(window trigger)<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:PULSe:STARt:SIDE?" target="_self">:SIDE? pls$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">pls$,A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:PULSe:STARt:SLOPe" target="_self">:SLOPe pls$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">pls$ = <span class="ch_pulse"></span><br>A$ = UP, DOWN</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets the pulse trigger slope(level trigger)<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:PULSe:STARt:SLOPe?" target="_self">:SLOPe? pls$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">pls$,A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:PULSe:STARt:UPPEr" target="_self">:UPPEr pls$,A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">pls$ = <span class="ch_pulse"></span><br>A = 0 to 1000000000(COUNT)<br>0 to 15000(r/s)<br>0 to 900000(r/min)</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets upper limit level of window trigger<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:PULSe:STARt:UPPEr?" target="_self">:UPPEr? pls$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">pls$,A&lt;NR3&gt; (9 decimal places)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0015" colspan="3">
+				<p class="MsoNormal" style="margin-left:9pt;text-align:justify">
+					<span style="color:white;font-weight:bold">Pulse Channel Stop Trigger (:TRIGger:PULSe:STOP)</span>
+				</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:PULSe:STOP:KIND" target="_self">:KIND pls$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">pls$ = <span class="ch_pulse"></span><br>A$ = OFF, LEVEL, WINDOW</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets type of trigger<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:PULSe:STOP:KIND?" target="_self">:KIND? pls$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">pls$,A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:PULSe:STOP:LEVEl" target="_self">:LEVEl pls$,A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">pls$ = <span class="ch_pulse"></span><br>A = 0 to 1000000000(COUNT)<br>0 to 15000(r/s)<br>0 to 900000(r/min)</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets the trigger level of the level trigger<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:PULSe:STOP:LEVEl?" target="_self">:LEVEl? pls$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">pls$,A&lt;NR3&gt; (9 decimal places)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:PULSe:STOP:LOWEr" target="_self">:LOWEr pls$,A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">pls$ = <span class="ch_pulse"></span><br>A = 0 to 1000000000(COUNT)<br>0 to 15000(r/s)<br>0 to 900000(r/min)</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets lower limit level of window trigger<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:PULSe:STOP:LOWEr?" target="_self">:LOWEr? pls$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">pls$,A&lt;NR3&gt; (9 decimal places)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:PULSe:STOP:SIDE" target="_self">:SIDE pls$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">pls$ = <span class="ch_pulse"></span><br>A$ = IN, OUT</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets the trigger side(window trigger)<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:PULSe:STOP:SIDE?" target="_self">:SIDE? pls$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">pls$,A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:PULSe:STOP:SLOPe" target="_self">:SLOPe pls$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">pls$ = <span class="ch_pulse"></span><br>A$ = UP, DOWN</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets the pulse trigger slope(level trigger)<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:PULSe:STOP:SLOPe?" target="_self">:SLOPe? pls$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">pls$,A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:PULSe:STOP:UPPEr" target="_self">:UPPEr pls$,A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">pls$ = <span class="ch_pulse"></span><br>A = 0 to 1000000000(COUNT)<br>0 to 15000(r/s)<br>0 to 900000(r/min)</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets upper limit level of window trigger<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:PULSe:STOP:UPPEr?" target="_self">:UPPEr? pls$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">pls$,A&lt;NR3&gt; (9 decimal places)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0014" colspan="3">
+				<p class="MsoNormal" style="margin-left:9pt;text-align:justify">
+					<span style="color:white;font-weight:bold">Logic Channel Trigger (:TRIGger:LOGic)</span>
+				</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0015" colspan="3">
+				<p class="MsoNormal" style="margin-left:9pt;text-align:justify">
+					<span style="color:white;font-weight:bold">Logic Channel Start Trigger (:TRIGger:LOGic:STARt)</span>
+				</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:LOGic:STARt:ANDOR" target="_self">:ANDOR A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = OFF, AND, OR</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets AND/OR for the logic trigger<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:LOGic:STARt:ANDOR?" target="_self">:ANDOR?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:LOGic:STARt:PATTern" target="_self">:PATTern "A$"</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = xxxxxxxx<br>trigger pattern(X, 0, 1)</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets the pattern for a logic trigger<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:LOGic:STARt:PATTern?" target="_self">:PATTern? </a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">"A$"</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0015" colspan="3">
+				<p class="MsoNormal" style="margin-left:9pt;text-align:justify">
+					<span style="color:white;font-weight:bold">Logic Channel Stop Trigger (:TRIGger:LOGic:STOP)</span>
+				</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:LOGic:STOP:ANDOR" target="_self">:ANDOR A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = OFF, AND, OR</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets AND/OR for the logic trigger<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:LOGic:STOP:ANDOR?" target="_self">:ANDOR? ch$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:LOGic:STOP:PATTern" target="_self">:PATTern "A$"</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = xxxxxxxx<br>trigger pattern(X, 0, 1)</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets the pattern for a logic trigger<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:LOGic:STOP:PATTern?" target="_self">:PATTern? </a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">"A$"</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0014" colspan="3">
+				<p class="MsoNormal" style="margin-left:9pt;text-align:justify">
+					<span style="color:white;font-weight:bold">External Trigger (:TRIGger:EXTernal)</span>
+				</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0015" colspan="3">
+				<p class="MsoNormal" style="margin-left:9pt;text-align:justify">
+					<span style="color:white;font-weight:bold">External Start Trigger (:TRIGger:EXTernal:STARt)</span>
+				</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:EXTernal:STARt:KIND" target="_self">:KIND "A$"</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = OFF, ON</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets external trigger use<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:EXTernal:STARt:KIND?" target="_self">:KIND? </a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0015" colspan="3">
+				<p class="MsoNormal" style="margin-left:9pt;text-align:justify">
+					<span style="color:white;font-weight:bold">External Stop Trigger (:TRIGger:EXTernal:STOP)</span>
+				</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:EXTernal:STOP:KIND" target="_self">:KIND "A$"</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = OFF, ON</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets external trigger use<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right08.htm#:EXTernal:STOP:KIND?" target="_self">:KIND? </a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A$</p>
+			</td>
+		</tr>
+
+
+	</table>
+</body>
+</html>

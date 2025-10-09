@@ -1,0 +1,21 @@
+C:\Users\tomita0105\Documents\Visual Studio 2010\Projects\samp2_usb\samp2_usb\bin\Release\samp2_usb.exe
+C:\Users\tomita0105\Documents\Visual Studio 2010\Projects\samp2_usb\samp2_usb\bin\Release\samp2_usb.pdb
+C:\Users\tomita0105\Documents\Visual Studio 2010\Projects\samp2_usb\samp2_usb\bin\Release\samp2_usb.xml
+C:\Users\tomita0105\Documents\Visual Studio 2010\Projects\samp2_usb\samp2_usb\obj\x86\Release\WindowsApplication1.Form1.resources
+C:\Users\tomita0105\Documents\Visual Studio 2010\Projects\samp2_usb\samp2_usb\obj\x86\Release\WindowsApplication1.Resources.resources
+C:\Users\tomita0105\Documents\Visual Studio 2010\Projects\samp2_usb\samp2_usb\obj\x86\Release\samp2_usb.vbproj.GenerateResource.Cache
+C:\Users\tomita0105\Documents\Visual Studio 2010\Projects\samp2_usb\samp2_usb\obj\x86\Release\samp2_usb.exe
+C:\Users\tomita0105\Documents\Visual Studio 2010\Projects\samp2_usb\samp2_usb\obj\x86\Release\samp2_usb.xml
+C:\Users\tomita0105\Documents\Visual Studio 2010\Projects\samp2_usb\samp2_usb\obj\x86\Release\samp2_usb.pdb
+C:\aa\xc797_comm_manual\japanese\Files\04\src\Sample2\samp2_usb\samp2_usb\obj\x86\Release\samp2_usb.exe
+C:\aa\xc797_comm_manual\japanese\Files\04\src\Sample2\samp2_usb\samp2_usb\obj\x86\Release\samp2_usb.xml
+C:\aa\xc797_comm_manual\japanese\Files\04\src\Sample2\samp2_usb\samp2_usb\obj\x86\Release\samp2_usb.pdb
+C:\Users\tomita0105\Desktop\tmp\xc797_comm_manual\english\Files\04\src\Sample2\samp2_usb\samp2_usb\bin\Release\samp2_usb.exe
+C:\Users\tomita0105\Desktop\tmp\xc797_comm_manual\english\Files\04\src\Sample2\samp2_usb\samp2_usb\bin\Release\samp2_usb.pdb
+C:\Users\tomita0105\Desktop\tmp\xc797_comm_manual\english\Files\04\src\Sample2\samp2_usb\samp2_usb\bin\Release\samp2_usb.xml
+C:\Users\tomita0105\Desktop\tmp\xc797_comm_manual\english\Files\04\src\Sample2\samp2_usb\samp2_usb\obj\x86\Release\WindowsApplication1.Form1.resources
+C:\Users\tomita0105\Desktop\tmp\xc797_comm_manual\english\Files\04\src\Sample2\samp2_usb\samp2_usb\obj\x86\Release\WindowsApplication1.Resources.resources
+C:\Users\tomita0105\Desktop\tmp\xc797_comm_manual\english\Files\04\src\Sample2\samp2_usb\samp2_usb\obj\x86\Release\samp2_usb.vbproj.GenerateResource.Cache
+C:\Users\tomita0105\Desktop\tmp\xc797_comm_manual\english\Files\04\src\Sample2\samp2_usb\samp2_usb\obj\x86\Release\samp2_usb.exe
+C:\Users\tomita0105\Desktop\tmp\xc797_comm_manual\english\Files\04\src\Sample2\samp2_usb\samp2_usb\obj\x86\Release\samp2_usb.xml
+C:\Users\tomita0105\Desktop\tmp\xc797_comm_manual\english\Files\04\src\Sample2\samp2_usb\samp2_usb\obj\x86\Release\samp2_usb.pdb

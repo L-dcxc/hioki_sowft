@@ -1,0 +1,163 @@
+﻿body{
+    background-color		: white;
+}
+
+p.MsoNormal, li.MsoNormal, div.MsoNormal{
+	margin					: 0mm;
+	font-size				: 14.0pt;
+	font-family				: "Verdana";
+}
+
+a:hover{
+	background-color		: #FFFF00;
+}
+
+.g_p0001{
+	width					: 30%;
+	max-width				: 360px;
+	border					: solid #A3A19E 2pt;
+	border-bottom			: solid windowtext 1pt;
+	border-right			: solid white 2pt;
+	background				: #3d60af;
+	padding					: .5pt;
+}
+
+.g_p0002{
+	width					: 35%;
+	max-width				: 420px;
+	border-top				: solid #A3A19E 2pt;
+	border-left				: none;
+	border-bottom			: solid windowtext 1pt;
+	border-right			: solid white 2pt;
+	background				: #3d60af;
+	padding					: .5pt;
+}
+
+.g_p0006{
+	width					: 30%;
+	max-width				: 360px;
+	border-top				: solid windowtext 1pt;
+	border-left				: solid windowtext 2pt;
+	border-bottom			: solid windowtext 1pt;
+	border-right			: solid windowtext 2pt;
+	border-top				: none;
+	border-color			: #A3A19E;
+	padding					: .5pt;
+}
+
+.g_p0007{
+	width					: 35%;
+	max-width				: 420px;
+	border-top				: none;
+	border-left				: none;
+	border-bottom			: solid windowtext 1pt;
+	border-right			: solid windowtext 2pt;
+	border-color			: #A3A19E;
+	padding					: .5pt;
+}
+
+.g_p0008{
+	width					: 35%;
+	max-width				: 420px;
+	border-top				: none;
+	border-left				: none;
+	border-bottom			: solid windowtext 2pt;
+	border-right			: solid windowtext 2pt;
+	border-color			: #A3A19E;
+	padding					: .5pt;
+}
+
+.g_p0009{
+	width					: 35%;
+	max-width				: 420px;
+	border					: solid #A3A19E 2pt;
+	border-left				: none;
+	border-bottom			: solid windowtext 1pt;
+	background				: #3d60af;
+	padding					: .5pt;
+}
+
+.g_p0010{
+	margin					: 0mm;
+	font-size				: 10pt;
+	text-align				: center;
+	font-family				: "Verdana";
+}
+
+.g_p0011{
+	font-size				: 10pt;
+	text-align				: justify;
+	text-justify			: inter-ideograph;
+	padding					: .5pt 5pt .5pt 5pt;
+}
+
+
+.g_p0012{
+	width					: 30%;
+	max-width				: 360px;
+	border-top				: none;
+	border-left				: solid windowtext 2pt;
+	border-bottom			: solid windowtext 2pt;
+	border-right			: solid windowtext 2pt;
+	border-color			: #A3A19E;
+	padding					: .5pt;
+}
+
+.g_p0013{
+	width					: 35%;
+	max-width				: 420px;
+	border-top				: none;
+	border-left				: none;
+	border-bottom			: solid windowtext 2pt;
+	border-right			: solid windowtext 2pt;
+	border-color			: #A3A19E;
+	padding					: .5pt;
+}
+
+.g_p0014{
+	width					: 30%;
+	max-width				: 360px;
+	height					: 25pt;
+	background				: #3d60af;
+	border-top				: solid windowtext 1pt;
+	border-left				: solid windowtext 2pt;
+	border-bottom			: solid windowtext 2pt;
+	border-bottom			: solid windowtext 2pt;
+	border-right			: solid windowtext 2pt;
+	border-color			: #A3A19E;
+	padding					: .5pt;
+}
+
+.g_p0015{
+	width					: 30%;
+	max-width				: 360px;
+	height					: 25pt;
+	background				: #a3b5db;
+	border-top				: solid windowtext 1pt;
+	border-left				: solid windowtext 2pt;
+	border-bottom			: solid windowtext 2pt;
+	border-right			: solid windowtext 2pt;
+	border-color			: #A3A19E;
+	padding					: .5pt;
+}
+
+span.unit:before{
+	content					: "UNIT1 to UNIT4, REMOTE1 to REMOTE7"; //UNIT12
+}
+
+span.ch_analog:before{
+	content					: "CH1_1 to CH4_30, R1_1 to R7_30";
+}
+
+span.ch_pulse:before{
+	content					: "PLS1 to PLS8";
+}
+
+span.ch_alarm:before{
+	content					: "ALM1 to ALM8";
+
+}
+
+span.ch_wcalc:before{
+	content					: "W1 to W30";
+}

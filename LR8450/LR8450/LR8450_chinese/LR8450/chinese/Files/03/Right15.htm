@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<title></title>
+	<style>
+	<!--
+	-->
+	</style>
+</head>
+
+<body>
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle">
+				<p class = "g_p_0001">
+					予約機能 (RESErve)(V2.0以降) 工事中
+				</p>
+			</td>
+		</tr>
+	</table>
+
+	<p class="MsoNormal"><br></p>
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":CONDition">
+						<span class = "g_HeadTitle">
+							<b>測定予約の測定条件の設定と問い合わせ</b>
+						</span>
+					</a>
+					<a id=":CONDition?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">構文</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(コマンド)<br><br>(クエリ)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:RESERve:C开Dition no$,A$<br><br>
+						:RESERve:C开Dition? no$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(応答)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						no$,A$<br>
+					</span>
+					<br>
+					no$ = NO1～NO10<br>A$ = NOW, LIST1～LIST5
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">解説</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					指定した測定予約の測定条件を設定します。<br>指定した測定予約の現在の測定条件を返します。<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>NOW</b></td><td class="g_td_0013">&nbsp;現在の設定</td></tr><tr><td class="g_td_0013"><b>LIST1～LIST5</b></td><td class="g_td_0013">&nbsp;保存No.1～保存No.5</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">例</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:RESERve:C开Dition NO1,NOW<br>:RESERve:C开Dition? NO1<br>
+					</span>
+					(応答)&nbsp;&nbsp;<b>:RESERVE:C开DITI开 NO1,NOW</b>&nbsp;&nbsp;(ヘッダが开の場合)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">注記</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">使用可能<br>条件</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":KIND">
+						<span class = "g_HeadTitle">
+							<b>測定予約の種類の設定と問い合わせ</b>
+						</span>
+					</a>
+					<a id=":KIND?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">構文</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(コマンド)<br><br>(クエリ)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:RESERve:KIND no$,A$<br><br>
+						:RESERve:KIND? no$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(応答)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						no$,A$<br>
+					</span>
+					<br>
+					no$ = NO1～NO10<br>A$ = 关, SPECify, REGUlar
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">解説</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					指定した測定予約の測定予約種類を設定します。<br>指定した測定予約の現在の測定予約種類を返します。
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>OFF</b></td><td class="g_td_0013">&nbsp;予約なし</td></tr><tr><td class="g_td_0013"><b>SPECify</b></td><td class="g_td_0013">&nbsp;指定日</td></tr><tr><td class="g_td_0013"><b>REGUlar</b></td><td class="g_td_0013">&nbsp;定期</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">例</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:RESERve:KIND NO1,SPECify<br>:RESERve:KIND? NO1<br>
+					</span>
+					(応答)&nbsp;&nbsp;<b>:RESERVE:KIND NO1,SPECIFY</b>&nbsp;&nbsp;(ヘッダが开の場合)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">注記</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">使用可能<br>条件</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":REGUlar">
+						<span class = "g_HeadTitle">
+							<b>測定予約の開始曜日(定期)の設定と問い合わせ</b>
+						</span>
+					</a>
+					<a id=":REGUlar?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">構文</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(コマンド)<br><br>(クエリ)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:RESERve:REGUlar no$,A$<br><br>
+						:RESERve:REGUlar? no$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(応答)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						no$,A$<br>
+					</span>
+					<br>
+					no$ = NO1～NO10<br>A$ = EVE, M_F, M_S, SUN, M开, TUE, WED, THU, FRI, SAT
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">解説</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					指定した測定予約の開始曜日(定期)を設定します。<br>指定した測定予約の現在の開始曜日(定期)を返します。
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>EVE</b></td><td class="g_td_0013">&nbsp;毎日</td></tr><tr><td class="g_td_0013"><b>M_F</b></td><td class="g_td_0013">&nbsp;月～金</td></tr><tr><td class="g_td_0013"><b>M_S</b></td><td class="g_td_0013">&nbsp;月～土</td></tr><tr><td class="g_td_0013"><b>SUN</b></td><td class="g_td_0013">&nbsp;日</td></tr><tr><td class="g_td_0013"><b>MON</b></td><td class="g_td_0013">&nbsp;月</td></tr><tr><td class="g_td_0013"><b>TUE</b></td><td class="g_td_0013">&nbsp;火</td></tr><tr><td class="g_td_0013"><b>WED</b></td><td class="g_td_0013">&nbsp;水</td></tr><tr><td class="g_td_0013"><b>THU</b></td><td class="g_td_0013">&nbsp;木</td></tr><tr><td class="g_td_0013"><b>FRI</b></td><td class="g_td_0013">&nbsp;金</td></tr><tr><td class="g_td_0013"><b>SAT</b></td><td class="g_td_0013">&nbsp;土</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">例</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:RESERve:REGUlar NO1,EVE<br>:RESERve:REGUlar? NO1<br>
+					</span>
+					(応答)&nbsp;&nbsp;<b>:RESERVE:REGULAR NO1,EVE</b>&nbsp;&nbsp;(ヘッダが开の場合)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">注記</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">使用可能<br>条件</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":STARTDate">
+						<span class = "g_HeadTitle">
+							<b>測定予約の開始日(指定日)の設定と問い合わせ</b>
+						</span>
+					</a>
+					<a id=":STARTDate?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">構文</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(コマンド)<br><br>(クエリ)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:RESERve:STARTDate no$,year,month,day<br><br>
+						:RESERve:STARTDate? no$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(応答)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						no$,year&lt;NR1&gt;,month&lt;NR1&gt;,day&lt;NR1&gt;<br>
+					</span>
+					<br>
+					no$ = NO1～NO10<br>year = 0～99(年)<br>month = 1～12(月)<br>day = 1～31(日)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">解説</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					指定した測定予約の開始日(指定日)を設定します。<br>指定した測定予約の現在の開始日(指定日)を返します。
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">例</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:RESERve:STARTDate NO1,20,1,2<br>:RESERve:STARTDate?<br>
+					</span>
+					(応答)&nbsp;&nbsp;<b>:RESERVE:STARTDATE NO1,20,1,2</b>&nbsp;&nbsp;(ヘッダが开の場合)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">注記</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">使用可能<br>条件</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":STARTTime">
+						<span class = "g_HeadTitle">
+							<b>測定予約の開始時間の設定と問い合わせ</b>
+						</span>
+					</a>
+					<a id=":STARTTime?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">構文</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(コマンド)<br><br>(クエリ)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:RESERve:STARTTime no$,hour,min<br><br>
+						:RESERve:STARTTime? no$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(応答)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						no$,hour&lt;NR1&gt;,min&lt;NR1&gt;<br>
+					</span>
+					<br>
+					no$ = NO1～NO10<br>hour = 0～23(時)<br>min = 0～59(分)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">解説</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					指定した測定予約の開始時間を設定します。<br>指定した測定予約の現在の開始時間を返します。
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">例</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:RESERve:STARTTime NO1,0,0<br>:RESERve:STARTTime?<br>
+					</span>
+					(応答)&nbsp;&nbsp;<b>:RESERVE:STARTTIME NO1,0,0</b>&nbsp;&nbsp;(ヘッダが开の場合)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">注記</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">使用可能<br>条件</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":STOPDate">
+						<span class = "g_HeadTitle">
+							<b>測定予約の停止日(定期)の設定と問い合わせ</b>
+						</span>
+					</a>
+					<a id=":STOPDate?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">構文</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(コマンド)<br><br>(クエリ)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:RESERve:STOPDate no$,year,month,day<br><br>
+						:RESERve:STOPDate? no$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(応答)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						no$,year&lt;NR1&gt;,month&lt;NR1&gt;,day&lt;NR1&gt;<br>
+					</span>
+					<br>
+					no$ = NO1～NO10<br>year = 0～99(年)<br>month = 1～12(月)<br>day = 1～31(日)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">解説</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					指定した測定予約の停止日(定期)を設定します。<br>指定した測定予約の現在の停止日(定期)を返します。
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">例</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:RESERve:STOPDate NO1,20,1,2<br>:RESERve:STOPDate?<br>
+					</span>
+					(応答)&nbsp;&nbsp;<b>:RESERVE:STOPDATE NO1,20,1,2</b>&nbsp;&nbsp;(ヘッダが开の場合)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">注記</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">使用可能<br>条件</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":STOPTime">
+						<span class = "g_HeadTitle">
+							<b>測定予約の停止時間の設定と問い合わせ</b>
+						</span>
+					</a>
+					<a id=":STOPTime?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">構文</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(コマンド)<br><br>(クエリ)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:RESERve:STOPTime no$,hour,min<br><br>
+						:RESERve:STOPTime? no$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(応答)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						no$,hour&lt;NR1&gt;,min&lt;NR1&gt;<br>
+					</span>
+					<br>
+					no$ = NO1～NO10<br>hour = 0～23(時)<br>min = 0～59(分)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">解説</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					指定した測定予約の停止時間を設定します。<br>指定した測定予約の現在の停止時間を返します。
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">例</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:RESERve:STOPTime NO1,0,0<br>:RESERve:STOPTime?<br>
+					</span>
+					(応答)&nbsp;&nbsp;<b>:RESERVE:STOPTIME NO1,0,0</b>&nbsp;&nbsp;(ヘッダが开の場合)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">注記</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">使用可能<br>条件</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":SWITch">
+						<span class = "g_HeadTitle">
+							<b>測定予約の有効／無効の設定と問い合わせ</b>
+						</span>
+					</a>
+					<a id=":SWITch?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">構文</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(コマンド)<br><br>(クエリ)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:RESERve:SWITch no$,A$ <br><br>
+						:RESERve:SWITch? no$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(応答)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						no$,A$<br>
+					</span>
+					<br>
+					no$ = NO1～NO10<br>A$ = 关, 开
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">解説</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					指定した測定予約の有効／無効を設定します。<br>指定した測定予約の現在の有効／無効を返します。
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">例</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:RESERve:SWITch NO1,开<br>:RESERve:SWITch? NO1<br>
+					</span>
+					(応答)&nbsp;&nbsp;<b>:RESERVE:SWITCH NO1,开</b>&nbsp;&nbsp;(ヘッダが开の場合)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">注記</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">使用可能<br>条件</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+</body>
+</html>

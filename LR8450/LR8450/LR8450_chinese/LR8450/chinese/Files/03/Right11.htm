@@ -1,0 +1,2564 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<title></title>
+	<style>
+	<!--
+		.m_td_set_001{
+			padding				: 5px;
+			color				: white;
+			font-size			: 9pt;
+			text-align			: center;
+			vertical-align		: middle;
+			border				: .5pt solid windowtext;
+			background			: black;
+		}
+
+		.m_td_set_002{
+			padding				: 5px;
+			font-size			: 9pt;
+			text-align			: justify;
+			vertical-align		: middle;
+			border				: .5pt solid windowtext;
+		}
+	-->
+	</style>
+</head>
+
+<body>
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle">
+				<p class = "g_p_0001">
+					Instrument memory (MEMory)
+				</p>
+			</td>
+		</tr>
+	</table>
+
+	<p class="MsoNormal"><br></p>
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":ADATa?">
+						<span class = "g_HeadTitle">
+							<b>Outputs data from memory. (ASCII)</b>
+						</span>
+					</a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:MEMory:ADATa? A<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						B1,B2,...&lt;NR1&gt;(Wave Calc Result = &lt;NR3&gt;)<br>
+					</span>
+					<br>
+					A = 1 to 2000(amount of output data)<br>
+					Bi = -32768 to 32767(Analog)<br>
+					Bi = 0 to 1000000000(Count, Revolve)<br>
+					Bi = 0 to 255(Logic, 报警)<br>
+					Bi = Wave Calc Result(Wave Calc)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					The number of data values specified by A are output from the memory channel and point set by the <a href="#:APOINt">:MEMory:APOINt</a>.<br>
+					The output point is incremented by the number of data values.<br><br>
+					Use the following formula to convert analog data values to physical quantities.<br>
+					physical quantities = (data value) &times; (voltage range) / (number of data per range)<br><br>
+					The number of data per range is shown in the table below.<br>
+				</p>
+
+				<blockquote>
+					<table style="border:0; border-collapse:collapse">
+						<tr>
+							<td class="m_td_set_001" colspan="2" style="border-right:.5pt solid white">Unit</td>
+							<td class="m_td_set_001" style="border-left:none;border-right:.5pt solid white">Mode</td>
+							<td class="m_td_set_001" style="border-left:none">Number of data per range<br>*The number of data from<br>0V to 1V in the 1V range</td>
+						</tr>
+						<tr>
+							<td class="m_td_set_002" rowspan="5">U8550/LR8530<br>U8552/LR8532</td>
+							<td class="m_td_set_002" rowspan="5">Voltage/Temp unit<br>30Ch Voltage/Temp unit</td>
+							<td class="m_td_set_002">Voltage(All range) *1-5V is the same as 10V</td>
+							<td class="m_td_set_002">20000</td>
+						</tr>
+						<tr>
+							<td class="m_td_set_002">Thermocouple(100&deg;C range)</td>
+							<td class="m_td_set_002">10000</td>
+						</tr>
+						<tr>
+							<td class="m_td_set_002">Thermocouple(500&deg;C range)</td>
+							<td class="m_td_set_002">10000</td>
+						</tr>
+						<tr>
+							<td class="m_td_set_002">Thermocouple(2000&deg;C range)</td>
+							<td class="m_td_set_002">20000</td>
+						</tr>
+						<tr>
+							<td class="m_td_set_002">Humidity(100%)</td>
+							<td class="m_td_set_002">1000</td>
+						</tr>
+						<tr>
+							<td class="m_td_set_002" rowspan="9">U8551/LR8531</td>
+							<td class="m_td_set_002" rowspan="9">Universal unit</td>
+							<td class="m_td_set_002">Voltage(All range) *1-5V is the same as 10V</td>
+							<td class="m_td_set_002">20000</td>
+						</tr>
+						<tr>
+							<td class="m_td_set_002">Thermocouple(100&deg;C range)</td>
+							<td class="m_td_set_002">10000</td>
+						</tr>
+						<tr>
+							<td class="m_td_set_002">Thermocouple(500&deg;C range)</td>
+							<td class="m_td_set_002">10000</td>
+						</tr>
+						<tr>
+							<td class="m_td_set_002">Thermocouple(2000&deg;C range)</td>
+							<td class="m_td_set_002">20000</td>
+						</tr>
+						<tr>
+							<td class="m_td_set_002">Humidity(100%)</td>
+							<td class="m_td_set_002">1000</td>
+						</tr>
+						<tr>
+							<td class="m_td_set_002">RTD(100&deg;C range)</td>
+							<td class="m_td_set_002">10000</td>
+						</tr>
+						<tr>
+							<td class="m_td_set_002">RTD(500&deg;C range)</td>
+							<td class="m_td_set_002">10000</td>
+						</tr>
+						<tr>
+							<td class="m_td_set_002">RTD(2000&deg;C range)</td>
+							<td class="m_td_set_002">20000</td>
+						</tr>
+						<tr>
+							<td class="m_td_set_002">Resistance(All range)</td>
+							<td class="m_td_set_002">20000</td>
+						</tr>
+						<tr>
+							<td class="m_td_set_002">U8553/LR8533</td>
+							<td class="m_td_set_002">High speed voltage unit</td>
+							<td class="m_td_set_002">Voltage(All range) *1-5V is the same as 10V</td>
+							<td class="m_td_set_002">20000</td>
+						</tr>
+						<tr>
+							<td class="m_td_set_002" rowspan="2">U8554/LR8534</td>
+							<td class="m_td_set_002" rowspan="2">Strain unit</td>
+							<td class="m_td_set_002">Voltage(All range)</td>
+							<td class="m_td_set_002">20000</td>
+						</tr>
+						<tr>
+							<td class="m_td_set_002">Strain</td>
+							<td class="m_td_set_002">20000</td>
+						</tr>
+					</table>
+				</blockquote>
+
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Count, Wave Calc returns a measurement value.<br><br>
+					The number of revolutions can be calculated by dividing the data value by the number of pulses per revolution set in <a href="../03/Right05.htm#:PCOUnt" target="_self">:UNIT:PCOUnt</a>.<br>
+					revolutions = data value / number of pulses per revolution<br><br>
+					The logic/alarm channel returns an integer representation of all channels (8 bits).<br>
+					(Output from the bottom bit to channel 1, channel 2...)<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:MEMory:APOINt CH1_1,0<br>:MEMory:ADATa? 10<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:MEMORY:ADATA 3176,3176,3176,3186,3186,3186,3186,3186,3198,3198</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					The correspondence between the value of A and the main unit notation is as follows.<br>
+
+					<blockquote>
+						<table style="border:0; border-collapse:collapse">
+							<tr>
+								<td class="m_td_set_001" style="border-right:.5pt solid white">Value of A</td>
+								<td class="m_td_set_001" style="border-left:none;border-right:.5pt solid white">Main unit notation</td>
+							</tr>
+							<tr>
+								<td class="m_td_set_002">32767</td>
+								<td class="m_td_set_002">＋OVER</td>
+							</tr>
+							<tr>
+								<td class="m_td_set_002">32768</td>
+								<td class="m_td_set_002">-OVER</td>
+							</tr>
+							<tr>
+								<td class="m_td_set_002">32766</td>
+								<td class="m_td_set_002">BURNOUT</td>
+							</tr>
+							<tr>
+								<td class="m_td_set_002">32765</td>
+								<td class="m_td_set_002">NODATA</td>
+							</tr>
+						</table>
+					</blockquote>
+
+					When recording 1,000,000 points data, the time required to send the command ":MEMory:ADATa? 2000" 500 times is about 12 seconds.<br>
+					(Running Microsoft Windows 10 Pro (Ver 1903) on a Intel(R) i7-9700F 3.00GHz CPU and 16 GB RAM).<br>
+					Please note that these values are for reference only, and depend on the actual data transfer speed of the LAN connection.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					The output point must be set to <a href="#:POINt">:MEMory:POINt</a>.<br>
+					Provided that the output point is lower than the amount of data stored.<br>
+					Provided that stored data is present.
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":AFETch?">
+						<span class = "g_HeadTitle">
+							<b>Output hold data. (ASCII)</b>
+						</span>
+					</a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:MEMory:AFETch? ch$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A&lt;NR1&gt;(Wave Calc Result = &lt;NR3&gt;)<br>
+					</span>
+					<br>
+					ch$ = <span class="ch_analog"></span>, <span class="ch_pulse"></span>, LOG, ALARM, <span class="ch_wcalc"></span><br>
+					A = -32768 to 32767(Analog)<br>
+					A = 0 to 1000000000(Count, Revolve)<br>
+					A = 0 to 255(Logic, 报警)<br>
+					A = Wave Calc Result(Wave Calc)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Returns the value of the channel specified by ch$ from the hold data captured by the <a href="#:GETReal">:MEMory:GETReal</a>.<br>
+					The relationship between the returned data value and the measured value is same as <a href="#:ADATa?">:MEMory:ADATa?</a>.<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:MEMory:GETReal<br>:MEMory:AFETch? CH1_1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:MEMORY:AFETCH 3176</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					If you have not run the <a href="#:GETReal">:MEMory:GETReal</a> before this command, it returns 32765 as a value indicating NODATA.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":AMAXPoint?">
+						<span class = "g_HeadTitle">
+							<b>Queries the end of data samples stored. (when longer data is stored than the inside memory)</b>
+						</span>
+					</a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:MEMory:AMAXPoint?<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A&lt;NR1&gt;<br>
+					</span>
+					<br>
+					A = 0(no data stored), 1 to
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Returns the end of data samples stored in the memory as a numerical value in NR1 format.<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:MEMory:AMAXPoint?<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:MEMORY:AMAXPOINT 800</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					It is not in a start operation.
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":APOINt">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the point in memory for output.(when longer data is stored than the inside memory)</b>
+						</span>
+					</a>
+					<a id=":APOINt?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:MEMory:APOINt ch$,A<br><br>
+						:MEMory:APOINt? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						ch$,A&lt;NR1&gt;<br>
+					</span>
+					<br>
+					ch$ = <span class="ch_analog"></span>, <span class="ch_pulse"></span>, LOG, ALARM, <span class="ch_wcalc"></span><br>
+					A = 0 to (number of storage data - 1)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the output point in memory.<br>
+					Returns the current output point in memory as an NR1 numerical value.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:MEMory:APOINt CH1_1,100<br>:MEMory:APOINt?<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:MEMORY:APOINT CH1_1,100</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					If there is no stored data, the read pointer cannot be set.<br>
+					Argument A can be set only to a value less than that returned by the <a href="#:AMAXPoint?">:MEMory:AMAXPoint?</a>.<br>
+					If the measurement data is longer than the internal memory, the data for the specified point may not be available.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":AREAL?">
+						<span class = "g_HeadTitle">
+							<b>Output real time data (ASCII)</b>
+						</span>
+					</a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:MEMory:AREAL? ch$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						ch$,A&lt;NR1&gt;(Wave Calc Result = &lt;NR3&gt;)<br>
+					</span>
+					<br>
+					ch$ = <span class="ch_analog"></span>, <span class="ch_pulse"></span>, LOG, ALARM, <span class="ch_wcalc"></span><br>
+					A = -32768 to 32767(Analog)<br>
+					A = 0 to 1000000000(Count, Revolve)<br>
+					A = 0 to 255(Logic, 报警)<br>
+					A = Wave Calc Result(Wave Calc)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Returns the final measurement of the channel designated by ch$.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:MEMory:AREAL? CH1_1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:MEMORY:AREAL CH1_1,3176</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Returns 32765 as a value indicating NODATA if following actions have not been performed have been performed before this command.<br>
+					&nbsp;&nbsp&bull;Measurements<br>
+					&nbsp;&nbsp&bull;Display Monitor 值s<br>
+					&nbsp;&nbsp&bull;Execute <a href="#:GETReal">:MEMory:GETReal</a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":BDATa?">
+						<span class = "g_HeadTitle">
+							<b>Binary transfer of stored data.</b>
+						</span>
+					</a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:MEMory:BDATa? A<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						#0&lt;binary data&gt;<br>
+					</span>
+					<br>
+					A = 1 to 5000 (Output number)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Outputs the data stored by a <a href="#:POINt">:MEMory:POINt</a> command specification in binary format.
+					The data format is big-endian.<br>
+					The output point is incremented by the number of data values.<br><br>
+					The read data is structured as follows:<br>
+					&nbsp;&nbsp;(1) Initially: "#0" (Indicates binary format)<br>
+					&nbsp;&nbsp;(2) After "#0", data in binary format is returned by the number of data specified in A.<br><br>
+					数据 sizes per point for each channel type are as follows:<br>
+					&nbsp;&nbsp;&bull;Analog, Logic, 报警:2byte<br>
+					&nbsp;&nbsp;&bull;Pulse:4byte<br>
+					&nbsp;&nbsp;&bull;Wave Calc:8byte<br>
+					(The response of the waveform calc channel is output in double-precision floating-point format (IEEE 754 format).)
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:MEMory:POINt CH1_1,0<br>:MEMory:BDATa? 10<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:MEMORY:BDATA #0...(binary data)</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Returns an error value if no storage data exists for the specified channel/output point.<br>
+					错误 values for each channel type are as follows.<br>
+					[Analog channel]<br>
+					0x7ffd(2byte)<br><br>
+					[Pulse channel]<br>
+					0x00000000(4byte)<br><br>
+					[Wave calc channel]<br>
+					0x7ff0000000000001(8byte)<br><br>
+					Binary data may include delimiter codes such as 0Ah or 0Dh.<br>
+					If the PC software misinterprets such codes as data terminators, the PC will not handle the data correctly, so the PC software should always read the number of words specified by A.<br>
+					A line feed code (LF or CR + LF) is not added at the end of the data.<br><br>
+					When recording 1,000,000 points data, the time required to send the command ":MEMory:BDATa? 5000" 200 times is about 2 seconds.<br>
+					(Running Microsoft Windows 10 Pro (Ver 1903) on a Intel(R) i7-9700F 3.00GHz CPU and 16 GB RAM).<br>
+					Please note that these values are for reference only, and depend on the actual data transfer speed of the LAN connection.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Provided that the output point is lower than the amount of data stored.<br>
+					Provided that stored data is present.
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":BFETch?">
+						<span class = "g_HeadTitle">
+							<b>Output hold data. (binary)</b>
+						</span>
+					</a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:MEMory:BFETch? ch$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A<br>
+					</span>
+					<br>
+					ch$ = <span class="ch_analog"></span>, <span class="ch_pulse"></span>, LOG, ALARM, <span class="ch_wcalc"></span>
+					<br>A = Binary data
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Returns the value of the channel specified by ch$ from the hold data captured by the <a href="#:GETReal">:MEMory:GETReal</a>.<br>
+					The relationship between the returned data value and the measured value is same as<a href="#:BDATa?">:MEMory:BDATa?</a>.<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:MEMory:GETReal<br>:MEMory:BFETch? CH1_1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:MEMORY:BFETCH (binary data)</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					If you have not run the <a href="#:GETReal">:MEMory:GETReal</a> before this command, it returns the error value for the specified channel.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":BREAL?">
+						<span class = "g_HeadTitle">
+							<b>Outputs real time data. (binary)</b>
+						</span>
+					</a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:MEMory:BREAL? ch$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						ch$,A<br>
+					</span>
+					<br>
+					ch$ = <span class="ch_analog"></span>, <span class="ch_pulse"></span>, LOG, ALARM, <span class="ch_wcalc"></span>
+					<br>A = Binary data
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Returns the final measurement of the channel designated by ch$.<br>
+					The relationship between the returned data value and the measured value is same as <a href="#:BDATa?">:MEMory:BDATa?</a>.<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:MEMory:BREAL? CH1_1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:MEMORY:BREAL (binary data)</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Returns the error value for the specified channel if following actions have not been performed have been performed before this command.<br>
+					&nbsp;&nbsp&bull;Measurements<br>
+					&nbsp;&nbsp&bull;Display Monitor 值s<br>
+					&nbsp;&nbsp&bull;Execute <a href="#:GETReal">:MEMory:GETReal</a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":CHSTore?">
+						<span class = "g_HeadTitle">
+							<b>Queries storage data existence for each channel.</b>
+						</span>
+					</a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:MEMory:CHSTore? ch$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						ch$,A$<br>
+					</span>
+					<br>
+					ch$ = <span class="ch_analog"></span>, <span class="ch_pulse"></span>, LOG, ALARM, <span class="ch_wcalc"></span><br>A$ = 关, 开
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Returns the presence or absence of storage data of the channel designated by ch$.<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:MEMory:CHSTore? CH1_1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:MEMORY:CHSTORE CH1_1,开</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":FCHSTore?">
+						<span class = "g_HeadTitle">
+							<b>Queries hold data existence for each channel.</b>
+						</span>
+					</a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:MEMory:FCHSTore? ch$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						ch$,A$<br>
+					</span>
+					<br>
+					ch$ = <span class="ch_analog"></span>, <span class="ch_pulse"></span>, LOG, ALARM, <span class="ch_wcalc"></span><br>A$ = 关, 开
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Returns the presence or absence of the hold data of the channel specified by ch$.<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:MEMory:FCHSTore? CH1_1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:MEMORY:FCHSTORE CH1_1,开</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":GETReal">
+						<span class = "g_HeadTitle">
+							<b>Captures hold data.</b>
+						</span>
+					</a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:MEMory:GETReal<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007"></td>
+			<td class = "g_td_0008" colspan = "2">
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Causes the instrument to acquire real-time measurement values on all channels and retains it as hold data.<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:MEMory:GETReal<br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":MAXPoint?">
+						<span class = "g_HeadTitle">
+							<b>Queries the number of data samples stored.</b>
+						</span>
+					</a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:MEMory:MAXPoint?<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A&lt;NR1&gt;<br>
+					</span>
+					<br>
+					A = number of data samples (0 = no data stored)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Returns the number of data samples stored in the memory as a numerical value in NR1 format.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:MEMory:MAXPoint?<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:MEMORY:MAXPOINT 2500</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":POINt">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the point in memory for output.</b>
+						</span>
+					</a>
+					<a id=":POINt?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:MEMory:POINt ch$,A<br><br>
+						:MEMory:POINt? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						ch$,A&lt;NR1&gt;<br>
+					</span>
+					<br>
+					ch$ = <span class="ch_analog"></span>, <span class="ch_pulse"></span>, LOG, ALARM, <span class="ch_wcalc"></span>
+					<br>A = 0 to 268435456(maximum at only 1 channel)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the output point in memory.<br>
+					Returns the current output point in memory as an NR1 numerical value.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:MEMory:POINt CH1_1,100<br>:MEMory:POINt?<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:MEMORY:POINT CH1_1,100</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					If there is no storage data, the output point cannot be set.<br>
+					The value that can be set for A is smaller than the value returned by <a href="#:MAXPoint?">:MEMory:MAXPoint?</a>.<br>
+					<!--<br>リアルタイム保存の場合は、波形表示画面の状態によってBで設定できる範囲が変わります。<br>また、Bの値は常にストレージデータの先頭からのポイントを表します。-->
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":TAFETch?">
+						<span class = "g_HeadTitle">
+							<b>Output hold data. (ASCII) (ALL storage channels in the Unit)</b>
+						</span>
+					</a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:MEMory:TAFETch? unit$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A1,A2,...&lt;NR1&gt;(Wave Calc Result = &lt;NR3&gt;)<br>
+					</span>
+					<br>
+					unit$ = <span class="unit"></span>, PLS&ALM, CALC1, CALC2<br>
+					Ax = -32768 to 32767(Analog)<br>
+					Ax = 0 to 1000000000(Count, Revolve)<br>
+					Ax = 0 to 255(Logic, 报警)<br>
+					Ax = Wave Calc Result(Wave Calc)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Returns the value of the channel containing the hold data of the specified unit (data type) among the hold data captured by the <a href="#:GETReal">:MEMory:GETReal</a>.<br>
+					The relationship between the returned data value and the measured value is same as <a href="#:ADATa?">:MEMory:ADATa?</a>.<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:MEMory:GETReal<br>:MEMory:TAFETch? UNIT1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:MEMORY:TAFETCH 3176,3176,3176,3186,3186,3186,3186,3186,3198,3198,3186,3186,3186,3198,3198</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					If you have not run the <a href="#:GETReal">:MEMory:GETReal</a> before this command, a command error is occur.<br>
+					If there is no channel with hold data in the specified unit, a command error will occur.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":TARCH?">
+						<span class = "g_HeadTitle">
+							<b>Outputs real time store channel. (ASCII)</b>
+						</span>
+					</a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:MEMory:TARCH? unit$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						ch1$,ch2$,...<br>
+					</span>
+					<br>
+					unit$ = <span class="unit"></span>, PLS&ALM, CALC1, CALC2<br>ch$ = <span class="ch_analog"></span>, <span class="ch_pulse"></span>, LOG, ALARM, <span class="ch_wcalc"></span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Returns the measurement 开 channel of the unit (data type) designated by unit$.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:MEMory:TARCH? UNIT1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:MEMORY:TARCH CH1_1,CH1_2,CH1_3,CH1_4,CH1_5,CH1_6,CH1_7,CH1_8,CH1_9,CH1_10,CH1_11,CH1_12,CH1_13,CH1_14,CH1_15</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":TAREAl?">
+						<span class = "g_HeadTitle">
+							<b>Outputs real time data (ASCII) (ALL storage channels in the Unit)</b>
+						</span>
+					</a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:MEMory:TAREAl? unit$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A1,A2,...&lt;NR1&gt;(Wave Calc Result = &lt;NR3&gt;)<br>
+					</span>
+					<br>
+					unit$ = <span class="unit"></span>, PLS&ALM, CALC1, CALC2<br>
+					Ax = -32768 to 32767(Analog)<br>
+					Ax = 0 to 1000000000(Count, Revolve)<br>
+					Ax = 0 to 255(Logic, 报警)<br>
+					Ax = Wave Calc Result(Wave Calc)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Returns the last storage data value of the measurement 开 channel of the unit (data type) designated by unit$.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:MEMory:TAREAl? UNIT1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:MEMORY:TAREAL 3176,3176,3176,3186,3186,3186,3186,3186,3198,3198,3186,3186,3186,3198,3198</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Returns 32765 as a value indicating NODATA if following actions have not been performed have been performed before this command.<br>
+					&nbsp;&nbsp&bull;Measurements<br>
+					&nbsp;&nbsp&bull;Display Monitor 值s<br>
+					&nbsp;&nbsp&bull;Execute <a href="#:GETReal">:MEMory:GETReal</a><br>
+					If there is no measurement 开 channel in the specified unit, NO_STORAGE is returned.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":TCHSTore?">
+						<span class = "g_HeadTitle">
+							<b>Queries storage data existence for each unit. (ALL storage channels in the Unit)</b>
+						</span>
+					</a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:MEMory:TCHSTore? unit$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						ch1$,ch2$,...<br>
+					</span>
+					<br>
+					unit$ = <span class="unit"></span>, PLS&ALM, CALC1, CALC2<br>ch$ = <span class="ch_analog"></span>, <span class="ch_pulse"></span>, LOG, ALARM, <span class="ch_wcalc"></span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Returns the presence or absence of storage data of the unit (data type) designated by unit$.<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:MEMory:TCHSTore? UNIT1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:MEMORY:TCHSTORE CH1_1,CH1_2,CH1_3,CH1_4,CH1_5,CH1_6,CH1_7,CH1_8,CH1_9,CH1_10,CH1_11,CH1_12,CH1_13,CH1_14,CH1_15</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":TFCHSTore?">
+						<span class = "g_HeadTitle">
+							<b>Queries hold data existence for each unit. (ALL storage channels in the Unit)</b>
+						</span>
+					</a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:MEMory:TFCHSTore? unit$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						ch1$,ch2$,...<br>
+					</span>
+					<br>
+					unit$ = <span class="unit"></span>, PLS&ALM, CALC1, CALC2<br>ch$ = <span class="ch_analog"></span>, <span class="ch_pulse"></span>, LOG, ALARM, <span class="ch_wcalc"></span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Returns the presence or absence of the hold data of the unit (data type) specified by unit$.<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:MEMory:TFCHSTore? UNIT1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:MEMORY:TFCHSTORE CH1_1,CH1_2,CH1_3,CH1_4,CH1_5,CH1_6,CH1_7,CH1_8,CH1_9,CH1_10,CH1_11,CH1_12,CH1_13,CH1_14,CH1_15</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":TOPPoint?">
+						<span class = "g_HeadTitle">
+							<b>Queries the top of data samples stored. (when longer data is stored than the inside memory)</b>
+						</span>
+					</a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:MEMory:TOPPoint?<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A&lt;NR1&gt;<br>
+					</span>
+					<br>
+					A = Top data number (0 = no data stored)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Returns the top of data samples stored in the memory as a numerical value in NR1 format.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:MEMory:TOPPoint?<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:MEMORY:TOPPOINT 100</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":TVFETch?">
+						<span class = "g_HeadTitle">
+							<b>Output hold data. (measured value) (ALL storage channels in the Unit)</b>
+						</span>
+					</a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:MEMory:TVFETch? unit$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A1,A2,...&lt;NR3&gt;<br>
+					</span>
+					<br>
+					unit$ = <span class="unit"></span>, PLS&ALM, CALC1, CALC2<br>Ax = measured value
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Returns the measured value of the channel containing the hold data of the specified unit (data type) among the hold data captured by the <a href="#:GETReal">:MEMory:GETReal</a>.<br>
+					See the description of <a href="#:VDATa?">:MEMory:VDATa?</a> For the contents of the returned data.<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:MEMory:GETReal<br>:MEMory:TVFETch? UNIT1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:MEMORY:TVFETCH +1.00000E-02,+2.00000E-02,+3.00000E-02,+4.00000E-02,+5.00000E-02,+6.00000E-02,+7.00000E-02,+8.00000E-02,+1.00000E-02,+2.00000E-02,+3.00000E-02,+4.00000E-02,+5.00000E-02,+6.00000E-02,+7.00000E-02</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					If you have not run the <a href="#:GETReal">:MEMory:GETReal</a> before this command, a command error is occur.<br>
+					If there is no channel with hold data in the specified unit, a command error will occur.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":TVRCH?">
+						<span class = "g_HeadTitle">
+							<b>Outputs real time store channel. (measured value) (ALL storage channels in the Unit) </b>
+						</span>
+					</a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:MEMory:TVRCH? unit$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						ch1$,ch2$,...<br>
+					</span>
+					<br>
+					unit$ = <span class="unit"></span>, PLS&ALM, CALC1, CALC2<br>ch$ = <span class="ch_analog"></span>, <span class="ch_pulse"></span>, LOG, ALARM, <span class="ch_wcalc"></span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Returns the measurement 开 channel of the unit (data type) designated by unit$. (Same as <a href="#:TARCH?">:MEMory:TARCH?</a>)<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:MEMory:TVRCH? UNIT1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:MEMORY:TVRCH CH1_1,CH1_2,CH1_3,CH1_4,CH1_5,CH1_6,CH1_7,CH1_8,CH1_9,CH1_10,CH1_11,CH1_12,CH1_13,CH1_14,CH1_15</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":TVREAl?">
+						<span class = "g_HeadTitle">
+							<b>Outputs real time data. (measured value) (ALL storage channels in the Unit)</b>
+						</span>
+					</a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:MEMory:TVREAl? unit$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A1,A2,...&lt;NR3&gt;<br>
+					</span>
+					<br>
+					unit$ = <span class="unit"></span>, PLS&ALM, CALC1, CALC2<br>Ax = measured value
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Returns the last storage data measured value of the measurement 开 channel of the unit (data type) designated by unit$.<br>
+					See the description of <a href="#:VDATa?">:MEMory:VDATa?</a> For the contents of the returned data.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:MEMory:TVREAl? UNIT1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:MEMORY:TVREAL +1.00000E-02,+2.00000E-02,+3.00000E-02,+4.00000E-02,+5.00000E-02,+6.00000E-02,+7.00000E-02,+8.00000E-02,+1.00000E-02,+2.00000E-02,+3.00000E-02,+4.00000E-02,+5.00000E-02,+6.00000E-02,+7.00000E-02</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Returns 9.99999+E99 as a value indicating NODATA if following actions have not been performed have been performed before this command.<br>
+					&nbsp;&nbsp&bull;Measurements<br>
+					&nbsp;&nbsp&bull;Display Monitor 值s<br>
+					&nbsp;&nbsp&bull;Execute <a href="#:GETReal">:MEMory:GETReal</a><br>
+					If there is no measurement 开 channel in the specified unit, NO_STORAGE is returned.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":VDATa?">
+						<span class = "g_HeadTitle">
+							<b>Output voltage data from memory.</b>
+						</span>
+					</a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:MEMory:VDATa? A<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						B1,B2,...&lt;NR3&gt;<br>
+					</span>
+					<br>
+					A = 1 to 1000<br>Bi = measured value<br>
+					<br>
+					The number of decimal places depends on the specified channel.<br>
+					[Analog channel]<br>
+					5 decimal places<br>
+					<br>
+					[Pulse channel]<br>
+					9 decimal places<br>
+					<br>
+					[Wave calc channel]<br>
+					9 decimal places<br>
+					<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					The number of measured values specified by A are output as voltage values from the memory channel and point set by the <a href="#:POINt">:MEMory:POINt</a>.<br>
+					The output point is incremented by the number of data values.<br>
+					When scaling, the scaled values are output.<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:MEMory:POINt CH1_1,0<br>:MEMory:VDATa? 2<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:MEMORY:VDATA +5.00000E-05,+4.00000E-05</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Returns 9.99999+E99 as a error value if no storage data exists for the specified channel/output point.<br><br>
+					When recording 1,000,000 points data, the time required to send the command ":MEMory:VDATa? 1000" 1000 times is about 14 seconds.<br>
+					(Running Microsoft Windows 10 Pro (Ver 1903) on a Intel(R) i7-9700F 3.00GHz CPU and 16 GB RAM).<br>
+					Please note that these values are for reference only, and depend on the actual data transfer speed of the LAN connection.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					The output point must be set to <a href="#:POINt">:MEMory:POINt</a>.<br>
+					Provided that the output point is lower than the amount of data stored.<br>
+					Provided that stored data is present.
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":VFETch?">
+						<span class = "g_HeadTitle">
+							<b>Output hold data. (measured value)</b>
+						</span>
+					</a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:MEMory:VFETch? ch$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A&lt;NR3&gt;<br>
+					</span>
+					<br>
+					ch$ = <span class="ch_analog"></span>, <span class="ch_pulse"></span>, LOG, ALARM, <span class="ch_wcalc"></span><br>A = measured value
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Returns the measured value of the channel specified by ch$ from the hold data captured by the <a href="#:GETReal">:MEMory:GETReal</a>.<br>
+					The relationship between the returned data value and the measured value is same as <a href="#:VDATa?">:MEMory:VDATa?</a>.<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:MEMory:GETReal<br>:MEMory:VFETch? CH1_1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:MEMORY:VFETCH +1.23000E-02</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					If you have not run the <a href="#:GETReal">:MEMory:GETReal</a> before this command, it returns 9.99999+E99 as a error value.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":VREAl?">
+						<span class = "g_HeadTitle">
+							<b>Outputs real time data. (measured value)</b>
+						</span>
+					</a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:MEMory:VREAL? ch$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A&lt;NR3&gt;<br>
+					</span>
+					<br>
+					ch$ = <span class="ch_analog"></span>, <span class="ch_pulse"></span>, LOG, ALARM, <span class="ch_wcalc"></span><br>A = measured value
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Returns the final measurement of the channel designated by ch$.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:MEMory:VREAL? CH1_1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:MEMORY:VREAL +1.23000E-02</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Returns 9.99999+E99 as a value indicating NODATA if following actions have not been performed have been performed before this command.<br>
+					&nbsp;&nbsp&bull;Measurements<br>
+					&nbsp;&nbsp&bull;Display Monitor 值s<br>
+					&nbsp;&nbsp&bull;Execute <a href="#:GETReal">:MEMory:GETReal</a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+</body>
+</html>

@@ -1,0 +1,2207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<title></title>
+	<style>
+	<!--
+	-->
+	</style>
+</head>
+
+<body>
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle">
+				<p class = "g_p_0001">
+					触发 (TRIGger)
+				</p>
+			</td>
+		</tr>
+	</table>
+
+	<p class="MsoNormal"><br></p>
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":DETECTDate?">
+						<span class = "g_HeadTitle">
+							<b>Queries the date for trigger detection.</b>
+						</span>
+					</a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:TRIGger:DETECTDate?<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						year&lt;NR1&gt;,month&lt;NR1&gt;,day&lt;NR1&gt;<br>
+					</span>
+					<br>
+					year = 00 to 99 (year)<br>month = 01 to 12 (month)<br>day = 01 to 31 (day)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Returns the setting for the date for trigger detection as a numerical value in NR1 format.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:TRIGger:DETECTDate?<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:TRIGGER:DETECTDATE 19,12,26</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Returns 00,00,00 if no storage data exists.<br>
+					Returns the measurement start date if the start trigger is 关.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":DETECTTime?">
+						<span class = "g_HeadTitle">
+							<b>Queries the time point for trigger detection.</b>
+						</span>
+					</a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:TRIGger:DETECTTime?<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						hour&lt;NR1&gt;,min&lt;NR1&gt;,sec&lt;NR1&gt;,ms&lt;NR1&gt;<br>
+					</span>
+					<br>
+					hour = 00 to 23 (hour)<br>min = 00 to 59 (min)<br>sec = 00 to 59 (sec)<br>ms = 000 to 999 (ms)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Returns the setting for the time point for trigger
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:TRIGger:DETECTTime?<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:TRIGGER:DETECTTIME 01,02,03,004</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Returns 00,00,00,000 if no storage data exists.<br>
+					Returns the measurement start time if the start trigger is 关.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":MODE">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the trigger mode.</b>
+						</span>
+					</a>
+					<a id=":MODE?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:TRIGger:MODE A$<br><br>
+						:TRIGger:MODE? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = SINGle, REPEat
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the repetitive recording.<br>
+					Returns the current repetitive recording as character data.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>SINGle</b></td><td class="g_td_0013">&nbsp;repeat off</td></tr><tr><td class="g_td_0013"><b>REPEat</b></td><td class="g_td_0013">&nbsp;repeat on</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:TRIGger:MODE REPEat<br>:TRIGger:MODE?<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:TRIGGER:MODE REPEAT</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":PRETrig">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the pre-trigger.</b>
+						</span>
+					</a>
+					<a id=":PRETrig?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:TRIGger:PRETrig day,hour,min,sec<br><br>
+						:TRIGger:PRETrig?<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						day&lt;NR1&gt;,hour&lt;NR1&gt;,min&lt;NR1&gt;,sec&lt;NR1&gt;<br>
+					</span>
+					<br>
+					day = 0 to 99(day)<br>hour = 0 to 23(hour)<br>min = 0 to 59(min)<br>sec = 0 to 59(sec)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets pre-trigger value to a numerical value.<br>
+					Returns the current pre-trigger value as an NR1 numerical value.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:TRIGger:PRETrig 0,0,0,10<br>:TRIGger:PRETrig?<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:TRIGGER:PRETRIG 0,0,0,10</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					The setting of pre-trigger be limited by a set value of <a href="../03/Right04.htm#:SAMPle" target="_self">recording interval</a>.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					When the <a href="#:TIMIng">trigger timing</a> is other than STOP.
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":SET">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the trigger use setting.</b>
+						</span>
+					</a>
+					<a id=":SET?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:TRIGger:SET A$<br><br>
+						:TRIGger:SET? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = 关, 开
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the trigger use setting.<br>
+					Returns the current trigger use setting as character data.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>OFF</b></td><td class="g_td_0013">&nbsp;Disbled</td></tr><tr><td class="g_td_0013"><b>ON</b></td><td class="g_td_0013">&nbsp;Enabled</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:TRIGger:SET 开<br>:TRIGger:SET?<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:TRIGGER:SET 开</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Depending on this setting, the <a href="../03/Right10.htm#:EXT:IO3:KIND" target="_self">input type of external input terminal 3</a> may be changed.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":SOURce">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the start trigger logical operator (AND/OR).</b>
+						</span>
+					</a>
+					<a id=":SOURce?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:TRIGger:SOURce A$<br><br>
+						:TRIGger:SOURce?<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = OR, AND
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the AND/OR logical operator for combining start trigger sources.<br>
+					Returns the current setting of the start trigger AND/OR logical operator as character data.
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>AND</b></td><td class="g_td_0013">&nbsp;Logical product</td></tr>
+					<tr><td class="g_td_0013"><b>OR</b></td><td class="g_td_0013">&nbsp;Logical sum</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:TRIGger:SOURce AND<br>:TRIGger:SOURce?<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:TRIGGER:SOURCE AND</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":SSOURce">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the stop trigger logical operator (AND/OR).</b>
+						</span>
+					</a>
+					<a id=":SSOURce?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:TRIGger:SSOURce A$<br><br>
+						:TRIGger:SSOURce?<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = OR, AND
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the AND/OR logical operator for combining stop trigger sources.<br>
+					Returns the current setting of the stop trigger AND/OR logical operator as character data.
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>AND</b></td><td class="g_td_0013">&nbsp;Logical product</td></tr>
+					<tr><td class="g_td_0013"><b>OR</b></td><td class="g_td_0013">&nbsp;Logical sum</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:TRIGger:SSOURce AND<br>:TRIGger:SSOURce?<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:TRIGGER:SSOURCE AND</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":TIMEr">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the interval trigger.</b>
+						</span>
+					</a>
+					<a id=":TIMEr?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:TRIGger:TIMEr A$<br><br>
+						:TRIGger:TIMEr? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = 关, OR, AND
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the interval trigger.<br>
+					Returns the current interval trigger setting as character data.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>OFF</b></td><td class="g_td_0013">&nbsp;Disabled</td></tr>
+					<tr><td class="g_td_0013"><b>OR</b></td><td class="g_td_0013">&nbsp;Logical sum</td></tr>
+					<tr><td class="g_td_0013"><b>AND</b></td><td class="g_td_0013">&nbsp;Logical product</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:TRIGger:TIMEr OR<br>:TRIGger:TIMEr?<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:TRIGGER:TIMER OR</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":TIMIng">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the trigger timing.</b>
+						</span>
+					</a>
+					<a id=":TIMIng?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:TRIGger:TIMIng A$<br><br>
+						:TRIGger:TIMIng? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = START, STOP, S_S
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the trigger timing.<br>
+					Returns the trigger timing as character data.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>START</b></td><td class="g_td_0013">&nbsp;Start trigger</td></tr>
+					<tr><td class="g_td_0013"><b>STOP</b></td><td class="g_td_0013">&nbsp;Stop trigger</td></tr>
+					<tr><td class="g_td_0013"><b>S_S</b></td><td class="g_td_0013">&nbsp;Start &amp; Stop trigger</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:TRIGger:TIMIng START<br>:TRIGger:TIMIng?<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:TRIGGER:TIMING START</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Depending on this setting, the <a href="../03/Right10.htm#:EXT:IO3:KIND" target="_self">input type of external input terminal 3</a> may be changed.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":TMINTvl">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the time interval for the interval trigger.</b>
+						</span>
+					</a>
+					<a id=":TMINTvl?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:TRIGger:TMINTvl day,hour,min,sec<br><br>
+						:TRIGger:TMINTvl?<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						day&lt;NR1&gt;,hour&lt;NR1&gt;,min&lt;NR1&gt;,sec&lt;NR1&gt;<br>
+					</span>
+					<br>
+					day = 0 to 99 (day)<br>hour = 0 to 23 (hour)<br>min = 0 to 59 (min)<br>sec = 0 to 59 (sec)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the time interval for the interval trigger.<br>
+					Returns the current setting for the interval trigger time interval as NR1 numerical values.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:TRIGger:TMINTvl 1,20,30,00<br>:TRIGger:TMINTvl?<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:TRIGGER:TMINTVL 1,20,30,00</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					:TRIGger:TMINTvl 0,0,0,0 can not be set.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":ANALog:STARt:KIND">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the type of trigger.</b>
+						</span>
+					</a>
+					<a id=":ANALog:STARt:KIND?"></a><a id=":ANALog:STOP:KIND"></a><a id=":ANALog:STOP:KIND?"></a>
+					<a id=":CALCulate:STARt:KIND"><a id=":CALCulate:STARt:KIND?"></a><a id=":CALCulate:STOP:KIND"></a><a id=":CALCulate:STOP:KIND?"></a>
+					<a id=":PULSe:STARt:KIND"></a><a id=":PULSe:STARt:KIND?"></a><a id=":PULSe:STOP:KIND"></a><a id=":PULSe:STOP:KIND?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br><br><br><br><br><br><br><br><br><br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<br>
+					[Analog 通道 Trigger]<br>
+					<span style="color:red;font-weight:bold">
+						:TRIGger:ANALog:STARt:KIND ch$,A$ (Start Trigger)<br>
+						:TRIGger:ANALog:STOP:KIND ch$,A$ (Stop Trigger)<br><br>
+					</span>
+					[Waveform Calculation Trigger]<br>
+					<span style="color:red;font-weight:bold">
+						:TRIGger:CALCulate:STARt:KIND w$,A$ (Start Trigger)<br>
+						:TRIGger:CALCulate:STOP:KIND w$,A$ (Stop Trigger)<br><br>
+					</span>
+					[Pulse 通道 Trigger]<br>
+					<span style="color:red;font-weight:bold">
+						:TRIGger:PULSe:STARt:KIND pls$,A$ (Start Trigger)<br>
+						:TRIGger:PULSe:STOP:KIND pls$,A$ (Stop Trigger)<br><br>
+					</span>
+					[Analog 通道 Trigger]<br>
+					<span style="color:red;font-weight:bold">
+						:TRIGger:ANALog:STARt:KIND? ch$ (Start Trigger)<br>
+						:TRIGger:ANALog:STOP:KIND? ch$ (Stop Trigger)<br><br>
+					</span>
+					[Waveform Calculation Trigger]<br>
+					<span style="color:red;font-weight:bold">
+						:TRIGger:CALCulate:STARt:KIND? w$ (Start Trigger)<br>
+						:TRIGger:CALCulate:STOP:KIND? w$ (Stop Trigger)<br><br>
+					</span>
+					[Pulse 通道 Trigger]<br>
+					<span style="color:red;font-weight:bold">
+						:TRIGger:PULSe:STARt:KIND? pls$ (Start Trigger)<br>
+						:TRIGger:PULSe:STOP:KIND? pls$ (Stop Trigger)<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					[Analog 通道 Trigger]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						ch$,A$<br>
+					</span>
+					<br>
+					[Waveform Calculation Trigger]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						w$,A$<br>
+					</span>
+					<br>
+					[Pulse 通道 Trigger]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						pls$,A$<br>
+					</span>
+					<br>
+					ch$ = <span class="ch_analog"></span><br>w$ = <span class="ch_wcalc"></span><br>pls$ = <span class="ch_pulse"></span><br>A$ = 关, LEVEL, WINDOW
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the type of trigger for the channel designated by ch$/w$/pls$.<br>
+					Returns as character data the type of the current trigger for the channel designated by ch$/w$/pls$.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>OFF</b></td><td class="g_td_0013">&nbsp;</td></tr>
+					<tr><td class="g_td_0013"><b>LEVEL</b></td><td class="g_td_0013">&nbsp;Level trigger</td></tr>
+					<tr><td class="g_td_0013"><b>WINDOW</b></td><td class="g_td_0013">&nbsp;Window trigger</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:TRIGger:ANALog:STARt:KIND CH1_1,LEVEl<br>:TRIGger:ANALog:STARt:KIND? CH1_1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:TRIGGER:ANALOG:START:KIND CH1_1,LEVEL</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					It is also possible to set and query using the following conventional commands.<br>
+					:TRIGger:KIND ch$,A$ / :TRIGger:KIND? ch$<br>
+					:TRIGger:SKIND ch$,A$ / :TRIGger:SKIND? ch$<br>
+					:TRIGger:WKIND w$,A$ / :TRIGger:WKIND? w$<br>
+					:TRIGger:SWKIND w$,A$ / :TRIGger:SWKIND? w$<br>
+					:TRIGger:PKIND pls$,A$ / :TRIGger:PKIND? pls$<br>
+					:TRIGger:SPKIND pls$,A$ / :TRIGger:SPKIND? pls$<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":ANALog:STARt:LEVEl">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries trigger level of the level trigger.</b>
+						</span>
+					</a>
+					<a id=":ANALog:STARt:LEVEl?"></a><a id=":ANALog:STOP:LEVEl"></a><a id=":ANALog:STOP:LEVEl?"></a>
+					<a id=":CALCulate:STARt:LEVEl"></a><a id=":CALCulate:STARt:LEVEl?"></a><a id=":CALCulate:STOP:LEVEl"></a><a id=":CALCulate:STOP:LEVEl?"></a>
+					<a id=":PULSe:STARt:LEVEl"></a><a id=":PULSe:STARt:LEVEl?"></a><a id=":PULSe:STOP:LEVEl"></a><a id=":PULSe:STOP:LEVEl?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br><br><br><br><br><br><br><br><br><br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<br>
+					[Analog 通道 Trigger]<br>
+					<span style="color:red;font-weight:bold">
+						:TRIGger:ANALog:STARt:LEVEl ch$,A (Start Trigger)<br>
+						:TRIGger:ANALog:STOP:LEVEl ch$,A (Stop Trigger)<br><br>
+					</span>
+					[Waveform Calculation Trigger]<br>
+					<span style="color:red;font-weight:bold">
+						:TRIGger:CALCulate:STARt:LEVEl w$,A (Start Trigger)<br>
+						:TRIGger:CALCulate:STOP:LEVEl w$,A (Stop Trigger)<br><br>
+					</span>
+					[Pulse 通道 Trigger]<br>
+					<span style="color:red;font-weight:bold">
+						:TRIGger:PULSe:STARt:LEVEl pls$,A (Start Trigger)<br>
+						:TRIGger:PULSe:STOP:LEVEl pls$,A (Stop Trigger)<br><br>
+					</span>
+					[Analog 通道 Trigger]<br>
+					<span style="color:red;font-weight:bold">
+						:TRIGger:ANALog:STARt:LEVEl? ch$ (Start Trigger)<br>
+						:TRIGger:ANALog:STOP:LEVEl? ch$ (Stop Trigger)<br><br>
+					</span>
+					[Waveform Calculation Trigger]<br>
+					<span style="color:red;font-weight:bold">
+						:TRIGger:CALCulate:STARt:LEVEl? w$ (Start Trigger)<br>
+						:TRIGger:CALCulate:STOP:LEVEl? w$ (Stop Trigger)<br><br>
+					</span>
+					[Pulse 通道 Trigger]<br>
+					<span style="color:red;font-weight:bold">
+						:TRIGger:PULSe:STARt:LEVEl? pls$ (Start Trigger)<br>
+						:TRIGger:PULSe:STOP:LEVEl? pls$ (Stop Trigger)<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					[Analog 通道 Trigger]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						ch$,A&lt;NR3&gt; (3 decimal places)<br>
+					</span>
+					<br>
+					[Waveform Calculation Trigger]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						w$,A&lt;NR3&gt; (4 decimal places)<br>
+					</span>
+					<br>
+					[Pulse 通道 Trigger]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						pls$,A&lt;NR3&gt; (9 decimal places)<br>
+					</span>
+					<br>
+					ch$ = <span class="ch_analog"></span><br>w$ = <span class="ch_wcalc"></span><br>pls$ = <span class="ch_pulse"></span><br>
+					[Analog 通道 Trigger]<br>
+					A = Configurable Range : (measurement range)&times;(&plusmn;1.5), Minimum Resolution : (measurement range)&times;(1/1000)<br>
+					[Waveform Calculation Trigger]<br>
+					A = -9.9999E+29 to 9.9999E+29<br>
+					[Pulse 通道 Trigger]<br>
+					A = 0 to 1000000000(count), 0 to 15000(r/s), 0 to 900000(r/min)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the trigger level of the level trigger of the channel designated by ch$/w$/pls$.<br>
+					Returns as an NR3 numerical value the current trigger level of the channel designated by ch$/w$/pls$.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:TRIGger:ANALog:STARt:LEVEl CH1_1,0.1<br>:TRIGger:ANALog:STARt:LEVEl? CH1_1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:TRIGGER:ANALOG:START:LEVEL CH1_1,+1.000E-01</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					If you enter a value greater than the configurable limit, the maximum value is set.<br>
+					If you enter a value less than the configurable lower limit, the minimum value is set.<br>
+					It is also possible to set and query using the following conventional commands.<br>
+					:TRIGger:LEVEl ch$,A / :TRIGger:LEVEl? ch$<br>
+					:TRIGger:SLEVEl ch$,A / :TRIGger:SLEVEl? ch$<br>
+					:TRIGger:WLEVEl w$,A / :TRIGger:WLEVEl? w$<br>
+					:TRIGger:SWLEVEl w$,A / :TRIGger:SWLEVEl? w$<br>
+					:TRIGger:PLEVEl pls$,A / :TRIGger:PLEVEl? pls$<br>
+					:TRIGger:SPLEVEl pls$,A / :TRIGger:SPLEVEl? pls$<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					The <a href="#:ANALog:STARt:KIND">type of trigger</a> that can be set is Level Trigger.
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":ANALog:STARt:LOWEr">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the lower limit level for a window trigger.</b>
+						</span>
+					</a>
+					<a id=":ANALog:STARt:LOWEr?"></a><a id=":ANALog:STOP:LOWEr"></a><a id=":ANALog:STOP:LOWEr?"></a>
+					<a id=":CALCulate:STARt:LOWEr"></a><a id=":CALCulate:STARt:LOWEr?"></a><a id=":CALCulate:STOP:LOWEr"></a><a id=":CALCulate:STOP:LOWEr?"></a>
+					<a id=":PULSe:STARt:LOWEr"></a><a id=":PULSe:STARt:LOWEr?"></a><a id=":PULSe:STOP:LOWEr"></a><a id=":PULSe:STOP:LOWEr?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br><br><br><br><br><br><br><br><br><br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<br>
+					[Analog 通道 Trigger]<br>
+					<span style="color:red;font-weight:bold">
+						:TRIGger:ANALog:STARt:LOWEr ch$,A (Start Trigger)<br>
+						:TRIGger:ANALog:STOP:LOWEr ch$,A (Stop Trigger)<br><br>
+					</span>
+					[Waveform Calculation Trigger]<br>
+					<span style="color:red;font-weight:bold">
+						:TRIGger:CALCulate:STARt:LOWEr w$,A (Start Trigger)<br>
+						:TRIGger:CALCulate:STOP:LOWEr w$,A (Stop Trigger)<br><br>
+					</span>
+					[Pulse 通道 Trigger]<br>
+					<span style="color:red;font-weight:bold">
+						:TRIGger:PULSe:STARt:LOWEr pls$,A (Start Trigger)<br>
+						:TRIGger:PULSe:STOP:LOWEr pls$,A (Stop Trigger)<br><br>
+					</span>
+					[Analog 通道 Trigger]<br>
+					<span style="color:red;font-weight:bold">
+						:TRIGger:ANALog:STARt:LOWEr? ch$ (Start Trigger)<br>
+						:TRIGger:ANALog:STOP:LOWEr? ch$ (Stop Trigger)<br><br>
+					</span>
+					[Waveform Calculation Trigger]<br>
+					<span style="color:red;font-weight:bold">
+						:TRIGger:CALCulate:STARt:LOWEr? w$ (Start Trigger)<br>
+						:TRIGger:CALCulate:STOP:LOWEr? w$ (Stop Trigger)<br><br>
+					</span>
+					[Pulse 通道 Trigger]<br>
+					<span style="color:red;font-weight:bold">
+						:TRIGger:PULSe:STARt:LOWEr? pls$ (Start Trigger)<br>
+						:TRIGger:PULSe:STOP:LOWEr? pls$ (Stop Trigger)<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					[Analog 通道 Trigger]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						ch$,A&lt;NR3&gt; (3 decimal places)<br>
+					</span>
+					<br>
+					[Waveform Calculation Trigger]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						w$,A&lt;NR3&gt; (4 decimal places)<br>
+					</span>
+					<br>
+					[Pulse 通道 Trigger]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						pls$,A&lt;NR3&gt; (9 decimal places)<br>
+					</span>
+					<br>
+					ch$ = <span class="ch_analog"></span><br>w$ = <span class="ch_wcalc"></span><br>pls$ = <span class="ch_pulse"></span>
+					<br>
+					[Analog 通道 Trigger]<br>
+					A = Configurable Range : (measurement range)&times;(&plusmn;1.5), Minimum Resolution : (measurement range)&times;(1/1000)<br>
+					[Waveform Calculation Trigger]<br>
+					A = -9.9999E+29 to 9.9999E+29<br>
+					[Pulse 通道 Trigger]<br>
+					A = 0 to 1000000000(count), 0 to 15000(r/s), 0 to 900000(r/min)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the lower limit level of the window trigger of the channel designated by ch$/w$/pls$ as a voltage value.<br>
+					Returns the current lower limit level of the window trigger as an NR3 numerical value of the channel designated by ch$/w$/pls$.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:TRIGger:ANALog:STARt:LOWEr CH1_1,-0.5<br>:TRIGger:ANALog:STARt:LOWEr? CH1_1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:TRIGGER:ANALOG:START:LOWER CH1_1,-5.000E-01</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					You cannot enter a value greater than or equal to the <a href="#:ANALog:STARt:UPPEr">upper limit level of the window trigger</a>.<br>
+					If you enter a value greater than the configurable limit, the maximum value is set.<br>
+					If you enter a value less than the configurable lower limit, the minimum value is set.<br>
+					It is also possible to set and query using the following conventional commands.<br>
+					:TRIGger:LOWEr ch$,A / :TRIGger:LOWEr? ch$<br>
+					:TRIGger:SLOWEr ch$,A / :TRIGger:SLOWEr? ch$<br>
+					:TRIGger:WLOWEr w$,A / :TRIGger:WLOWEr? w$<br>
+					:TRIGger:SWLOWEr w$,A / :TRIGger:SWLOWEr? w$<br>
+					:TRIGger:PLOWEr pls$,A / :TRIGger:PLOWEr? pls$<br>
+					:TRIGger:SPLOWEr pls$,A / :TRIGger:SPLOWEr? pls$<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					The <a href="#:ANALog:STARt:KIND">type of trigger</a> that can be set is Window Trigger.
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":ANALog:STARt:SIDE">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the window trigger direction (side).</b>
+						</span>
+					</a>
+					<a id=":ANALog:STARt:SIDE?"></a><a id=":ANALog:STOP:SIDE"></a><a id=":ANALog:STOP:SIDE?"></a>
+					<a id=":CALCulate:STARt:SIDE"></a><a id=":CALCulate:STARt:SIDE?"></a><a id=":CALCulate:STOP:SIDE"></a><a id=":CALCulate:STOP:SIDE?"></a>
+					<a id=":PULSe:STARt:SIDE"></a><a id=":PULSe:STARt:SIDE?"></a><a id=":PULSe:STOP:SIDE"></a><a id=":PULSe:STOP:SIDE?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br><br><br><br><br><br><br><br><br><br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<br>
+					[Analog 通道 Trigger]<br>
+					<span style="color:red;font-weight:bold">
+						:TRIGger:ANALog:STARt:SIDE ch$,A$ (Start Trigger)<br>
+						:TRIGger:ANALog:STOP:SIDE ch$,A$ (Stop Trigger)<br><br>
+					</span>
+					[Waveform Calculation Trigger]<br>
+					<span style="color:red;font-weight:bold">
+						:TRIGger:CALCulate:STARt:SIDE w$,A$ (Start Trigger)<br>
+						:TRIGger:CALCulate:STOP:SIDE w$,A$ (Stop Trigger)<br><br>
+					</span>
+					[Pulse 通道 Trigger]<br>
+					<span style="color:red;font-weight:bold">
+						:TRIGger:PULSe:STARt:SIDE pls$,A$ (Start Trigger)<br>
+						:TRIGger:PULSe:STOP:SIDE pls$,A$ (Stop Trigger)<br><br>
+					</span>
+					[Analog 通道 Trigger]<br>
+					<span style="color:red;font-weight:bold">
+						:TRIGger:ANALog:STARt:SIDE? ch$ (Start Trigger)<br>
+						:TRIGger:ANALog:STOP:SIDE? ch$ (Stop Trigger)<br><br>
+					</span>
+					[Waveform Calculation Trigger]<br>
+					<span style="color:red;font-weight:bold">
+						:TRIGger:CALCulate:STARt:SIDE? w$ (Start Trigger)<br>
+						:TRIGger:CALCulate:STOP:SIDE? w$ (Stop Trigger)<br><br>
+					</span>
+					[Pulse 通道 Trigger]<br>
+					<span style="color:red;font-weight:bold">
+						:TRIGger:PULSe:STARt:SIDE? pls$ (Start Trigger)<br>
+						:TRIGger:PULSe:STOP:SIDE? pls$ (Stop Trigger)<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					[Analog 通道 Trigger]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						ch$,A$<br>
+					</span>
+					<br>
+					[Waveform Calculation Trigger]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						w$,A$<br>
+					</span>
+					<br>
+					[Pulse 通道 Trigger]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						pls$,A$<br>
+					</span>
+					<br>
+					ch$ = <span class="ch_analog"></span><br>w$ = <span class="ch_wcalc"></span><br>pls$ = <span class="ch_pulse"></span><br>A$ = IN, OUT
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the trigger direction of the window trigger of the channel designated by ch$/w$/pls$.<br>
+					Returns as a character value the current window trigger direction of the channel designated by ch$/w$/pls$.
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>IN</b></td><td class="g_td_0013">&nbsp;Window in</td></tr>
+					<tr><td class="g_td_0013"><b>OUT</b></td><td class="g_td_0013">&nbsp;Window out</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:TRIGger:ANALog:STARt:SIDE CH1_1,IN<br>:TRIGger:ANALog:STARt:SIDE? CH1_1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:TRIGGER:ANALOG:START:SIDE CH1_1,IN</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					It is also possible to set and query using the following conventional commands.<br>
+					:TRIGger:SIDE ch$,A$ / :TRIGger:SIDE? ch$<br>
+					:TRIGger:SSIDE ch$,A$ / :TRIGger:SSIDE? ch$<br>
+					:TRIGger:WSIDE w$,A$ / :TRIGger:WSIDE? w$<br>
+					:TRIGger:SWSIDE w$,A$ / :TRIGger:SWSIDE? w$<br>
+					:TRIGger:PSIDE pls$,A$ / :TRIGger:PSIDE? pls$<br>
+					:TRIGger:SPSIDE pls$,A$ / :TRIGger:SPSIDE? pls$<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					The <a href="#:ANALog:STARt:KIND">type of trigger</a> that can be set is Window Trigger.
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":ANALog:STARt:SLOPe">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the level trigger direction (slope).</b>
+						</span>
+					</a>
+					<a id=":ANALog:STARt:SLOPe?"></a><a id=":ANALog:STOP:SLOPe"></a><a id=":ANALog:STOP:SLOPe?"></a>
+					<a id=":CALCulate:STARt:SLOPe"></a><a id=":CALCulate:STARt:SLOPe?"></a><a id=":CALCulate:STOP:SLOPe"></a><a id=":CALCulate:STOP:SLOPe?"></a>
+					<a id=":PULSe:STARt:SLOPe"></a><a id=":PULSe:STARt:SLOPe?"></a><a id=":PULSe:STOP:SLOPe"></a><a id=":PULSe:STOP:SLOPe?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br><br><br><br><br><br><br><br><br><br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<br>
+					[Analog 通道 Trigger]<br>
+					<span style="color:red;font-weight:bold">
+						:TRIGger:ANALog:STARt:SLOPe ch$,A$ (Start Trigger)<br>
+						:TRIGger:ANALog:STOP:SLOPe ch$,A$ (Stop Trigger)<br><br>
+					</span>
+					[Waveform Calculation Trigger]<br>
+					<span style="color:red;font-weight:bold">
+						:TRIGger:CALCulate:STARt:SLOPe w$,A$ (Start Trigger)<br>
+						:TRIGger:CALCulate:STOP:SLOPe w$,A$ (Stop Trigger)<br><br>
+					</span>
+					[Pulse 通道 Trigger]<br>
+					<span style="color:red;font-weight:bold">
+						:TRIGger:PULSe:STARt:SLOPe pls$,A$ (Start Trigger)<br>
+						:TRIGger:PULSe:STOP:SLOPe pls$,A$ (Stop Trigger)<br><br>
+					</span>
+					[Analog 通道 Trigger]<br>
+					<span style="color:red;font-weight:bold">
+						:TRIGger:ANALog:STARt:SLOPe? ch$ (Start Trigger)<br>
+						:TRIGger:ANALog:STOP:SLOPe? ch$ (Stop Trigger)<br><br>
+					</span>
+					[Waveform Calculation Trigger]<br>
+					<span style="color:red;font-weight:bold">
+						:TRIGger:CALCulate:STARt:SLOPe? w$ (Start Trigger)<br>
+						:TRIGger:CALCulate:STOP:SLOPe? w$ (Stop Trigger)<br><br>
+					</span>
+					[Pulse 通道 Trigger]<br>
+					<span style="color:red;font-weight:bold">
+						:TRIGger:PULSe:STARt:SLOPe? pls$ (Start Trigger)<br>
+						:TRIGger:PULSe:STOP:SLOPe? pls$ (Stop Trigger)<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					[Analog 通道 Trigger]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						ch$,A$<br>
+					</span>
+					<br>
+					[Waveform Calculation Trigger]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						w$,A$<br>
+					</span>
+					<br>
+					[Pulse 通道 Trigger]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						pls$,A$<br>
+					</span>
+					<br>
+					ch$ = <span class="ch_analog"></span><br>w$ = <span class="ch_wcalc"></span><br>pls$ = <span class="ch_pulse"></span><br>A$ = UP, DOWN
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the trigger direction of the level trigger of the channel designated by ch$/w$/pls$.<br>
+					Returns as a character value the current level trigger direction of the channel designated by ch$/w$/pls$.
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>UP</b></td><td class="g_td_0013">&nbsp;Rising</td></tr>
+					<tr><td class="g_td_0013"><b>DOWN</b></td><td class="g_td_0013">&nbsp;Falling</td></tr>
+					<tr><td class="g_td_0013"><b><!--UPDOwn</b></td><td class="g_td_0013">&nbsp;立ち上がり、または立ち下がり--></td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:TRIGger:ANALog:STARt:SLOPe CH1_1,UP<br>:TRIGger:ANALog:STARt:SLOPe? CH1_1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:TRIGGER:ANALOG:START:SLOPE CH1_1,UP</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					It is also possible to set and query using the following conventional commands.<br>
+					:TRIGger:SLOPe ch$,A$ / :TRIGger:SLOPe? ch$<br>
+					:TRIGger:SSLOPe ch$,A$ / :TRIGger:SSLOPe? ch$<br>
+					:TRIGger:WSLOPe w$,A$ / :TRIGger:WSLOPe? w$<br>
+					:TRIGger:SWSLOPe w$,A$ / :TRIGger:SWSLOPe? w$<br>
+					:TRIGger:PSLOPe pls$,A$ / :TRIGger:PSLOPe? pls$<br>
+					:TRIGger:SPSLOPe pls$,A$ / :TRIGger:SPSLOPe? pls$<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					The <a href="#:ANALog:STARt:KIND">type of trigger</a> that can be set is Level Trigger.
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":ANALog:STARt:UPPEr">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the upper limit level for a window trigger.</b>
+						</span>
+					</a>
+					<a id=":ANALog:STARt:UPPEr?"></a><a id=":ANALog:STOP:UPPEr"></a><a id=":ANALog:STOP:UPPEr?"></a>
+					<a id=":CALCulate:STARt:UPPEr"></a><a id=":CALCulate:STARt:UPPEr?"></a><a id=":CALCulate:STOP:UPPEr"></a><a id=":CALCulate:STOP:UPPEr?"></a>
+					<a id=":PULSe:STARt:UPPEr"></a><a id=":PULSe:STARt:UPPEr?"></a><a id=":PULSe:STOP:UPPEr"></a><a id=":PULSe:STOP:UPPEr?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br><br><br><br><br><br><br><br><br><br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<br>
+					[Analog 通道 Trigger]<br>
+					<span style="color:red;font-weight:bold">
+						:TRIGger:ANALog:STARt:UPPEr ch$,A (Start Trigger)<br>
+						:TRIGger:ANALog:STOP:UPPEr ch$,A (Stop Trigger)<br><br>
+					</span>
+					[Waveform Calculation Trigger]<br>
+					<span style="color:red;font-weight:bold">
+						:TRIGger:CALCulate:STARt:UPPEr w$,A (Start Trigger)<br>
+						:TRIGger:CALCulate:STOP:UPPEr w$,A (Stop Trigger)<br><br>
+					</span>
+					[Pulse 通道 Trigger]<br>
+					<span style="color:red;font-weight:bold">
+						:TRIGger:PULSe:STARt:UPPEr pls$,A (Start Trigger)<br>
+						:TRIGger:PULSe:STOP:UPPEr pls$,A (Stop Trigger)<br><br>
+					</span>
+					[Analog 通道 Trigger]<br>
+					<span style="color:red;font-weight:bold">
+						:TRIGger:ANALog:STARt:UPPEr? ch$ (Start Trigger)<br>
+						:TRIGger:ANALog:STOP:UPPEr? ch$ (Stop Trigger)<br><br>
+					</span>
+					[Waveform Calculation Trigger]<br>
+					<span style="color:red;font-weight:bold">
+						:TRIGger:CALCulate:STARt:UPPEr? w$ (Start Trigger)<br>
+						:TRIGger:CALCulate:STOP:UPPEr? w$ (Stop Trigger)<br><br>
+					</span>
+					[Pulse 通道 Trigger]<br>
+					<span style="color:red;font-weight:bold">
+						:TRIGger:PULSe:STARt:UPPEr? pls$ (Start Trigger)<br>
+						:TRIGger:PULSe:STOP:UPPEr? pls$ (Stop Trigger)<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					[Analog 通道 Trigger]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						ch$,A&lt;NR3&gt; (3 decimal places)<br>
+					</span>
+					<br>
+					[Waveform Calculation Trigger]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						w$,A&lt;NR3&gt; (4 decimal places)<br>
+					</span>
+					<br>
+					[Pulse 通道 Trigger]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						pls$,A&lt;NR3&gt; (9 decimal places)<br>
+					</span>
+					<br>
+					ch$ = <span class="ch_analog"></span><br>w$ = <span class="ch_wcalc"></span><br>pls$ = <span class="ch_pulse"></span>
+					<br>
+					[Analog 通道 Trigger]<br>
+					A = Configurable Range : (measurement range)&times;(&plusmn;1.5), Minimum Resolution : (measurement range)&times;(1/1000)<br>
+					[Waveform Calculation Trigger]<br>
+					A = -9.9999E+29 to 9.9999E+29<br>
+					[Pulse 通道 Trigger]<br>
+					A = 0 to 1000000000(count), 0 to 15000(r/s), 0 to 900000(r/min)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the upper limit level of the window trigger of the channel designated by ch$/w$/pls$ as a voltage value.<br>
+					Returns the current upper limit level of the window trigger as an NR3 numerical value of the channel designated by ch$/w$/pls$.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:TRIGger:ANALog:STARt:UPPEr CH1_1,0.5<br>:TRIGger:ANALog:STARt:UPPEr? CH1_1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:TRIGGER:ANALOG:START:UPPER CH1_1,+5.000E-01</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					You cannot enter a value less than or equal to the <a href="#:ANALog:STARt:LOWEr">lower limit level of the window trigger</a>.<br>
+					If you enter a value greater than the configurable limit, the maximum value is set.<br>
+					If you enter a value less than the configurable lower limit, the minimum value is set.<br>
+					It is also possible to set and query using the following conventional commands.<br>
+					:TRIGger:UPPEr ch$,A / :TRIGger:UPPEr? ch$<br>
+					:TRIGger:SUPPEr ch$,A / :TRIGger:SUPPEr? ch$<br>
+					:TRIGger:WUPPEr w$,A / :TRIGger:WUPPEr? w$<br>
+					:TRIGger:SWUPPEr w$,A / :TRIGger:SWUPPEr? w$<br>
+					:TRIGger:PUPPEr pls$,A / :TRIGger:PUPPEr? pls$<br>
+					:TRIGger:SPUPPEr pls$,A / :TRIGger:SPUPPEr pls$<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					The <a href="#:ANALog:STARt:KIND">type of trigger</a> that can be set is Window Trigger.
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":LOGic:STARt:ANDOR">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the logical operator (AND/OR) for the trigger pattern of a logic trigger.</b>
+						</span>
+					</a>
+					<a id=":LOGic:STARt:ANDOR?"></a>
+					<a id=":LOGic:STOP:ANDOR"></a>
+					<a id=":LOGic:STOP:ANDOR?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:TRIGger:LOGic:STARt:ANDOR A$ (Start Trigger)<br>
+						:TRIGger:LOGic:STOP:ANDOR A$ (Stop Trigger)<br><br>
+						:TRIGger:LOGic:STARt:ANDOR? (Start Trigger)<br>
+						:TRIGger:LOGic:STOP:ANDOR? (Stop Trigger)<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = 关, OR, AND
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the AND/OR logical operator for the trigger pattern of a logic trigger.<br>
+					Returns the AND/OR setting for the trigger pattern of a logic trigger as a character string.
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>OFF</b></td><td class="g_td_0013">&nbsp;Trigger OFF</td></tr>
+					<tr><td class="g_td_0013"><b>OR</b></td><td class="g_td_0013">&nbsp;Logical sum</td></tr>
+					<tr><td class="g_td_0013"><b>AND</b></td><td class="g_td_0013">&nbsp;Logical product</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:TRIGger:LOGic:STARt:ANDOR OR<br>:TRIGger:LOGic:STARt:ANDOR?<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:TRIGGER:LOGIC:START:ANDOR OR</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					It is also possible to set and query using the following conventional commands.<br>
+					:TRIGger:LOGAnd A$ / :TRIGger:LOGAnd?<br>
+					:TRIGger:SLOGAnd A$ / :TRIGger:SLOGAnd?<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":LOGic:STARt:PATTern">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the trigger pattern for a logic trigger.</b>
+						</span>
+					</a>
+					<a id=":LOGic:STARt:PATTern?"></a>
+					<a id=":LOGic:STOP:PATTern"></a>
+					<a id=":LOGic:STOP:PATTern?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:TRIGger:LOGic:STARt:PATTern "A$" (Start Trigger)<br>
+						:TRIGger:LOGic:STOP:PATTern "A$" (Stop Trigger)<br><br>
+						:TRIGger:LOGic:STARt:PATTern? (Start Trigger)<br>
+						:TRIGger:LOGic:STOP:PATTern? (Stop Trigger)<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						&quot;A$&quot;<br>
+					</span>
+					<br>
+					A$ = xxxxxxxx<br>Trigger pattern(X,0,1)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the trigger pattern (8 bits) for the logic trigger.<br>
+					Returns the setting for the trigger pattern (8 bits) for the logic trigger as that specified by the given character data.
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>X</b></td><td class="g_td_0013">&nbsp;Ignore signal</td></tr>
+					<tr><td class="g_td_0013"><b>0</b></td><td class="g_td_0013">&nbsp;Trigger at low level</td></tr>
+					<tr><td class="g_td_0013"><b>1</b></td><td class="g_td_0013">&nbsp;Trigger at high level</td></tr>
+					<!--<tr><td class="g_td_0013"><b>2</b></td><td class="g_td_0013">&nbsp;LOWまたはHIGHレベルの信号でトリガがかかります</td></tr>-->
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:TRIGger:LOGic:STARt:PATTern "X01XX01X"<br>:TRIGger:LOGic:STARt:PATTern?<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:TRIGGER:LOGIC:START:PATTERN "X01XX01X"</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					It is also possible to set and query using the following conventional commands.<br>
+					:TRIGger:LOGPat "A$" / :TRIGger:LOGPat?<br>
+					:TRIGger:SLOGPat "A$" / :TRIGger:SLOGPat?<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":EXTernal:STARt:KIND">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the external trigger.</b>
+						</span>
+					</a>
+					<a id=":EXTernal:STARt:KIND?"></a>
+					<a id=":EXTernal:STOP:KIND"></a>
+					<a id=":EXTernal:STOP:KIND?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:TRIGger:EXTernal:STARt:KIND A$ (Start Trigger)<br>
+						:TRIGger:EXTernal:STOP:KIND A$ (Stop Trigger)<br><br>
+						:TRIGger:EXTernal:STARt:KIND? (Start Trigger)<br>
+						:TRIGger:EXTernal:STOP:KIND? (Stop Trigger)<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = 关, 开
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the external trigger.<br>
+					Returns the current external trigger setting as character data.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>OFF</b></td><td class="g_td_0013">&nbsp;Disabled</td></tr>
+					<tr><td class="g_td_0013"><b>ON</b></td><td class="g_td_0013">&nbsp;Enabled</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:TRIGger:EXTernal:STARt:KIND 开<br>:TRIGger:EXTernal:STARt:KIND?<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:TRIGGER:EXTERNAL:START:KIND 开</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Depending on this setting, the <a href="../03/Right10.htm#:EXT:IO3:KIND" target="_self">input type of external input terminal 3</a> may be changed.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+</body>
+</html>

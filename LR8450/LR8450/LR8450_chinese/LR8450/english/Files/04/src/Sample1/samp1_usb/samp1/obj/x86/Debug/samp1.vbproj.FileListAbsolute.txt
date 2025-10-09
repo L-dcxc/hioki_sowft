@@ -1,0 +1,27 @@
+C:\Users\tomita0105\Documents\Visual Studio 2010\Projects\samp1\samp1\bin\Debug\samp1.exe
+C:\Users\tomita0105\Documents\Visual Studio 2010\Projects\samp1\samp1\bin\Debug\samp1.pdb
+C:\Users\tomita0105\Documents\Visual Studio 2010\Projects\samp1\samp1\bin\Debug\samp1.xml
+C:\Users\tomita0105\Documents\Visual Studio 2010\Projects\samp1\samp1\obj\x86\Debug\WindowsApplication1.Form1.resources
+C:\Users\tomita0105\Documents\Visual Studio 2010\Projects\samp1\samp1\obj\x86\Debug\WindowsApplication1.Resources.resources
+C:\Users\tomita0105\Documents\Visual Studio 2010\Projects\samp1\samp1\obj\x86\Debug\samp1.vbproj.GenerateResource.Cache
+C:\Users\tomita0105\Documents\Visual Studio 2010\Projects\samp1\samp1\obj\x86\Debug\samp1.exe
+C:\Users\tomita0105\Documents\Visual Studio 2010\Projects\samp1\samp1\obj\x86\Debug\samp1.xml
+C:\Users\tomita0105\Documents\Visual Studio 2010\Projects\samp1\samp1\obj\x86\Debug\samp1.pdb
+D:\git\xc797_comm_manual\japanese\Files\04\src\Sample1\samp1_usb\samp1\bin\Debug\samp1.exe
+D:\git\xc797_comm_manual\japanese\Files\04\src\Sample1\samp1_usb\samp1\bin\Debug\samp1.pdb
+D:\git\xc797_comm_manual\japanese\Files\04\src\Sample1\samp1_usb\samp1\bin\Debug\samp1.xml
+D:\git\xc797_comm_manual\japanese\Files\04\src\Sample1\samp1_usb\samp1\obj\x86\Debug\WindowsApplication1.Form1.resources
+D:\git\xc797_comm_manual\japanese\Files\04\src\Sample1\samp1_usb\samp1\obj\x86\Debug\WindowsApplication1.Resources.resources
+D:\git\xc797_comm_manual\japanese\Files\04\src\Sample1\samp1_usb\samp1\obj\x86\Debug\samp1.vbproj.GenerateResource.Cache
+D:\git\xc797_comm_manual\japanese\Files\04\src\Sample1\samp1_usb\samp1\obj\x86\Debug\samp1.exe
+D:\git\xc797_comm_manual\japanese\Files\04\src\Sample1\samp1_usb\samp1\obj\x86\Debug\samp1.xml
+D:\git\xc797_comm_manual\japanese\Files\04\src\Sample1\samp1_usb\samp1\obj\x86\Debug\samp1.pdb
+C:\Users\tomita0105\Desktop\tmp\xc797_comm_manual\english\Files\04\src\Sample1\samp1_usb\samp1\obj\x86\Debug\samp1.exe
+C:\Users\tomita0105\Desktop\tmp\xc797_comm_manual\english\Files\04\src\Sample1\samp1_usb\samp1\obj\x86\Debug\samp1.xml
+C:\Users\tomita0105\Desktop\tmp\xc797_comm_manual\english\Files\04\src\Sample1\samp1_usb\samp1\obj\x86\Debug\samp1.pdb
+C:\Users\tomita0105\Desktop\tmp\xc797_comm_manual\english\Files\04\src\Sample1\samp1_usb\samp1\obj\x86\Debug\WindowsApplication1.Form1.resources
+C:\Users\tomita0105\Desktop\tmp\xc797_comm_manual\english\Files\04\src\Sample1\samp1_usb\samp1\obj\x86\Debug\WindowsApplication1.Resources.resources
+C:\Users\tomita0105\Desktop\tmp\xc797_comm_manual\english\Files\04\src\Sample1\samp1_usb\samp1\obj\x86\Debug\samp1.vbproj.GenerateResource.Cache
+C:\Users\tomita0105\Desktop\tmp\xc797_comm_manual\english\Files\04\src\Sample1\samp1_usb\samp1\bin\Debug\samp1.exe
+C:\Users\tomita0105\Desktop\tmp\xc797_comm_manual\english\Files\04\src\Sample1\samp1_usb\samp1\bin\Debug\samp1.pdb
+C:\Users\tomita0105\Desktop\tmp\xc797_comm_manual\english\Files\04\src\Sample1\samp1_usb\samp1\bin\Debug\samp1.xml

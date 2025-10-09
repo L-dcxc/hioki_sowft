@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+	<style>
+		<!--
+			body{
+				background-color	: white;
+			}
+
+			.dropmenu{
+				*zoom				: 1;
+				list-style-type		: none;
+				width				: 1050px;
+				margin				: 5px auto 30px;
+				padding				: 0;
+			}
+
+			.dropmenu:before, .dropmenu:after{
+				content				: "";
+				display				: table;
+			}
+
+			.dropmenu:after{
+				clear				: both;
+			}
+
+			.dropmenu li{
+				position			: relative;
+				width				: 150px;
+				float				: left;
+				margin				: 0;
+				padding				: 0;
+				text-align			: center;
+			}
+
+			.dropmenu li a{
+				width				: 150px;
+				display				: block;
+				margin				: 0;
+				padding				: 10px 0 30px;
+				background			: #5182ea;
+				border				: 1px solid #aabfea;
+				color				: #fff;
+				font-size			: 13px;
+				font-family         : Verdana, Geneva, Tahoma, sans-serif;
+				line-height			: 1;
+				text-decoration		: none;
+			}
+
+			.dropmenu li ul{
+				list-style			: none;
+				position			: absolute;
+				top					: 100%;
+				left				: 0;
+				margin				: 0;
+				padding				: 0;
+			}
+
+			.dropmenu li ul li{
+				margin				: 0;
+				padding				: 0;
+			}
+
+			.dropmenu li ul li a{
+				border-top			: 1px solid #aabfea;
+				background			: #5182ea;
+				text-align			: left;
+				text-indent			: 15px;
+			}
+
+			.dropmenu li:hover > a{
+				width				: 150px;
+				background			: #3d60af;
+			}
+
+			.dropmenu li a:hover{
+				background			: #3d60af;
+			}
+
+			#flip > li{
+				perspective			: 400px;
+			}
+
+			#flip li ul{
+				visibility			: hidden;
+				transform			: rotateX(-90deg);
+				transform-origin	: 50% 0;
+				transition			: .3s;
+			}
+
+			#flip li:hover ul{
+				visibility			: visible;
+				transform			: rotateX(0);
+			}
+		-->
+	</style>
+</head>
+
+<body>
+	<p>
+		<span style='font-size:15pt;font-family:Verdana;color:#3D60AF'><b>LR8450/LR8450-01 通信命令手册</b></span>
+	</p>
+
+	<ul	id="flip" class="dropmenu">
+		<li><a href="../index.htm" target="_top"><b>介绍</b></a></li>
+		<li><a href="01/MainFrame01.htm" target=BOTTOM><b>概述</b></a></li>
+		<li><a href="02/MainFrame01.htm" target=BOTTOM><b>命令摘要</b></a></li>
+		<li><a href="03/MainFrame01.htm" target=BOTTOM><b>命令详情</b></a></li>
+		<li><a href="04/MainFrame01.htm" target=BOTTOM><b>示例程序</b></a></li>
+		<li><a href="05/MainFrame01.htm" target=BOTTOM><b>故障排除</b></a></li>
+	  </li>
+	</ul>
+</body>
+
+</html>

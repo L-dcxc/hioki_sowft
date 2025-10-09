@@ -1,0 +1,595 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<title></title>
+</head>
+
+<body>
+	<table class="MsoNormalTable" style="border:0; border-collapse:collapse; width:100%; max-width:1200px;">
+		<tr style="height:25pt">
+			<td style ="background:#3d60af">
+				<p class="MsoNormal" style="margin-left:9pt;text-align:justify">
+					<span style="color:white;font-weight:bold">配置（CONFigure）</span>
+				</p>
+			</td>
+		</tr>
+	</table>
+
+	<p class="MsoNormal">&nbsp;</p>
+
+	<table class="MsoNormalTable" style="border:solid #A3A19E 2pt; border-collapse:collapse; width:100%; max-width:1200px;">
+		<tr style="height:40pt">
+			<td class = "g_p0001">
+				<p class="g_p0010"><span style="color:white">命令</span></p>
+			</td>
+			<td class = "g_p0002">
+				<p class="g_p0010"><span style="color:white">数据<br>（查询时为响应数据）</span></p>
+			</td>
+			<td class = "g_p0009">
+				<p class="g_p0010"><span style="color:white">说明</span></p>
+			</td>
+		</tr>
+
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right04.htm#:ADDDate" target="_self">:ADDDate A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = OFF, ON</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">设置自动保存文件名中的触发日期添加<br>查询</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right04.htm#:ADDDate?" target="_self">:ADDDate?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right04.htm#:ALMSource" target="_self">:ALMSource A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = OFF, ON</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets alarm source saving<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right04.htm#:ALMSource?" target="_self">:ALMSource?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right04.htm#:ATSAve" target="_self">:ATSAve A$(,"B$")</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = OFF, BIN, CSV, MEAS, BIN_MEAS, CSV_MEAS<br>B$ = file name(8 character)</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets auto save<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right04.htm#:ATSAve?" target="_self">:ATSAve?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A$(,"B$")</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right04.htm#:AUTOFolder" target="_self">:AUTOFolder A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = OFF, DAY, WEEK, MONTH</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets folder Splitting for auto save<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right04.htm#:AUTOFolder?" target="_self">:AUTOFolder?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right04.htm#:FILEName" target="_self">:FILEName "A$"</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = file name(8 character)</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets file name for auto save<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right04.htm#:FILEName?" target="_self">:FILEName?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">"A$"</p>
+			</td>
+		</tr>
+
+
+<!--
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right04.htm#:MODE" target="_self">:MODE A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = NORMal, STATistics</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets recording mode(V2.00)<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right04.htm#:MODE?" target="_self">:MODE?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A$</p>
+			</td>
+		</tr>
+-->
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right04.htm#:RECTime" target="_self">:RECTime day,hour,min,sec</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">day = 0 to 500<br>hour = 0 to 23<br>min = 0 to 59<br>sec = 0 to 59</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets recording time<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right04.htm#:RECTime?" target="_self">:RECTime?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">day&lt;NR1&gt;,hour&lt;NR1&gt;,min&lt;NR1&gt;,sec&lt;NR1&gt;</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right04.htm#:SAMPle" target="_self">:SAMPle A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A = interval(unit s)</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets recording interval<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right04.htm#:SAMPle?" target="_self">:SAMPle?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A&lt;NR3&gt; (1 decimal place)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right04.htm#:SAVECalc" target="_self">:SAVECalc A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = OFF, CSV</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets format for saving mathematical results<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right04.htm#:SAVECalc?" target="_self">:SAVECalc?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right04.htm#:SAVEDeci" target="_self">:SAVEDeci A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = PERIOD, COMMA</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets text save decimal<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right04.htm#:SAVEDeci?" target="_self">:SAVEDeci?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right04.htm#:SAVEFormat" target="_self">:SAVEFormat A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = COMMENT, SPLITMS</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets text save date format<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right04.htm#:SAVEFormat?" target="_self">:SAVEFormat?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right04.htm#:SAVEKind" target="_self">:SAVEKind A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = NORMal, DIVide</p><!-- REGularly (v02) -->
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets auto save division<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right04.htm#:SAVEKind?" target="_self">:SAVEKind?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right04.htm#:SAVELen" target="_self">:SAVELen day,hour,min</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">day = 0 to 30(day)<br>hour = 0 to 23(hour)<br>min = 0 to 59(min)</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets auto save division length<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right04.htm#:SAVELen?" target="_self">:SAVELen?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">day&lt;NR1&gt;,hour&lt;NR1&gt;,min&lt;NR1&gt;</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right04.htm#:SAVEMode" target="_self">:SAVEMode A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = FILEfull, REMove</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets auto save mode<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right04.htm#:SAVEMode?" target="_self">:SAVEMode?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right04.htm#:SAVEPri" target="_self">:SAVEPri A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = SD, USB</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets auto save priority<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right04.htm#:SAVEPri?" target="_self">:SAVEPri?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A$</p>
+			</td>
+		</tr>
+
+<!-- 定時分割はv02
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right04.htm#:SAVEReg" target="_self">:SAVEReg hour,min</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">hour = 0 to 23(day)<br>min = 0 to 60(min)</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets auto save regular time<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right04.htm#:SAVEReg?" target="_self">:SAVEReg?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">hour&lt;NR1&gt;,min&lt;NR1&gt;</p>
+			</td>
+		</tr>
+	-->
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right04.htm#:SAVESep" target="_self">:SAVESep A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = COMMA, SPACE, TAB, SEMI</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets text save separator<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right04.htm#:SAVESep?" target="_self">:SAVESep?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A$</p>
+			</td>
+		</tr>
+
+<!-- 定時分割v02
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right04.htm#:SAVETime" target="_self">:SAVETime A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A = 1 to 1440 (unit min)</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets division time<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right04.htm#:SAVETime?" target="_self">:SAVETime?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A&lt;NR1&gt;</p>
+			</td>
+		</tr>
+	-->
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right04.htm#:SAVEWave" target="_self">:SAVEWave A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = OFF, BIN, CSV</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets format for saving waveform Data<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right04.htm#:SAVEWave?" target="_self">:SAVEWave?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right04.htm#:TDIV" target="_self">:TDIV A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A = 2.00E-03 to 8.64E+04 (unit s)</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets time axis range<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right04.htm#:TDIV?" target="_self">:TDIV?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A&lt;NR3&gt; (2 decimal places)</p>
+			</td>
+		</tr>
+
+<!--
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right04.htm#:THINData" target="_self">:THINData A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = SIMPLE, MAX, MIN, AVE</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets downsampling type for auto save<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right04.htm#:THINData?" target="_self">:THINData?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A$</p>
+			</td>
+		</tr>
+-->
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right04.htm#:THINOut" target="_self">:THINOut A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A = 1(OFF) to 100000</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets decimation factor for auto save<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right04.htm#:THINOut?" target="_self">:THINOut?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A&lt;NR1&gt;</p>
+			</td>
+		</tr>
+
+
+	</table>
+</body>
+</html>

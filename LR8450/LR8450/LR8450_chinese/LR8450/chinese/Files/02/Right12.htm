@@ -1,0 +1,614 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<title></title>
+</head>
+
+<body>
+	<table class="MsoNormalTable" style="border:0; border-collapse:collapse; width:100%; max-width:1200px;">
+		<tr style="height:25pt">
+			<td style ="background:#3d60af">
+				<p class="MsoNormal" style="margin-left:9pt;text-align:justify">
+					<span style="color:white;font-weight:bold">屏幕（DISPlay）</span>
+				</p>
+			</td>
+		</tr>
+	</table>
+
+	<p class="MsoNormal">&nbsp;</p>
+
+	<table class="MsoNormalTable" style="border:0; border-collapse:collapse; width:100%; max-width:1200px;">
+		<tr style="height:40pt">
+			<td class = "g_p0001">
+				<p class="g_p0010"><span style="color:white">Command</span></p>
+			</td>
+			<td class = "g_p0002">
+				<p class="g_p0010"><span style="color:white">Data<br>(for a query, response data)</span></p>
+			</td>
+			<td class = "g_p0009">
+				<p class="g_p0010"><span style="color:white">Explanation</span></p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right12.htm#:CHANge" target="_self">:CHANge A$(,B$,C$)</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">
+					A$ = WAVE,SET,FILE,M开ITOR<br>
+					B$ = UNIT,MEAS,CHANNEL,TRIG,ALARM,CALC<br>
+					SYSTEM,SD,USB<br>
+					C$ = RECORD,A_SAVE,M_SAVE,DISPLAY,INDIVIDUAL<br>
+					UNIT1,UNIT2,UNIT3,UNIT4<br>
+					REMOTE1,REMOTE2,REMOTE3,REMOTE4<br>
+					REMOTE5,REMOTE6,REMOTE7<br>
+					PULSE,COMM开,W_CALC,ALARM1_8<br>
+					NUMERICAL,WAVEFORM<br>
+				  ENVIR开MENT,INTERFACE,EXTERNAL<br>
+				</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets the screen mode<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right12.htm#:CHANge?" target="_self">:CHANge?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A$</p>
+			</td>
+		</tr>
+
+
+	<!--
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right12.htm#:GROUp" target="_self">:GROUp A$,B$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = 未定<br>B$ = 未定</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">波形表示とデータ表示の設定と問い合わせ</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right12.htm#:GROUp?" target="_self">:GROUp?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A$,B$</p>
+			</td>
+		</tr>
+	-->
+
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right12.htm#:MARK" target="_self">:MARK</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">-</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Insert event mark</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right12.htm#:MARK?" target="_self">:MARK?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A&lt;NR1&gt;<br><br>A = 0 to 1000</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Queries the event mark num</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right12.htm#:MARKJump" target="_self">:MARKJump A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A = 1 to event mark num</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Jump to event mark</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right12.htm#:MARKJump?" target="_self">:MARKJump? A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A&lt;NR1&gt;,B&lt;NR1&gt;<br><br>A = 1 to event mark num<br>B = data num</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Queries the data num at the event mark designeated</p>
+			</td>
+		</tr>
+
+<!--
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right12.htm#:MODE" target="_self">:MODE A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = 未定</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">画面表示モードの切り換えと問い合わせ</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right12.htm#:MODE?" target="_self">:MODE?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A$</p>
+			</td>
+		</tr>
+	-->
+
+	<!--
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right12.htm#:PAGE" target="_self">:PAGE A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A = 1 to ページ数</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">画面のページの切り換えと問い合わせ</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right12.htm#:PAGE?" target="_self">:PAGE?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A&lt;NR1&gt;</p>
+			</td>
+		</tr>
+	-->
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right12.htm#:WAVE" target="_self">:WAVE A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = ACUR,TRIG,POINT</p>
+			</td>
+			<td class = "g_p0008">
+				<p class="g_p0011">Executes waveform</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0014" colspan="3">
+				<p class="MsoNormal" style="margin-left:9pt;text-align:justify">
+					<span style="color:white;font-weight:bold">Analog Channel(:DISPlay:ANALog)</span>
+				</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right12.htm#:ANAlog:DRAWing" target="_self">:DRAWing ch$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">ch$ = <span class="ch_analog"></span><br>A$ = OFF, C1 to C24</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets waveform display color<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right12.htm#:ANAlog:DRAWing?" target="_self">:DRAWing? ch$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">ch$,A$</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right12.htm#:ANAlog:USECh" target="_self">:USECh ch$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">ch$ = <span class="ch_analog"></span><br>A$ = OFF, ON</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets analog waveform display ON/OFF<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right12.htm#:ANAlog:USECh?" target="_self">:USECh? ch$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">ch$,A$</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right12.htm#:ANAlog:VARIable" target="_self">:VARIable ch$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">ch$ = <span class="ch_analog"></span><br>A$ = OFF, ON</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets upper-lower mode<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right12.htm#:ANAlog:VARIable?" target="_self">:VARIable? ch$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">ch$,A$</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right12.htm#:ANAlog:VARIUPLOw" target="_self">:VARIUPLOw ch$,A,B</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">ch$ = <span class="ch_analog"></span><br>A = -9.9999E+29 to 9.9999E+29 (upper level)<br>B = -9.9999E+29 to 9.9999E+29 (lower level)</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets upper-lower level<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right12.htm#:ANAlog:VARIUPLOw?" target="_self">:VARIUPLOw? ch$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">ch$,A&lt;NR3&gt;,B&lt;NR3&gt;</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right12.htm#:ANAlog:YMAG" target="_self">:YMAG ch$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">ch$ = <span class="ch_analog"></span><br>A$ = X1_2, X1, X2, X5, X10, X20, X50, X100</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets the magnification/compression ratio on the voltage axis<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right12.htm#:ANAlog:YMAG?" target="_self">:YMAG? ch$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">ch$,A$</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0014" colspan="3">
+				<p class="MsoNormal" style="margin-left:9pt;text-align:justify">
+					<span style="color:white;font-weight:bold">Pulse Channel (:DISPlay:PULSe)</span>
+				</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right12.htm#:PULSe:DRAWing" target="_self">:DRAWing pls$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">pls$ = <span class="ch_pulse"></span><br>A$ = OFF, C1 to C24</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets waveform display color<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right12.htm#:PULSe:DRAWing?" target="_self">:DRAWing? pls$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">pls$,A$</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right12.htm#:PULSe:USECh" target="_self">:USECh pls$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">pls$ = <span class="ch_pulse"></span><br>A$ = OFF, ON</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets analog waveform display ON/OFF<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right12.htm#:PULSe:USECh?" target="_self">:USECh? pls$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">pls$,A$</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right12.htm#:PULSe:VARIable" target="_self">:VARIable pls$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">pls$ = <span class="ch_pulse"></span><br>A$ = OFF, ON</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets upper-lower mode<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right12.htm#:PULSe:VARIable?" target="_self">:VARIable? pls$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">pls$,A$</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right12.htm#:PULSe:VARIUPLOw" target="_self">:VARIUPLOw pls$,A,B</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">pls$ = <span class="ch_pulse"></span><br>A = -9.9999E+29 to 9.9999E+29 (upper level)<br>B = -9.9999E+29 to 9.9999E+29 (lower level)</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets upper-lower level<br>Queries</p></p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right12.htm#:PULSe:VARIUPLOw?" target="_self">:VARIUPLOw? pls$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">pls$,A&lt;NR3&gt;,B&lt;NR3&gt;</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right12.htm#:PULSe:YMAG" target="_self">:YMAG pls$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">pls$ = <span class="ch_pulse"></span><br>A$ = X1_2, X1, X2, X5, X10, X20, X50, X100</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets the magnification/compression ratio on the voltage axis<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right12.htm#:PULSe:YMAG?" target="_self">:YMAG? pls$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">pls$,A$</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0014" colspan="3">
+				<p class="MsoNormal" style="margin-left:9pt;text-align:justify">
+					<span style="color:white;font-weight:bold">Alarm Channel (:DISPlay:ALARm)</span>
+				</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right12.htm#:ALARm:DRAWing" target="_self">:DRAWing alm$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">alm$ = <span class="ch_alarm"></span><br>A$ = OFF, C1 to C24</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets waveform display color<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right12.htm#:ALARm:DRAWing?" target="_self">:DRAWing? alm$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">alm$,A$</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right12.htm#:ALARm:USECh" target="_self">:USECh alm$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">alm$ = <span class="ch_alarm"></span><br>A$ = OFF, ON</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets analog waveform display ON/OFF<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right12.htm#:ALARm:USECh?" target="_self">:USECh? alm$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">alm$,A$</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0014" colspan="3">
+				<p class="MsoNormal" style="margin-left:9pt;text-align:justify">
+					<span style="color:white;font-weight:bold">Waveform Calculation (:DISPlay:CALCulate)</span>
+				</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right12.htm#:CALCulate:DRAWing" target="_self">:DRAWing w$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">w$ = <span class="ch_wcalc"></span><br>A$ = OFF, C1 to C24</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets waveform display color<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right12.htm#:CALCulate:DRAWing?" target="_self">:DRAWing? w$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">w$,A$</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right12.htm#:CALCulate:USECh" target="_self">:USECh w$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">w$ = <span class="ch_wcalc"></span><br>A$ = OFF, ON</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets analog waveform display ON/OFF<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right12.htm#:CALCulate:USECh?" target="_self">:USECh? w$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">w$,A$</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right12.htm#:CALCulate:VARIUPLOw" target="_self">:VARIUPLOw w$,A,B</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">w$ = <span class="ch_wcalc"></span><br>A = -9.9999E+29 to 9.9999E+29 (upper level)<br>B = -9.9999E+29 to 9.9999E+29 (lower level)</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets upper-lower level<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right12.htm#:CALCulate:VARIUPLOw?" target="_self">:VARIUPLOw? w$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">w$,A&lt;NR3&gt;,B&lt;NR3&gt;</p>
+			</td>
+		</tr>
+
+	</table>
+</body>
+</html>

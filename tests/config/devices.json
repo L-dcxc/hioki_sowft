@@ -1,0 +1,15 @@
+{
+  "devices": [
+    {
+      "name": "LR8450-01",
+      "ip": "192.168.1.14",
+      "port": 8800,
+      "description": "÷˜≤‚ ‘…Ë±∏"
+    }
+  ],
+  "test_settings": {
+    "timeout": 5.0,
+    "retry_count": 3,
+    "delay_between_commands": 0.5
+  }
+}

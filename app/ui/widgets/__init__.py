@@ -1,4 +1,4 @@
-"""Reusable widgets for the LR8450 UI."""
+"""Reusable widgets for the XY2580 UI."""
 
 
 

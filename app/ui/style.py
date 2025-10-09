@@ -342,4 +342,18 @@ def get_stylesheet() -> str:
         color: #222222;
         background-color: transparent;
     }
+
+    /* Scroll area styling - ensure white background for right panel */
+    QScrollArea {
+        background-color: #ffffff;
+        border: 1px solid #cccccc;
+    }
+
+    QScrollArea > QWidget > QWidget {
+        background-color: #ffffff;
+    }
+
+    QScrollArea QWidget {
+        background-color: #ffffff;
+    }
     """

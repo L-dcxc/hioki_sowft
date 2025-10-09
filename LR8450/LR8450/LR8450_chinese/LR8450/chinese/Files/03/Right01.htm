@@ -1,0 +1,416 @@
+﻿﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<title></title>
+	<style>
+		<!--
+			.m_td_01{
+				border          : solid windowtext .75pt;
+				border-top      : none;
+				padding         : 5pt;
+			}
+
+			.m_td_02{
+				border-top      : none;
+				border-left     : none;
+				border-bottom   : solid windowtext .75pt;
+				border-right    : solid windowtext .75pt;
+				padding         : 5pt;
+			}
+		-->
+	</style>
+</head>
+
+<body>
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle">
+				<p class = "g_p_0001">
+					命令描述方法和术语
+				</p>
+			</td>
+		</tr>
+	</table>
+
+	<br><br>
+
+	<table class="MsoNormalTable" style="border-collapse:collapse; border:0;width:100%;">
+		<tr>
+			<td colspan="4" style="background:#3d60af;width:70%; height: 32px;">
+				<p class = "g_HeadTitle">
+					启用或禁用查询响应的标题前缀，或查询当前设置
+				</p>
+			</td>
+			<td style = "width:10%; height: 32px;">
+				<p class="MsoNormal" style="text-align :center"><b><a href="#(1)" target="_self">...(1)</a></b></p>
+			</td>
+		</tr>
+
+		<tr>
+			<td rowspan="2" style="border:none;border-bottom:solid silver 1pt;width:20%;vertical-align:top">
+				<p class="MsoNormal" style="padding:10pt;text-align:center;">
+					语法
+				</p>
+			</td>
+			<td style="width:20%;vertical-align:top">
+				<p class="MsoNormal" style="padding:10pt 10pt 0 10pt;">
+					(命令)<br><br>(查询)
+				</p>
+			</td>
+			<td colspan="2" style="width:50%;vertical-align:top">
+				<p class="MsoNormal" style="padding:10pt 10pt 0 10pt;">
+					<span style="color:red">
+						<b>
+							:HEADer A$<br><br>
+							:HEADer?
+						</b>
+					</span>
+				</p>
+			</td>
+			<td style="width:10%">
+				<p class="MsoNormal" style="text-align :center"><b><a href="#(2)" target="_self">...(2)</a></b></p>
+			</td>
+		</tr>
+
+		<tr>
+			<td style="border:none;border-bottom:solid silver 1pt;width:20%;vertical-align:top">
+				<br>
+				<p class="MsoNormal" style="padding:0 10pt 10pt 10pt;">(响应)</p>
+			</td>
+			<td colspan="2" style="border:none;border-bottom:solid silver 1pt;width:50%;vertical-align:top">
+				<br>
+				<p class="MsoNormal" style="margin:0 10pt 10pt 10pt">
+					<span style="color:#0000CC">
+						<b>A$<br></b>
+					</span>
+					<br>
+					A$:关,开
+				</p>
+			</td>
+			<td style="border:none;width:10%">
+				<p class="MsoNormal" style="text-align :center"><b><a href="#(3)" target="_self">...(3)</a></b></p>
+			</td>
+		</tr>
+
+		<tr>
+			<td style="border:none;border-bottom:solid silver 1pt;width:20%;vertical-align:top">
+				<p class="MsoNormal" style="margin:10pt;text-align:center">
+					详情
+				</p>
+			</td>
+			<td colspan="3" style="border:none;border-bottom:solid silver 1pt;width:70%;vertical-align:top">
+				<p class="MsoNormal" style="margin:10pt">
+					启用和禁用标题。<br>
+					启用时，查询的响应包含标题前缀；禁用时，响应没有前缀。<br>
+					返回一个文本字符串，指示标题是否已启用。<br>
+				</p>
+			</td>
+			<td style="border:none;width:10%">
+				<p class="MsoNormal" style="text-align:center"><b><a href="#(4)" target="_self">...(4)</a></b></p>
+			</td>
+		</tr>
+
+		<tr>
+			<td style="border:none;border-bottom:solid silver 1pt; width:20%;vertical-align:top">
+				<p class="MsoNormal" style="margin:10pt;text-align:center">
+					示例
+				</p>
+			</td>
+			<td colspan="3" style="border:none;border-bottom:solid silver 1pt;width:70%;vertical-align:top">
+				<p class="MsoNormal" style="margin:10pt">
+					<span style="color:#008040">
+						<b>:HEADer ON;:HEADer?</b>
+					</span>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(响应)&nbsp;&nbsp;<b>:HEADER 开</b><br>
+					<span style="color:#008040">
+						<b>:HEADer OFF;:HEADer?</b>
+					</span>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(响应)&nbsp;&nbsp;<b>关</b><br>
+				</p>
+			</td>
+			<td style="border:none;width:10%">
+				<p class="MsoNormal" style="text-align:center"><b><a href="#(5)" target="_self">...(5)</a></b></p>
+			</td>
+		</tr>
+
+		<tr>
+			<td style="border:none;border-bottom:solid silver 1pt;width:20%;vertical-align:top">
+				<p class="MsoNormal" style="margin:10pt;text-align:center">
+					注意
+				</p>
+			</td>
+			<td colspan="3" style="border:none;border-bottom:solid silver 1pt;width:70%;vertical-align:top">
+				<p class="MsoNormal" style="margin:10pt">
+					-
+				</p>
+			</td>
+			<td style="border:none;width:10%">
+				<p class="MsoNormal" style="text-align :center"><b><a href="#(6)" target="_self">...(6)</a></b></p>
+			</td>
+		</tr>
+
+		<tr>
+			<td style="border:none;border-bottom:solid silver 1pt;width:20%;vertical-align:top">
+				<p class="MsoNormal" style="margin:10pt;text-align:center">
+					使用<br>条件
+				</p>
+			</td>
+			<td colspan="3" style="border:none;border-bottom:solid silver 1pt;width:70%;vertical-align:top">
+				<p class="MsoNormal" style="margin:10pt">
+					-
+				</p>
+			</td>
+			<td style="width:10%">
+				<p class="MsoNormal" style="text-align :center"><b><a href="#(7)" target="_self">...(7)</a></b></p>
+			</td>
+		</tr>
+	</table>
+
+	<p class = "MsoNormal">
+		<br><br>
+		<span style="color:red; font-weight:bold"><a name="(1)"></a>(1) 命令或查询的功能描述<br></span>
+		这是命令或查询功能的简要描述。<br>
+		型号表示兼容的存储记录仪。<br><br><br>
+
+		<b><font color="#CC0000"><a name="(2)"></a>(2) 语法<br></font></b>
+		这是命令或查询的语法。<br>
+		如果需要，可以在响应中附加标题。<br>
+		<br><br>
+
+		<b><font color="#CC0000"><a name="(3)"></a>(3) 参数<br></font></b>
+		参数描述中可能出现以下符号。<br>
+		<br>
+	</p>
+
+	<table style=" border:1; border-collapse:collapse; border:none">
+		<tr>
+			<td style="border:solid windowtext .75pt;border-right:solid white .75pt;background:black;vertical-align:top">
+				<p class="MsoNormal" style="text-align:center">
+					<span style='font-size:10pt;color:white'>符号</span>
+				</p>
+			</td>
+			<td style="border-top:solid windowtext .75pt;border-left:none;border-bottom:solid windowtext .75pt;border-right:solid white .75pt;background:black;vertical-align:top">
+				<p class="MsoNormal" style="text-align:center">
+					<span style='font-size:10pt;color:white'>定义</span>
+				</p>
+			</td>
+			<td style="border:solid windowtext .75pt;border-left:none;background:black;vertical-align:top">
+				<p class="MsoNormal" style="text-align:center">
+					<span style='font-size:10pt;color:white'>示例</span>
+				</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="m_td_01" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">A$</span>
+				</p>
+			</td>
+			<td class="m_td_02" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">文本数据</span>
+				</p>
+			</td>
+			<td class="m_td_02" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">OFF, ON</span>
+				</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="m_td_01" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">unit$</span>
+				</p>
+			</td>
+			<td class="m_td_02" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">单元数据</span>
+				</p>
+			</td>
+			<td class="m_td_02" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt"><b>UNIT1</b> to <b>UNIT4</b><br><b>REMOTE1</b> to <b>REMOTE7</b></span>
+				</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="m_td_01" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">ch$</span>
+				</p>
+			</td>
+			<td class="m_td_02" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">通道数据</span>
+				</p>
+			</td>
+			<td class="m_td_02" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">
+						<b>CH1_1</b> to <b>CH4_30</b>&nbsp;&nbsp;(有线模拟通道)<br>
+						<b>R1_1</b> to <b>R7_30</b>&nbsp;&nbsp;(无线模拟通道)<br>
+						<b>PLS1</b> to <b>PLS8</b>&nbsp;&nbsp;&nbsp;(脉冲通道)<br>
+						<b>ALM1</b> to <b>ALM8</b>&nbsp;&nbsp;&nbsp;(报警通道)<br>
+						<b>W1</b> to <b>W30</b>&nbsp;&nbsp;&nbsp;(波形计算通道)<br>
+					</span>
+				</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="m_td_01" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">pls$</span>
+				</p>
+			</td>
+			<td class="m_td_02" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">脉冲通道数据</span>
+				</p>
+			</td>
+			<td class="m_td_02" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt"><b>PLS1</b> to <b>PLS8</b></span>
+				</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="m_td_01" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">alm$</span>
+				</p>
+			</td>
+			<td class="m_td_02" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">报警通道数据</span>
+				</p>
+			</td>
+			<td class="m_td_02" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt"><b>ALM1</b> to <b>ALM8</b></span>
+				</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="m_td_01" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">w$</span>
+				</p>
+			</td>
+			<td class="m_td_02" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">波形计算通道数据</span>
+				</p>
+			</td>
+			<td class="m_td_02" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt"><b>W1</b> to <b>W30</b></span>
+				</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="m_td_01" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">A, B, C,...</span>
+				</p>
+			</td>
+			<td class="m_td_02" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">数值数据</span>
+				</p>
+			</td>
+			<td class="m_td_02" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">10, -20, 1.5E+05, 0.1</span>
+				</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="m_td_01" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">A&lt;NR1&gt;</span><span style="font-size:8pt"><sup>(note1)</sup></span>
+				</p>
+			</td>
+			<td class="m_td_02" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">整数数据</span>
+				</p>
+			</td>
+			<td class="m_td_02" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">+15, -20, 25</span>
+				</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="m_td_01" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">A&lt;NR2&gt;</span><span style="font-size:8pt"><sup>(note1)</sup></span>
+				</p>
+			</td>
+			<td class="m_td_02" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">定点数据</span>
+				</p>
+			</td>
+			<td class="m_td_02" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">+1.23, -4.57, 7.89</span>
+				</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="m_td_01" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">A&lt;NR3&gt;</span><span style="font-size:8pt"><sup>(note1)</sup></span>
+				</p>
+			</td>
+			<td class="m_td_02" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">浮点数据</span>
+				</p>
+			</td>
+			<td class="m_td_02" style="vertical-align:top">
+				<p class="MsoNormal">
+					<span style="font-size:10pt">+10.0E-03, -2.3E+03, 5E+03</span>
+				</p>
+			</td>
+		</tr>
+	</table>
+
+	<p class="MsoNormal">
+		<br>
+		(note 1)
+		NR1, NR2 and NR3 formats are collectively referred to as NRf format.
+		All commands and queries accept NRf data as arguments. However, responses are returned in the prespecified format.<br>
+		<br><br>
+
+		<b><font color="#CC0000"><a name="(4)"></a>(4) 详情<br></font></b>
+		这些是命令/查询的功能细节。<br>
+		<br><br>
+
+		<b><font color="#CC0000"><a name="(5)"></a>(5) 示例<br></font></b>
+		命令/查询的具体示例。<br>
+		<br><br>
+
+		<b><font color="#CC0000"><a name="(6)"></a>(6) 注意<br></font></b>
+		关于命令/查询的补充说明。<br>
+		<br><br>
+
+		<b><font color="#CC0000"><a name="(7)"></a>(7) 使用条件<br></font></b>
+		使用命令/查询所需的条件。<br>
+	</p>
+</body>
+</html>

@@ -1,0 +1,1728 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<title></title>
+	<style>
+	<!--
+	.m_td_set_001{
+		padding				: 5px;
+		color				: white;
+		font-size			: 9pt;
+		text-align			: center;
+		vertical-align		: middle;
+		border				: .5pt solid windowtext;
+		background			: black;
+	}
+
+	.m_td_set_002{
+		padding				: 5px;
+		font-size			: 9pt;
+		text-align			: justify;
+		vertical-align		: middle;
+		border				: .5pt solid windowtext;
+	}
+	-->
+	</style>
+</head>
+
+<body>
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle">
+				<p class = "g_p_0001">
+					屏幕 (DISPlay)
+				</p>
+			</td>
+		</tr>
+	</table>
+
+	<p class="MsoNormal"><br></p>
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":CHANge">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the screen mode.</b>
+						</span>
+					</a>
+					<a id=":CHANge?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:DISPlay:CHANge A$,(B$,C$)<br><br>
+						:DISPlay:CHANge? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$(,B$,C$)<br>
+					</span>
+					<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Changes the screen mode.<br>
+					Returns the current screen mode as character data.<br>
+					The correspondence between each parameter and the screen is as follows.<br>
+					Medium and small items can be omitted. In that case, it moves to the screen that was displayed last in the specified item.<br>
+					<blockquote>
+						<table style="border:0; border-collapse:collapse">
+							<tr>
+								<td class="m_td_set_001" style="border-right:.5pt solid white">A$(Major item)</td>
+								<td class="m_td_set_001" style="border-left:none;border-right:.5pt solid white">B$(Middle item)</td>
+								<td class="m_td_set_001" style="border-left:none;border-right:.5pt solid white">C$(Small item)</td>
+								<td class="m_td_set_001" style="border-left:none;border-right:.5pt solid white">Display screen</td>
+							</tr>
+							<!-- 波形画面 -->
+							<tr>
+								<td class="m_td_set_002" >WAVE</td>
+								<td class="m_td_set_002" >-</td>
+								<td class="m_td_set_002">-</td>
+								<td class="m_td_set_002">Waveform</td>
+							</tr>
+							<!-- 設定画面 -->
+							<!-- 設定画面>UNIT -->
+							<tr>
+								<td class="m_td_set_002" rowspan="25">SET</td>
+								<td class="m_td_set_002" >UNIT</td>
+								<td class="m_td_set_002">-</td>
+								<td class="m_td_set_002">Setting&gt;Unit</td>
+							</tr>
+
+							<!-- 設定画面>MEAS -->
+							<tr>
+								<td class="m_td_set_002" rowspan="4">MEAS</td>
+								<td class="m_td_set_002">RECORD</td>
+								<td class="m_td_set_002">Setting&gt;Measure&gt;Record</td>
+							</tr>
+							<tr>
+								<td class="m_td_set_002">A_SAVE</td>
+								<td class="m_td_set_002">Setting&gt;Measure&gt;Auto save</td>
+							</tr>
+							<tr>
+								<td class="m_td_set_002">M_SAVE</td>
+								<td class="m_td_set_002">Setting&gt;Measure&gt;Manual save</td>
+							</tr>
+							<tr>
+								<td class="m_td_set_002">DISPLAY</td>
+								<td class="m_td_set_002">Setting&gt;Measure&gt;Display</td>
+							</tr>
+
+							<!-- 設定画面>CH -->
+							<tr>
+								<td class="m_td_set_002" rowspan="4">CHANNEL</td>
+								<td class="m_td_set_002">INDIVIDUAL</td>
+								<td class="m_td_set_002">Setting&gt;Channel&gt;Individual</td>
+							</tr>
+							<tr>
+								<td class="m_td_set_002">UNIT1 to UNIT4</td>
+								<td class="m_td_set_002">Setting&gt;Channel&gt;Wired Unit 1 to Unit 4</td>
+							</tr>
+							<tr>
+								<td class="m_td_set_002">REMOTE1 to REMOTE7</td>
+								<td class="m_td_set_002">Setting&gt;Channel&gt;Wireless Unit 1 to Unit 7</td>
+							</tr>
+							<tr>
+								<td class="m_td_set_002">PULSE</td>
+								<td class="m_td_set_002">Setting&gt;Channel&gt;Pulse</td>
+							</tr>
+
+							<!-- 設定画面>TRIG -->
+							<tr>
+								<td class="m_td_set_002" rowspan="5">TRIG</td>
+								<td class="m_td_set_002">COMMON</td>
+								<td class="m_td_set_002">Setting&gt;Trigger&gt;Common</td>
+							</tr>
+							<tr>
+								<td class="m_td_set_002">UNIT1 to UNIT4</td>
+								<td class="m_td_set_002">Setting&gt;Trigger&gt;Wired Unit 1 to Unit 4</td>
+							</tr>
+							<tr>
+								<td class="m_td_set_002">REMOTE1 to REMOTE7</td>
+								<td class="m_td_set_002">Setting&gt;Trigger&gt;Wireless Unit 1 to Unit 7</td>
+							</tr>
+							<tr>
+								<td class="m_td_set_002">PULSE</td>
+								<td class="m_td_set_002">Setting&gt;Trigger&gt;Pulse</td>
+							</tr>
+							<tr>
+								<td class="m_td_set_002">W_CALC</td>
+								<td class="m_td_set_002">Setting&gt;Trigger&gt;Waveform</td>
+							</tr>
+
+							<!-- 設定画面>ALARM -->
+							<tr>
+								<td class="m_td_set_002" rowspan="6">ALARM</td>
+								<td class="m_td_set_002">COMMON</td>
+								<td class="m_td_set_002">Setting&gt;Alarm&gt;Common</td>
+							</tr>
+							<tr>
+								<td class="m_td_set_002">ALARM1_8</td>
+								<td class="m_td_set_002">Setting&gt;Alarm&gt;Alarm 1-8</td>
+							</tr>
+							<tr>
+								<td class="m_td_set_002">UNIT1 to UNIT4</td>
+								<td class="m_td_set_002">Setting&gt;Alarm&gt;Wired Unit 1 to Unit 4</td>
+							</tr>
+							<tr>
+								<td class="m_td_set_002">REMOTE1 to REMOTE7</td>
+								<td class="m_td_set_002">Setting&gt;Alarm&gt;Wireless Unit 1 to Unit 7</td>
+							</tr>
+							<tr>
+								<td class="m_td_set_002">PULSE</td>
+								<td class="m_td_set_002">Setting&gt;Alarm&gt;Pulse</td>
+							</tr>
+							<tr>
+								<td class="m_td_set_002">W_CALC</td>
+								<td class="m_td_set_002">Setting&gt;Alarm&gt;Waveform</td>
+							</tr>
+
+							<!-- 設定画面>CALC -->
+							<tr>
+								<td class="m_td_set_002" rowspan="2">CALC</td>
+								<td class="m_td_set_002">NUMERICAL</td>
+								<td class="m_td_set_002">Setting&gt;Calculation&gt;Numerical</td>
+							</tr>
+							<tr>
+								<td class="m_td_set_002">WAVEFORM</td>
+								<td class="m_td_set_002">Setting&gt;Calculation&gt;Waveform</td>
+							</tr>
+
+							<!-- 設定画面>SYSTEM -->
+							<tr>
+								<td class="m_td_set_002" rowspan="3">SYSTEM</td>
+								<td class="m_td_set_002">ENVIRONMENT</td>
+								<td class="m_td_set_002">Setting&gt;System&gt;Environment</td>
+							</tr>
+							<tr>
+								<td class="m_td_set_002">INTERFACE</td>
+								<td class="m_td_set_002">Setting&gt;System&gt;Communication</td>
+							</tr>
+							<tr>
+								<td class="m_td_set_002">EXTERNAL</td>
+								<td class="m_td_set_002">Setting&gt;System&gt;External</td>
+							</tr>
+
+							<tr>
+								<td class="m_td_set_002" rowspan="2">FILE</td>
+								<td class="m_td_set_002">SD</td>
+								<td class="m_td_set_002">-</td>
+								<td class="m_td_set_002">File&gt;SD</td>
+							</tr>
+							<tr>
+								<td class="m_td_set_002" >USB</td>
+								<td class="m_td_set_002" >-</td>
+								<td class="m_td_set_002">File&gt;USB</td>
+							</tr>
+
+							<!-- モニタ画面 -->
+							<tr>
+								<td class="m_td_set_002" >MONITOR</td>
+								<td class="m_td_set_002" >-</td>
+								<td class="m_td_set_002">-</td>
+								<td class="m_td_set_002">Monitor</td>
+							</tr>
+
+							<!-- QSET画面 -->
+							<tr>
+								<td class="m_td_set_002" >QSET</td>
+								<td class="m_td_set_002" >-</td>
+								<td class="m_td_set_002">-</td>
+								<td class="m_td_set_002">Quick set<br>*Query only</td>
+							</tr>
+						</table>
+					</blockquote>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:DISPlay:CHANge WAVE<br>:DISPlay:CHANge?<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:DISPLAY:CHANGE WAVE</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					The screen cannot be switched during measurement.<br>
+					Cannot change to a unit screen that is not connected.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+<!--
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":GROUp">
+						<span class = "g_HeadTitle">
+							<b>波形表示とデータ表示の設定と問い合わせ</b>
+						</span>
+					</a>
+					<a id=":GROUp?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:DISPlay:GROUp A$,B$<br><br>
+						:DISPlay:GROUp? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$,B$<br>
+					</span>
+					<br>
+					A$ = 未定<br>B$ = 未定
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					波形表示画面の波形表示とデータ表示を設定します。<br>現在の波形表示画面の波形表示とデータ表示の設定を返します。<br>
+				</p>
+				<table>
+					<tr><td>以下未確定</td></tr>
+					<tr><td class="g_td_0013"><b>ALL</b></td><td class="g_td_0013">&nbsp;</td></tr><tr><td class="g_td_0013"><b>UNIT</b></td><td class="g_td_0013">&nbsp;</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:DISPlay:GROUp ALL,UNIT1<br>:DISPlay:GROUp?<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:DISPLAY:GROUP ALL,UNIT1</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+-->
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":MARK">
+						<span class = "g_HeadTitle">
+							<b>Insert the event mark.</b>
+						</span>
+					</a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:DISPlay:MARK<br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Insert the event mark.<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:DISPlay:MARK<br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Insert event mark at only start.
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":MARK?">
+						<span class = "g_HeadTitle">
+							<b>Queries the event mark num.</b>
+						</span>
+					</a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:DISPlay:MARK?<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A&lt;NR1&gt;<br>
+					</span>
+					<br>
+					A =  0 to 1000
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Queries the event mark num as an NR1 numerical value.<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:DISPlay:MARK?<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:DISPLAY:MARK 10</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":MARKJump">
+						<span class = "g_HeadTitle">
+							<b>Jump to the event mark.</b>
+						</span>
+					</a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:DISPlay:MARKJump A<br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					A =  1 to event mark num
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Jump to the event mark.<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:DISPlay:MARKJump 10<br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":MARKJump?">
+						<span class = "g_HeadTitle">
+							<b>Queries the data num at the event mark designeated.</b>
+						</span>
+					</a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:DISPlay:MARKJump? A<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A&lt;NR1&gt;,B&lt;NR1&gt;<br>
+					</span>
+					<br>
+					A =  1 to event mark num<br>B = data num
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Queries the data num at the event mark designeated as an NR1 numerical value.<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:DISPlay:MARKJump? 10<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:DISPLAY:MARKJUMP 10,500</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+<!--
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":MODE">
+						<span class = "g_HeadTitle">
+							<b>画面表示モードの切り換えと問い合わせ</b>
+						</span>
+					</a>
+					<a id=":MODE?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:DISPlay:MODE A$<br><br>
+						:DISPlay:MODE? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = 未定
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					波形表示画面の表示モードを設定します。<br>現在の波形表示画面の表示モードの設定を返します。<br>
+				</p>
+				<table>
+					以下未確定<br>
+					<tr><td class="g_td_0013"><b>G_W</b></td><td class="g_td_0013">&nbsp;ゲージと波形</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:DISPlay:MODE WAVE<br>:DISPlay:MODE?<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:DISPLAY:MODE WAVE</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+-->
+
+
+
+<!--
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":PAGE">
+						<span class = "g_HeadTitle">
+							<b>画面のページの切り換えと問い合わせ</b>
+						</span>
+					</a>
+					<a id=":PAGE?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:DISPlay:PAGE A<br><br>
+						:DISPlay:PAGE? <br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A&lt;NR1&gt;<br>
+					</span>
+					<br>
+					A = 1 to ページ数
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					画面のページを設定します。<br>現在の画面のページを返します。<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:DISPlay:PAGE 2<br>:DISPlay:PAGE?<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:DISPLAY:PAGE 2</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+-->
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":WAVE">
+						<span class = "g_HeadTitle">
+							<b>Performs waveform display.</b>
+						</span>
+					</a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:DISPlay:WAVE A$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					A$ = ACUR,TRIG,POINT
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Displays the waveform on the screen from the position indicated by A$.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>ACUR</b></td><td class="g_td_0013">&nbsp;A Cursor position (cursor display: ON, cursor type: valid only for vertical axis)</td></tr>
+					<tr><td class="g_td_0013"><b>TRIG</b></td><td class="g_td_0013">&nbsp;Trigger point</td></tr>
+					<tr><td class="g_td_0013"><b>POINT</b></td><td class="g_td_0013">&nbsp;Point set by <a href="../03/Right11.htm#:POINt">:MEMory:POINt</a></td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:DISPlay:WAVE ACUR<br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":ANAlog:DRAWing">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the waveform display color.</b>
+						</span>
+					</a>
+					<a id=":ANAlog:DRAWing?"></a>
+					<a id=":PULSe:DRAWing"></a><a id=":PULSe:DRAWing?"></a>
+					<a id=":ALARm:DRAWing"></a><a id=":ALARm:DRAWing?"></a>
+					<a id=":CALCulate:DRAWing"></a><a id=":CALCulate:DRAWing?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br><br><br><br><br><br><br><br><br><br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<br>
+					[Analog waveform display]<br>
+					<span style="color:red;font-weight:bold">
+						:DISPlay:ANALog:DRAWing ch$,A$<br><br>
+					</span>
+					[Pulse waveform display]<br>
+					<span style="color:red;font-weight:bold">
+						:DISPlay:PULSe:DRAWing pls$,A$<br><br>
+					</span>
+					[报警 waveform display]<br>
+					<span style="color:red;font-weight:bold">
+						:DISPlay:ALARm:DRAWing alm$,A$<br><br>
+					</span>
+					[Wave calc waveform display]<br>
+					<span style="color:red;font-weight:bold">
+						:DISPlay:CALCulate:DRAWing w$,A$<br><br>
+					</span>
+					[Analog waveform display]<br>
+					<span style="color:red;font-weight:bold">
+						:DISPlay:ANALog:DRAWing? ch$<br><br>
+					</span>
+					[Pulse waveform display]<br>
+					<span style="color:red;font-weight:bold">
+						:DISPlay:PULSe:DRAWing? pls$<br><br>
+					</span>
+					[报警 waveform display]<br>
+					<span style="color:red;font-weight:bold">
+						:DISPlay:ALARm:DRAWing? alm$<br><br>
+					</span>
+					[Wave calc waveform display]<br>
+					<span style="color:red;font-weight:bold">
+						:DISPlay:CALCulate:DRAWing? w$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					[Analog waveform display]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						ch$,A$<br>
+					</span>
+					<br>
+					[Pulse waveform display]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						pls$,A$<br>
+					</span>
+					<br>
+					[报警 waveform display]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						alm$,A$<br>
+					</span>
+					<br>
+					[Wave calc waveform display]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						w$,A$<br>
+					</span>
+					<br>
+					ch$ = <span class="ch_analog"></span><br>pls$ = <span class="ch_pulse"></span><br>alm$ = <span class="ch_alarm"></span><br>w$ = <span class="ch_wcalc"></span><br>A$ = 关,C1 to C24
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the waveform display color for the channel designated by ch$/pls$/alm$/w$.<br>
+					Returns the waveform display color for the channel designated by ch$/pls$/alm$/w$ as character data.<br>
+					<br>
+					<a name="Color">
+					The relationship between color numbers and display colors is as follows.<br>
+					</a>
+					<style type="text/css">
+					.table3 {
+						border-collapse: collapse;
+					}
+					.table3 th {
+						background-color: #cccccc;
+					}
+					</style>
+					<table class="table3" border=2 cellpadding="1">
+						<tr><th>C1</th><td width="25" bgcolor="#00A7FF"></td>	<th>C2</th><td width="25" bgcolor="#E700A7"></td>	<th>C3</th><td width="25" bgcolor="#FFD200"></td>	<th>C4</th><td width="25" bgcolor="#00EF7F"></td>	<th>C5</th><td width="25" bgcolor="#FF8F00"></td>	<th>C6</th><td width="25" bgcolor="#F1F1F1"></td>	<th>C7</th><td width="25" bgcolor="#3F27FF"></td>	<th>C8</th><td width="25" bgcolor="#D70000"></td></tr>
+						<tr><th>C9</th><td width="25" bgcolor="#00FFFF"></td>	<th>C10</th><td width="25" bgcolor="#FF007F"></td>	<th>C11</th><td width="25" bgcolor="#FFFF00"></td>	<th>C12</th><td width="25" bgcolor="#00FF00"></td>	<th>C13</th><td width="25" bgcolor="#FF7F00"></td>	<th>C14</th><td width="25" bgcolor="#BFBFBF"></td>	<th>C15</th><td width="25" bgcolor="#0000FF"></td>	<th>C16</th><td width="25" bgcolor="#FF0000"></td></tr>
+						<tr><th>C17</th><td width="25" bgcolor="#0080FF"></td>	<th>C18</th><td width="25" bgcolor="#BF007F"></td>	<th>C19</th><td width="25" bgcolor="#9F9F00"></td>	<th>C20</th><td width="25" bgcolor="#00BC00"></td>	<th>C21</th><td width="25" bgcolor="#DF5F00"></td>	<th>C22</th><td width="25" bgcolor="#7E7E7E"></td>	<th>C23</th><td width="25" bgcolor="#0000BF"></td>	<th>C24</th><td width="25" bgcolor="#BF0000"></td></tr>
+					</table>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:DISPlay:ANALog:DRAWing CH1_1,C1<br>:DISPlay:ANALog:DRAWing? CH1_1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:DISPLAY:ANALOG:DRAWING CH1_1,C1</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					It is also possible to set and query using the following conventional commands.<br>
+					:DISPlay:DRAWing ch$,A$ / :DISPlay:DRAWing? ch$<br>
+					:DISPlay:PDRAWing pls$,A$ / :DISPlay:PDRAWing? pls$<br>
+					:DISPlay:ADRAWing alm$,A$ / :DISPlay:ADRAWing? alm$<br>
+					:DISPlay:WDRAWing w$,A$ / :DISPlay:WDRAWing? w$<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":ANAlog:USECh">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the analog waveform display ON/OFF.</b>
+						</span>
+					</a>
+					<a id=":ANAlog:USECh?"></a>
+					<a id=":PULSe:USECh"></a><a id=":PULSe:USECh?"></a>
+					<a id=":ALARm:USECh"></a><a id=":ALARm:USECh?"></a>
+					<a id=":CALCulate:USECh"></a><a id=":CALCulate:USECh?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br><br><br><br><br><br><br><br><br><br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<br>
+					[Analog waveform display]<br>
+					<span style="color:red;font-weight:bold">
+						:DISPlay:ANALog:USECh ch$,A$<br><br>
+					</span>
+					[Pulse waveform display]<br>
+					<span style="color:red;font-weight:bold">
+						:DISPlay:PULSe:USECh pls$,A$<br><br>
+					</span>
+					[报警 waveform display]<br>
+					<span style="color:red;font-weight:bold">
+						:DISPlay:ALARm:USECh alm$,A$<br><br>
+					</span>
+					[Wave calc waveform display]<br>
+					<span style="color:red;font-weight:bold">
+						:DISPlay:CALCulate:USECh w$,A$<br><br>
+					</span>
+					[Analog waveform display]<br>
+					<span style="color:red;font-weight:bold">
+						:DISPlay:ANALog:USECh? ch$<br><br>
+					</span>
+					[Pulse waveform display]<br>
+					<span style="color:red;font-weight:bold">
+						:DISPlay:PULSe:USECh? pls$<br><br>
+					</span>
+					[报警 waveform display]<br>
+					<span style="color:red;font-weight:bold">
+						:DISPlay:ALARm:USECh? alm$<br><br>
+					</span>
+					[Wave calc waveform display]<br>
+					<span style="color:red;font-weight:bold">
+						:DISPlay:CALCulate:USECh? w$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					[Analog waveform display]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						ch$,A$<br>
+					</span>
+					<br>
+					[Pulse waveform display]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						pls$,A$<br>
+					</span>
+					<br>
+					[报警 waveform display]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						alm$,A$<br>
+					</span>
+					<br>
+					[Wave calc waveform display]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						w$,A$<br>
+					</span>
+					<br>
+					ch$ = <span class="ch_analog"></span><br>pls$ = <span class="ch_pulse"></span><br>alm$ = <span class="ch_alarm"></span><br>w$ = <span class="ch_wcalc"></span><br>A$ = 关, 开
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the analog waveform display 开/关 for the channel designated by ch$/pls$/alm$/w$.<br>
+					Returns the analog waveform display 开/关 for the channel designated by ch$/pls$/alm$/w$ as character data.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>OFF</b></td><td class="g_td_0013">&nbsp;Not display waveform</td></tr>
+					<tr><td class="g_td_0013"><b>ON</b></td><td class="g_td_0013">&nbsp;Display waveform</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:DISPlay:ANALog:USECh CH1_1,开<br>:DISPlay:ANALog:USECh? CH1_1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:DISPLAY:ANALOG:USECH CH1_1,开</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					It is also possible to set and query using the following conventional commands.<br>
+					:DISPlay:USECh ch$,A$ / :DISPlay:USECh? ch$<br>
+					:DISPlay:AUSECh alm$,A$ / :DISPlay:AUSECh? alm$<br>
+					:DISPlay:WUSECh w$,A$ / :DISPlay:WUSECh? w$<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":ANAlog:VARIable">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the upper-lower mode.</b>
+						</span>
+					</a>
+					<a id=":ANAlog:VARIable?"></a>
+					<a id=":PULSe:VARIable"></a><a id=":PULSe:VARIable?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br><br><br><br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<br>
+					[Analog waveform display]<br>
+					<span style="color:red;font-weight:bold">
+						:DISPlay:ANALog:VARIable ch$,A$<br><br>
+					</span>
+					[Pulse waveform display]<br>
+					<span style="color:red;font-weight:bold">
+						:DISPlay:PULSe:VARIable pls$,A$<br><br>
+					</span>
+					[Analog waveform display]<br>
+					<span style="color:red;font-weight:bold">
+						:DISPlay:ANALog:VARIable? ch$<br><br>
+					</span>
+					[Pulse waveform display]<br>
+					<span style="color:red;font-weight:bold">
+						:DISPlay:PULSe:VARIable? pls$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					[Analog waveform display]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						ch$,A$<br>
+					</span>
+					<br>
+					[Pulse waveform display]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						pls$,A$<br>
+					</span>
+					<br>
+					ch$ = <span class="ch_analog"></span><br>pls$ = <span class="ch_pulse"></span><br>A$ = 关, 开
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the upper-lower mode for the channel designated by ch$/pls$.<br>
+					Returns the current upper-lower mode for the channel designated by ch$/pls$ as character data.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>OFF</b></td><td class="g_td_0013">&nbsp;set in position</td></tr>
+					<tr><td class="g_td_0013"><b>ON</b></td><td class="g_td_0013">&nbsp;set in up-low</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:DISPlay:ANALog:VARIable CH1_1,开<br>:DISPlay:ANALog:VARIable? CH1_1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:DISPLAY:ANALOG:VARIABLE CH1_1,开</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					[Pulse waveform display]<br>
+					If the input type is other than the number of revolutions, the setting cannot be changed.<br>
+					It is also possible to set and query using the following conventional commands.<br>
+					:DISPlay:VARIable ch$,A$ / :DISPlay:VARIable? ch$<br>
+					:DISPlay:PVARIable pls$,A$ / :DISPlay:PVARIable? pls$<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":ANAlog:VARIUPLOw">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the upper-lower level.</b>
+						</span>
+					</a>
+					<a id=":ANAlog:VARIUPLOw?"></a>
+					<a id=":PULSe:VARIUPLOw"></a><a id=":PULSe:VARIUPLOw?"></a>
+					<a id=":CALCulate:VARIUPLOw"></a><a id=":CALCulate:VARIUPLOw?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br><br><br><br><br><br><br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<br>
+					[Analog waveform display]<br>
+					<span style="color:red;font-weight:bold">
+						:DISPlay:ANALog:VARIUPLOw ch$,A,B<br><br>
+					</span>
+					[Pulse waveform display]<br>
+					<span style="color:red;font-weight:bold">
+						:DISPlay:PULSe:VARIUPLOw pls$,A,B<br><br>
+					</span>
+					[Wave calc waveform display]<br>
+					<span style="color:red;font-weight:bold">
+						:DISPlay:CALCulate:VARIUPLOw w$,A,B<br><br>
+					</span>
+					[Analog waveform display]<br>
+					<span style="color:red;font-weight:bold">
+						:DISPlay:ANALog:VARIUPLOw? ch$<br><br>
+					</span>
+					[Pulse waveform display]<br>
+					<span style="color:red;font-weight:bold">
+						:DISPlay:PULSe:VARIUPLOw? pls$<br><br>
+					</span>
+					[Wave calc waveform display]<br>
+					<span style="color:red;font-weight:bold">
+						:DISPlay:CALCulate:VARIUPLOw? w$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					[Analog waveform display]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						ch$,A&lt;NR3&gt;,B&lt;NR3&gt; (4 decimal places)<br>
+					</span>
+					<br>
+					[Pulse waveform display]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						pls$,A&lt;NR3&gt;,B&lt;NR3&gt; (4 decimal places)<br>
+					</span>
+					<br>
+					[Wave calc waveform display]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						w$,A&lt;NR3&gt;,B&lt;NR3&gt; (4 decimal places)<br>
+					</span>
+					<br>
+					ch$ = <span class="ch_analog"></span><br>pls$ = <span class="ch_pulse"></span><br>w$ = <span class="ch_wcalc"></span><br>A = -9.9999E+29 to 9.9999E+29 (upper level)<br>B = -9.9999E+29 to 9.9999E+29 (lower level)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the upper-lower level for the channel designated by ch$/pls$/w$.<br>
+					Returns the current upper-lower level for the channel designated by ch$/pls$/w$ as an NR3 numerical value.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:DISPlay:ANALog:VARIUPLOw CH1_1,100,-100<br>:DISPlay:ANALog:VARIUPLOw? CH1_1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:DISPLAY:ANALOG:VARIUPLOW CH1_1,1,+1.0000E+02,-1.0000E+02</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					It is also possible to set and query using the following conventional commands.<br>
+					:DISPlay:VARIUPLOw ch$,A,B / :DISPlay:VARIUPLOw? ch$<br>
+					:DISPlay:PVARIUPLOw pls$,A,B / :DISPlay:PVARIUPLOw? pls$<br>
+					:DISPlay:WVARIUPLOw w$,A,B / :DISPlay:WVARIUPLOw? w$<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":ANAlog:YMAG">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the magnification/compression ratio on the voltage axis.</b>
+						</span>
+					</a>
+					<a id=":ANAlog:YMAG?"></a>
+					<a id=":PULSe:YMAG"></a><a id=":PULSe:YMAG?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br><br><br><br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<br>
+					[Analog waveform display]<br>
+					<span style="color:red;font-weight:bold">
+						:DISPlay:ANALog:YMAG ch$,A$<br><br>
+					</span>
+					[Pulse waveform display]<br>
+					<span style="color:red;font-weight:bold">
+						:DISPlay:PULSe:YMAG pls$,A$<br><br>
+					</span>
+					[Analog waveform display]<br>
+					<span style="color:red;font-weight:bold">
+						:DISPlay:ANALog:YMAG? ch$<br><br>
+					</span>
+					[Pulse waveform display]<br>
+					<span style="color:red;font-weight:bold">
+						:DISPlay:PULSe:YMAG? pls$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					[Analog waveform display]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						ch$,A$<br>
+					</span>
+					<br>
+					[Pulse waveform display]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						pls$,A$<br>
+					</span>
+					<br>
+					ch$ = <span class="ch_analog"></span><br>pls$ = <span class="ch_pulse"></span><br>A$ = X1_2, X1, X2, X5, X10, X20, X50, X100
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the magnification/compression ratio on the voltage axis for the channel designated by ch$/pls$.<br>
+					Returns the current magnification/compression ratio on the voltage axis for the channel designated by ch$/pls$ as character data.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:DISPlay:ANALog:YMAG CH1_1,X2<br>:DISPlay:ANALog:YMAG? CH1_1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:DISPLAY:ANALOG:YMAG CH1_1,X2</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					It is also possible to set and query using the following conventional commands.<br>
+					:DISPlay:YMAG ch$,A,B / :DISPlay:YMAG? ch$<br>
+					:DISPlay:PYMAG pls$,A,B / :DISPlay:PYMAG? pls$<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+</body>
+</html>

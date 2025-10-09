@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<style>
+		<!--
+		    body{
+				background-color	: white
+			}
+
+			p.MsoNormal, li.MsoNormal, div.MsoNormal{
+				margin				: 0mm;
+				font-size			: 11pt;
+				font-family			: "Verdana";
+			}
+
+			.m_p01{
+				margin				: 0mm;
+			 	font-size			: 10pt;
+			 	font-family			: "Verdana";
+			 	text-align			: justify;
+				text-justify		: inter-ideograph;
+			}
+		-->
+	</style>
+	<title></title>
+</head>
+
+<body>
+	<table class="MsoNormalTable" style ="width:100%; border-collapse:collapse">
+		<tr style="height:25pt">
+			<td style ="background:#3d60af">
+				<p class="MsoNormal" style="margin-left:9pt;text-align:justify;">
+					<span style="font-size:14pt;color:white">输入缓冲区和输出队列</span>
+				</p>
+			</td>
+		</tr>
+	</table>
+
+	<p class="m_p01"><br></p>
+
+	<table class="MsoNormalTable" style ="width:100%; border-collapse:collapse">
+		<tr>
+			<td style="background:#bac6d8">
+				<p class="MsoNormal" style="margin:5pt;">输入缓冲区</p>
+			</td>
+		</tr>
+	</table>
+
+	<p class="m_p01">
+		<br>
+		仪器具有200KB的输入缓冲区。<br>
+		接收到的消息被放入此缓冲区并按先进先出顺序处理。<br>
+		但是，<b>"ABORT"</b>命令在接收到时会立即处理。<br>
+		<br>
+	</p>
+
+	<table class="MsoNormalTable" style ="width:100%; border-collapse:collapse">
+		<tr>
+			<td style="background:#bac6d8">
+				<p class="MsoNormal" style="margin:5pt;">输出队列</p>
+			</td>
+		</tr>
+	</table>
+
+	<p class="m_p01">
+		<br>
+		仪器具有200KB的输出队列。<br>
+		响应消息在输出队列中排队，然后发送到控制器（PC）进行读取。<br>
+		如果响应消息的长度超过200KB，则会产生查询错误。<br>
+		<br>
+		以下事件会清除输出队列：<br>
+		<br>
+		&nbsp;&nbsp;1. 当控制器读取所有内容时。<br>
+		&nbsp;&nbsp;2. 当仪器关闭并重新启动时。<br>
+		&nbsp;&nbsp;3. 接收到下一条命令时。<br>
+	</p>
+
+</body>
+</html>

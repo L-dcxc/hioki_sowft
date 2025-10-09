@@ -1,4 +1,4 @@
-"""Application package for LR8450 desktop client."""
+"""Application package for XY2580 desktop client."""
 
 
 

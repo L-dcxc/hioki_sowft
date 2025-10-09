@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<style>
+		<!--
+		    body{
+				background-color	: white
+			}
+
+			p.MsoNormal, li.MsoNormal, div.MsoNormal{
+				margin				: 0mm;
+				font-size			: 11pt;
+				font-family			: "Verdana";
+			}
+
+			.m_p01{
+				margin				: 0mm;
+			 	font-size			: 10pt;
+			 	font-family			:"Verdana";
+			}
+
+			.m_td_01{
+				border				: solid windowtext 1pt;
+				border-right		: solid white 1pt;
+				background			: black;
+				padding				: 0mm 4.95pt 0mm 4.95pt;
+			}
+
+			.m_td_02{
+				border				: solid windowtext 1pt;
+				border-left			: none;
+				background			: black;
+				padding				: 0mm 4.95pt 0mm 4.95pt;
+			}
+
+			.m_td_03{
+				border-top			: none;
+				border-left			: solid windowtext 1pt;
+				border-bottom		: solid #999999 1pt;
+				border-right		: solid windowtext 1pt;
+				padding				: 0mm 4.95pt 0mm 4.95pt;
+			}
+
+			.m_td_04{
+				border-top			: none;
+				border-left			: none;
+				border-bottom		: solid #999999 1pt;
+				border-right		: solid windowtext 1pt;
+				padding				: 0mm 4.95pt 0mm 4.95pt;
+			}
+
+			.m_td_05{
+				border				: solid windowtext 1pt;
+				border-top			: none;
+				padding				: 0mm 4.95pt 0mm 4.95pt;
+			}
+
+			.m_td_06{
+				border-top			: none;
+				border-left			: none;
+				border-bottom		: solid windowtext 1pt;
+				border-right		: solid windowtext 1pt;
+				padding				: 0mm 4.95pt 0mm 4.95pt;
+			}
+
+			.m_td_07{
+				border				: solid windowtext 1pt;
+				padding				: 0mm 4.95pt 0mm 4.95pt;
+			}
+
+			.m_td_08{
+				border				: solid windowtext 1pt;
+				border-left			: none;
+				padding				: 0mm 4.95pt 0mm 4.95pt;
+			}
+
+			.m_td_09{
+				border				: solid windowtext 1pt;
+				border-top			: none;
+				padding				: 0mm 4.95pt 0mm 4.95pt;
+			}
+
+			.m_td_10{
+				border-top			: none;
+				border-left			: none;
+				border-bottom		: solid windowtext 1pt;
+				border-right		: solid windowtext 1pt;
+				padding				: 0mm 4.95pt 0mm 4.95pt;
+			}
+
+			.m_td_11{
+				border				: solid windowtext 1pt;
+				border-right		: solid white 1pt;
+				background			: black;
+				padding				: 0mm 4.95pt 0mm 4.95pt;
+			}
+
+			.m_td_12{
+				border				: solid windowtext 1pt;
+				border-left			: none;
+				background			: black;
+				padding				: 0mm 4.95pt 0mm 4.95pt;
+			}
+
+			.m_td_13{
+				border				: solid windowtext 1pt;
+				border-top			: none;
+				padding				: 0mm 4.95pt 0mm 4.95pt;
+			}
+
+			.m_td_14{
+				border-top			: none;
+				border-left			: none;
+				border-bottom		: solid windowtext 1pt;
+				border-right		: solid windowtext 1pt;
+				padding				: 0mm 4.95pt 0mm 4.95pt;
+			}
+
+			.m_td_15{
+				border				: solid windowtext 1pt;
+				border-right		: solid white 1pt;
+				background			: black;
+				padding				: 0mm 4.95pt 0mm 4.95pt;
+			}
+
+			.m_td_16{
+				border				: solid windowtext 1pt;
+				border-left			: none;
+				background			: black;
+				padding				: 0mm 4.95pt 0mm 4.95pt;
+			}
+
+			.m_td_17{
+				border				: solid windowtext 1pt;
+				border-top			: none;
+				padding				: 0mm 4.95pt 0mm 4.95pt;
+			}
+
+			.m_td_18{
+				border-top			: none;
+				border-left			: none;
+				border-bottom		: solid windowtext 1pt;
+				border-right		: solid windowtext 1pt;
+				padding				: 0mm 4.95pt 0mm 4.95pt;
+			}
+		-->
+		</style>
+	<title></title>
+</head>
+
+<body>
+	<table class="MsoNormalTable" style ="width:100%; border-collapse:collapse">
+		<tr style="height:25pt">
+			<td style ="background:#3d60af">
+				<p class="MsoNormal" style="margin-left:9pt;text-align:justify;">
+					<span style="font-size:14pt;color:white">状态字节和事件寄存器</span>
+				</p>
+			</td>
+		</tr>
+	</table>
+
+	<p class="m_p01">
+		<br>
+		仪器包含多个标准寄存器：
+		<a href="#__SESR__">"标准事件状态寄存器", "标准事件状态使能寄存器"</a>,
+		<a href="#__STB__">"状态字节寄存器", "服务请求使能寄存器"</a>,
+		<a href="#__ESR0__">"事件状态寄存器0", 和 "事件状态使能寄存器0"</a>.<br>
+		<br>
+	</p>
+
+	<div align="center">
+		<br><img src="Right04/Fig01.png" width="50%" height="50%" border="0"><br><br>
+	</div>
+
+	<table class="MsoNormalTable" style ="width:100%; border-collapse:collapse">
+		<tr>
+			<td style="background:#bac6d8">
+				<p class="MsoNormal" style="margin:5pt;"><a name=__STB__></a>状态字节</p>
+			</td>
+		</tr>
+	</table>
+
+	<p class="m_p01">
+		<br>
+		状态字节的每一位都是对应位的事件寄存器的摘要（逻辑或）。<br><br>
+	</p>
+
+	<div align="center">
+		<table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border:none">
+			<tr style="height:30pt">
+				<td class="m_td_01">
+					<p class="m_p01" style="text-align:center"><span style="color:white">状态字节</span></p>
+				</td>
+				<td class="m_td_02">
+					<p class="m_p01" style="text-align:center"><span style="color:white">内容</span></p>
+				</td>
+			</tr>
+			<tr style="height:30pt">
+				<td class="m_td_03">
+					<p class="m_p01" style="text-align:center">bit 7</p>
+				</td>
+				<td class="m_td_04">
+					<p class="m_p01">未使用: 0</p>
+				</td>
+			</tr>
+			<tr style="height:30pt">
+				<td class="m_td_03">
+					<p class="m_p01" style="text-align:center">bit 6<br>(RQS, MSS)</p>
+				</td>
+				<td class="m_td_04">
+					<p class="m_p01">Reserved</p>
+				</td>
+			</tr>
+			<tr style="height:30pt">
+				<td class="m_td_03">
+					<p class="m_p01" style="text-align:center">bit 5<br>(ESB)</p>
+				</td>
+				<td class="m_td_04">
+					<p class="m_p01">Event summary bit.<br>Shows a summary of the Standard Event Status Register.</p>
+				</td>
+			</tr>
+			<tr style="height:30pt">
+				<td class="m_td_03">
+					<p class="m_p01" style="text-align:center">bit 4<br>(MAV)</p>
+				</td>
+				<td class="m_td_04">
+					<p class="m_p01">消息可用<br>表示输出队列中存在消息。</p>
+				</td>
+			</tr>
+			<tr style="height:30pt">
+				<td class="m_td_03">
+					<p class="m_p01" style="text-align:center">bit 3</p>
+				</td>
+				<td class="m_td_04">
+					<p class="m_p01">未使用: 0</p>
+				</td>
+			</tr>
+			<tr style="height:30pt">
+				<td class="m_td_03">
+					<p class="m_p01" style="text-align:center">bit 2</p>
+				</td>
+				<td class="m_td_04">
+					<p class="m_p01">未使用: 0</p>
+				</td>
+			</tr>
+			<tr style="height:30pt">
+				<td class="m_td_03">
+					<p class="m_p01" style="text-align:center">bit 1</p>
+				</td>
+				<td class="m_td_04">
+					<p class="m_p01">未使用: 0</p>
+				</td>
+			</tr>
+			<tr style="height:30pt">
+				<td class="m_td_05">
+					<p class="m_p01" style="text-align:center">bit 0<br>(ESB0)</p>
+				</td>
+				<td class="m_td_06">
+					<p class="m_p01">事件摘要位0<br>显示事件状态寄存器0的摘要。</p>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<p class = "m_p01">
+		<br>
+		以下命令读取状态字节。<br>
+		<br>
+	</p>
+
+	<div align="center">
+		<table class="MsoNormalTable" style="border:1; border-collapse:collapse;border:none">
+			<tr style="height:50pt">
+				<td class="m_td_07">
+					<p class = "m_p01">读取状态字节</p>
+				</td>
+				<td class="m_td_08">
+					<p class = "m_p01">*STB?</p>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<p class = "m_p01"><br><br></p>
+
+	<table class="MsoNormalTable" style ="width:100%; border-collapse:collapse">
+		<tr>
+			<td style="background:#bac6d8">
+				<p class="MsoNormal" style="margin:5pt;"><a name=__SESR__>标准事件状态寄存器(SESR)</a></p>
+			</td>
+		</tr>
+	</table>
+
+	<p class = "m_p01">
+		<br>
+		状态字节的第5位表示该寄存器的摘要。<br>
+		以下事件会清除标准事件状态寄存器的内容：<br>
+	</p>
+	<ol>
+		<li><p class = "MsoNormal">当接收到*CLS命令时。</p>
+		<li><p class = "MsoNormal">当内容已被*ESR?查询读取时。</p>
+		<li><p class = "MsoNormal">当电源关闭并重新打开时。</p>
+	</ol>
+
+	<div align="center">
+		<table class="MsoNormalTable" style="border:0; border-collapse:collapse;">
+			<tr style="height:45pt">
+				<td class="m_td_11">
+					<p class="m_p01" style="text-align:center;padding:5pt;"><span style="color:white">标准事件<br>状态寄存器<br>(SESR)</span></p>
+				</td>
+				<td class="m_td_12">
+					<p class="m_p01" align="center"><span style="color:white">内容</span></p>
+				</td>
+			</tr>
+			<tr style="height:45pt">
+				<td class="m_td_13">
+					<p class="m_p01" align="center">bit 7<br>(PON)</p>
+				</td>
+				<td class="m_td_14">
+					<p class="m_p01">
+						电源已重新打开。<br>
+						自上次读取此寄存器以来，仪器已断电并重新通电。在通电时初始化为1。<br>
+					</p>
+				</td>
+			</tr>
+			<tr style="height:45pt">
+				<td class="m_td_13">
+					<p class="m_p01" align="center">bit 6<br>(URQ)</p>
+				</td>
+				<td class="m_td_14">
+					<p class="m_p01">用户请求：未使用。</p>
+				</td>
+			</tr>
+			<tr style="height:45pt">
+				<td class="m_td_13">
+					<p class="m_p01" align="center">bit 5<br>(CME)</p>
+				</td>
+				<td class="m_td_14">
+					<p class="m_p01">
+						命令错误。<br>
+						接收到的命令中存在错误：<br>
+						语法错误或含义错误。<br>
+					</p>
+				</td>
+			</tr>
+			<tr style="height:45pt">
+				<td class="m_td_13">
+					<p class="m_p01" align="center">bit 4<br>(EXE)</p>
+				</td>
+				<td class="m_td_14">
+					<p class="m_p01">
+						执行错误。<br>
+						执行命令时发生错误。<br>
+						范围或模式错误。<br>
+					</p>
+				</td>
+			</tr>
+			<tr style="height:45pt">
+				<td class="m_td_13">
+					<p class="m_p01" align="center">bit 3<br>(DDE)</p>
+				</td>
+				<td class="m_td_14">
+					<p class="m_p01">
+						设备相关错误。<br>
+						由于命令错误、查询错误或执行错误以外的错误，命令无法执行。<br>
+					</p>
+				</td>
+			</tr>
+			<tr style="height:45pt">
+				<td class="m_td_13">
+					<p class="m_p01" align="center">bit 2<br>(QYE)</p>
+				</td>
+				<td class="m_td_14">
+					<p class="m_p01">
+						查询错误。<br>
+						队列为空，或发生数据丢失（队列溢出）。<br>
+					</p>
+				</td>
+			</tr>
+			<tr style="height:45pt">
+				<td class="m_td_13">
+					<p class="m_p01" align="center">bit 1<br>(RQC)</p>
+				</td>
+				<td class="m_td_14">
+					<p class="m_p01">
+						控制器权限请求（未使用）未使用: 0<br>
+					</p>
+				</td>
+			</tr>
+			<tr style="height:45pt">
+				<td class="m_td_13">
+					<p class="m_p01" align="center">bit 0<br>(OPC)</p>
+				</td>
+				<td class="m_td_14">
+					<p class="m_p01">
+						操作完成。<br>
+						仅针对*OPC命令设置。<br>
+					</p>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<p class = "m_p01">
+		<br>
+		通过写入标准事件状态使能寄存器（通电时初始化为零）来屏蔽每个事件。<br>
+		以下命令用于读取标准事件状态寄存器，以及写入和读取标准事件状态使能寄存器。<br>
+		<br>
+	</p>
+
+	<div align="center">
+		<table class="MsoNormalTable" style="border:1; border-collapse:collapse;border:none">
+			<tr style="height:25pt">
+				<td class="m_td_07">
+					<p class = "m_p01">读取标准事件状态寄存器</p>
+				</td>
+				<td class="m_td_08">
+					<p class = "m_p01">*ESR?</p>
+				</td>
+			</tr>
+			<tr style="height:25pt">
+				<td class="m_td_09">
+					<p class = "m_p01">写入标准事件状态使能寄存器</p>
+				</td>
+				<td class="m_td_10">
+					<p class = "m_p01">*ESE</p>
+				</td>
+			</tr>
+			<tr style="height:25pt">
+				<td class="m_td_09">
+					<p class = "m_p01">读取标准事件状态使能寄存器</p>
+				</td>
+				<td class="m_td_10">
+					<p class = "m_p01">*ESE?</p>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<p class = "m_p01"><br><br></p>
+
+	<table class="MsoNormalTable" style ="width:100%; border-collapse:collapse">
+		<tr>
+			<td style="background:#bac6d8">
+				<p class="MsoNormal" style="margin:5pt;"><a name=__ESR0__>事件状态寄存器0 (ESR0)</a></p>
+			</td>
+		</tr>
+	</table>
+
+	<p class = "m_p01">
+		<br>
+		该寄存器的摘要设置在状态字节的第0位。<br>
+		以下事件会清除事件状态寄存器0的内容：<br>
+	</p>
+	<ol>
+		<li><p class = "MsoNormal">当接收到*CLS命令时。</p>
+		<li><p class = "MsoNormal">当内容已被:ESR0?查询读取时。</p>
+		<li><p class = "MsoNormal">当电源关闭并重新打开时。</p>
+	</ol>
+
+	<div align="center">
+		<table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0">
+			<tr style="height:25pt">
+				<td class="m_td_15">
+					<p class="m_p01" style="text-align:center; padding:5pt;">
+						<span style="color:white">事件状态寄存器0<br>(SESR0)</span>
+					</p>
+				</td>
+				<td class="m_td_16">
+					<p class="m_pNormal" style="text-align:center"><span style="color:white">内容</span></p>
+				</td>
+			</tr>
+			<tr style="height:25pt">
+				<td class="m_td_17">
+					<p class="m_pNormal" style="text-align:center">bit 7</p>
+				</td>
+				<td class="m_td_18">
+					<p class="m_pNormal">Reserved.</p>
+				</td>
+			</tr>
+			<tr style="height:25pt">
+				<td class="m_td_17">
+					<p class="m_pNormal" style="text-align:center">bit 6</p>
+				</td>
+				<td class="m_td_18">
+					<p class="m_pNormal">FAIL parameter decision occurred.</p>
+				</td>
+			</tr>
+			<tr style="height:25pt">
+				<td class="m_td_17">
+					<p class="m_pNormal" style="text-align:center">bit 5</p>
+				</td>
+				<td class="m_td_18">
+					<p class="m_pNormal">Parameter calculation finished.</p>
+				</td>
+			</tr>
+			<tr style="height:25pt">
+				<td class="m_td_17">
+					<p class="m_pNormal" style="text-align:center">bit 4</p>
+				</td>
+				<td class="m_td_18">
+					<p class="m_pNormal">Waveform processing calculation finished.</p>
+				</td>
+			</tr>
+			<tr style="height:25pt">
+				<td class="m_td_17">
+					<p class="m_pNormal" style="text-align:center">bit 3</p>
+				</td>
+				<td class="m_td_18">
+					<p class="m_pNormal">Reserved.</p>
+				</td>
+			</tr>
+			<tr style="height:25pt">
+				<td class="m_td_17">
+					<p class="m_pNormal" style="text-align:center">bit 2</p>
+				</td>
+				<td class="m_td_18">
+					<p class="m_pNormal">Trigger wait finished (set when a trigger event occurs).</p>
+				</td>
+			</tr>
+			<tr style="height:25pt">
+				<td class="m_td_17">
+					<p class="m_pNormal" style="text-align:center">bit 1</p>
+				</td>
+				<td class="m_td_18">
+					<p class="m_pNormal">Measurement operation concluded (set by STOP).</p>
+				</td>
+			</tr>
+			<tr style="height:25pt">
+				<td class="m_td_17">
+					<p class="m_pNormal" style="text-align:center">bit 0</p>
+				</td>
+				<td class="m_td_18">
+					<p class="m_pNormal">Error not related to interface.</p>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<p class="m_p01">
+		<br>
+		The following commands read the 事件 状态 寄存器 0,
+		and write and read the 事件 状态 启用 寄存器 0.<br>
+		<br>
+	</p>
+
+	<div align="center">
+		<table class="MsoNormalTable" style="border:1; border-collapse:collapse;border:none">
+			<tr style="height:25pt">
+				<td class="m_td_07">
+					<p class = "m_p01">Read Event Status Register 0</p>
+				</td>
+				<td class="m_td_08">
+					<p class = "m_p01">:ESR0?</p>
+				</td>
+			</tr>
+			<tr style="height:25pt">
+				<td class="m_td_09">
+					<p class = "m_p01">Write Event Status Enable Register 0</p>
+				</td>
+				<td class="m_td_08">
+					<p class = "m_p01">:ESE0</p>
+				</td>
+			</tr>
+			<tr style="height:25pt">
+				<td class="m_td_09">
+					<p class = "m_p01">Read Event Status Enable Register 0</p>
+				</td>
+				<td class="m_td_08">
+					<p class = "m_p01">:ESE0?</p>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+
+</html>

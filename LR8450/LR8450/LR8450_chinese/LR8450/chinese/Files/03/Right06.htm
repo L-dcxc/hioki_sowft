@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<title></title>
+	<style>
+	<!--
+	-->
+	</style>
+</head>
+
+<body>
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle">
+				<p class = "g_p_0001">
+					缩放 setting (SCALing)
+				</p>
+			</td>
+		</tr>
+	</table>
+
+	<p class="MsoNormal"><br></p>
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":KIND">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the type of scaling.</b>
+						</span>
+					</a>
+					<a id=":KIND?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SCALing:KIND ch$,A$<br><br>
+						:SCALing:KIND? ch$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						ch$,A$<br>
+					</span>
+					<br>
+					ch$ = <span class="ch_analog"></span>, <span class="ch_pulse"></span><br>A$ = RATIO, POINT, RATED, SENS
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the type of scaling designated by ch$.<br>
+					Returns the current type of scaling designated by ch$ as a character string.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>RATIO</b></td><td class="g_td_0013">&nbsp;Scale by specifying a conversion ratio</td></tr>
+					<tr><td class="g_td_0013"><b>POINT</b></td><td class="g_td_0013">&nbsp;Scale by specifying two data points</td></tr>
+					<tr><td class="g_td_0013"><b>RATED</b></td><td class="g_td_0013">&nbsp;Scale in terms of rated output</td></tr>
+					<tr><td class="g_td_0013"><b>SENS</b></td><td class="g_td_0013">&nbsp;Scale by specifying a sensitivity</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SCALing:KIND CH1_1,POINT<br>:SCALing:KIND? CH1_1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:SCALING:KIND CH1_1,POINT</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					The setting method depends on the unit type.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":OFFSet">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the scaling offset.(RATIO)</b>
+						</span>
+					</a>
+					<a id=":OFFSet?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SCALing:关Set ch$,A<br><br>
+						:SCALing:关Set? ch$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						ch$,A&lt;NR3&gt; (4 decimal places)<br>
+					</span>
+					<br>
+					ch$ = <span class="ch_analog"></span>, <span class="ch_pulse"></span><br>A = -9.9999E+09 to 9.9999E+09
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the scaling offset for the channel designated by ch$.<br>
+					Returns the current scaling offset for the channel designated by ch$ as an NR3 numerical value.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SCALing:关Set CH1_1,0<br>:SCALing:关Set? CH1_1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:SCALING:关SET CH1_1,+0.0000E+00</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					The possible values for A are the same as for the main unit.<br>
+					This setting may change the following settings<br>
+					<b><a href="../03/Right06.htm#:SCUPLOw" target="_self">Scaling SCALE UP and LOW</a></b><br>
+					<b><a href="../03/Right14.htm#:MEAS:LEVEl" target="_self">Thresholds for Numerical Calculation</a></b>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":RTDCapa">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries scaling rated capacity.</b>
+						</span>
+					</a>
+					<a id=":RTDCapa?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SCALing:RTDCapa ch$,A<br><br>
+						:SCALing:RTDCapa? ch$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						ch$,A&lt;NR3&gt; (4 decimal places)<br>
+					</span>
+					<br>
+					ch$ = <span class="ch_analog"></span><br>A = +1.0000E-09 to +9.9999E+09
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the scaling rated capacity for the channel designated by ch$.<br>
+					Returns the current scaling rated capacity for the channel designated by ch$ as an NR3 numerical value.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SCALing:RTDCapa CH1_1,2<br>:SCALing:RTDCapa? CH1_1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:SCALING:RTDCAPA CH1_1,+2.0000E+00</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					The configurable range of scaling rated capacity may vary depending on the setting of the <b><a href="#:RTDOut" target="_self">scaling rated output</a></b>.<br>
+					This setting may change the following settings<br>
+					<b><a href="../03/Right06.htm#:SCUPLOw" target="_self">Scaling SCALE UP and LOW</a></b><br>
+					<b><a href="../03/Right06.htm#:SENSE" target="_self">Scaling sense value</a></b><br>
+					<b><a href="../03/Right06.htm#:VOLT" target="_self">Scaling conversion value</a></b>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Strain unit (U8554, LR8534)
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":RTDOut">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries scaling rated output.</b>
+						</span>
+					</a>
+					<a id=":RTDOut?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SCALing:RTDOut ch$,A<br><br>
+						:SCALing:RTDOut? ch$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						ch$,A&lt;NR3&gt; (4 decimal places)<br>
+					</span>
+					<br>
+					ch$ = <span class="ch_analog"></span><br>A = +1.0000E-09 to +9.9999E+09
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the scaling rated output for the channel designated by ch$.<br>
+					Returns the current scaling rated output for the channel designated by ch$ as an NR3 numerical value.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SCALing:RTDOut CH1_1,1<br>:SCALing:RTDOut? CH1_1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:SCALING:RTDOUT CH1_1,+1.0000E+00</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					The configurable range of scaling rated output may vary depending on the setting of the <b><a href="#:RTDCapa" target="_self">scaling rated capacity</a></b>.<br>
+					This setting may change the following settings<br>
+					<b><a href="../03/Right06.htm#:SCUPLOw" target="_self">Scaling SCALE UP and LOW</a></b><br>
+					<b><a href="../03/Right06.htm#:SENSE" target="_self">Scaling sense value</a></b><br>
+					<b><a href="../03/Right06.htm#:VOLT" target="_self">Scaling conversion value</a></b>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Strain unit (U8554, LR8534)
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":SCUPLOw">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the scaling SCALE UP and LOW.</b>
+						</span>
+					</a>
+					<a id=":SCUPLOw?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SCALing:SCUPLOw ch$,A,B<br><br>
+						:SCALing:SCUPLOw? ch$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						ch$,A&lt;NR3&gt;,B&lt;NR3&gt; (4 decimal places)<br>
+					</span>
+					<br>
+					ch$ = <span class="ch_analog"></span>, <span class="ch_pulse"></span><br>A, B = -9.9999E+29 to +9.9999E+29
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the scaling SC UP and SC LOW values for the channel designated by ch$.<br>
+					Returns the current scaling SC UP and SC LOW values for the channel designated by ch$ as an NR3 numerical value.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SCALing:SCUPLOw CH1_1,0.5,-0.5<br>:SCALing:SCUPLOw? CH1_1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:SCALING:SCUPLOW CH1_1,+5.0000E-01,-5.0000E-01</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Same value in A and B can not be set.<br>
+					This setting may change the following settings<br>
+					<b><a href="../03/Right06.htm#:OFFSet" target="_self">Scaling offset</a></b><br>
+					<b><a href="../03/Right06.htm#:RTDCapa" target="_self">Scaling rated capacity</a></b><br>
+					<b><a href="../03/Right06.htm#:RTDOut" target="_self">Scaling rated output</a></b><br>
+					<b><a href="../03/Right06.htm#:SENSE" target="_self">Scaling sense value</a></b><br>
+					<b><a href="../03/Right06.htm#:VOLT" target="_self">Scaling conversion value</a></b>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":SENSE">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the scaling sense value.</b>
+						</span>
+					</a>
+					<a id=":SENSE?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SCALing:SENSE ch$,A<br><br>
+						:SCALing:SENSE? ch$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						ch$,A&lt;NR3&gt; (4 decimal places)<br>
+					</span>
+					<br>
+					ch$ = <span class="ch_analog"></span>, <span class="ch_pulse"></span><br>A = -1.0000E+09 to +1.0000E+09
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the scaling sense value for the channel designated by ch$.<br>
+					Returns the current scaling sense value setting for the channel designated by ch$ as an NR3 numerical value.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SCALing:SENSE CH1_1,1<br>:SCALing:SENSE? CH1_1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:SCALING:SENSE CH1_1,+1.0000E+00</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					The possible values for A are the same as for the main unit.<br>
+					This setting may change the following settings<br>
+					<b><a href="../03/Right06.htm#:RTDCapa" target="_self">Scaling rated capacity</a></b><br>
+					<b><a href="../03/Right06.htm#:RTDOut" target="_self">Scaling rated output</a></b><br>
+					<b><a href="../03/Right06.htm#:SCUPLOw" target="_self">Scaling SCALE UP and LOW</a></b><br>
+					<b><a href="../03/Right06.htm#:VOLT" target="_self">Scaling conversion value</a></b>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":SET">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the scaling kind.</b>
+						</span>
+					</a>
+					<a id=":SET?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SCALing:SET ch$,A$<br><br>
+						:SCALing:SET? ch$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						ch$,A$<br>
+					</span>
+					<br>
+					ch$ = <span class="ch_analog"></span>, <span class="ch_pulse"></span><br>A$ = 关, ENG, SCI
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the scaling kind designated by ch$.<br>
+					Returns the current scaling kind designated by ch$ as a character string.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>OFF</b></td><td class="g_td_0013">&nbsp;Scaling is disabled</td></tr>
+					<tr><td class="g_td_0013"><b>ENG</b></td><td class="g_td_0013">&nbsp;Decimal: Scaling is enabled and values are displayed using engineering notation</td></tr>
+					<tr><td class="g_td_0013"><b>SCI</b></td><td class="g_td_0013">&nbsp;Exponential: Scaling is enabled and values are displayed using scientific notation</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SCALing:SET CH1_1,ENG<br>:SCALing:SET? CH1_1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:SCALING:SET CH1_1,ENG</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":UNIT">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the scaling unit.</b>
+						</span>
+					</a>
+					<a id=":UNIT?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SCALing:UNIT ch$,"A$"<br><br>
+						:SCALing:UNIT? ch$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						ch$,&quot;A$&quot;<br>
+					</span>
+					<br>
+					ch$ = <span class="ch_analog"></span>, <span class="ch_pulse"></span><br>A$ = scaling unit (up to 7 characters)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the scaling unit for the channel designated by ch$.<br>
+					Returns the current scaling unit for the channel designated by ch$ as character data.<br><br>
+					Single quotation marks (') can be used instead of double quotation marks(&quot;).<br>
+					Entry of the special characters is as follows.<br>
+				</p>
+				<table style="border:1; border-collapse:collapse; border:none;">
+					<tr style="height:18.0pt">
+						<td class="g_td_com01">
+							<p class="g_p_com01"><b>PC</b></p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">^2</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">^3</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~u</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~o</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~e</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~c</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~+</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~,</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~;</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">^^</p>
+						</td>
+						<td class="g_td_com02">
+							<p class="g_p_com01">~~</p>
+						</td>
+					</tr>
+					<tr style="height:18.0pt">
+						<td class="g_td_com03">
+							<p class="g_p_com01"><b>LR8450<br>LR8450-01</b></p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01"><sup>2</sup></p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01"><sup>3</sup></p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">&mu;</p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">&Omega;</p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">&epsilon;</p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">&deg;</p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">&plusmn;</p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">'</p>
+						</td>
+						<td class="g_td_com03">
+							<p class="g_p_com01">&quot;</p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">&circ;</p>
+						</td>
+						<td class="g_td_com04">
+							<p class="g_p_com01">&tilde;</p>
+						</td>
+					</tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SCALing:UNIT CH1_1,"mA"<br>:SCALing:UNIT? CH1_1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:SCALING:UNIT CH1_1,"mA"</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Characters exceeding the maximum number of characters are not set.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":VOLT">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the scaling conversion value.(RATIO)</b>
+						</span>
+					</a>
+					<a id=":VOLT?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SCALing:VOLT ch$,A<br><br>
+						:SCALing:VOLT? ch$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						ch$,A&lt;NR3&gt; (4 decimal places)<br>
+					</span>
+					<br>
+					ch$ = <span class="ch_analog"></span>, <span class="ch_pulse"></span><br>A = -9.9999E+09 to +9.9999E+09 (pulse channel mode = COUNT:+1.0000E-09 to +9.9999E+09)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the scaling conversion value for the channel designated by ch$.<br>
+					Returns the current scaling conversion value setting for the channel designated by ch$ as an NR3 numerical value.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SCALing:VOLT CH1_1,1<br>:SCALing:VOLT? CH1_1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:SCALING:VOLT CH1_1,+1.0000E+00</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					The possible values for A are the same as for the main unit.<br>
+					This setting may change the following settings<br>
+					<b><a href="../03/Right06.htm#:RTDCapa" target="_self">Scaling rated capacity</a></b><br>
+					<b><a href="../03/Right06.htm#:RTDOut" target="_self">Scaling rated output</a></b><br>
+					<b><a href="../03/Right06.htm#:SCUPLOw" target="_self">Scaling SCALE UP and LOW</a></b><br>
+					<b><a href="../03/Right06.htm#:SENSE" target="_self">Scaling sense value</a></b><br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":VOUPLOw">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the scaling VOLT UP and LOW.</b>
+						</span>
+					</a>
+					<a id=":VOUPLOw?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:SCALing:VOUPLOw ch$,A,B<br><br>
+						:SCALing:VOUPLOw? A$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						ch$,A&lt;NR3&gt;,B&lt;NR3&gt; (4 decimal places)<br>
+					</span>
+					<br>
+					ch$ = <span class="ch_analog"></span>, <span class="ch_pulse"></span><br>A, B = -9.9999E+29 to +9.9999E+29
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the scaling VOLT UP and VOLT LOW values for the channel designated by ch$.<br>
+					Returns the current scaling VOLT UP and VOLT LOW values for the channel designated by ch$ as an NR3 numerical value.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:SCALing:VOUPLOw CH1_1,0.05,-0.05<br>:SCALing:VOUPLOw? CH1_1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:SCALING:VOUPLOW CH1_1,+5.0000E-02,-5.0000E-02</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Same value in A and B can not be set.<br>
+					This setting may change the following settings<br>
+					<b><a href="../03/Right06.htm#:OFFSet" target="_self">Scaling offset</a></b><br>
+					<b><a href="../03/Right06.htm#:RTDCapa" target="_self">Scaling rated capacity</a></b><br>
+					<b><a href="../03/Right06.htm#:RTDOut" target="_self">Scaling rated output</a></b><br>
+					<b><a href="../03/Right06.htm#:SENSE" target="_self">Scaling sense value</a></b><br>
+					<b><a href="../03/Right06.htm#:VOLT" target="_self">Scaling conversion value</a></b>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+</body>
+</html>

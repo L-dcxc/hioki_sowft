@@ -1,0 +1,575 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<title></title>
+	<style>
+	</style>
+</head>
+
+<body>
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle">
+				<p class = "g_p_0001">
+					General 命令s
+				</p>
+			</td>
+		</tr>
+	</table>
+
+	<p class="MsoNormal"><br></p>
+
+
+		<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+			<tr style="height:25pt">
+				<td class = "g_HeadTitle" colspan = "4">
+					<p class="g_p_0002">
+						<a id=":ABORT">
+							<span class = "g_HeadTitle">
+								<b>Force STOP waveform sampling.</b>
+							</span>
+						</a>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_td_0004" rowspan = "2">
+					<p class = "g_p_0003">Syntax</p>
+				</td>
+				<td class = "g_td_0005">
+					<p class="MsoNormal">(Command)</p>
+				</td>
+				<td class = "g_td_0006" colspan = "2">
+					<p class="MsoNormal">
+						<span style="color:red;font-weight:bold">
+							<br>
+							:ABORT<br><br>
+						</span>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_td_0007"></td>
+				<td class = "g_td_0008" colspan = "2">
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_td_0009">
+					<p class = "g_p_0003">Details</p>
+				</td>
+				<td class = "g_td_0010" colspan = "3">
+					<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+						Force STOP waveform sampling.
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_td_0011">
+					<p class = "g_p_0003">Example</p>
+				</td>
+				<td class = "g_td_0012" colspan = "3">
+					<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+						<span style="color:#00582a">
+							:ABORT<br>
+						</span>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_td_0009">
+					<p class = "g_p_0003">Note</p>
+				</td>
+				<td class = "g_td_0010" colspan = "3">
+					<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+						Terminates even if waveform sampling operation is not yet completed.<br>
+						:ABORT command cannot be used in combination with other commands.(e.g.:ABORT;*OPC?)
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_td_0011">
+					<p class = "g_p_0003">Usage<br>Conditions</p>
+				</td>
+				<td class = "g_td_0012" colspan = "3">
+					<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+						-
+					</p>
+				</td>
+			</tr>
+		</table>
+		<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+		<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+			<tr style="height:25pt">
+				<td class = "g_HeadTitle" colspan = "4">
+					<p class="g_p_0002">
+						<a id=":ERRor?">
+							<span class = "g_HeadTitle">
+								<b>Queries the unit error number</b>
+							</span>
+						</a>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_td_0004" rowspan = "2">
+					<p class = "g_p_0003">Syntax</p>
+				</td>
+				<td class = "g_td_0005">
+					<p class="MsoNormal">(Query)</p>
+				</td>
+				<td class = "g_td_0006" colspan = "2">
+					<p class="MsoNormal">
+						<span style="color:red;font-weight:bold">
+							<br>
+							:ERRor?<br><br>
+						</span>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_td_0007">
+					<p class="MsoNormal">(Response)</p>
+				</td>
+				<td class = "g_td_0008" colspan = "2">
+					<p class="MsoNormal" style="margin-bottom:12pt">
+						<span style="color:#0000cc;font-weight:bold">
+							A$<br>
+						</span>
+						<br>
+						A$ = error number
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_td_0009">
+					<p class = "g_p_0003">Details</p>
+				</td>
+				<td class = "g_td_0010" colspan = "3">
+					<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+						The number of error or warning that has occurred on the unit is returned.<br>
+						For errors or warnings, refer to the instruction manual included with the unit.
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_td_0011">
+					<p class = "g_p_0003">Example</p>
+				</td>
+				<td class = "g_td_0012" colspan = "3">
+					<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+						<span style="color:#00582a">
+							:ERRor?<br>
+						</span>
+						(响应)&nbsp;&nbsp;<b>:ERROR ERR_SY01</b>&nbsp;&nbsp;(when headers are enabled)
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_td_0009">
+					<p class = "g_p_0003">Note</p>
+				</td>
+				<td class = "g_td_0010" colspan = "3">
+					<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+						-
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_td_0011">
+					<p class = "g_p_0003">Usage<br>Conditions</p>
+				</td>
+				<td class = "g_td_0012" colspan = "3">
+					<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+						-
+					</p>
+				</td>
+			</tr>
+		</table>
+		<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+		<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+			<tr style="height:25pt">
+				<td class = "g_HeadTitle" colspan = "4">
+					<p class="g_p_0002">
+						<a id=":HEADer">
+							<span class = "g_HeadTitle">
+								<b>Enable/disable header prefixes on query responses.&nbsp;Query the current setting of header prefixes</b>
+							</span>
+						</a>
+						<a id=":HEADer?"></a>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_td_0004" rowspan = "2">
+					<p class = "g_p_0003">Syntax</p>
+				</td>
+				<td class = "g_td_0005">
+					<p class="MsoNormal">(Command)<br><br>(Query)</p>
+				</td>
+				<td class = "g_td_0006" colspan = "2">
+					<p class="MsoNormal">
+						<span style="color:red;font-weight:bold">
+							<br>
+							:HEADer A$<br><br>
+							:HEADer? <br><br>
+						</span>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_td_0007">
+					<p class="MsoNormal">(Response)</p>
+				</td>
+				<td class = "g_td_0008" colspan = "2">
+					<p class="MsoNormal" style="margin-bottom:12pt">
+						<span style="color:#0000cc;font-weight:bold">
+							A$<br>
+						</span>
+						<br>
+						A$ = 关, 开
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_td_0009">
+					<p class = "g_p_0003">Details</p>
+				</td>
+				<td class = "g_td_0010" colspan = "3">
+					<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+						Sets header enablement.<br>
+						When headers are enabled, responses to queries are prefixed by headers; when headers are disabled, responses are not so prefixed.<br>
+						Returns whether or not headers are prefixed to responses to queries.<br>
+					</p>
+					<table>
+						<tr><td class="g_td_0013"><b>OFF</b></td><td class="g_td_0013">&nbsp; headers are disabled.</td></tr><tr><td class="g_td_0013"><b>ON</b></td><td class="g_td_0013">&nbsp; headers are enabled.</td></tr>
+					</table>
+					<br>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_td_0011">
+					<p class = "g_p_0003">Example</p>
+				</td>
+				<td class = "g_td_0012" colspan = "3">
+					<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+						<span style="color:#00582a">
+							:HEADer 开<br>:HEADer?<br>
+						</span>
+						(响应)&nbsp;&nbsp;<b>:HEADER 开</b>&nbsp;&nbsp;(when headers are enabled)
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_td_0009">
+					<p class = "g_p_0003">Note</p>
+				</td>
+				<td class = "g_td_0010" colspan = "3">
+					<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+						-
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_td_0011">
+					<p class = "g_p_0003">Usage<br>Conditions</p>
+				</td>
+				<td class = "g_td_0012" colspan = "3">
+					<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+						-
+					</p>
+				</td>
+			</tr>
+		</table>
+		<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+		<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+			<tr style="height:25pt">
+				<td class = "g_HeadTitle" colspan = "4">
+					<p class="g_p_0002">
+						<a id=":STARt">
+							<span class = "g_HeadTitle">
+								<b>START waveform sampling</b>
+							</span>
+						</a>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_td_0004" rowspan = "2">
+					<p class = "g_p_0003">Syntax</p>
+				</td>
+				<td class = "g_td_0005">
+					<p class="MsoNormal">(Command)</p>
+				</td>
+				<td class = "g_td_0006" colspan = "2">
+					<p class="MsoNormal">
+						<span style="color:red;font-weight:bold">
+							<br>
+							:STARt<br><br>
+						</span>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_td_0007"></td>
+				<td class = "g_td_0008" colspan = "2">
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_td_0009">
+					<p class = "g_p_0003">Details</p>
+				</td>
+				<td class = "g_td_0010" colspan = "3">
+					<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+						START waveform sampling.
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_td_0011">
+					<p class = "g_p_0003">Example</p>
+				</td>
+				<td class = "g_td_0012" colspan = "3">
+					<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+						<span style="color:#00582a">
+							:STARt<br>
+						</span>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_td_0009">
+					<p class = "g_p_0003">Note</p>
+				</td>
+				<td class = "g_td_0010" colspan = "3">
+					<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+						-
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_td_0011">
+					<p class = "g_p_0003">Usage<br>Conditions</p>
+				</td>
+				<td class = "g_td_0012" colspan = "3">
+					<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+						-
+					</p>
+				</td>
+			</tr>
+		</table>
+		<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+		<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+			<tr style="height:25pt">
+				<td class = "g_HeadTitle" colspan = "4">
+					<p class="g_p_0002">
+						<a id=":STATus?">
+							<span class = "g_HeadTitle">
+								<b>Query storage status</b>
+							</span>
+						</a>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_td_0004" rowspan = "2">
+					<p class = "g_p_0003">Syntax</p>
+				</td>
+				<td class = "g_td_0005">
+					<p class="MsoNormal">(Query)</p>
+				</td>
+				<td class = "g_td_0006" colspan = "2">
+					<p class="MsoNormal">
+						<span style="color:red;font-weight:bold">
+							<br>
+							:STATUS?<br><br>
+						</span>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_td_0007">
+					<p class="MsoNormal">(Response)</p>
+				</td>
+				<td class = "g_td_0008" colspan = "2">
+					<p class="MsoNormal" style="margin-bottom:12pt">
+						<span style="color:#0000cc;font-weight:bold">
+							A&lt;NR1&gt;<br>
+						</span>
+						<br>
+						A = 0～63
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_td_0009">
+					<p class = "g_p_0003">Details</p>
+				</td>
+				<td class = "g_td_0010" colspan = "3">
+					<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+						Returns the current storage status of the instrument.<br>
+						For example, the value 3 is returned when starting (bit 0) and storing (bit 1).<br>
+					</p>
+					<table>
+						<tr><td class="g_td_0013"><b>Bit0</b></td><td class="g_td_0013">&nbsp; starting</td></tr>
+						<tr><td class="g_td_0013"><b>Bit1</b></td><td class="g_td_0013">&nbsp; storing</td></tr>
+						<tr><td class="g_td_0013"><b>Bit2</b></td><td class="g_td_0013">&nbsp; awaiting trigger</td></tr>
+						<tr><td class="g_td_0013"><b>Bit3</b></td><td class="g_td_0013">&nbsp; pre-trigger wait period</td></tr>
+						<tr><td class="g_td_0013"><b>Bit4</b></td><td class="g_td_0013">&nbsp; (unused)</td></tr>
+						<tr><td class="g_td_0013"><b>Bit5</b></td><td class="g_td_0013">&nbsp; saving</td></tr>
+					</table>
+					<br>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_td_0011">
+					<p class = "g_p_0003">Example</p>
+				</td>
+				<td class = "g_td_0012" colspan = "3">
+					<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+						<span style="color:#00582a">
+							:STATus?<br>
+						</span>
+						(响应)&nbsp;&nbsp;<b>:STATUS 3</b>&nbsp;&nbsp;(when headers are enabled)
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_td_0009">
+					<p class = "g_p_0003">Note</p>
+				</td>
+				<td class = "g_td_0010" colspan = "3">
+					<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+						-
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_td_0011">
+					<p class = "g_p_0003">Usage<br>Conditions</p>
+				</td>
+				<td class = "g_td_0012" colspan = "3">
+					<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+						-
+					</p>
+				</td>
+			</tr>
+		</table>
+		<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+		<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+			<tr style="height:25pt">
+				<td class = "g_HeadTitle" colspan = "4">
+					<p class="g_p_0002">
+						<a id=":STOP">
+							<span class = "g_HeadTitle">
+								<b>STOP waveform sampling</b>
+							</span>
+						</a>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_td_0004" rowspan = "2">
+					<p class = "g_p_0003">Syntax</p>
+				</td>
+				<td class = "g_td_0005">
+					<p class="MsoNormal">(Command)</p>
+				</td>
+				<td class = "g_td_0006" colspan = "2">
+					<p class="MsoNormal">
+						<span style="color:red;font-weight:bold">
+							<br>
+							:STOP<br><br>
+						</span>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_td_0007"></td>
+				<td class = "g_td_0008" colspan = "2">
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_td_0009">
+					<p class = "g_p_0003">Details</p>
+				</td>
+				<td class = "g_td_0010" colspan = "3">
+					<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+						STOP waveform sampling.<br>
+						Terminates at the instant that waveform sampling operation is completed.
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_td_0011">
+					<p class = "g_p_0003">Example</p>
+				</td>
+				<td class = "g_td_0012" colspan = "3">
+					<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+						<span style="color:#00582a">
+							:STOP<br>
+						</span>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_td_0009">
+					<p class = "g_p_0003">Note</p>
+				</td>
+				<td class = "g_td_0010" colspan = "3">
+					<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					The operation differs depending on the <a href="../03/Right04.htm#:RECTime" target="_self">recording time setting</a>.<br>
+					<b>First STOP command</b><br>
+					When recording time is Continuous → Not stop<br>
+					When recording time is Designated time → Stops after measuring for the recording time.<br>
+					<b>Second STOP command</b><br>
+					When recording time is Continuous → Stop waveform sampling.<br>
+					When Recording time is Designated time → Stop waveform sampling.<br>
+					<!--(:STOPコマンドの処理終了タイミングは、実際に測定が停止したタイミングになります。)-->
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td class = "g_td_0011">
+					<p class = "g_p_0003">Usage<br>Conditions</p>
+				</td>
+				<td class = "g_td_0012" colspan = "3">
+					<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+						-
+					</p>
+				</td>
+			</tr>
+		</table>
+		<p class="MsoNormal"><br><br><br></p>
+
+
+
+</body>
+</html>

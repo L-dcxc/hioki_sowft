@@ -1,0 +1,916 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<title></title>
+</head>
+
+<body>
+	<table class="MsoNormalTable" style="border:0; border-collapse:collapse; width:100%; max-width:1200px;">
+		<tr style="height:25pt">
+			<td style ="background:#3d60af">
+				<p class="MsoNormal" style="margin-left:9pt;text-align:justify">
+					<span style="color:white;font-weight:bold">计算（CALCulate）</span>
+				</p>
+			</td>
+		</tr>
+	</table>
+
+	<p class="MsoNormal">&nbsp;</p>
+
+	<table class="MsoNormalTable" style="border:0; border-collapse:collapse; width:100%; max-width:1200px;">
+		<tr style="height:40pt">
+			<td class = "g_p0001">
+				<p class="g_p0010"><span style="color:white">Command</span></p>
+			</td>
+			<td class = "g_p0002">
+				<p class="g_p0010"><span style="color:white">Data<br>(for a query, response data)</span></p>
+			</td>
+			<td class = "g_p0009">
+				<p class="g_p0010"><span style="color:white">Explanation</span></p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0014" colspan="3">
+				<p class="MsoNormal" style="margin-left:9pt;text-align:justify">
+					<span style="color:white;font-weight:bold">Numerical Calculation (:CALCulate:MEAS)</span>
+				</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:MEAS:SURE" target="_self">:MEASure A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = OFF, ON, EXEC</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets numerical calculation<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:MEAS:SURE?" target="_self">:MEASure?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:MEAS:ANSWer?" target="_self">:ANSWer? no$,ch$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">no$,ch$,A&lt;NR3&gt; (5 decimal places)<br><br>no$ = NO1 to NO10<br>ch$ = <span class="ch_analog"></span>, <span class="ch_pulse"></span>, <span class="ch_wcalc"></span><br>A = Calculation Result</p>
+			</td>
+			<td class = "g_p0008" >
+				<p class="g_p0011">Queries result of a numerical calculation</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:MEAS:AREA" target="_self">:AREA A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = ALL, AB, TOP_A, TOP_B, A_END, B_END</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets calculation area<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:MEAS:AREA?" target="_self">:AREA?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:MEAS:DISP" target="_self">:DISP A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = USUAL, SPLIT</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets calculation result display kind<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:MEAS:DISP?" target="_self">:DISP?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:MEAS:FILE" target="_self">:FILE A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = OFF, ON</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets calculation file divisionses<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:MEAS:FILE?" target="_self">:FILE?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:MEAS:INTegra" target="_self">:INTegra no$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">no$ = NO1 to NO10<br>A$ = TOTAL,POSitive,NEGative,ABSolute</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets accumulation/integrations method<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:MEAS:INTegra?" target="_self">:INTegra? no$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">no$,A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:MEAS:KIND" target="_self">:KIND A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A$ = OFF, DIVide</p><!-- , REGulary v02 -->
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets time split calculation kind<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:MEAS:KIND?" target="_self">:KIND?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:MEAS:LEN" target="_self">:LEN day,hour,min</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">day = 0 to 30(day)<br>hour = 0 to 23(hour)<br>min = 0 to 59(min)</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets time split calculation division length<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:MEAS:LEN?" target="_self">:LEN?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">day&lt;NR1&gt;,hour&lt;NR1&gt;,min&lt;NR1&gt;</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:MEAS:LEVEl" target="_self">:LEVEl ch$,A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">ch$ = <span class="ch_analog"></span>, <span class="ch_pulse"></span>, <span class="ch_wcalc"></span><br>A = -9.9999E+29~+9.9999E+29</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets thresholds for Numerical Calculation<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:MEAS:LEVEl?" target="_self">:LEVEl? ch$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">ch$,A&lt;NR3&gt; (4 decimal places)</p>
+			</td>
+		</tr>
+
+<!-- 定時分割はv02
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:MEAS:REG" target="_self">:REG hour,min</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">hour = 0 to 23(hour)<br>min = 0 to 59(min)</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets time split calculation regular time<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:MEAS:REG?" target="_self">:REG?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">hour&lt;NR1&gt;,min&lt;NR1&gt;</p>
+			</td>
+		</tr>
+-->
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:MEAS:SET" target="_self">:SET no$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">no$ = NO1 to NO10<br>A$ = OFF, AVE, PP, MAX, MIN, MAXT, MINT, ACC, INT, OPE, ONT, OFFT, ONC, OFFC</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets numerical calculation item<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:MEAS:SET?" target="_self">:SET? no$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">no$,A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:MEAS:TARGet" target="_self">:TARGet no$,ch$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">no$ = NO1 to NO10<br>ch$ = ALL, <span class="ch_analog"></span>, <span class="ch_pulse"></span>, <span class="ch_wcalc"></span></p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets calculation target channel<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:MEAS:TARGet?" target="_self">:TARGet? no$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">no$,ch$</p>
+			</td>
+		</tr>
+
+<!-- 定時分割はv02
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:MEAS:TIME" target="_self">:TIME A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">A = 1, 2, 5, 10, 15, 20, 30, 60, 120, 180, 240, 360, 480, 720, 1440 (unit min)</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets time split calculation division time</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:MEAS:TIME?" target="_self">:TIME?</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">A&lt;NR1&gt; (unit min)</p>
+			</td>
+		</tr>
+	-->
+
+
+		<tr>
+			<td class = "g_p0014" colspan="3">
+				<p class="MsoNormal" style="margin-left:9pt;text-align:justify">
+						 <span style="color:white;font-weight:bold">Waveform Calculation (:CALCulate:WAVE)</span>
+				</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:WAVE:KIND" target="_self">:KIND w$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">w$ = <span class="ch_wcalc"></span><br>A$ = OPE, SUM, AVE, MOV, INT</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets wave calculation kind<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:WAVE:KIND?" target="_self">:KIND? w$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">w$,A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:WAVE:STR" target="_self">:STR w$,"A$"</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">w$ = <span class="ch_wcalc"></span><br>A$ = wave calc unit(7 character)</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets wave calculation unit<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:WAVE:STR?" target="_self">:STR? w$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">w$,"A$"</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0015" colspan="3">
+				<p class="MsoNormal" style="margin-left:9pt;text-align:justify">
+					<span style="color:white;font-weight:bold">Four arithmetic (:CALCulate:WAVE:ARIThmetic)</span>
+				</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0015" colspan="3">
+				<p class="MsoNormal" style="margin-left:9pt;text-align:justify">
+					<span style="color:white;font-weight:bold">Four arithmetic：Coefficients (:CALCulate:WAVE:ARIThmetic:COEF)</span>
+				</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:WAVE:ARIThmetic:COEF:A" target="_self">:A w$,A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">w$ = <span class="ch_wcalc"></span><br>A = -9.9999E+29 to 9.9999E+29</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets four arithmetic coefficient A<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:WAVE:ARIThmetic:COEF:A?" target="_self">:A? w$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">w$,A&lt;NR3&gt; (4 decimal places)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:WAVE:ARIThmetic:COEF:B" target="_self">:B w$,A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">w$ = <span class="ch_wcalc"></span><br>A = -9.9999E+29 to 9.9999E+29</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets four arithmetic coefficient B<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:WAVE:ARIThmetic:COEF:B?" target="_self">:B? w$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">w$,A&lt;NR3&gt; (4 decimal places)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:WAVE:ARIThmetic:COEF:C" target="_self">:C w$,A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">w$ = <span class="ch_wcalc"></span><br>A = -9.9999E+29 to 9.9999E+29</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets four arithmetic coefficient C<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:WAVE:ARIThmetic:COEF:C?" target="_self">:C? w$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">w$,A&lt;NR3&gt; (4 decimal places)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:WAVE:ARIThmetic:COEF:D" target="_self">:D w$,A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">w$ = <span class="ch_wcalc"></span><br>A = -9.9999E+29 to 9.9999E+29</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets four arithmetic coefficient D<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:WAVE:ARIThmetic:COEF:D?" target="_self">:D? w$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">w$,A&lt;NR3&gt; (4 decimal places)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:WAVE:ARIThmetic:COEF:E" target="_self">:E w$,A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">w$ = <span class="ch_wcalc"></span><br>A = -9.9999E+29 to 9.9999E+29</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets four arithmetic coefficient E<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:WAVE:ARIThmetic:COEF:E?" target="_self">:E? w$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">w$,A&lt;NR3&gt; (4 decimal places)</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0015" colspan="3">
+				<p class="MsoNormal" style="margin-left:9pt;text-align:justify">
+					<span style="color:white;font-weight:bold">Four arithmetic：Operator (:CALCulate:WAVE:ARIThmetic:OPERator)</span>
+				</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:WAVE:ARIThmetic:OPERator:A" target="_self">:A w$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">w$ = <span class="ch_wcalc"></span><br>A$ = OFF, PLUS, MINUS, MULTI, DIV</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets four arithmetic operator A<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:WAVE:ARIThmetic:OPERator:A?" target="_self">:A? w$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">w$,A$</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:WAVE:ARIThmetic:OPERator:B" target="_self">:B w$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">w$ = <span class="ch_wcalc"></span><br>A$ = OFF, PLUS, MINUS, MULTI, DIV</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets four arithmetic operator B<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:WAVE:ARIThmetic:OPERator:B?" target="_self">:B? w$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">w$,A$</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:WAVE:ARIThmetic:OPERator:C" target="_self">:C w$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">w$ = <span class="ch_wcalc"></span><br>A$ = OFF, PLUS, MINUS, MULTI, DIV</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets four arithmetic operator C<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:WAVE:ARIThmetic:OPERator:C?" target="_self">:C? w$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">w$,A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:WAVE:ARIThmetic:OPERator:D" target="_self">:D w$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">w$ = <span class="ch_wcalc"></span><br>A$ = OFF, PLUS, MINUS, MULTI, DIV, EXP</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets four arithmetic operator D<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:WAVE:ARIThmetic:OPERator:D?" target="_self">:D? w$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">w$,A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0015" colspan="3">
+				<p class="MsoNormal" style="margin-left:9pt;text-align:justify">
+					<span style="color:white;font-weight:bold">Moving Average (:CALCulate:WAVE:MOVe)</span>
+				</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:WAVE:MOVe:POINt" target="_self">:POINt w$,A</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">w$ = <span class="ch_wcalc"></span><br>A = 1 to 600 (point)</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets moving average point<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:WAVE:MOVe:POINt?" target="_self">:POINt? w$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">w$,A&lt;NR1&gt;</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0015" colspan="3">
+				<p class="MsoNormal" style="margin-left:9pt;text-align:justify">
+					<span style="color:white;font-weight:bold">Reset Setting for Integral and Simple Average (:CALCulate:WAVE:RESet)</span>
+				</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:WAVE:RESet:BASE" target="_self">:BASE w$,hour,min</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">w$ = <span class="ch_wcalc"></span><br>hour = 0 to 23 (hour)<br>min = 0 to 59 (min)</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Set reset referense time<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:WAVE:RESet:BASE?" target="_self">:BASE? w$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">w$,hour&lt;NR1&gt;,min&lt;NR1&gt;</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:WAVE:RESet:INT" target="_self">:INT w$,day,hour,min</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">w$ = <span class="ch_wcalc"></span><br>day = 0 to 30 (day)<br>hour = 0 to 23 (hour)<br>min = 0 to 59 (min)</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets reset interval<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:WAVE:RESet:INT?" target="_self">:INT? w$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">w$,day&lt;NR1&gt;,hour&lt;NR1&gt;,min&lt;NR1&gt;</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:WAVE:RESet:KIND" target="_self">:KIND w$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">w$ = <span class="ch_wcalc"></span><br>A$ = OFF, TRIG</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets reset timing<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:WAVE:RESet:KIND?" target="_self">:KIND? w$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">w$,A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:WAVE:RESet:TIME" target="_self">:TIME w$,A$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">w$ = <span class="ch_wcalc"></span><br>A$ = OFF, ON, ONTIME</p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets reset time<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:WAVE:RESet:TIME?" target="_self">:TIME? w$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">w$,A$</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td class = "g_p0015" colspan="3">
+				<p class="MsoNormal" style="margin-left:9pt;text-align:justify">
+					<span style="color:white;font-weight:bold">Source Channel (:CALCulate:WAVE:SOURce)</span>
+				</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:WAVE:SOURce:SR1" target="_self">:SR1 w$,ch$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">w$ = <span class="ch_wcalc"></span><br>ch$ =<span class="ch_analog"></span>, <span class="ch_pulse"></span>, <span class="ch_wcalc"></span></p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets wave calculation source A<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:WAVE:SOURce:SR1?" target="_self">:SR1? w$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">w$,ch$</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:WAVE:SOURce:SR2" target="_self">:SR2 w$,ch$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">w$ = <span class="ch_wcalc"></span><br>ch$ =<span class="ch_analog"></span>, <span class="ch_pulse"></span>, <span class="ch_wcalc"></span></p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets wave calculation source B<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:WAVE:SOURce:SR2?" target="_self">:SR2? w$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">w$,ch$</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:WAVE:SOURce:SR3" target="_self">:SR3 w$,ch$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">w$ = <span class="ch_wcalc"></span><br>ch$ =<span class="ch_analog"></span>, <span class="ch_pulse"></span>, <span class="ch_wcalc"></span></p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets wave calculation source C<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:WAVE:SOURce:SR3?" target="_self">:SR3? w$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">w$,ch$</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "g_p0006">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:WAVE:SOURce:SR4" target="_self">:SR4 w$,ch$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0007">
+				<p class="g_p0011">w$ = <span class="ch_wcalc"></span><br>ch$ =<span class="ch_analog"></span>, <span class="ch_pulse"></span>, <span class="ch_wcalc"></span></p>
+			</td>
+			<td class = "g_p0008" rowspan="2">
+				<p class="g_p0011">Sets wave calculation source D<br>Queries</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_p0012">
+				<p class="g_p0011">
+					<b><a href="../03/Right14.htm#:WAVE:SOURce:SR4?" target="_self">:SR4? w$</a></b>
+				</p>
+			</td>
+			<td class = "g_p0013">
+				<p class="g_p0011">w$,ch$</p>
+			</td>
+		</tr>
+
+	</table>
+</body>
+</html>

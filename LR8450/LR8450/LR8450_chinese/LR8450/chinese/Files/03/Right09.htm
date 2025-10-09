@@ -1,0 +1,2155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<title></title>
+	<style>
+	<!--
+	-->
+	</style>
+</head>
+
+<body>
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle">
+				<p class = "g_p_0001">
+					报警 (ALARm)
+				</p>
+			</td>
+		</tr>
+	</table>
+
+	<p class="MsoNormal"><br></p>
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":ACTive">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the alarm output terminal.</b>
+						</span>
+					</a>
+					<a id=":ACTive?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:ALARm:ACTive alm$,A$<br><br>
+						:ALARm:ACTive? alm$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						alm$,A$<br>
+					</span>
+					<br>
+					alm$ = <span class="ch_alarm"></span><br>A$ = LOW, HIGH
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>LOW</b></td><td class="g_td_0013">&nbsp;Active low</td></tr>
+					<tr><td class="g_td_0013"><b>HIGH</b></td><td class="g_td_0013">&nbsp;Active high</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the active low/high of the alarm output terminal.<br>
+					Returns the current active low/high setting of the alarm output terminal as character data.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:ALARm:ACTive ALM1,LOW<br>:ALARm:ACTive? ALM1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:TRIGGER:ACTIVE ALM1,LOW</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":ARCD?">
+						<span class = "g_HeadTitle">
+							<b>Queries the alarm history details.</b>
+						</span>
+					</a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:ALARm:ARCD? NO<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						NO&lt;NR1&gt;,ALM$,CH$,ERR$,STR$,END$<br>
+					</span>
+					<br>
+					NO = alarm history num (1 to 100)<br>ALM$ = <span class="ch_alarm"></span>, -<br>CH$ = <span class="ch_analog"></span>, <span class="unit"></span><br>ERR$ = -, BURN_OUT, BATT_LOW, BURN/BATT, DISC开NECT<br>STR$ = 报警 start time<br>END$ = 报警 stop time
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Returns the alarm history details set by NO.<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:ALARm:ARCD? 1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:ALARM:ARCD 1,ALM1,CH1_1,-, 20ms, 60ms</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					The format of the alarm start/stop time is based on the <a href="../03/Right10.htm#:TMAXis" target="_self">time axis display setting</a>.<br>
+					If the alarm is not stopped, the stop time will be "-".
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					The <a href="#:ARCDNum?">alarm history num</a> is greater than or equal to 1.
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":ARCDNum?">
+						<span class = "g_HeadTitle">
+							<b>Queries the alarm history num.</b>
+						</span>
+					</a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:ALARm:ARCDNum?<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A&lt;NR1&gt;<br>
+					</span>
+					<br>
+					A = 0 to 100 (0 = No alarm)
+
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Returns the alarm history num as an NR1 numerical value.<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:ALARm:ARCDNum?<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:ALARM:ARCDNUM 10</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":BATT">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the alarm at low battery.</b>
+						</span>
+					</a>
+					<a id=":BATT?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:ALARm:BATT alm$,A$<br><br>
+						:ALARm:BATT? alm$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						alm$,A$<br>
+					</span>
+					<br>
+					alm$ = <span class="ch_alarm"></span><br>A$ = 关, 开
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the alarm at low battery.<br>
+					Returns the current alarm at low battery as character data.<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:ALARm:BATT ALM1,开<br>:ALARm:BATT? ALM1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:ALARM:BATT ALM1,开</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":BEEP">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the alarm beep.</b>
+						</span>
+					</a>
+					<a id=":BEEP?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:ALARm:BEEP A$<br><br>
+						:ALARm:BEEP?<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = 关, 开
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the alarm beep.<br>
+					Returns the current alarm beep as character data.<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:ALARm:BEEP 开<br>:ALARm:BEEP?<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:ALARM:BEEP 开</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":BURN">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the alarm at burn out.</b>
+						</span>
+					</a>
+					<a id=":BURN?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:ALARm:BURN alm$,A$<br><br>
+						:ALARm:BURN? alm$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						alm$,A$<br>
+					</span>
+					<br>
+					alm$ = <span class="ch_alarm"></span><br>A$ = 关, 开
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the alarm at burn out.<br>
+					Returns the current alarm at burn out as character data.<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:ALARm:BURN ALM1,开<br>:ALARm:BURN? ALM1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:ALARM:BURN ALM1,开</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":DISCon">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the alarm at communication disconnect.</b>
+						</span>
+					</a>
+					<a id=":DISCon?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:ALARm:DISCon alm$,A$<br><br>
+						:ALARm:DISCon? alm$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						alm$,A$<br>
+					</span>
+					<br>
+					alm$ = <span class="ch_alarm"></span><br>A$ = 关, 开, DELAY
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the alarm at communication disconnect.<br>
+					Returns the current alarm at communication disconnect as character data.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>OFF</b></td><td class="g_td_0013">&nbsp;Disabled</td></tr>
+					<tr><td class="g_td_0013"><b>ON</b></td><td class="g_td_0013">&nbsp;Enabled（No Grace）</td></tr>
+					<tr><td class="g_td_0013"><b>DELAY</b></td><td class="g_td_0013">&nbsp;Enabled（Grace 3 minutes）</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:ALARm:DISCon ALM1,开<br>:ALARm:DISCon? ALM1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:ALARM:DISC开 ALM1,开</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":FILTer">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the alarm filter.</b>
+						</span>
+					</a>
+					<a id=":FILTer?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:ALARm:FILTer alm$,A<br><br>
+						:ALARm:FILTer? alm$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						alm$,A&lt;NR1&gt;<br>
+					</span>
+					<br>
+					alm$ = <span class="ch_alarm"></span><br>A = 0(关), 2, 5, 10, 20, 50, 100, 200, 500, 1000
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the alarm filter.<br>
+					Returns the current alarm filter setting as an NR1 numerical value.<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:ALARm:FILTer ALM1,2<br>:ALARm:FILTer? ALM1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:ALARM:FILTER ALM1,2</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					If you specify a value that is not in the setting, it will be set to the nearest value if there is a value greater than the value you tried to set.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":HOLD">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the alarm hold.</b>
+						</span>
+					</a>
+					<a id=":HOLD?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:ALARm:HOLD A$<br><br>
+						:ALARm:HOLD?<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						A$<br>
+					</span>
+					<br>
+					A$ = 关, 开, CLEAR
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the alarm hold.<br>
+					Returns the current alarm hold as character data.<br>
+					If you specify CLEAR for A$, the alarm is cleared without stopping the measurement.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:ALARm:HOLD 开<br>:ALARm:HOLD?<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:ALARM:HOLD 开</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					A$=CLEAR can only be used when alarm hold is 开.
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":SOURce">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the alarm source AND/OR.</b>
+						</span>
+					</a>
+					<a id=":SOURce?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:ALARm:SOURce alm$,A$<br><br>
+						:ALARm:SOURce? alm$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						alm$,A$<br>
+					</span>
+					<br>
+					alm$ = <span class="ch_alarm"></span><br>A$ = OR, AND
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the alarm source AND/OR.<br>
+					Returns the current alarm source AND/OR as character data.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>AND</b></td><td class="g_td_0013">&nbsp;Logical product</td></tr>
+					<tr><td class="g_td_0013"><b>OR</b></td><td class="g_td_0013">&nbsp;Logical sum</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:ALARm:SOURce ALM1,AND<br>:ALARm:SOURce? ALM1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:ALARM:SOURCE ALM1,AND</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":ANALog:KIND">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the type of alarm.</b>
+						</span>
+					</a>
+					<a id=":ANALog:KIND?"></a>
+					<a id=":CALCulate:KIND"><a id=":CALCulate:KIND?"></a>
+					<a id=":PULSe:KIND"></a><a id=":PULSe:KIND?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br><br><br><br><br><br><br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<br>
+					[Analog 通道 报警]<br>
+					<span style="color:red;font-weight:bold">
+						:ALARm:ANALog:KIND alm$,ch$,A$<br><br>
+					</span>
+					[Waveform Calculation 报警]<br>
+					<span style="color:red;font-weight:bold">
+						:ALARm:CALCulate:KIND alm$,w$,A$<br><br>
+					</span>
+					[Pulse 通道 报警]<br>
+					<span style="color:red;font-weight:bold">
+						:ALARm:PULSe:KIND alm$,pls$,A$<br><br>
+					</span>
+					[Analog 通道 报警]<br>
+					<span style="color:red;font-weight:bold">
+						:ALARm:ANALog:KIND? alm$,ch$<br><br>
+					</span>
+					[Waveform Calculation 报警]<br>
+					<span style="color:red;font-weight:bold">
+						:ALARm:CALCulate:KIND? alm$,w$<br><br>
+					</span>
+					[Pulse 通道 报警]<br>
+					<span style="color:red;font-weight:bold">
+						:ALARm:PULSe:KIND? alm$,pls$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					[Analog 通道 报警]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						alm$,ch$,A$<br>
+					</span>
+					<br>
+					[Waveform Calculation 报警]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						alm$,w$,A$<br>
+					</span>
+					<br>
+					[Pulse 通道 报警]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						alm$,pls$,A$<br>
+					</span>
+					<br>
+					alm$ = <span class="ch_alarm"></span><br>ch$ = <span class="ch_analog"></span><br>w$ = <span class="ch_wcalc"></span><br>pls$ = <span class="ch_pulse"></span><br>A$ = 关, LEVEl, WINDow, SLOPe
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the type of alarm for the channel designated by alm$,ch$/w$/pls$.<br>
+					Returns as character data the type of the current alarm for the channel designated by alm$,ch$/w$/pls$.
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>OFF</b></td><td class="g_td_0013">&nbsp;</td></tr>
+					<tr><td class="g_td_0013"><b>LEVEl</b></td><td class="g_td_0013">&nbsp;Level alarm</td></tr>
+					<tr><td class="g_td_0013"><b>WINDow</b></td><td class="g_td_0013">&nbsp;Window alarm</td></tr>
+					<tr><td class="g_td_0013"><b>SLOPe</b></td><td class="g_td_0013">&nbsp;Slope alarm</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:ALARm:ANALog:KIND ALM1,CH1_1,LEVEl<br>:ALARm:ANALog:KIND? ALM1,CH1_1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:ALARM:ANALOG:KIND ALM1,CH1_1,LEVEL</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					It is also possible to set and query using the following conventional commands.<br>
+					:ALARm:KIND alm$,ch$,A$ / :ALARm:KIND? alm$,ch$<br>
+					:ALARm:WKIND alm$,w$,A$ / :ALARm:WKIND? alm$,w$<br>
+					:ALARm:PKIND alm$,pls$,A$ / :ALARm:PKIND? alm$,pls$<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":ANALog:LEVEl">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the level of the level alarm.</b>
+						</span>
+					</a>
+					<a id=":ANALog:LEVEl?"></a>
+					<a id=":CALCulate:LEVEl"></a><a id=":CALCulate:LEVEl?"></a>
+					<a id=":PULSe:LEVEl"></a><a id=":PULSe:LEVEl?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br><br><br><br><br><br><br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<br>
+					[Analog 通道 报警]<br>
+					<span style="color:red;font-weight:bold">
+						:ALARm:ANALog:LEVEl alm$,ch$,A<br><br>
+					</span>
+					[Waveform Calculation 报警]<br>
+					<span style="color:red;font-weight:bold">
+						:ALARm:CALCulate:LEVEl alm$,w$,A<br><br>
+					</span>
+					[Pulse 通道 报警]<br>
+					<span style="color:red;font-weight:bold">
+						:ALARm:PULSe:LEVEl alm$,pls$,A<br><br>
+					</span>
+					[Analog 通道 报警]<br>
+					<span style="color:red;font-weight:bold">
+						:ALARm:ANALog:LEVEl? alm$,ch$<br><br>
+					</span>
+					[Waveform Calculation 报警]<br>
+					<span style="color:red;font-weight:bold">
+						:ALARm:CALCulate:LEVEl? alm$,w$<br><br>
+					</span>
+					[Pulse 通道 报警]<br>
+					<span style="color:red;font-weight:bold">
+						:ALARm:PULSe:LEVEl? alm$,pls$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					[Analog 通道 报警]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						alm$,ch$,A&lt;NR3&gt; (3 decimal places)<br>
+					</span>
+					<br>
+					[Waveform Calculation 报警]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						alm$,w$,A&lt;NR3&gt; (4 decimal places)<br>
+					</span>
+					<br>
+					[Pulse 通道 报警]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						alm$,pls$,A&lt;NR3&gt; (9 decimal places)<br>
+					</span>
+					<br>
+					alm$ = <span class="ch_alarm"></span><br>ch$ = <span class="ch_analog"></span><br>w$ = <span class="ch_wcalc"></span><br>pls$ = <span class="ch_pulse"></span>
+					<br>
+					[Analog 通道 报警]<br>
+					A = Configurable Range : (measurement range)&times;(&plusmn;1.5), Minimum Resolution : (measurement range)&times;(1/1000)<br>
+					[Waveform Calculation 报警]<br>
+					A = -9.9999E+29 to 9.9999E+29<br>
+					[Pulse 通道 报警]<br>
+					A = 0 to 1000000000(count), 0 to 15000(r/s), 0 to 900000(r/min)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the alarm level of the level alarm of the channel designated by alm$,ch$/w$/pls$.<br>
+					Returns as an NR3 numerical value the current alarm level of the channel designated by alm$,ch$/w$/pls$.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:ALARm:ANALog:LEVEl ALM1,CH1_1,0.1<br>:ALARm:ANALog:LEVEl? ALM1,CH1_1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:ALARM:ANALOG:LEVEL ALM1,CH1_1,+1.000E-01</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					If you enter a value greater than the configurable limit, the maximum value is set.<br>
+					If you enter a value less than the configurable lower limit, the minimum value is set.<br>
+					It is also possible to set and query using the following conventional commands.<br>
+					:ALARm:LEVEl alm$,ch$,A / :ALARm:LEVEl? alm$,ch$<br>
+					:ALARm:WLEVEl alm$,w$,A / :ALARm:WLEVEl? alm$,w$<br>
+					:ALARm:PLEVEl alm$,pls$,A / :ALARm:PLEVEl? alm$,pls$<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":ANALog:LOWEr">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the lower limit level for a window-in/-out alarm.</b>
+						</span>
+					</a>
+					<a id=":ANALog:LOWEr?"></a>
+					<a id=":CALCulate:LOWEr"></a><a id=":CALCulate:LOWEr?"></a>
+					<a id=":PULSe:LOWEr"></a><a id=":PULSe:LOWEr?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br><br><br><br><br><br><br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<br>
+					[Analog 通道 报警]<br>
+					<span style="color:red;font-weight:bold">
+						:ALARm:ANALog:LOWEr alm$,ch$,A<br><br>
+					</span>
+					[Waveform Calculation 报警]<br>
+					<span style="color:red;font-weight:bold">
+						:ALARm:CALCulate:LOWEr alm$,w$,A<br><br>
+					</span>
+					[Pulse 通道 报警]<br>
+					<span style="color:red;font-weight:bold">
+						:ALARm:PULSe:LOWEr alm$,pls$,A<br><br>
+					</span>
+					[Analog 通道 报警]<br>
+					<span style="color:red;font-weight:bold">
+						:ALARm:ANALog:LOWEr? alm$,ch$<br><br>
+					</span>
+					[Waveform Calculation 报警]<br>
+					<span style="color:red;font-weight:bold">
+						:ALARm:CALCulate:LOWEr? alm$,w$<br><br>
+					</span>
+					[Pulse 通道 报警]<br>
+					<span style="color:red;font-weight:bold">
+						:ALARm:PULSe:LOWEr? alm$,pls$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					[Analog 通道 报警]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						alm$,ch$,A&lt;NR3&gt; (3 decimal places)<br>
+					</span>
+					<br>
+					[Waveform Calculation 报警]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						alm$,w$,A&lt;NR3&gt; (4 decimal places)<br>
+					</span>
+					<br>
+					[Pulse 通道 报警]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						alm$,pls$,A&lt;NR3&gt; (9 decimal places)<br>
+					</span>
+					<br>
+					alm$ = <span class="ch_alarm"></span><br>ch$ = <span class="ch_analog"></span><br>w$ = <span class="ch_wcalc"></span><br>pls$ = <span class="ch_pulse"></span>
+					<br>
+					[Analog 通道 报警]<br>
+					A = Configurable Range : (measurement range)&times;(&plusmn;1.5), Minimum Resolution : (measurement range)&times;(1/1000)<br>
+					[Waveform Calculation 报警]<br>
+					A = -9.9999E+29 to 9.9999E+29<br>
+					[Pulse 通道 报警]<br>
+					A = 0 to 1000000000(count), 0 to 15000(r/s), 0 to 900000(r/min)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the lower limit level of the window alarm of the channel designated by alm$,ch$/w$/pls$ as a voltage value.<br>
+					Returns the current lower limit level of the window alarm as an NR3 numerical value.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:ALARm:ANALog:LOWEr ALM1,CH1_1,-0.5<br>:ALARm:ANALog:LOWEr? ALM1,CH1_1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:ALARM:ANALOG:LOWER ALM1,CH1_1,-5.000E-01</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					You cannot enter a value greater than or equal to the <a href="#:ANALog:UPPEr">upper limit level of the window alarm</a>.<br>
+					If you enter a value greater than the configurable limit, the maximum value is set.<br>
+					If you enter a value less than the configurable lower limit, the minimum value is set.<br>
+					It is also possible to set and query using the following conventional commands.<br>
+					:ALARm:LOWEr alm$,ch$,A / :ALARm:LOWEr? alm$,ch$<br>
+					:ALARm:WLOWEr alm$,w$,A / :ALARm:WLOWEr? alm$,w$<br>
+					:ALARm:PLOWEr alm$,pls$,A / :ALARm:PLOWEr? alm$,pls$<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":ANALog:SIDE">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the window alarm direction (side).</b>
+						</span>
+					</a>
+					<a id=":ANALog:SIDE?"></a>
+					<a id=":CALCulate:SIDE"></a><a id=":CALCulate:SIDE?"></a>
+					<a id=":PULSe:SIDE"></a><a id=":PULSe:SIDE?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br><br><br><br><br><br><br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<br>
+					[Analog 通道 报警]<br>
+					<span style="color:red;font-weight:bold">
+						:ALARm:ANALog:SIDE alm$,ch$,A$<br><br>
+					</span>
+					[Waveform Calculation 报警]<br>
+					<span style="color:red;font-weight:bold">
+						:ALARm:CALCulate:SIDE alm$,w$,A$<br><br>
+					</span>
+					[Pulse 通道 报警]<br>
+					<span style="color:red;font-weight:bold">
+						:ALARm:PULSe:SIDE alm$,pls$,A$<br><br>
+					</span>
+					[Analog 通道 报警]<br>
+					<span style="color:red;font-weight:bold">
+						:ALARm:ANALog:SIDE? alm$,ch$<br><br>
+					</span>
+					[Waveform Calculation 报警]<br>
+					<span style="color:red;font-weight:bold">
+						:ALARm:CALCulate:SIDE? alm$,w$<br><br>
+					</span>
+					[Pulse 通道 报警]<br>
+					<span style="color:red;font-weight:bold">
+						:ALARm:PULSe:SIDE? alm$,pls$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					[Analog 通道 报警]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						alm$,ch$,A$<br>
+					</span>
+					<br>
+					[Waveform Calculation 报警]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						alm$,w$,A$<br>
+					</span>
+					<br>
+					[Pulse 通道 报警]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						alm$,pls$,A$<br>
+					</span>
+					<br>
+					alm$ = <span class="ch_alarm"></span><br>ch$ = <span class="ch_analog"></span><br>w$ = <span class="ch_wcalc"></span><br>pls$ = <span class="ch_pulse"></span><br>A$ = IN, OUT
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the alarm direction of the window alarm of the channel designated by alm$,ch$/w$/pls$.<br>
+					Returns as a character value the current window alarm direction of the channel designated by alm$,ch$/w$/pls$.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>IN</b></td><td class="g_td_0013">&nbsp;Window-in</td></tr>
+					<tr><td class="g_td_0013"><b>OUT</b></td><td class="g_td_0013">&nbsp;Window-out</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:ALARm:ANALog:SIDE ALM1,CH1_1,IN<br>:ALARm:ANALog:SIDE? ALM1,CH1_1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:ALARM:ANALOG:SIDE ALM1,CH1_1,IN</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					It is also possible to set and query using the following conventional commands.<br>
+					:ALARm:SIDE alm$,ch$,A$ / :ALARm:SIDE? alm$,ch$<br>
+					:ALARm:WSIDE alm$,w$,A$ / :ALARm:WSIDE? alm$,w$<br>
+					:ALARm:PSIDE alm$,pls$,A$ / :ALARm:PSIDE? alm$,pls$<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":ANALog:SLOPe">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the level alarm direction (slope).</b>
+						</span>
+					</a>
+					<a id=":ANALog:SLOPe?"></a>
+					<a id=":CALCulate:SLOPe"></a><a id=":CALCulate:SLOPe?"></a>
+					<a id=":PULSe:SLOPe"></a><a id=":PULSe:SLOPe?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br><br><br><br><br><br><br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<br>
+					[Analog 通道 报警]<br>
+					<span style="color:red;font-weight:bold">
+						:ALARm:ANALog:SLOPe alm$,ch$,A$<br><br>
+					</span>
+					[Waveform Calculation 报警]<br>
+					<span style="color:red;font-weight:bold">
+						:ALARm:CALCulate:SLOPe alm$,w$,A$<br><br>
+					</span>
+					[Pulse 通道 报警]<br>
+					<span style="color:red;font-weight:bold">
+						:ALARm:PULSe:SLOPe alm$,pls$,A$<br><br>
+					</span>
+					[Analog 通道 报警]<br>
+					<span style="color:red;font-weight:bold">
+						:ALARm:ANALog:SLOPe? alm$,ch$<br><br>
+					</span>
+					[Waveform Calculation 报警]<br>
+					<span style="color:red;font-weight:bold">
+						:ALARm:CALCulate:SLOPe? alm$,w$<br><br>
+					</span>
+					[Pulse 通道 报警]<br>
+					<span style="color:red;font-weight:bold">
+						:ALARm:PULSe:SLOPe? alm$,pls$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					[Analog 通道 报警]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						alm$,ch$,A$<br>
+					</span>
+					<br>
+					[Waveform Calculation 报警]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						alm$,w$,A$<br>
+					</span>
+					<br>
+					[Pulse 通道 报警]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						alm$,pls$,A$<br>
+					</span>
+					<br>
+					alm$ = <span class="ch_alarm"></span><br>ch$ = <span class="ch_analog"></span><br>w$ = <span class="ch_wcalc"></span><br>pls$ = <span class="ch_pulse"></span><br>A$ = HIGH, LOW
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the alarm direction of the level alarm of the channel designated by alm$,ch$/w$/pls$.<br>
+					Returns as a character value the current level alarm direction of the channel designated by alm$,ch$/w$/pls$.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>HIGH</b></td><td class="g_td_0013">&nbsp;High</td></tr>
+					<tr><td class="g_td_0013"><b>LOW</b></td><td class="g_td_0013">&nbsp;Low</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:ALARm:ANALog:SLOPe ALM1,CH1_1,HIGH<br>:ALARm:ANALog:SLOPe? ALM1,CH1_1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:ALARM:ANALOG:SLOPE ALM1,CH1_1,UP</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					It is also possible to set and query using the following conventional commands.<br>
+					:ALARm:SLOPe alm$,ch$,A$ / :ALARm:SLOPe? alm$,ch$<br>
+					:ALARm:WSLOPe alm$,w$,A$ / :ALARm:WSLOPe? alm$,w$<br>
+					:ALARm:PSLOPe alm$,pls$,A$ / :ALARm:PSLOPe? alm$,pls$<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":ANALog:STIMe">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the time width of slope alarm.</b>
+						</span>
+					</a>
+					<a id=":ANALog:STIMe?"></a>
+					<a id=":CALCulate:STIMe"></a><a id=":CALCulate:STIMe?"></a>
+					<a id=":PULSe:STIMe"></a><a id=":PULSe:STIMe?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br><br><br><br><br><br><br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<br>
+					[Analog 通道 报警]<br>
+					<span style="color:red;font-weight:bold">
+						:ALARm:ANALog:STIMe alm$,ch$,hour,min,sec<br><br>
+					</span>
+					[Waveform Calculation 报警]<br>
+					<span style="color:red;font-weight:bold">
+						:ALARm:CALCulate:STIMe alm$,w$,hour,min,sec<br><br>
+					</span>
+					[Pulse 通道 报警]<br>
+					<span style="color:red;font-weight:bold">
+						:ALARm:PULSe:STIMe alm$,pls$,hour,min,sec<br><br>
+					</span>
+					[Analog 通道 报警]<br>
+					<span style="color:red;font-weight:bold">
+						:ALARm:ANALog:STIMe? alm$,ch$<br><br>
+					</span>
+					[Waveform Calculation 报警]<br>
+					<span style="color:red;font-weight:bold">
+						:ALARm:CALCulate:STIMe? alm$,w$<br><br>
+					</span>
+					[Pulse 通道 报警]<br>
+					<span style="color:red;font-weight:bold">
+						:ALARm:PULSe:STIMe? alm$,pls$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					[Analog 通道 报警]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						alm$,ch$,hour&lt;NR1&gt;,min&lt;NR1&gt;,sec&lt;NR1&gt;<br>
+					</span>
+					<br>
+					[Waveform Calculation 报警]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						alm$,w$,hour&lt;NR1&gt;,min&lt;NR1&gt;,sec&lt;NR1&gt;<br>
+					</span>
+					<br>
+					[Pulse 通道 报警]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						alm$,pls$,hour&lt;NR1&gt;,min&lt;NR1&gt;,sec&lt;NR1&gt;<br>
+					</span>
+					<br>
+					alm$ = <span class="ch_alarm"></span><br>ch$ = <span class="ch_analog"></span><br>w$ = <span class="ch_wcalc"></span><br>pls$ = <span class="ch_pulse"></span><br>hour = 0 to 6(hour)<br>min = 0 to 59(min)<br>sec = 0 to 59(sec)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the time width of slope alarm of the channel designated by alm$,ch$/w$/pls$.<br>
+					Returns as an NR1 numerical value the current time width of slope alarm of the channel designated by alm$,ch$/w$/pls$.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:ALARm:ANALog:STIMe ALM1,CH1_1,0,1,20<br>:ALARm:ANALog:STIMe? ALM1,CH1_1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:ALARM:ANALOG:STIME ALM1,CH1_1,0,1,20</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					0,0,0 can not be set.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":ANALog:UPPEr">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the upper limit level for a window-in/-out alarm.</b>
+						</span>
+					</a>
+					<a id=":ANALog:UPPEr?"></a>
+					<a id=":CALCulate:UPPEr"></a><a id=":CALCulate:UPPEr?"></a>
+					<a id=":PULSe:UPPEr"></a><a id=":PULSe:UPPEr?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br><br><br><br><br><br><br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<br>
+					[Analog 通道 报警]<br>
+					<span style="color:red;font-weight:bold">
+						:ALARm:ANALog:UPPEr alm$,ch$,A<br><br>
+					</span>
+					[Waveform Calculation 报警]<br>
+					<span style="color:red;font-weight:bold">
+						:ALARm:CALCulate:UPPEr alm$,w$,A<br><br>
+					</span>
+					[Pulse 通道 报警]<br>
+					<span style="color:red;font-weight:bold">
+						:ALARm:PULSe:UPPEr alm$,pls$,A<br><br>
+					</span>
+					[Analog 通道 报警]<br>
+					<span style="color:red;font-weight:bold">
+						:ALARm:ANALog:UPPEr? alm$,ch$<br><br>
+					</span>
+					[Waveform Calculation 报警]<br>
+					<span style="color:red;font-weight:bold">
+						:ALARm:CALCulate:UPPEr? alm$,w$<br><br>
+					</span>
+					[Pulse 通道 报警]<br>
+					<span style="color:red;font-weight:bold">
+						:ALARm:PULSe:UPPEr? alm$,pls$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					[Analog 通道 报警]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						alm$,ch$,A&lt;NR3&gt; (3 decimal places)<br>
+					</span>
+					<br>
+					[Waveform Calculation 报警]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						alm$,w$,A&lt;NR3&gt; (4 decimal places)<br>
+					</span>
+					<br>
+					[Pulse 通道 报警]<br>
+					<span style="color:#0000cc;font-weight:bold">
+						alm$,pls$,A&lt;NR3&gt; (9 decimal places)<br>
+					</span>
+					<br>
+					alm$ = <span class="ch_alarm"></span><br>ch$ = <span class="ch_analog"></span><br>w$ = <span class="ch_wcalc"></span><br>pls$ = <span class="ch_pulse"></span>
+					<br>
+					[Analog 通道 报警]<br>
+					A = Configurable Range : (measurement range)&times;(&plusmn;1.5), Minimum Resolution : (measurement range)&times;(1/1000)<br>
+					[Waveform Calculation 报警]<br>
+					A = -9.9999E+29 to 9.9999E+29<br>
+					[Pulse 通道 报警]<br>
+					A = 0 to 1000000000(count), 0 to 15000(r/s), 0 to 900000(r/min)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the upper limit level of the window alarm of the channel designated by alm$,ch$/w$/pls$ as a voltage value.<br>
+					Returns the current upper limit level of the window alarm as an NR3 numerical value.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:ALARm:ANALog:UPPEr ALM1,CH1_1,0.5<br>:ALARm:ANALog:UPPEr? ALM1,CH1_1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:ALARM:ANALOG:UPPER ALM1,CH1_1,+5.000E-01</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					You cannot enter a value less than or equal to the <a href="#:ANALog:LOWEr">lower limit level of the window alarm</a>.<br>
+					If you enter a value greater than the configurable limit, the maximum value is set.<br>
+					If you enter a value less than the configurable lower limit, the minimum value is set.<br>
+					It is also possible to set and query using the following conventional commands.<br>
+					:ALARm:UPPEr alm$,ch$,A / :ALARm:UPPEr? alm$,ch$<br>
+					:ALARm:WUPPEr alm$,w$,A / :ALARm:WUPPEr? alm$,w$<br>
+					:ALARm:PUPPEr alm$,pls$,A / :ALARm:PUPPEr? alm$,pls$<br>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":LOGic:ANDOR">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the logical operator (AND/OR) for the alarm pattern of a logic alarm.</b>
+						</span>
+					</a>
+					<a id=":LOGic:ANDOR?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:ALARm:LOGic:ANDOR alm$,A$<br><br>
+						:ALARm:LOGic:ANDOR? alm$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						alm$,A$<br>
+					</span>
+					<br>
+					alm$ = <span class="ch_alarm"></span><br>A$ = 关, OR, AND
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the AND/OR logical operator for the alarm pattern of a logic alarm of the channel designated by alm$.<br>
+					Returns the present AND/OR setting for the alarm pattern of a logic alarm as a character string.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>OFF</b></td><td class="g_td_0013">&nbsp;Alarm OFF</td></tr>
+					<tr><td class="g_td_0013"><b>OR</b></td><td class="g_td_0013">&nbsp;Logical sum</td></tr>
+					<tr><td class="g_td_0013"><b>AND</b></td><td class="g_td_0013">&nbsp;Logical product</td></tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:ALARm:LOGic:ANDOR ALM1,OR<br>:ALARm:LOGic:ANDOR? ALM1,<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:ALARM:LOGIC:ANDOR ALM1,OR</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					It is also possible to set and query using the following conventional commands.<br>
+					:ALARm:LOGAnd alm$,A$ / :ALARm:LOGAnd? alm$
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+
+
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:0;width:100%">
+		<tr style="height:25pt">
+			<td class = "g_HeadTitle" colspan = "4">
+				<p class="g_p_0002">
+					<a id=":LOGic:PATTern">
+						<span class = "g_HeadTitle">
+							<b>Sets and queries the alarm pattern for a logic alarm.</b>
+						</span>
+					</a>
+					<a id=":LOGic:PATTern?"></a>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0004" rowspan = "2">
+				<p class = "g_p_0003">Syntax</p>
+			</td>
+			<td class = "g_td_0005">
+				<p class="MsoNormal">(Command)<br><br>(Query)</p>
+			</td>
+			<td class = "g_td_0006" colspan = "2">
+				<p class="MsoNormal">
+					<span style="color:red;font-weight:bold">
+						<br>
+						:ALARm:LOGic:PATTern alm$,"A$"<br><br>
+						:ALARm:LOGic:PATTern? alm$<br><br>
+					</span>
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0007">
+				<p class="MsoNormal">(Response)</p>
+			</td>
+			<td class = "g_td_0008" colspan = "2">
+				<p class="MsoNormal" style="margin-bottom:12pt">
+					<span style="color:#0000cc;font-weight:bold">
+						&quot;A$&quot;<br>
+					</span>
+					<br>
+					alm$ = <span class="ch_alarm"></span><br>A$ = xxxxxxxx<br>报警 pattern(X,0,1)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Details</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					Sets the alarm pattern (8 bits) for the logic alarm.<br>
+					Returns the setting for the alarm pattern (8 bits) for the logic alarm as that specified by the given character data.<br>
+				</p>
+				<table>
+					<tr><td class="g_td_0013"><b>X</b></td><td class="g_td_0013">&nbsp;Ignore signal</td></tr>
+					<tr><td class="g_td_0013"><b>0</b></td><td class="g_td_0013">&nbsp;Alarm at low level</td></tr>
+					<tr><td class="g_td_0013"><b>1</b></td><td class="g_td_0013">&nbsp;Alarm at high level</td></tr>
+					<!--<tr><td class="g_td_0013"><b>2</b></td><td class="g_td_0013">&nbsp;LOWまたはHIGHレベルの信号で警報がかかります</td></tr>-->
+				</table>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Example</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					<span style="color:#00582a">
+						:ALARm:LOGic:PATTern ALM1,"X01XX01X"<br>:ALARm:LOGic:PATTern? ALM1<br>
+					</span>
+					(响应)&nbsp;&nbsp;<b>:ALARM:LOGIC:PATTERN ALM1,"X01XX01X"</b>&nbsp;&nbsp;(when headers are enabled)
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0009">
+				<p class = "g_p_0003">Note</p>
+			</td>
+			<td class = "g_td_0010" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					It is also possible to set and query using the following conventional commands.<br>
+					:ALARm:LOGPat alm$,"A$" / :ALARm:LOGPat? alm$
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td class = "g_td_0011">
+				<p class = "g_p_0003">Usage<br>Conditions</p>
+			</td>
+			<td class = "g_td_0012" colspan = "3">
+				<p class="MsoNormal" style="margin-top:12pt;margin-bottom:12pt">
+					-
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p class="MsoNormal"><br><br><br></p>
+
+
+
+</body>
+</html>
