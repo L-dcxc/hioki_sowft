@@ -152,3 +152,9 @@ python tests/communication/test_lr8450_protocol.py --config tests/config/devices
 ---
 
 **测试框架已就绪！** ? 现在你可以系统性地验证LR8450设备的通信协议，为后续开发提供可靠的基础。
+
+
+
+git add .
+git commit -m "提交信息"
+git push

@@ -511,18 +511,42 @@ class MainWindow(QMainWindow):
         )
 
     def update_voltage_color(self, color_hex: str) -> None:
-        """更新电压曲线颜色。"""
+        """更新电压曲线颜色和左Y轴颜色。"""
         self.current_volt_color = color_hex  # 更新当前颜色
+        
+        # 更新曲线颜色
         for curve in self.volt_curves:
             curve.setPen(pg.mkPen(color_hex, width=2))
-        self.statusBar().showMessage(f"电压曲线颜色已更新为 {color_hex}")
+        
+        # 更新左Y轴（电压轴）颜色
+        self.waveforms.left_plot.setLabel('left', '电压 V', color=color_hex, **{'font-size': '11pt'})
+        self.waveforms.left_plot.getAxis('left').setPen(pg.mkPen(color_hex, width=2))
+        self.waveforms.left_plot.getAxis('left').setTextPen(color_hex)
+        
+        self.waveforms.right_plot.setLabel('left', '电压 V', color=color_hex, **{'font-size': '11pt'})
+        self.waveforms.right_plot.getAxis('left').setPen(pg.mkPen(color_hex, width=2))
+        self.waveforms.right_plot.getAxis('left').setTextPen(color_hex)
+        
+        self.statusBar().showMessage(f"电压曲线和坐标轴颜色已更新为 {color_hex}")
     
     def update_temp_color(self, color_hex: str) -> None:
-        """更新温度曲线颜色。"""
+        """更新温度曲线颜色和右Y轴颜色。"""
         self.current_temp_color = color_hex  # 更新当前颜色
+        
+        # 更新曲线颜色
         for curve in self.temp_curves:
             curve.setPen(pg.mkPen(color_hex, width=2))
-        self.statusBar().showMessage(f"温度曲线颜色已更新为 {color_hex}")
+        
+        # 更新右Y轴（温度轴）颜色
+        self.waveforms.left_plot.setLabel('right', '温度 T', units='°C', color=color_hex, **{'font-size': '11pt'})
+        self.waveforms.left_plot.getAxis('right').setPen(pg.mkPen(color_hex, width=2))
+        self.waveforms.left_plot.getAxis('right').setTextPen(color_hex)
+        
+        self.waveforms.right_plot.setLabel('right', '温度 T', units='°C', color=color_hex, **{'font-size': '11pt'})
+        self.waveforms.right_plot.getAxis('right').setPen(pg.mkPen(color_hex, width=2))
+        self.waveforms.right_plot.getAxis('right').setTextPen(color_hex)
+        
+        self.statusBar().showMessage(f"温度曲线和坐标轴颜色已更新为 {color_hex}")
     
     def _update_waveform(self) -> None:
         """定时更新波形（虚拟数据）。"""
