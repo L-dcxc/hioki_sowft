@@ -798,7 +798,7 @@ class ConnectionSettingsPage(QWidget):
                             port = int(port)
                         else:
                             ip_address = device_id
-                            port = 8800  # \u9ed8\u8ba4\u7aef\u53e3
+                            port = 8802  # \u9ed8\u8ba4\u7aef\u53e3
 
                         # \u6dfb\u52a0\u5230\u8bbe\u5907\u8868\u683c
                         self._add_device_to_table(

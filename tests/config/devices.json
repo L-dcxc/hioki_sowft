@@ -2,9 +2,9 @@
   "devices": [
     {
       "name": "LR8450-01",
-      "ip": "192.168.1.14",
-      "port": 8800,
-      "description": "Ö÷²âÊÔÉè±¸"
+      "ip": "192.168.2.136",
+      "port": 8802,
+      "description": "ä¸»æµ‹è¯•è®¾å¤‡"
     }
   ],
   "test_settings": {

@@ -13,7 +13,7 @@ from typing import Optional, Dict, Any
 class SimpleDeviceClient:
     """Simple device client that creates new connection for each command."""
     
-    def __init__(self, ip_address: str, port: int = 8800):
+    def __init__(self, ip_address: str, port: int = 8802):
         """Initialize device client.
         
         Args:
@@ -129,41 +129,62 @@ class SimpleDeviceClient:
             return None
             
         try:
-            # Parse HIOKI response
-            parts = idn_response.split()
-            if len(parts) >= 3:
-                manufacturer = parts[0]  # "HIOKI"
-                model = parts[1]         # "8450"
-                firmware = parts[2]      # "V2.10"
-                
-                # Extract unit information
-                unit_info = []
-                estimated_channels = 0
-                
-                for part in parts[4:]:
-                    if part.startswith('U') and '-' in part:
-                        unit_info.append(part)
-                        try:
-                            unit_type = part.split('-')[1]
-                            if unit_type == 'A':
-                                estimated_channels += 15
-                            elif unit_type.isdigit():
-                                estimated_channels += int(unit_type)
-                            elif unit_type == 'B':
-                                estimated_channels += 4
-                        except:
-                            pass
-                    elif part == "DUMMY":
-                        break
+            # 判断IDN格式：标准SCPI格式 vs HIOKI扩展格式
+            if ',' in idn_response:
+                # 标准SCPI格式（8802端口）: "HIOKI,LR8450-01,221018368,V2.10"
+                parts = idn_response.split(',')
+                manufacturer = parts[0].strip()  # "HIOKI"
+                model = parts[1].strip()          # "LR8450-01"
+                serial = parts[2].strip()         # "221018368"
+                firmware = parts[3].strip()       # "V2.10"
                 
                 return {
                     "manufacturer": manufacturer,
-                    "model": f"LR{model}",
+                    "model": model,
+                    "serial": serial,
                     "firmware": firmware,
-                    "unit_info": unit_info,
-                    "estimated_channels": max(estimated_channels, 30),
-                    "raw_idn": idn_response
+                    "unit_info": [],  # 标准格式不包含单元信息
+                    "estimated_channels": 60,  # 默认估算
+                    "raw_idn": idn_response,
+                    "port_type": "8802_SCPI"
                 }
+            else:
+                # HIOKI扩展格式（8800端口）: "HIOKI 8450 V2.10 1.01 U1-A U2-4 ..."
+                parts = idn_response.split()
+                if len(parts) >= 3:
+                    manufacturer = parts[0]  # "HIOKI"
+                    model = parts[1]         # "8450"
+                    firmware = parts[2]      # "V2.10"
+                    
+                    # Extract unit information
+                    unit_info = []
+                    estimated_channels = 0
+                    
+                    for part in parts[4:]:
+                        if part.startswith('U') and '-' in part:
+                            unit_info.append(part)
+                            try:
+                                unit_type = part.split('-')[1]
+                                if unit_type == 'A':
+                                    estimated_channels += 15
+                                elif unit_type.isdigit():
+                                    estimated_channels += int(unit_type)
+                                elif unit_type == 'B':
+                                    estimated_channels += 4
+                            except:
+                                pass
+                        elif part == "DUMMY":
+                            break
+                    
+                    return {
+                        "manufacturer": manufacturer,
+                        "model": f"LR{model}",
+                        "firmware": firmware,
+                        "unit_info": unit_info,
+                        "estimated_channels": max(estimated_channels, 30),
+                        "raw_idn": idn_response,
+                        "port_type": "8800_INFO"
+                    }
                 
         except Exception as e:
             print(f"Error parsing device info: {e}")

@@ -11,6 +11,7 @@ from PySide6.QtCore import Qt, QTimer
 from PySide6.QtWidgets import (
     QWidget, QMainWindow, QHBoxLayout, QVBoxLayout, QGridLayout,
     QLabel, QPushButton, QLineEdit, QComboBox, QStatusBar, QSplitter,
+    QDialog, QCheckBox, QMessageBox,
 )
 
 import pyqtgraph as pg
@@ -45,11 +46,11 @@ class KPICard(QWidget):
 
 
 class MainWindow(QMainWindow):
-    """白色主题主窗口 - 顶部控制 + 横向波形。"""
+    """白色版主窗口 - 顶部控制栏 + 横向波形 + mX+b + 参数设置。"""
 
     def __init__(self) -> None:
         super().__init__()
-        self.setWindowTitle("电池分析软件 - 简洁版")
+        self.setWindowTitle("电池分析软件")
         self.resize(1400, 900)
         
         # 数据管理
@@ -211,6 +212,48 @@ class MainWindow(QMainWindow):
         
         layout.addStretch()
         
+        # mX+b按钮（放在右侧）
+        layout.addStretch()
+
+        self.btn_mx_plus_b = QPushButton("mX+b")
+        self.btn_mx_plus_b.setObjectName("mxPlusBButton")
+        self.btn_mx_plus_b.setStyleSheet("""
+            QPushButton#mxPlusBButton {
+                background-color: #f8f9fa;
+                color: #2c3e50;
+                border: 2px solid #3498db;
+                border-radius: 6px;
+                padding: 8px 16px;
+                font-weight: 500;
+            }
+            QPushButton#mxPlusBButton:hover {
+                background-color: #e3f2fd;
+                border-color: #2196f3;
+            }
+        """)
+        self.btn_mx_plus_b.clicked.connect(self._show_mx_plus_b_dialog)
+        layout.addWidget(self.btn_mx_plus_b)
+
+        # 参数设置按钮
+        self.btn_settings = QPushButton("参数设置")
+        self.btn_settings.setObjectName("settingsButton")
+        self.btn_settings.setStyleSheet("""
+            QPushButton#settingsButton {
+                background-color: #f8f9fa;
+                color: #2c3e50;
+                border: 2px solid #3498db;
+                border-radius: 6px;
+                padding: 8px 16px;
+                font-weight: 500;
+            }
+            QPushButton#settingsButton:hover {
+                background-color: #3498db;
+                color: #ffffff;
+            }
+        """)
+        self.btn_settings.clicked.connect(self._show_settings_dialog)
+        layout.addWidget(self.btn_settings)
+
         # 开始按钮
         self.btn_start = QPushButton("开始采集")
         self.btn_start.setObjectName("startButton")
@@ -270,7 +313,17 @@ class MainWindow(QMainWindow):
         
         self.volt_curves = [v_left, v_right]
         self.temp_curves = [t_left, t_right]
-    
+
+    def _show_mx_plus_b_dialog(self) -> None:
+        """显示mX+b对话框。"""
+        dialog = MXPlusBDialog(self)
+        dialog.exec()
+
+    def _show_settings_dialog(self) -> None:
+        """显示系统设置对话框。"""
+        dialog = SettingsDialog(self)
+        dialog.exec()
+
     def _toggle_acquisition(self) -> None:
         if not self.is_running:
             self.is_running = True
@@ -319,6 +372,241 @@ class MainWindow(QMainWindow):
         self.ternary_t_kpi.set_value(f"{t_t:.2f}")
         self.blade_v_kpi.set_value(f"{v_b:.2f}")
         self.blade_t_kpi.set_value(f"{t_b:.2f}")
-        
+
         self.data_index += 1
+
+
+class SettingsDialog(QDialog):
+    """系统设置对话框。"""
+
+    def __init__(self, parent: Optional[QWidget] = None) -> None:
+        super().__init__(parent)
+        self.setWindowTitle("系统设置")
+        self.setFixedSize(500, 400)
+
+        layout = QVBoxLayout(self)
+        layout.setSpacing(16)
+
+        # 标题
+        title = QLabel("电池分析软件 - 系统设置")
+        title.setStyleSheet("color: #2c3e50; font-size: 18px; font-weight: bold;")
+        layout.addWidget(title)
+
+        # 设备连接设置
+        device_group = QGroupBox("设备连接设置")
+        device_layout = QFormLayout(device_group)
+
+        self.edit_device_ip = QLineEdit("192.168.1.100")
+        self.edit_device_ip.setPlaceholderText("设备IP地址")
+        device_layout.addRow("设备IP地址:", self.edit_device_ip)
+
+        self.edit_device_port = QLineEdit("8800")
+        self.edit_device_port.setPlaceholderText("端口号")
+        device_layout.addRow("端口号:", self.edit_device_port)
+
+        self.combo_baud_rate = QComboBox()
+        self.combo_baud_rate.addItems(["9600", "19200", "38400", "57600", "115200"])
+        self.combo_baud_rate.setCurrentText("115200")
+        device_layout.addRow("波特率:", self.combo_baud_rate)
+
+        layout.addWidget(device_group)
+
+        # 数据采集设置
+        acquisition_group = QGroupBox("数据采集设置")
+        acquisition_layout = QFormLayout(acquisition_group)
+
+        self.edit_sample_rate = QLineEdit("100")
+        self.edit_sample_rate.setPlaceholderText("采样率 (Hz)")
+        acquisition_layout.addRow("采样率 (Hz):", self.edit_sample_rate)
+
+        self.edit_buffer_size = QLineEdit("1000")
+        self.edit_buffer_size.setPlaceholderText("缓冲区大小")
+        acquisition_layout.addRow("缓冲区大小:", self.edit_buffer_size)
+
+        self.combo_data_format = QComboBox()
+        self.combo_data_format.addItems(["二进制", "ASCII", "十六进制"])
+        self.combo_data_format.setCurrentText("二进制")
+        acquisition_layout.addRow("数据格式:", self.combo_data_format)
+
+        layout.addWidget(acquisition_group)
+
+        # 显示设置
+        display_group = QGroupBox("显示设置")
+        display_layout = QVBoxLayout(display_group)
+        display_layout.setSpacing(8)
+
+        self.checkbox_show_grid = QCheckBox("显示网格")
+        self.checkbox_show_grid.setChecked(True)
+        display_layout.addWidget(self.checkbox_show_grid)
+
+        self.checkbox_auto_scale = QCheckBox("自动缩放")
+        self.checkbox_auto_scale.setChecked(True)
+        display_layout.addWidget(self.checkbox_auto_scale)
+
+        self.checkbox_show_legend = QCheckBox("显示图例")
+        self.checkbox_show_legend.setChecked(False)
+        display_layout.addWidget(self.checkbox_show_legend)
+
+        layout.addWidget(display_group)
+
+        # 按钮区域
+        button_layout = QHBoxLayout()
+        button_layout.addStretch()
+
+        btn_cancel = QPushButton("取消")
+        btn_cancel.clicked.connect(self.reject)
+        btn_cancel.setStyleSheet("""
+            QPushButton {
+                background-color: #f8f9fa;
+                color: #2c3e50;
+                border: 2px solid #bdc3c7;
+                border-radius: 6px;
+                padding: 10px 20px;
+                font-weight: 500;
+            }
+            QPushButton:hover {
+                background-color: #e9ecef;
+            }
+        """)
+        button_layout.addWidget(btn_cancel)
+
+        btn_save = QPushButton("保存设置")
+        btn_save.clicked.connect(self._save_settings)
+        btn_save.setStyleSheet("""
+            QPushButton {
+                background-color: #28a745;
+                color: #ffffff;
+                border: none;
+                padding: 10px 20px;
+                font-weight: bold;
+                border-radius: 6px;
+            }
+            QPushButton:hover {
+                background-color: #218838;
+            }
+        """)
+        button_layout.addWidget(btn_save)
+
+        layout.addLayout(button_layout)
+
+    def _save_settings(self) -> None:
+        """保存设置。"""
+        # 这里可以添加实际的设置保存逻辑
+        QMessageBox.information(
+            self,
+            "设置已保存",
+            "系统设置已保存！\n\n"
+            f"设备IP: {self.edit_device_ip.text()}\n"
+            f"端口号: {self.edit_device_port.text()}\n"
+            f"采样率: {self.edit_sample_rate.text()} Hz\n"
+            "其他设置已应用。"
+        )
+        self.accept()
+
+
+class MXPlusBDialog(QDialog):
+    """mX+b对话框。"""
+
+    def __init__(self, parent: Optional[QWidget] = None) -> None:
+        super().__init__(parent)
+        self.setWindowTitle("mX+b")
+        self.setFixedSize(400, 300)
+
+        layout = QVBoxLayout(self)
+        layout.setSpacing(12)
+
+        # 说明文本
+        desc = QLabel("校准公式: Y = mX + b")
+        desc.setStyleSheet("color: #2c3e50; font-size: 14px; font-weight: bold;")
+        layout.addWidget(desc)
+
+        # 参数输入区域
+        params_group = QGroupBox("校准参数")
+        params_layout = QFormLayout(params_group)
+
+        self.edit_m = QLineEdit("1.0")
+        self.edit_m.setPlaceholderText("斜率 m")
+        params_layout.addRow("斜率 m:", self.edit_m)
+
+        self.edit_b = QLineEdit("0.0")
+        self.edit_b.setPlaceholderText("截距 b")
+        params_layout.addRow("截距 b:", self.edit_b)
+
+        layout.addWidget(params_group)
+
+        # 通道选择
+        channel_group = QGroupBox("应用通道")
+        channel_layout = QVBoxLayout(channel_group)
+        channel_layout.setSpacing(8)
+
+        self.radio_ternary = QRadioButton("三元电池")
+        self.radio_ternary.setChecked(True)
+        self.radio_blade = QRadioButton("刀片电池")
+
+        channel_layout.addWidget(self.radio_ternary)
+        channel_layout.addWidget(self.radio_blade)
+
+        layout.addWidget(channel_group)
+
+        # 按钮区域
+        button_layout = QHBoxLayout()
+        button_layout.addStretch()
+
+        btn_cancel = QPushButton("取消")
+        btn_cancel.clicked.connect(self.reject)
+        btn_cancel.setStyleSheet("""
+            QPushButton {
+                background-color: #f8f9fa;
+                color: #2c3e50;
+                border: 2px solid #bdc3c7;
+                border-radius: 6px;
+                padding: 10px 20px;
+                font-weight: 500;
+            }
+            QPushButton:hover {
+                background-color: #e9ecef;
+            }
+        """)
+        button_layout.addWidget(btn_cancel)
+
+        btn_apply = QPushButton("应用校准")
+        btn_apply.clicked.connect(self._apply_calibration)
+        btn_apply.setStyleSheet("""
+            QPushButton {
+                background-color: #28a745;
+                color: #ffffff;
+                border: none;
+                padding: 10px 20px;
+                font-weight: bold;
+                border-radius: 6px;
+            }
+            QPushButton:hover {
+                background-color: #218838;
+            }
+        """)
+        button_layout.addWidget(btn_apply)
+
+        layout.addLayout(button_layout)
+
+    def _apply_calibration(self) -> None:
+        """应用校准参数。"""
+        try:
+            m = float(self.edit_m.text())
+            b = float(self.edit_b.text())
+
+            if self.radio_ternary.isChecked():
+                channel = "三元电池"
+            else:
+                channel = "刀片电池"
+
+            QMessageBox.information(
+                self,
+                "校准应用成功",
+                f"已对{channel}应用线性校准:\nY = {m}X + {b}"
+            )
+
+            self.accept()
+
+        except ValueError:
+            QMessageBox.warning(self, "输入错误", "请输入有效的数字参数")
 

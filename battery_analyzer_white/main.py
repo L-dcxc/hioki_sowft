@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Battery Analyzer - White Theme 应用入口。"""
+"""Battery Analyzer - 白色版（带mX+b和参数设置）应用入口。"""
 
 from __future__ import annotations
 
@@ -13,7 +13,7 @@ from battery_analyzer_white.ui.main_window import MainWindow
 
 def main() -> None:
     app = QApplication(sys.argv)
-    app.setApplicationName("电池分析软件 - 简洁版")
+    app.setApplicationName("电池分析软件")
     app.setStyleSheet(get_stylesheet())
 
     window = MainWindow()

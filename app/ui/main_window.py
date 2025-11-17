@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import time
+
 from PySide6.QtCore import Qt
 from PySide6.QtWidgets import (
     QApplication,
@@ -82,70 +84,70 @@ class MainWindow(QMainWindow):
         # File menu
         file_menu = menubar.addMenu("\u6587\u4ef6(F)")
         
-        # ´ò¿ª²¨ĞÎÎÄ¼ş(O)... Ctrl+O
+        # ï¿½ò¿ª²ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½(O)... Ctrl+O
         open_waveform_action = file_menu.addAction("\u6253\u5f00\u6ce2\u5f62\u6587\u4ef6(O)...")
         open_waveform_action.setShortcut("Ctrl+O")
         open_waveform_action.triggered.connect(self._open_waveform_file)
         
-        # ´ò¿ªÉèÖÃÎÄ¼ş(O)... Ctrl+Shift+O
+        # ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½(O)... Ctrl+Shift+O
         open_settings_action = file_menu.addAction("\u6253\u5f00\u8bbe\u7f6e\u6587\u4ef6(O)...")
         open_settings_action.setShortcut("Ctrl+Shift+O")
         open_settings_action.triggered.connect(self._show_placeholder)
         
-        # ±£´æÉèÖÃÎÄ¼ş(S)... Ctrl+Shift+S
+        # ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½(S)... Ctrl+Shift+S
         save_settings_action = file_menu.addAction("\u4fdd\u5b58\u8bbe\u7f6e\u6587\u4ef6(S)...")
         save_settings_action.setShortcut("Ctrl+Shift+S")
         save_settings_action.triggered.connect(self._show_placeholder)
         
         file_menu.addSeparator()
         
-        # ÒÔ×¨ÓÃ¸ñÊ½±£´æÎÄ¼ş...
+        # ï¿½ï¿½×¨ï¿½Ã¸ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½...
         file_menu.addAction("\u4ee5\u4e13\u7528\u683c\u5f0f\u4fdd\u5b58\u6587\u4ef6...", self._show_placeholder)
         
-        # ÒÔÍ¨ÓÃ¸ñÊ½±£´æ×ª»»ÎÄ¼ş...
+        # ï¿½ï¿½Í¨ï¿½Ã¸ï¿½Ê½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½Ä¼ï¿½...
         file_menu.addAction("\u4ee5\u901a\u7528\u683c\u5f0f\u4fdd\u5b58\u8f6c\u6362\u6587\u4ef6...", self._show_placeholder)
         
-        # ºÏ²¢ÎÄ¼şµ¼³ö...
+        # ï¿½Ï²ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½...
         file_menu.addAction("\u5408\u5e76\u6587\u4ef6\u5bfc\u51fa...", self._show_placeholder)
         
         file_menu.addSeparator()
         
-        # µ¼³öÊı¾İÖÁExcel...
+        # ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Excel...
         file_menu.addAction("\u5bfc\u51fa\u6570\u636e\u81f3Excel...", self._show_placeholder)
         
-        # ±£³ÖÊı¾İÁ´½Ó...
+        # ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½...
         file_menu.addAction("\u4fdd\u6301\u6570\u636e\u94fe\u63a5...", self._show_placeholder)
         
         file_menu.addSeparator()
         
-        # ´ò¿ªÍâ²¿Êı¾İÔØÈëµÄ²¨ĞÎÎÄ¼ş...
+        # ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä²ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½...
         file_menu.addAction("\u6253\u5f00\u5916\u90e8\u6570\u636e\u8f7d\u5165\u7684\u6ce2\u5f62\u6587\u4ef6...", self._show_placeholder)
         
-        # ±£´æÍâ²¿Êı¾İÔØÈëµÄ²¨ĞÎÎÄ¼ş
+        # ï¿½ï¿½ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä²ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½
         file_menu.addAction("\u4fdd\u5b58\u5916\u90e8\u6570\u636e\u8f7d\u5165\u7684\u6ce2\u5f62\u6587\u4ef6", self._show_placeholder)
         
         file_menu.addSeparator()
         
-        # ´òÓ¡(P)... Ctrl+P
+        # ï¿½ï¿½Ó¡(P)... Ctrl+P
         print_action = file_menu.addAction("\u6253\u5370(P)...")
         print_action.setShortcut("Ctrl+P")
         print_action.triggered.connect(self._show_placeholder)
         
         file_menu.addSeparator()
         
-        # ×î½üÊ¹ÓÃµÄ´¢´æ
+        # ï¿½ï¿½ï¿½Ê¹ï¿½ÃµÄ´ï¿½ï¿½ï¿½
         file_menu.addAction("\u6700\u8fd1\u4f7f\u7528\u7684\u50a8\u5b58", self._show_placeholder)
         
         file_menu.addSeparator()
         
-        # ½«ËùÓĞÊı¾İ³õÊ¼»¯ Ctrl+I with red exclamation icon
+        # ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½İ³ï¿½Ê¼ï¿½ï¿½ Ctrl+I with red exclamation icon
         initialize_action = file_menu.addAction("\u5c06\u6240\u6709\u6570\u636e\u521d\u59cb\u5316")
         initialize_action.setShortcut("Ctrl+I")
         initialize_action.triggered.connect(self._show_placeholder)
         
         file_menu.addSeparator()
         
-        # ÍË³ö(X) Alt+F4
+        # ï¿½Ë³ï¿½(X) Alt+F4
         exit_action = file_menu.addAction("\u9000\u51fa(X)")
         exit_action.setShortcut("Alt+F4")
         exit_action.triggered.connect(QApplication.quit)
@@ -321,18 +323,22 @@ class MainWindow(QMainWindow):
             device_id: Device identifier
             status: New connection status
         """
-        if status == ConnectionStatus.CONNECTED:
-            self.status_bar.showMessage(f"\u8bbe\u5907\u5df2\u8fde\u63a5: {device_id}")
-            self.data_table.add_log_entry(f"\u8bbe\u5907\u8fde\u63a5\u6210\u529f: {device_id}")
-        elif status == ConnectionStatus.CONNECTING:
-            self.status_bar.showMessage(f"\u6b63\u5728\u8fde\u63a5: {device_id}")
-            self.data_table.add_log_entry(f"\u6b63\u5728\u8fde\u63a5\u8bbe\u5907: {device_id}")
-        elif status == ConnectionStatus.DISCONNECTED:
-            self.status_bar.showMessage(f"\u8bbe\u5907\u5df2\u65ad\u5f00: {device_id}")
-            self.data_table.add_log_entry(f"\u8bbe\u5907\u65ad\u5f00\u8fde\u63a5: {device_id}")
-        elif status == ConnectionStatus.ERROR:
-            self.status_bar.showMessage(f"\u8fde\u63a5\u9519\u8bef: {device_id}")
-            self.data_table.add_log_entry(f"\u8bbe\u5907\u8fde\u63a5\u9519\u8bef: {device_id}")
+        try:
+            if status == ConnectionStatus.CONNECTED:
+                self.status_bar.showMessage(f"\u8bbe\u5907\u5df2\u8fde\u63a5: {device_id}")
+                self.data_table.add_log_entry(f"\u8bbe\u5907\u8fde\u63a5\u6210\u529f: {device_id}")
+            elif status == ConnectionStatus.CONNECTING:
+                self.status_bar.showMessage(f"\u6b63\u5728\u8fde\u63a5: {device_id}")
+                self.data_table.add_log_entry(f"\u6b63\u5728\u8fde\u63a5\u8bbe\u5907: {device_id}")
+            elif status == ConnectionStatus.DISCONNECTED:
+                self.status_bar.showMessage(f"\u8bbe\u5907\u5df2\u65ad\u5f00: {device_id}")
+                self.data_table.add_log_entry(f"\u8bbe\u5907\u65ad\u5f00\u8fde\u63a5: {device_id}")
+            elif status == ConnectionStatus.ERROR:
+                self.status_bar.showMessage(f"\u8fde\u63a5\u9519\u8bef: {device_id}")
+                self.data_table.add_log_entry(f"\u8bbe\u5907\u8fde\u63a5\u9519\u8bef: {device_id}")
+        except RuntimeError:
+            # Qtå¯¹è±¡å·²åˆ é™¤ï¼Œå¿½ç•¥
+            pass
     
     def _on_device_data_received(self, device_id: str, data: dict) -> None:
         """Handle received device data.
@@ -420,7 +426,6 @@ class MainWindow(QMainWindow):
                     self.data_table.add_log_entry(f"\u6536\u5230\u5b9e\u65f6\u6570\u636e: {len(data.channel_data)} \u901a\u9053")
                     self._last_data_log_time = time.time()
             else:
-                import time
                 self._last_data_log_time = time.time()
                 self.data_table.add_log_entry(f"\u5f00\u59cb\u63a5\u6536\u5b9e\u65f6\u6570\u636e: {len(data.channel_data)} \u901a\u9053")
             
@@ -460,11 +465,12 @@ class MainWindow(QMainWindow):
     def _quick_connect_device(self) -> None:
         """Quick connect to device using known IP."""
         device_ip = "192.168.2.136"  # Your device IP
+        device_port = 8802  # ä½¿ç”¨SCPIæ§åˆ¶ç«¯å£
         
-        self.status_bar.showMessage(f"\u6b63\u5728\u8fde\u63a5\u8bbe\u5907: {device_ip}...")
-        self.data_table.add_log_entry(f"\u5c1d\u8bd5\u8fde\u63a5\u8bbe\u5907: {device_ip}")
+        self.status_bar.showMessage(f"\u6b63\u5728\u8fde\u63a5\u8bbe\u5907: {device_ip}:{device_port}...")
+        self.data_table.add_log_entry(f"\u5c1d\u8bd5\u8fde\u63a5\u8bbe\u5907: {device_ip}:{device_port}")
         
-        success = self.device_manager.connect_device(device_ip)
+        success = self.device_manager.connect_device(device_ip, device_port)
         
         if success:
             self.status_bar.showMessage(f"\u8bbe\u5907\u8fde\u63a5\u6210\u529f: {device_ip}")

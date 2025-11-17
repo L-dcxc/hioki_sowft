@@ -85,6 +85,34 @@ def get_stylesheet() -> str:
         border-color: #3498db;
     }
 
+    /* 设置按钮样式 */
+    QPushButton#settingsButton {
+        background-color: #f8f9fa;
+        color: #2c3e50;
+        border: 2px solid #3498db;
+        border-radius: 6px;
+        padding: 8px 16px;
+        font-weight: 500;
+    }
+    QPushButton#settingsButton:hover {
+        background-color: #3498db;
+        color: #ffffff;
+    }
+
+    /* mX+b校准按钮样式 */
+    QPushButton#mxPlusBButton {
+        background-color: #f8f9fa;
+        color: #2c3e50;
+        border: 2px solid #3498db;
+        border-radius: 6px;
+        padding: 8px 16px;
+        font-weight: 500;
+    }
+    QPushButton#mxPlusBButton:hover {
+        background-color: #e3f2fd;
+        border-color: #2196f3;
+    }
+
     /* KPI 卡片 */
     QLabel.kpi {
         background-color: #f8f9fa;

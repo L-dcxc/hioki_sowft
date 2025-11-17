@@ -44,7 +44,7 @@ class DataAcquisition(QObject):
         self.is_acquiring = False
         self.logger = logging.getLogger(__name__)
         
-        # ???QTimer??????????????????????
+        # QTimer for thread-safe acquisition
         self.acquisition_timer = QTimer()
         self.acquisition_timer.timeout.connect(self._acquisition_tick)
         self.current_device_id = None
@@ -57,6 +57,9 @@ class DataAcquisition(QObject):
         self.active_channels = []
         self.channel_types = {}
         self.sample_rate = 100.0  # Hz
+        
+        # Cached active channels (discovered during first acquisition)
+        self.discovered_channels = None  # Will be populated on first scan
         
     
     def start_acquisition(self, device_id: str | None = None) -> bool:
@@ -92,9 +95,10 @@ class DataAcquisition(QObject):
         self.is_acquiring = True
         self.current_device_id = target_device
         
-        # Start timer with 1 second interval (like Sample3)
-        self.acquisition_timer.start(1000)  # 1000ms = 1 second
+        # Start timer with 2 second interval (给足够时间完成数据采集)
+        self.acquisition_timer.start(2000)  # 2000ms = 2 seconds
         print(f"Started acquisition timer for device: {target_device}")
+        print(f"采集间隔: 2秒（首次扫描较慢，后续会加快）")
         
         return True
     
@@ -192,11 +196,12 @@ class DataAcquisition(QObject):
     
     
     def _get_real_time_data(self, device_id: str) -> RealTimeData | None:
-        """\u6839\u636e\u5b98\u65b9\u793a\u4f8b\u83b7\u53d6\u5b9e\u65f6\u6570\u636e
+        """根据官方Sample3获取实时数据（使用8802端口）
 
-        \u6309\u7167Sample3\u7684\u6b63\u786e\u6d41\u7a0b:
+        按照Sample3的正确流程:
         1. :MEMory:GETReal
-        2. :MEMory:VREAL? CH1_1 (\u6309\u901a\u9053\u83b7\u53d6)
+        2. :MEMory:VREAL? CH1_1 (按通道获取)
+        3. 过滤 9.99999E+99 (NODATA标志)
         
         Args:
             device_id: Device identifier
@@ -208,45 +213,85 @@ class DataAcquisition(QObject):
             print(f"Getting real-time data from device: {device_id}")
             channel_data = {}
             
-            # \u6309\u7167\u5b98\u65b9Sample3\u7684\u6b63\u786e\u6d41\u7a0b
+            # 按照官方Sample3的正确流程
             try:
-                # Step 1: \u83b7\u53d6\u5b9e\u65f6\u6570\u636e\u5feb\u7167
+                # Step 1: 获取实时数据快照
                 print("Sending :MEMory:GETReal command...")
-                self.device_manager.send_command(device_id, ":MEMory:GETReal")
+                self.device_manager.send_command(device_id, ":MEMory:GETReal", expect_response=False)
+                time.sleep(0.3)  # 等待设备准备数据
                 
-                # Step 2: \u6309\u901a\u9053\u83b7\u53d6\u6570\u636e (\u6309\u7167Sample3\u7684\u65b9\u5f0f)
-                test_channels = ["CH1_1", "CH1_2", "CH1_3", "CH1_4"]  # \u6d4b\u8bd5\u524d4\u4e2a\u901a\u9053
-                
-                for channel in test_channels:
-                    try:
-                        print(f"Querying channel {channel}...")
-                        # \u4f7f\u7528\u6b63\u786e\u7684\u547d\u4ee4\u683c\u5f0f
-                        cmd = f":MEMory:VREAL? {channel}"
-                        response = self.device_manager.query_device(device_id, cmd)
+                # Step 2: 扫描通道（首次全扫描，后续只查询有效通道）
+                if self.discovered_channels is None:
+                    # 首次扫描：全面扫描发现有效通道
+                    print("首次扫描：发现有效通道...")
+                    test_units = [1, 2]  # UNIT1(15ch), UNIT2(30ch)
+                    max_channels_per_unit = [15, 30]
+                    
+                    for unit_idx, unit_num in enumerate(test_units):
+                        max_ch = max_channels_per_unit[unit_idx]
                         
-                        if response and response.strip():
-                            try:
-                                value = float(response.strip())
-                                channel_data[channel] = [value]
-                                print(f"Got data for {channel}: {value}")
-                            except ValueError:
-                                print(f"Could not parse response for {channel}: {response}")
-                        else:
-                            print(f"No response for {channel}")
+                        for ch_num in range(1, max_ch + 1):
+                            channel = f"CH{unit_num}_{ch_num}"
                             
-                    except Exception as e:
-                        print(f"Error querying {channel}: {e}")
-                        continue
+                            try:
+                                cmd = f":MEMory:VREAL? {channel}"
+                                response = self.device_manager.query_device(device_id, cmd)
+                                
+                                if response and response.strip():
+                                    response_val = response.strip()
+                                    
+                                    # 过滤NODATA
+                                    if '9.99999' in response_val and 'E+99' in response_val:
+                                        continue
+                                    
+                                    try:
+                                        value = float(response_val)
+                                        channel_data[channel] = [value]
+                                        if abs(value) > 0.0001 or abs(value) > 10:
+                                            print(f"  ✓ {channel}: {value}")
+                                    except ValueError:
+                                        pass
+                                
+                            except Exception as e:
+                                continue
+                            
+                            time.sleep(0.02)  # 20ms延迟
+                    
+                    # 缓存发现的通道列表
+                    if channel_data:
+                        self.discovered_channels = list(channel_data.keys())
+                        print(f"\n✓ 发现 {len(self.discovered_channels)} 个有效通道，后续只查询这些通道")
+                else:
+                    # 后续采集：只查询已发现的有效通道（快速）
+                    for channel in self.discovered_channels:
+                        try:
+                            cmd = f":MEMory:VREAL? {channel}"
+                            response = self.device_manager.query_device(device_id, cmd)
+                            
+                            if response and response.strip():
+                                response_val = response.strip()
+                                
+                                if '9.99999' not in response_val or 'E+99' not in response_val:
+                                    try:
+                                        value = float(response_val)
+                                        channel_data[channel] = [value]
+                                    except ValueError:
+                                        pass
+                            
+                        except Exception as e:
+                            continue
+                        
+                        time.sleep(0.01)  # 10ms延迟（更快）
                 
                 if channel_data:
-                    print(f"Successfully got real data from {len(channel_data)} channels")
+                    print(f"\n✓ 成功获取 {len(channel_data)} 个通道的真实数据")
                 else:
-                    print("No real data received from any channel")
+                    print("\n⚠ 未获取到真实数据，使用模拟数据")
                 
             except Exception as e:
                 print(f"Real data acquisition failed: {e}")
             
-            # \u5982\u679c\u6ca1\u6709\u771f\u5b9e\u6570\u636e\uff0c\u4f7f\u7528\u6a21\u62df\u6570\u636e
+            # 如果没有真实数据，使用模拟数据
             if not channel_data:
                 print("Using simulated data as fallback")
                 channel_data = self._generate_simulated_data()
@@ -254,7 +299,7 @@ class DataAcquisition(QObject):
             if not channel_data:
                 return None
             
-            # \u521b\u5efa\u5b9e\u65f6\u6570\u636e\u5bf9\u8c61
+            # 创建实时数据对象
             return RealTimeData(
                 timestamp=time.time(),
                 channel_data=channel_data,
@@ -264,7 +309,7 @@ class DataAcquisition(QObject):
             
         except Exception as e:
             print(f"Error getting real-time data: {e}")
-            # \u8fd4\u56de\u6a21\u62df\u6570\u636e\u4f5c\u4e3a\u6700\u540e\u7684\u540e\u5907
+            # 返回模拟数据作为最后的后备
             try:
                 return RealTimeData(
                     timestamp=time.time(),

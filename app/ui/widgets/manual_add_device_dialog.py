@@ -115,7 +115,7 @@ class ManualAddDeviceDialog(QDialog):
         comm_layout.addRow("\u5b50\u7f51\u63a9\u7801", subnet_layout)
         
         # \u7aef\u53e3\u53f7
-        self.port_edit = QLineEdit("8800")
+        self.port_edit = QLineEdit("8802")
         comm_layout.addRow("\u7aef\u53e3\u53f7", self.port_edit)
         
         # \u7f51\u5173 - \u7b2c\u4e00\u884c
@@ -291,7 +291,7 @@ class ManualAddDeviceDialog(QDialog):
             QMessageBox.warning(self, "\u9519\u8bef", "\u8bf7\u8f93\u5165IP\u5730\u5740")
             return
         
-        port = int(self.port_edit.text() or "8800")
+        port = int(self.port_edit.text() or "8802")
         
         # \u663e\u793a\u8fde\u63a5\u8fdb\u5ea6
         progress = QMessageBox(self)
@@ -359,7 +359,7 @@ class ManualAddDeviceDialog(QDialog):
             'comment': self.comment_edit.text(),
             'interface': 'LAN' if self.lan_radio.isChecked() else 'USB',
             'ip_address': self.address_edit.text(),
-            'port': int(self.port_edit.text() or "8800"),
+            'port': int(self.port_edit.text() or "8802"),
             'dhcp': self.dhcp_combo.currentText(),
             'subnet_mask': f"{self.subnet_1.value()}.{self.subnet_2.value()}.{self.subnet_3.value()}.{self.subnet_4.value()}",
             'gateway': f"{self.gateway_1_1.value()}.{self.gateway_1_2.value()}.{self.gateway_1_3.value()}.{self.gateway_1_4.value()}",
