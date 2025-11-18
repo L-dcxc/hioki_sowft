@@ -1,100 +1,100 @@
-# PySide6 ¹¤³ÌÓë×é¼þ¹æ»®
+# PySide6 å·¥ç¨‹ä¸Žç»„ä»¶è§„åˆ’
 
-## ¹¤³Ì½á¹¹½¨Òé
+## å·¥ç¨‹ç»“æž„å»ºè®®
 
 ```
 project_sowf/
-©À©¤ app/
-©¦  ©À©¤ main.py              # ³ÌÐòÈë¿Ú£¬³õÊ¼»¯ QApplication & Ö÷´°¿Ú
-©¦  ©À©¤ core/
-©¦  ©¦  ©À©¤ config.py         # È«¾ÖÅäÖÃ/Â·¾¶
-©¦  ©¦  ©À©¤ state.py          # Ó¦ÓÃ×´Ì¬¡¢ÐÅºÅ¶¨Òå
-©¦  ©¦  ©À©¤ device_manager.py # Éè±¸·¢ÏÖ/Á¬½Ó¹ÜÀí£¨Õ¼Î»£©
-©¦  ©¦  ©¸©¤ data_bus.py       # ²É¼¯Êý¾Ý·Ö·¢½Ó¿Ú£¨Õ¼Î»£©
-©¦  ©À©¤ ui/
-©¦  ©¦  ©À©¤ main_window.py    # QMainWindow ¹Ç¼Ü
-©¦  ©¦  ©À©¤ widgets/
-©¦  ©¦  ©¦  ©À©¤ waveform_panel.py
-©¦  ©¦  ©¦  ©À©¤ channel_sidebar.py
-©¦  ©¦  ©¦  ©À©¤ control_toolbar.py
-©¦  ©¦  ©¦  ©À©¤ status_bar.py
-©¦  ©¦  ©¦  ©À©¤ log_table.py
-©¦  ©¦  ©¦  ©¸©¤ setting_dialog/
-©¦  ©¦  ©¦     ©À©¤ __init__.py
-©¦  ©¦  ©¦     ©À©¤ connection_page.py
-©¦  ©¦  ©¦     ©À©¤ unit_page.py
-©¦  ©¦  ©¦     ©À©¤ channel_page.py
-©¦  ©¦  ©¦     ©À©¤ measure_page.py
-©¦  ©¦  ©¦     ©¸©¤ summary_page.py
-©¦  ©¦  ©À©¤ style.py          # È«¾ÖÑùÊ½±í£¨¹¤Òµ·çÅäÉ«£©
-©¦  ©¦  ©¸©¤ resources/        # Í¼±ê/×ÖÌå
-©¦  ©¸©¤ utils/
-©¦     ©À©¤ settings.py       # QSettings ·â×°
-©¦     ©¸©¤ validators.py     # ±íµ¥Ð£Ñé
-©¸©¤ tests/ (ºóÐø²¹³ä)
+â”œâ”€ app/
+â”‚  â”œâ”€ main.py              # ç¨‹åºå…¥å£ï¼Œåˆå§‹åŒ– QApplication & ä¸»çª—å£
+â”‚  â”œâ”€ core/
+â”‚  â”‚  â”œâ”€ config.py         # å…¨å±€é…ç½®/è·¯å¾„
+â”‚  â”‚  â”œâ”€ state.py          # åº”ç”¨çŠ¶æ€ã€ä¿¡å·å®šä¹‰
+â”‚  â”‚  â”œâ”€ device_manager.py # è®¾å¤‡å‘çŽ°/è¿žæŽ¥ç®¡ç†ï¼ˆå ä½ï¼‰
+â”‚  â”‚  â””â”€ data_bus.py       # é‡‡é›†æ•°æ®åˆ†å‘æŽ¥å£ï¼ˆå ä½ï¼‰
+â”‚  â”œâ”€ ui/
+â”‚  â”‚  â”œâ”€ main_window.py    # QMainWindow éª¨æž¶
+â”‚  â”‚  â”œâ”€ widgets/
+â”‚  â”‚  â”‚  â”œâ”€ waveform_panel.py
+â”‚  â”‚  â”‚  â”œâ”€ channel_sidebar.py
+â”‚  â”‚  â”‚  â”œâ”€ control_toolbar.py
+â”‚  â”‚  â”‚  â”œâ”€ status_bar.py
+â”‚  â”‚  â”‚  â”œâ”€ log_table.py
+â”‚  â”‚  â”‚  â””â”€ setting_dialog/
+â”‚  â”‚  â”‚     â”œâ”€ __init__.py
+â”‚  â”‚  â”‚     â”œâ”€ connection_page.py
+â”‚  â”‚  â”‚     â”œâ”€ unit_page.py
+â”‚  â”‚  â”‚     â”œâ”€ channel_page.py
+â”‚  â”‚  â”‚     â”œâ”€ measure_page.py
+â”‚  â”‚  â”‚     â””â”€ summary_page.py
+â”‚  â”‚  â”œâ”€ style.py          # å…¨å±€æ ·å¼è¡¨ï¼ˆå·¥ä¸šé£Žé…è‰²ï¼‰
+â”‚  â”‚  â””â”€ resources/        # å›¾æ ‡/å­—ä½“
+â”‚  â””â”€ utils/
+â”‚     â”œâ”€ settings.py       # QSettings å°è£…
+â”‚     â””â”€ validators.py     # è¡¨å•æ ¡éªŒ
+â””â”€ tests/ (åŽç»­è¡¥å……)
 ```
 
-## Ö÷´°¿Ú×é¼þ
+## ä¸»çª—å£ç»„ä»¶
 
 - `MainWindow` (`QMainWindow`)
-  - ²Ëµ¥À¸ `File/View/Help`
-  - ¹¤¾ßÀ¸ `MainToolBar` ¡ú `control_toolbar.ControlToolBar`
-  - ÖÐÑë²¿¼þ£º`WaveformPanel`
-  - ÓÒ²à Dock£º`ChannelSidebar`£¨º¬ Tab£©
-  - µ×²¿ Dock£º`DataTableDock`£¨ÈÕÖ¾/ÊýÖµ±í£©
-  - ×´Ì¬À¸£º`StatusBarWidget`
+  - èœå•æ  `File/View/Help`
+  - å·¥å…·æ  `MainToolBar` â†’ `control_toolbar.ControlToolBar`
+  - ä¸­å¤®éƒ¨ä»¶ï¼š`WaveformPanel`
+  - å³ä¾§ Dockï¼š`ChannelSidebar`ï¼ˆå« Tabï¼‰
+  - åº•éƒ¨ Dockï¼š`DataTableDock`ï¼ˆæ—¥å¿—/æ•°å€¼è¡¨ï¼‰
+  - çŠ¶æ€æ ï¼š`StatusBarWidget`
 
 ### WaveformPanel
-- »ùÓÚ `pyqtgraph.GraphicsLayoutWidget`
-- °üº¬£ºÖ÷²¨ÐÎÊÓÍ¼¡¢¶àÒ³ Tab£¨10 Ò³ÄÚ£©¡¢Ê±¼äÖáËõ·Å¿Ø¼þ¡¢A/B ¹â±êÌõ¡£
-- ÔÝÓÃÄ£ÄâÊý¾ÝË¢ÆÁ£¬ÑéÖ¤ 20FPS ×óÓÒäÖÈ¾¡£
+- åŸºäºŽ `pyqtgraph.GraphicsLayoutWidget`
+- åŒ…å«ï¼šä¸»æ³¢å½¢è§†å›¾ã€å¤šé¡µ Tabï¼ˆ10 é¡µå†…ï¼‰ã€æ—¶é—´è½´ç¼©æ”¾æŽ§ä»¶ã€A/B å…‰æ ‡æ¡ã€‚
+- æš‚ç”¨æ¨¡æ‹Ÿæ•°æ®åˆ·å±ï¼ŒéªŒè¯ 20FPS å·¦å³æ¸²æŸ“ã€‚
 
 ### ChannelSidebar
-- `QTabWidget`£¬°üº¬£º
-  - `ChannelTable` (`QTableView`)£ºÍ¨µÀÁÐ±í¡¢¿ª¹Ø¡¢Á¿³ÌµÈ
-  - `AlarmTable`£º±¨¾¯×´Ì¬
-  - `EventList`£ºÊÂ¼þ±ê¼Ç
-  - `MonitorPanel`£º¿É²ð·Ö¶ÀÁ¢´°¿Ú
-- Ö§³ÖÕÛµþ/Òþ²Ø¡£
+- `QTabWidget`ï¼ŒåŒ…å«ï¼š
+  - `ChannelTable` (`QTableView`)ï¼šé€šé“åˆ—è¡¨ã€å¼€å…³ã€é‡ç¨‹ç­‰
+  - `AlarmTable`ï¼šæŠ¥è­¦çŠ¶æ€
+  - `EventList`ï¼šäº‹ä»¶æ ‡è®°
+  - `MonitorPanel`ï¼šå¯æ‹†åˆ†ç‹¬ç«‹çª—å£
+- æ”¯æŒæŠ˜å /éšè—ã€‚
 
 ### ControlToolBar
-- `QToolBar` ¼¯³É£º
-  - ´ò¿ª/±£´æ¹¤³Ì°´Å¥
-  - `Á¬½ÓÉèÖÃ` °´Å¥ (µ¯ `SettingDialog`)
-  - `²âÁ¿¿ªÊ¼`¡¢`Í£Ö¹`¡¢`ÔÝÍ£`
-  - Excel ÍÆËÍ¡¢LUW ±£´æ¡¢½ØÍ¼¡¢ÊÂ¼þ±ê¼ÇµÈ¿ª¹Ø
-- Ìá¹©ÐÅºÅ£º`start_acquisition`, `stop_acquisition`, `open_settings` µÈ¡£
+- `QToolBar` é›†æˆï¼š
+  - æ‰“å¼€/ä¿å­˜å·¥ç¨‹æŒ‰é’®
+  - `è¿žæŽ¥è®¾ç½®` æŒ‰é’® (å¼¹ `SettingDialog`)
+  - `æµ‹é‡å¼€å§‹`ã€`åœæ­¢`ã€`æš‚åœ`
+  - Excel æŽ¨é€ã€LUW ä¿å­˜ã€æˆªå›¾ã€äº‹ä»¶æ ‡è®°ç­‰å¼€å…³
+- æä¾›ä¿¡å·ï¼š`start_acquisition`, `stop_acquisition`, `open_settings` ç­‰ã€‚
 
 ### StatusBarWidget
-- ¼Ì³Ð `QStatusBar`
-- ÏÔÊ¾£ºÁ¬½Ó×´Ì¬ (Í¼±ê+ÎÄ±¾)¡¢²ÉÑù FPS¡¢»º´æÕ¼ÓÃ¡¢±¨¾¯¼ÆÊý¡¢Excel ÍÆËÍ×´Ì¬¡¢µ±Ç°Ê±¼ä¡£
+- ç»§æ‰¿ `QStatusBar`
+- æ˜¾ç¤ºï¼šè¿žæŽ¥çŠ¶æ€ (å›¾æ ‡+æ–‡æœ¬)ã€é‡‡æ · FPSã€ç¼“å­˜å ç”¨ã€æŠ¥è­¦è®¡æ•°ã€Excel æŽ¨é€çŠ¶æ€ã€å½“å‰æ—¶é—´ã€‚
 
 ### DataTableDock
-- Ê¹ÓÃ `QDockWidget` + `QTabWidget`
-- `DataLogTable` (`QTableView`)£ºÊ±¼ä/Í¨µÀÖµ
-- `OperationLog` (`QPlainTextEdit`)£º²Ù×÷ÈÕÖ¾
-- Excel ÍÆËÍ×´Ì¬Ò³¡£
+- ä½¿ç”¨ `QDockWidget` + `QTabWidget`
+- `DataLogTable` (`QTableView`)ï¼šæ—¶é—´/é€šé“å€¼
+- `OperationLog` (`QPlainTextEdit`)ï¼šæ“ä½œæ—¥å¿—
+- Excel æŽ¨é€çŠ¶æ€é¡µã€‚
 
-## ÉèÖÃ¶Ô»°¿ò (`SettingDialog`)
-- ²ÉÓÃ `QDialog` + `QStackedWidget`
-- ¶¥²¿°´Å¥À¸£º`Connection` `Units` `Channels` `Measurement` `Analysis` `Summary`
-- µ×²¿£º`È¡Ïû` `Ó¦ÓÃ` `ÏÂÒ»²½`
-- ¸÷Ò³Ãæµ÷ÓÃºËÐÄÄ£¿é½Ó¿Ú£¨ÔÝÁô stub£©£º
+## è®¾ç½®å¯¹è¯æ¡† (`SettingDialog`)
+- é‡‡ç”¨ `QDialog` + `QStackedWidget`
+- é¡¶éƒ¨æŒ‰é’®æ ï¼š`Connection` `Units` `Channels` `Measurement` `Analysis` `Summary`
+- åº•éƒ¨ï¼š`å–æ¶ˆ` `åº”ç”¨` `ä¸‹ä¸€æ­¥`
+- å„é¡µé¢è°ƒç”¨æ ¸å¿ƒæ¨¡å—æŽ¥å£ï¼ˆæš‚ç•™ stubï¼‰ï¼š
   - `ConnectionPage`
-    - ±íµ¥£º½Ó¿ÚÀàÐÍ¡¢IP¡¢¶Ë¿Ú¡¢³¬Ê±
-    - ¶¯×÷£ºPing °´Å¥ -> µ÷ÓÃ `device_manager.test_connection`
+    - è¡¨å•ï¼šæŽ¥å£ç±»åž‹ã€IPã€ç«¯å£ã€è¶…æ—¶
+    - åŠ¨ä½œï¼šPing æŒ‰é’® -> è°ƒç”¨ `device_manager.test_connection`
   - `UnitPage`
-    - ±í¸ñÕ¹Ê¾¼ì²âµ½µÄµ¥Ôª/²å²Û£¬Ö§³ÖË¢ÐÂ
+    - è¡¨æ ¼å±•ç¤ºæ£€æµ‹åˆ°çš„å•å…ƒ/æ’æ§½ï¼Œæ”¯æŒåˆ·æ–°
   - `ChannelPage`
-    - ±í¸ñ + ÅúÁ¿²Ù×÷²àÀ¸£»ÔÝÓÃÄ£ÄâÍ¨µÀÊý¾Ý
+    - è¡¨æ ¼ + æ‰¹é‡æ“ä½œä¾§æ ï¼›æš‚ç”¨æ¨¡æ‹Ÿé€šé“æ•°æ®
   - `MeasurePage`
-    - ²ÉÑù¼ä¸ô¡¢¼ÇÂ¼Ê±¼ä¡¢´¥·¢Ä£Ê½¡¢±£´æ²ßÂÔ
+    - é‡‡æ ·é—´éš”ã€è®°å½•æ—¶é—´ã€è§¦å‘æ¨¡å¼ã€ä¿å­˜ç­–ç•¥
   - `SummaryPage`
-    - ÏÔÊ¾±ä¸üÕªÒª£¬Ìá¹©±£´æÄ£°å
+    - æ˜¾ç¤ºå˜æ›´æ‘˜è¦ï¼Œæä¾›ä¿å­˜æ¨¡æ¿
 
-## ÐÅºÅ & ×´Ì¬Á÷ (Õ¼Î»)
+## ä¿¡å· & çŠ¶æ€æµ (å ä½)
 
-ÔÚ `core/state.py` ÖÐ¶¨Òå `QObject` ×ÓÀàÓÃÓÚ¿ç×é¼þÍ¨ÐÅ£º
+åœ¨ `core/state.py` ä¸­å®šä¹‰ `QObject` å­ç±»ç”¨äºŽè·¨ç»„ä»¶é€šä¿¡ï¼š
 
 ```python
 class AppState(QObject):
@@ -106,14 +106,14 @@ class AppState(QObject):
     logMessage = Signal(str, str)
 ```
 
-UI ×é¼þ¶©ÔÄÕâÐ©ÐÅºÅ£¬ÊµÏÖ UI ÓëºóÌ¨Ä£¿é½âñî¡£
+UI ç»„ä»¶è®¢é˜…è¿™äº›ä¿¡å·ï¼Œå®žçŽ° UI ä¸ŽåŽå°æ¨¡å—è§£è€¦ã€‚
 
-## ÏÂÒ»²½ÊµÏÖË³Ðò
-1. ³õÊ¼»¯ `app/main.py`¡¢`MainWindow` ¹Ç¼Ü¡¢²Ëµ¥/¹¤¾ßÀ¸/×´Ì¬À¸¿Õ¿Ø¼þ¡£
-2. Ìí¼Ó `WaveformPanel` Õ¼Î»£¨Ëæ»úÊý¾ÝË¢ÐÂ£©£¬ÑéÖ¤ÐÔÄÜ¡£
-3. ¹¹½¨ `SettingDialog` ¿ò¼Ü£¬Ìî³ä±íµ¥¿Ø¼þ¡£
-4. ½ÓÈë `AppState` ÐÅºÅ£¬ÓÃ¼ÙÊý¾ÝÄ£Äâ²É¼¯Á÷³Ì¡£
-5. ´ýÓ²¼þ»Ö¸´ºó°ó¶¨ÕæÊµ DeviceManager¡£
+## ä¸‹ä¸€æ­¥å®žçŽ°é¡ºåº
+1. åˆå§‹åŒ– `app/main.py`ã€`MainWindow` éª¨æž¶ã€èœå•/å·¥å…·æ /çŠ¶æ€æ ç©ºæŽ§ä»¶ã€‚
+2. æ·»åŠ  `WaveformPanel` å ä½ï¼ˆéšæœºæ•°æ®åˆ·æ–°ï¼‰ï¼ŒéªŒè¯æ€§èƒ½ã€‚
+3. æž„å»º `SettingDialog` æ¡†æž¶ï¼Œå¡«å……è¡¨å•æŽ§ä»¶ã€‚
+4. æŽ¥å…¥ `AppState` ä¿¡å·ï¼Œç”¨å‡æ•°æ®æ¨¡æ‹Ÿé‡‡é›†æµç¨‹ã€‚
+5. å¾…ç¡¬ä»¶æ¢å¤åŽç»‘å®šçœŸå®ž DeviceManagerã€‚
 
 
 

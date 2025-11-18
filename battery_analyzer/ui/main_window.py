@@ -28,6 +28,7 @@ from PySide6.QtWidgets import (
     QLineEdit,
     QSpinBox,
     QComboBox,
+    QApplication,
     QStatusBar,
     QDialog,
     QRadioButton,
@@ -39,6 +40,7 @@ import numpy as np
 
 from battery_analyzer.core.lr8450_client import LR8450Client
 from battery_analyzer.core.analysis_engine import BatteryAnalysisEngine
+from battery_analyzer.core.acquisition_thread import DataAcquisitionThread
 from battery_analyzer.ui.dialogs.channel_config_dialog import ChannelConfigDialog
 from battery_analyzer.ui.dialogs.device_connect_dialog import DeviceConnectDialog
 
@@ -467,43 +469,69 @@ class MainWindow(QMainWindow):
         # LR8450设备客户端
         self.device_client: Optional[LR8450Client] = None
         self.device_connected = False
-        
+
+        # 数据采集线程
+        self.acquisition_thread: Optional[DataAcquisitionThread] = None
+
         # 分析引擎
         self.analysis_engine = BatteryAnalysisEngine()
-        
-        # 通道配置
+
+        # 通道配置（包含详细参数）
         self.channel_config = {
-            'ternary_voltage': 'CH2_1',
-            'ternary_temp': 'CH2_3',
-            'blade_voltage': 'CH2_4',
-            'blade_temp': 'CH2_5',
+            'ternary_voltage': {
+                'channel': 'CH2_1',
+                'type': 'VOLTAGE',
+                'range': 10.0,
+            },
+            'ternary_temp': {
+                'channel': 'CH2_3',
+                'type': 'TEMPERATURE',
+                'range': 500,
+                'thermocouple': 'K',
+                'int_ext': 'INT',
+            },
+            'blade_voltage': {
+                'channel': 'CH2_4',
+                'type': 'VOLTAGE',
+                'range': 10.0,
+            },
+            'blade_temp': {
+                'channel': 'CH2_5',
+                'type': 'TEMPERATURE',
+                'range': 500,
+                'thermocouple': 'K',
+                'int_ext': 'INT',
+            },
         }
-        
+
         # 数据采集状态
         self.is_running = False
         self.data_index = 0
         self.max_points = 600  # 最多显示600个点（300秒）
-        
+
         # 数据缓冲区
         self.x_data = []
         self.ternary_volt_data = []
         self.ternary_temp_data = []
         self.blade_volt_data = []
         self.blade_temp_data = []
-        
+
         # 当前颜色和线宽（从控制面板获取）
         self.current_volt_color = "#ff9933"
         self.current_temp_color = "#66ccff"
         self.current_volt_width = 3  # 默认3像素
         self.current_temp_width = 3  # 默认3像素
-        
-        # 定时器：每100ms更新一次数据
+
+        # 定时器：用于虚拟数据模式
         self.update_timer = QTimer()
-        self.update_timer.timeout.connect(self._update_waveform)
+        self.update_timer.timeout.connect(self._update_waveform_virtual)
         self.update_interval_ms = 100  # 更新间隔（毫秒）
 
         # 预置示例波形（初始静态数据）
         self._plot_demo()
+
+        # 初始化Y轴范围（根据配置的量程）
+        self._update_plot_ranges()
 
     def _plot_demo(self) -> None:
         """绘制示例波形（电压在左Y轴，温度在右Y轴）。"""
@@ -685,55 +713,29 @@ class MainWindow(QMainWindow):
         dialog = MAHTestDialog(self)
         dialog.exec()
 
-    def _update_waveform(self) -> None:
-        """定时更新波形（真实设备数据或虚拟数据）。"""
-        # 修正时间戳计算：100ms间隔 = 0.1秒
-        t = self.data_index * (self.update_interval_ms / 1000.0)
+    def _on_data_acquired(self, timestamp: float, data: dict) -> None:
+        """处理从采集线程接收到的数据（真实设备数据）
 
-        # 如果设备已连接，获取真实数据
-        if self.device_connected and self.device_client:
-            try:
-                # 获取4个通道的数据
-                channels = [
-                    self.channel_config['ternary_voltage'],
-                    self.channel_config['ternary_temp'],
-                    self.channel_config['blade_voltage'],
-                    self.channel_config['blade_temp'],
-                ]
+        Args:
+            timestamp: 时间戳（秒）
+            data: 通道数据字典
+        """
+        # 提取数据（使用通道名称）
+        v_ternary = data.get(self.channel_config['ternary_voltage']['channel'], 0.0)
+        t_ternary = data.get(self.channel_config['ternary_temp']['channel'], 0.0)
+        v_blade = data.get(self.channel_config['blade_voltage']['channel'], 0.0)
+        t_blade = data.get(self.channel_config['blade_temp']['channel'], 0.0)
 
-                data = self.device_client.get_channel_data(channels)
+        # 添加到分析引擎
+        self.analysis_engine.add_data_point(v_ternary, t_ternary, v_blade, t_blade, timestamp)
 
-                if data:
-                    v_ternary = data.get(self.channel_config['ternary_voltage'], 0.0)
-                    t_ternary = data.get(self.channel_config['ternary_temp'], 0.0)
-                    v_blade = data.get(self.channel_config['blade_voltage'], 0.0)
-                    t_blade = data.get(self.channel_config['blade_temp'], 0.0)
-
-                    # 添加到分析引擎
-                    self.analysis_engine.add_data_point(v_ternary, t_ternary, v_blade, t_blade, t)
-                else:
-                    # 设备无响应，使用虚拟数据
-                    v_ternary, t_ternary, v_blade, t_blade = self._generate_virtual_data(t)
-                    # 虚拟数据也要添加到分析引擎
-                    self.analysis_engine.add_data_point(v_ternary, t_ternary, v_blade, t_blade, t)
-            except Exception as e:
-                print(f"设备数据获取失败: {e}")
-                v_ternary, t_ternary, v_blade, t_blade = self._generate_virtual_data(t)
-                # 虚拟数据也要添加到分析引擎
-                self.analysis_engine.add_data_point(v_ternary, t_ternary, v_blade, t_blade, t)
-        else:
-            # 使用虚拟数据
-            v_ternary, t_ternary, v_blade, t_blade = self._generate_virtual_data(t)
-            # 虚拟数据也要添加到分析引擎
-            self.analysis_engine.add_data_point(v_ternary, t_ternary, v_blade, t_blade, t)
-        
         # 添加到缓冲区
-        self.x_data.append(t)
+        self.x_data.append(timestamp)
         self.ternary_volt_data.append(v_ternary)
         self.ternary_temp_data.append(t_ternary)
         self.blade_volt_data.append(v_blade)
         self.blade_temp_data.append(t_blade)
-        
+
         # 限制数据点数量（滚动显示）
         if len(self.x_data) > self.max_points:
             self.x_data.pop(0)
@@ -741,20 +743,77 @@ class MainWindow(QMainWindow):
             self.ternary_temp_data.pop(0)
             self.blade_volt_data.pop(0)
             self.blade_temp_data.pop(0)
-        
+
         # 更新曲线
         if len(self.volt_curves) >= 2 and len(self.temp_curves) >= 2:
             self.volt_curves[0].setData(self.x_data, self.ternary_volt_data)
             self.temp_curves[0].setData(self.x_data, self.ternary_temp_data)
             self.volt_curves[1].setData(self.x_data, self.blade_volt_data)
             self.temp_curves[1].setData(self.x_data, self.blade_temp_data)
-        
+
         # 更新KPI显示
         self.ternary_voltage_kpi.set_value(f"{v_ternary:.2f}")
         self.ternary_temp_kpi.set_value(f"{t_ternary:.2f}")
         self.blade_voltage_kpi.set_value(f"{v_blade:.2f}")
         self.blade_temp_kpi.set_value(f"{t_blade:.2f}")
-        
+
+    def _on_acquisition_error(self, error_msg: str) -> None:
+        """处理采集线程的错误
+
+        Args:
+            error_msg: 错误消息
+        """
+        print(f"⚠️ 采集错误: {error_msg}")
+        # 可以选择显示在状态栏或弹窗
+        # self.statusBar().showMessage(f"采集错误: {error_msg}")
+
+    def _on_acquisition_status(self, status_msg: str) -> None:
+        """处理采集线程的状态变化
+
+        Args:
+            status_msg: 状态消息
+        """
+        print(f"ℹ️ 采集状态: {status_msg}")
+
+    def _update_waveform_virtual(self) -> None:
+        """定时更新波形（虚拟数据模式）"""
+        # 修正时间戳计算：100ms间隔 = 0.1秒
+        t = self.data_index * (self.update_interval_ms / 1000.0)
+
+        # 生成虚拟数据
+        v_ternary, t_ternary, v_blade, t_blade = self._generate_virtual_data(t)
+
+        # 添加到分析引擎
+        self.analysis_engine.add_data_point(v_ternary, t_ternary, v_blade, t_blade, t)
+
+        # 添加到缓冲区
+        self.x_data.append(t)
+        self.ternary_volt_data.append(v_ternary)
+        self.ternary_temp_data.append(t_ternary)
+        self.blade_volt_data.append(v_blade)
+        self.blade_temp_data.append(t_blade)
+
+        # 限制数据点数量（滚动显示）
+        if len(self.x_data) > self.max_points:
+            self.x_data.pop(0)
+            self.ternary_volt_data.pop(0)
+            self.ternary_temp_data.pop(0)
+            self.blade_volt_data.pop(0)
+            self.blade_temp_data.pop(0)
+
+        # 更新曲线
+        if len(self.volt_curves) >= 2 and len(self.temp_curves) >= 2:
+            self.volt_curves[0].setData(self.x_data, self.ternary_volt_data)
+            self.temp_curves[0].setData(self.x_data, self.ternary_temp_data)
+            self.volt_curves[1].setData(self.x_data, self.blade_volt_data)
+            self.temp_curves[1].setData(self.x_data, self.blade_temp_data)
+
+        # 更新KPI显示
+        self.ternary_voltage_kpi.set_value(f"{v_ternary:.2f}")
+        self.ternary_temp_kpi.set_value(f"{t_ternary:.2f}")
+        self.blade_voltage_kpi.set_value(f"{v_blade:.2f}")
+        self.blade_temp_kpi.set_value(f"{t_blade:.2f}")
+
         self.data_index += 1
     
     def _generate_virtual_data(self, t: float) -> tuple[float, float, float, float]:
@@ -765,9 +824,9 @@ class MainWindow(QMainWindow):
         t_blade = 120 + 40 * np.sin(0.02 * t + 2.0) + 4 * np.random.randn()
         return v_ternary, t_ternary, v_blade, t_blade
     
-    # 槽函数：开始/停止虚拟数据采集
+    # 槽函数：开始/停止数据采集
     def _on_start(self) -> None:
-        """开始虚拟数据采集。"""
+        """开始数据采集（真实设备或虚拟数据）"""
         if not self.is_running:
             self.is_running = True
             self.data_index = 0
@@ -776,24 +835,62 @@ class MainWindow(QMainWindow):
             self.ternary_temp_data.clear()
             self.blade_volt_data.clear()
             self.blade_temp_data.clear()
-            
-            # 启动定时器
-            self.update_timer.start(self.update_interval_ms)
 
             # 清空分析引擎数据
             self.analysis_engine.clear_data()
-            
-            self.statusBar().showMessage("虚拟数据采集进行中...")
+
+            # 如果设备已连接，使用后台线程采集真实数据
+            if self.device_connected and self.device_client:
+                # 获取通道列表（使用通道名称）
+                channels = [
+                    self.channel_config['ternary_voltage']['channel'],
+                    self.channel_config['ternary_temp']['channel'],
+                    self.channel_config['blade_voltage']['channel'],
+                    self.channel_config['blade_temp']['channel'],
+                ]
+
+                # 创建并启动采集线程
+                self.acquisition_thread = DataAcquisitionThread(
+                    device_client=self.device_client,
+                    channels=channels,
+                    interval_ms=self.update_interval_ms
+                )
+
+                # 连接信号
+                self.acquisition_thread.data_acquired.connect(self._on_data_acquired)
+                self.acquisition_thread.error_occurred.connect(self._on_acquisition_error)
+                self.acquisition_thread.status_changed.connect(self._on_acquisition_status)
+
+                # 启动设备采集
+                self.device_client.start_acquisition()
+
+                # 启动线程
+                self.acquisition_thread.start()
+
+                self.statusBar().showMessage("✓ 真实设备数据采集进行中...")
+            else:
+                # 使用虚拟数据模式
+                self.update_timer.start(self.update_interval_ms)
+                self.statusBar().showMessage("虚拟数据采集进行中...")
+
             self.control.btn_start.setText("停止")
             self.control.btn_start.clicked.disconnect()
             self.control.btn_start.clicked.connect(self._on_stop)
-    
+
     def _on_stop(self) -> None:
-        """停止数据采集。"""
+        """停止数据采集"""
         if self.is_running:
             self.is_running = False
-            self.update_timer.stop()
-            
+
+            # 停止采集线程
+            if self.acquisition_thread and self.acquisition_thread.is_running():
+                self.acquisition_thread.stop()
+                self.acquisition_thread = None
+
+            # 停止虚拟数据定时器
+            if self.update_timer.isActive():
+                self.update_timer.stop()
+
             # 停止设备采集
             if self.device_connected and self.device_client:
                 self.device_client.stop_acquisition()
@@ -806,76 +903,325 @@ class MainWindow(QMainWindow):
     def _show_device_connect_dialog(self) -> None:
         """显示设备连接对话框"""
         dialog = DeviceConnectDialog(self)
-        
+
         if dialog.exec() == QDialog.DialogCode.Accepted:
-            ip, port = dialog.get_connection_params()
-            self._connect_to_device(ip, port)
+            params = dialog.get_connection_params()
+            self._connect_to_device(params)
     
-    def _connect_to_device(self, ip: str, port: int) -> None:
-        """连接到LR8450设备"""
-        self.statusBar().showMessage(f"正在连接设备 {ip}:{port}...")
-        
+    def _connect_to_device(self, params: dict) -> None:
+        """连接到LR8450设备（支持TCP和USB）
+
+        Args:
+            params: 连接参数字典，包含：
+                - connection_type: "TCP" 或 "USB"
+                - ip_address: TCP IP地址
+                - port: TCP端口
+                - com_port: COM端口
+        """
+        connection_type = params['connection_type']
+
+        if connection_type == "TCP":
+            ip = params['ip_address']
+            port = params['port']
+            connection_info = f"IP地址: {ip}\n端口: {port}"
+            progress_text = f"正在通过TCP连接设备 {ip}:{port}..."
+        else:  # USB
+            com_port = params['com_port']
+            connection_info = f"COM端口: {com_port}"
+            progress_text = f"正在通过USB连接设备 {com_port}..."
+
+        # 显示加载对话框
+        from PySide6.QtWidgets import QProgressDialog
+        progress = QProgressDialog(progress_text, None, 0, 0, self)
+        progress.setWindowTitle("连接中")
+        progress.setWindowModality(Qt.WindowModality.WindowModal)
+        progress.setMinimumDuration(0)
+        progress.setValue(0)
+        progress.show()
+        QApplication.processEvents()
+
         try:
             # 断开旧连接
             if self.device_client:
                 self.device_client.disconnect()
-            
+
             # 创建新客户端
-            self.device_client = LR8450Client(ip, port)
-            
+            self.device_client = LR8450Client(
+                connection_type=connection_type,
+                ip_address=params['ip_address'],
+                port=params['port'],
+                com_port=params['com_port']
+            )
+
             # 连接
             if self.device_client.connect():
                 self.device_connected = True
-                self.statusBar().showMessage(f"✓ 设备已连接: {ip}:{port}")
-                QMessageBox.information(
-                    self,
-                    "连接成功",
-                    f"成功连接到LR8450设备\n\n"
-                    f"IP地址: {ip}\n"
-                    f"端口: {port}\n\n"
-                    f"现在可以开始测试了！"
+                conn_method = "TCP/IP" if connection_type == "TCP" else "USB串口"
+
+                # 更新进度对话框
+                progress.setLabelText(f"✓ 设备已连接，正在配置通道...")
+                QApplication.processEvents()
+
+                # 准备通道配置（使用当前配置的详细参数）
+                channel_configs = [
+                    {
+                        'channel': self.channel_config['ternary_voltage']['channel'],
+                        'type': self.channel_config['ternary_voltage']['type'],
+                        'range': self.channel_config['ternary_voltage']['range'],
+                    },
+                    {
+                        'channel': self.channel_config['ternary_temp']['channel'],
+                        'type': self.channel_config['ternary_temp']['type'],
+                        'range': self.channel_config['ternary_temp']['range'],
+                        'thermocouple': self.channel_config['ternary_temp']['thermocouple'],
+                        'int_ext': self.channel_config['ternary_temp']['int_ext'],
+                    },
+                    {
+                        'channel': self.channel_config['blade_voltage']['channel'],
+                        'type': self.channel_config['blade_voltage']['type'],
+                        'range': self.channel_config['blade_voltage']['range'],
+                    },
+                    {
+                        'channel': self.channel_config['blade_temp']['channel'],
+                        'type': self.channel_config['blade_temp']['type'],
+                        'range': self.channel_config['blade_temp']['range'],
+                        'thermocouple': self.channel_config['blade_temp']['thermocouple'],
+                        'int_ext': self.channel_config['blade_temp']['int_ext'],
+                    },
+                ]
+
+                # 提取通道列表
+                channels = [cfg['channel'] for cfg in channel_configs]
+
+                # 配置通道（先禁用所有通道，然后只启用需要的通道）
+                config_success = self.device_client.configure_channels(
+                    channels=channels,
+                    disable_others=True,  # 先禁用其他通道，防止数据错乱
+                    channel_configs=channel_configs
                 )
-                
-                # 启动设备采集
-                self.device_client.start_acquisition()
+
+                # 关闭进度对话框
+                progress.close()
+
+                if config_success:
+                    self.statusBar().showMessage(f"✓ 设备已通过{conn_method}连接，通道已配置")
+                    QMessageBox.information(
+                        self,
+                        "连接成功",
+                        f"成功通过{conn_method}连接到LR8450设备\n\n"
+                        f"{connection_info}\n\n"
+                        f"已自动配置以下通道：\n"
+                        f"• {channels[0]} - 三元电池电压 ({self.channel_config['ternary_voltage']['range']}V)\n"
+                        f"• {channels[1]} - 三元电池温度 ({self.channel_config['ternary_temp']['range']}°C, "
+                        f"{self.channel_config['ternary_temp']['thermocouple']}型)\n"
+                        f"• {channels[2]} - 刀片电池电压 ({self.channel_config['blade_voltage']['range']}V)\n"
+                        f"• {channels[3]} - 刀片电池温度 ({self.channel_config['blade_temp']['range']}°C, "
+                        f"{self.channel_config['blade_temp']['thermocouple']}型)\n\n"
+                        f"现在可以开始测试了！"
+                    )
+                else:
+                    self.statusBar().showMessage(f"⚠️ 设备已连接，但通道配置失败")
+                    QMessageBox.warning(
+                        self,
+                        "通道配置警告",
+                        f"设备连接成功，但通道配置失败。\n\n"
+                        f"请在设备上手动启用以下通道：\n"
+                        f"• {channels[0]}\n"
+                        f"• {channels[1]}\n"
+                        f"• {channels[2]}\n"
+                        f"• {channels[3]}\n\n"
+                        f"或者尝试重新连接。"
+                    )
             else:
+                # 关闭进度对话框
+                progress.close()
+
                 self.device_connected = False
                 self.statusBar().showMessage("✗ 设备连接失败")
-                QMessageBox.warning(
-                    self,
-                    "连接失败",
-                    f"无法连接到设备 {ip}:{port}\n\n"
-                    f"请检查：\n"
-                    f"1. 设备电源是否开启\n"
-                    f"2. 网络连接是否正常\n"
-                    f"3. IP地址和端口是否正确\n"
-                    f"4. 端口8802（SCPI控制端口）"
-                )
+
+                if connection_type == "TCP":
+                    error_msg = (
+                        f"无法连接到设备 {ip}:{port}\n\n"
+                        f"请检查：\n"
+                        f"1. 设备电源是否开启\n"
+                        f"2. 网络连接是否正常\n"
+                        f"3. IP地址和端口是否正确\n"
+                        f"4. 端口8802（SCPI控制端口）"
+                    )
+                else:
+                    error_msg = (
+                        f"无法连接到设备 {com_port}\n\n"
+                        f"请检查：\n"
+                        f"1. 设备电源是否开启\n"
+                        f"2. USB线是否连接\n"
+                        f"3. 是否已安装HIOKI USB驱动\n"
+                        f"4. COM端口是否正确"
+                    )
+
+                QMessageBox.warning(self, "连接失败", error_msg)
         except Exception as e:
+            # 关闭进度对话框
+            progress.close()
+
             self.device_connected = False
             self.statusBar().showMessage("✗ 连接错误")
             QMessageBox.critical(self, "错误", f"连接失败：{str(e)}")
     
     def _show_channel_config_dialog(self) -> None:
         """显示通道配置对话框"""
-        dialog = ChannelConfigDialog(self)
-        
-        # 设置当前配置
-        dialog.config = self.channel_config.copy()
-        
+        dialog = ChannelConfigDialog(self, current_config=self.channel_config)
+
         if dialog.exec() == QDialog.DialogCode.Accepted:
             self.channel_config = dialog.get_config()
             self.statusBar().showMessage("✓ 通道配置已更新")
-            QMessageBox.information(
-                self,
-                "配置成功",
-                f"通道配置已更新：\n\n"
-                f"三元电池电压: {self.channel_config['ternary_voltage']}\n"
-                f"三元电池温度: {self.channel_config['ternary_temp']}\n"
-                f"刀片电池电压: {self.channel_config['blade_voltage']}\n"
-                f"刀片电池温度: {self.channel_config['blade_temp']}"
+
+            # 更新Y轴范围（根据新的量程配置）
+            self._update_plot_ranges()
+
+            # 格式化配置信息
+            config_info = (
+                f"三元电池电压: {self.channel_config['ternary_voltage']['channel']} "
+                f"({self.channel_config['ternary_voltage']['range']}V)\n"
+                f"三元电池温度: {self.channel_config['ternary_temp']['channel']} "
+                f"({self.channel_config['ternary_temp']['range']}°C, "
+                f"{self.channel_config['ternary_temp']['thermocouple']}型, "
+                f"{self.channel_config['ternary_temp']['int_ext']})\n"
+                f"刀片电池电压: {self.channel_config['blade_voltage']['channel']} "
+                f"({self.channel_config['blade_voltage']['range']}V)\n"
+                f"刀片电池温度: {self.channel_config['blade_temp']['channel']} "
+                f"({self.channel_config['blade_temp']['range']}°C, "
+                f"{self.channel_config['blade_temp']['thermocouple']}型, "
+                f"{self.channel_config['blade_temp']['int_ext']})"
             )
-    
+
+            # 如果设备已连接，立即应用新配置到设备
+            if self.device_connected and self.device_client:
+                reply = QMessageBox.question(
+                    self,
+                    "应用配置",
+                    f"通道配置已更新：\n\n{config_info}\n\n"
+                    f"是否立即应用到已连接的设备？\n"
+                    f"（这将重新配置设备通道）",
+                    QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+                    QMessageBox.StandardButton.Yes
+                )
+
+                if reply == QMessageBox.StandardButton.Yes:
+                    self._apply_channel_config_to_device()
+            else:
+                QMessageBox.information(
+                    self,
+                    "配置成功",
+                    f"通道配置已更新：\n\n{config_info}\n\n"
+                    f"注意：如果设备已连接，请重新连接以应用新配置。"
+                )
+
+    def _apply_channel_config_to_device(self) -> None:
+        """应用通道配置到已连接的设备"""
+        if not self.device_connected or not self.device_client:
+            return
+
+        try:
+            # 显示加载对话框
+            from PySide6.QtWidgets import QProgressDialog
+            progress = QProgressDialog("正在应用通道配置到设备...", None, 0, 0, self)
+            progress.setWindowTitle("配置中")
+            progress.setWindowModality(Qt.WindowModality.WindowModal)
+            progress.setMinimumDuration(0)
+            progress.setValue(0)
+            progress.show()
+            QApplication.processEvents()
+
+            # 准备通道配置
+            channel_configs = [
+                {
+                    'channel': self.channel_config['ternary_voltage']['channel'],
+                    'type': self.channel_config['ternary_voltage']['type'],
+                    'range': self.channel_config['ternary_voltage']['range'],
+                },
+                {
+                    'channel': self.channel_config['ternary_temp']['channel'],
+                    'type': self.channel_config['ternary_temp']['type'],
+                    'range': self.channel_config['ternary_temp']['range'],
+                    'thermocouple': self.channel_config['ternary_temp']['thermocouple'],
+                    'int_ext': self.channel_config['ternary_temp']['int_ext'],
+                },
+                {
+                    'channel': self.channel_config['blade_voltage']['channel'],
+                    'type': self.channel_config['blade_voltage']['type'],
+                    'range': self.channel_config['blade_voltage']['range'],
+                },
+                {
+                    'channel': self.channel_config['blade_temp']['channel'],
+                    'type': self.channel_config['blade_temp']['type'],
+                    'range': self.channel_config['blade_temp']['range'],
+                    'thermocouple': self.channel_config['blade_temp']['thermocouple'],
+                    'int_ext': self.channel_config['blade_temp']['int_ext'],
+                },
+            ]
+
+            channels = [cfg['channel'] for cfg in channel_configs]
+
+            # 配置通道
+            config_success = self.device_client.configure_channels(
+                channels=channels,
+                disable_others=True,
+                channel_configs=channel_configs
+            )
+
+            progress.close()
+
+            if config_success:
+                self.statusBar().showMessage("✓ 通道配置已成功应用到设备")
+                QMessageBox.information(
+                    self,
+                    "配置成功",
+                    f"通道配置已成功应用到设备！\n\n"
+                    f"已配置通道：\n"
+                    f"• {channels[0]} - 三元电池电压\n"
+                    f"• {channels[1]} - 三元电池温度\n"
+                    f"• {channels[2]} - 刀片电池电压\n"
+                    f"• {channels[3]} - 刀片电池温度"
+                )
+            else:
+                QMessageBox.warning(
+                    self,
+                    "配置失败",
+                    "通道配置应用失败，请尝试重新连接设备。"
+                )
+        except Exception as e:
+            QMessageBox.critical(self, "错误", f"应用配置时出错：{str(e)}")
+
+    def _update_plot_ranges(self) -> None:
+        """根据配置的量程更新Y轴范围"""
+        # 获取电压量程（两个电池取最大值）
+        voltage_range = max(
+            self.channel_config['ternary_voltage']['range'],
+            self.channel_config['blade_voltage']['range']
+        )
+
+        # 获取温度量程（两个电池取最大值）
+        temp_range = max(
+            self.channel_config['ternary_temp']['range'],
+            self.channel_config['blade_temp']['range']
+        )
+
+        # 更新三元电池波形的Y轴范围（左图）
+        self.waveforms.left_plot.setYRange(0, voltage_range * 1.1, padding=0)  # 左Y轴（电压）
+        self.waveforms.left_plot.viewbox_temp.setYRange(0, temp_range * 1.1)  # 右Y轴（温度）
+
+        # 更新刀片电池波形的Y轴范围（右图）
+        self.waveforms.right_plot.setYRange(0, voltage_range * 1.1, padding=0)  # 左Y轴（电压）
+        self.waveforms.right_plot.viewbox_temp.setYRange(0, temp_range * 1.1)  # 右Y轴（温度）
+
+        # 更新Y轴标签（保持当前颜色）
+        self.waveforms.left_plot.setLabel('left', f'电压 (V, 量程: {voltage_range}V)', color=self.current_volt_color, **{'font-size': '11pt'})
+        self.waveforms.left_plot.setLabel('right', f'温度 (°C, 量程: {temp_range}°C)', color=self.current_temp_color, **{'font-size': '11pt'})
+        self.waveforms.right_plot.setLabel('left', f'电压 (V, 量程: {voltage_range}V)', color=self.current_volt_color, **{'font-size': '11pt'})
+        self.waveforms.right_plot.setLabel('right', f'温度 (°C, 量程: {temp_range}°C)', color=self.current_temp_color, **{'font-size': '11pt'})
+
+        self.statusBar().showMessage(f"✓ Y轴范围已更新：电压 0-{voltage_range}V，温度 0-{temp_range}°C")
+
     def _export_report(self) -> None:
         """导出测试报告"""
         if not self.analysis_engine.ternary_data.timestamps:
