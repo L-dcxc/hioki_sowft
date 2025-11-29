@@ -12,6 +12,8 @@
 
 from __future__ import annotations
 
+import time
+from datetime import datetime
 from typing import Optional, List
 
 from PySide6.QtCore import Qt, Signal, QTimer
@@ -279,6 +281,45 @@ class ControlPanel(QWidget):
         self.edit_tester.setStyleSheet("font-size: 18px; font-weight: bold; color: #33c1ff; padding: 6px;")
         info_layout.addWidget(self.edit_tester)
 
+        # 时间信息区域
+        time_info = QGroupBox("时间信息")
+        time_info_layout = QVBoxLayout(time_info)
+        time_info_layout.setSpacing(4)
+
+        # 系统时间
+        time_info_layout.addWidget(QLabel("系统时间"))
+        self.lbl_system_time = QLabel("--:--:--")
+        self.lbl_system_time.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.lbl_system_time.setStyleSheet("""
+            QLabel {
+                font-size: 20px;
+                font-weight: bold;
+                color: #00ff88;
+                background-color: #1a1a2e;
+                border: 1px solid #00ff88;
+                border-radius: 4px;
+                padding: 8px;
+            }
+        """)
+        time_info_layout.addWidget(self.lbl_system_time)
+
+        # 软件运行时间
+        time_info_layout.addWidget(QLabel("软件运行时间"))
+        self.lbl_running_time = QLabel("00:00:00")
+        self.lbl_running_time.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.lbl_running_time.setStyleSheet("""
+            QLabel {
+                font-size: 20px;
+                font-weight: bold;
+                color: #ffaa00;
+                background-color: #1a1a2e;
+                border: 1px solid #ffaa00;
+                border-radius: 4px;
+                padding: 8px;
+            }
+        """)
+        time_info_layout.addWidget(self.lbl_running_time)
+
         # 开始按钮
         self.btn_start = QPushButton("开始")
         self.btn_start.setObjectName("startButton")
@@ -331,6 +372,7 @@ class ControlPanel(QWidget):
         root.addWidget(functions)
         root.addWidget(vis)
         root.addWidget(info)
+        root.addWidget(time_info)
         root.addStretch(1)
         root.addWidget(self.btn_start)
     
@@ -533,6 +575,13 @@ class MainWindow(QMainWindow):
         self.update_timer.timeout.connect(self._update_waveform_virtual)
         self.update_interval_ms = 100  # 更新间隔（毫秒）
 
+        # 时间显示定时器
+        self.app_start_time = time.time()  # 软件启动时间
+        self.time_display_timer = QTimer()
+        self.time_display_timer.timeout.connect(self._update_time_display)
+        self.time_display_timer.start(1000)  # 每秒更新一次
+        self._update_time_display()  # 立即更新一次
+
         # 预置示例波形（初始静态数据）
         self._plot_demo()
 
@@ -546,6 +595,20 @@ class MainWindow(QMainWindow):
         self.control.edit_model.editingFinished.connect(self._save_channel_config_to_file)
         self.control.edit_sn.editingFinished.connect(self._save_channel_config_to_file)
         self.control.edit_tester.editingFinished.connect(self._save_channel_config_to_file)
+
+    def _update_time_display(self) -> None:
+        """更新时间显示（系统时间和软件运行时间）"""
+        # 更新系统时间
+        current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        self.control.lbl_system_time.setText(current_time)
+
+        # 更新软件运行时间
+        elapsed = int(time.time() - self.app_start_time)
+        hours = elapsed // 3600
+        minutes = (elapsed % 3600) // 60
+        seconds = elapsed % 60
+        running_time = f"{hours:02d}:{minutes:02d}:{seconds:02d}"
+        self.control.lbl_running_time.setText(running_time)
 
     def _plot_demo(self) -> None:
         """绘制示例波形（电压在左Y轴，温度在右Y轴）。"""
@@ -1672,43 +1735,281 @@ class MainWindow(QMainWindow):
             QMessageBox.critical(self, "召回失败", f"召回波形数据时出错:\n{str(e)}")
 
     def _export_report_to_file(self, report_data: dict, result_text: str) -> None:
-        """导出报告到文件（支持TXT、Excel、HTML格式）"""
+        """导出报告到文件（支持PDF、Excel、HTML、TXT格式）"""
         from PySide6.QtWidgets import QFileDialog, QMessageBox
-        from datetime import datetime
 
         # 选择导出格式和路径
         default_name = f"battery_report_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
-        file_path, selected_filter = QFileDialog.getSaveFileName(
+        file_path, _ = QFileDialog.getSaveFileName(
             self,
             "导出测试报告",
             default_name,
-            "文本文件 (*.txt);;Excel文件 (*.xlsx);;HTML文件 (*.html);;所有文件 (*.*)"
+            "PDF文件 (*.pdf);;Excel文件 (*.xlsx);;HTML文件 (*.html);;文本文件 (*.txt);;所有文件 (*.*)"
         )
 
         if not file_path:
             return
 
         try:
-            if file_path.endswith('.txt'):
-                self._export_txt_report(file_path, result_text, report_data)
+            if file_path.endswith('.pdf'):
+                self._export_pdf_report(file_path, report_data)
             elif file_path.endswith('.xlsx'):
                 self._export_excel_report(file_path, report_data)
             elif file_path.endswith('.html'):
-                self._export_html_report(file_path, result_text, report_data)
+                self._export_html_report(file_path, report_data)
+            elif file_path.endswith('.txt'):
+                self._export_txt_report(file_path, report_data)
             else:
-                # 默认导出为TXT
-                self._export_txt_report(file_path + '.txt', result_text, report_data)
+                # 默认导出为PDF
+                self._export_pdf_report(file_path + '.pdf', report_data)
 
             self.statusBar().showMessage(f"✓ 报告已导出: {file_path}")
             QMessageBox.information(self, "导出成功", f"测试报告已导出到:\n{file_path}")
 
         except Exception as e:
+            import traceback
+            traceback.print_exc()
             QMessageBox.critical(self, "导出失败", f"导出报告时出错:\n{str(e)}")
 
-    def _export_txt_report(self, file_path: str, result_text: str, report_data: dict) -> None:
-        """导出TXT格式报告"""
-        from datetime import datetime
+    def _export_pdf_report(self, file_path: str, report_data: dict) -> None:
+        """导出PDF格式报告（专业版）"""
+        try:
+            from reportlab.lib import colors
+            from reportlab.lib.pagesizes import A4
+            from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+            from reportlab.lib.units import mm
+            from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, Image
+            from reportlab.pdfbase import pdfmetrics
+            from reportlab.pdfbase.ttfonts import TTFont
+            import tempfile
+            import os
+        except ImportError:
+            QMessageBox.warning(
+                self, "缺少依赖",
+                "导出PDF需要安装 reportlab 库。\n\n"
+                "请运行: pip install reportlab"
+            )
+            return
 
+        # 注册中文字体
+        font_registered = False
+        try:
+            # 尝试使用系统中文字体
+            font_paths = [
+                "C:/Windows/Fonts/simhei.ttf",  # 黑体
+                "C:/Windows/Fonts/msyh.ttf",    # 微软雅黑
+                "C:/Windows/Fonts/simsun.ttc",  # 宋体
+            ]
+            for font_path in font_paths:
+                if os.path.exists(font_path):
+                    pdfmetrics.registerFont(TTFont('ChineseFont', font_path))
+                    font_registered = True
+                    print(f"✓ 已注册中文字体: {font_path}")
+                    break
+            if not font_registered:
+                print("⚠️ 未找到中文字体，使用默认字体")
+        except Exception as e:
+            print(f"⚠️ 注册中文字体失败: {e}")
+            font_registered = False
+
+        # 创建PDF文档
+        doc = SimpleDocTemplate(
+            file_path,
+            pagesize=A4,
+            rightMargin=20*mm,
+            leftMargin=20*mm,
+            topMargin=20*mm,
+            bottomMargin=20*mm
+        )
+
+        # 样式
+        styles = getSampleStyleSheet()
+        try:
+            title_style = ParagraphStyle(
+                'ChineseTitle',
+                parent=styles['Title'],
+                fontName='ChineseFont',
+                fontSize=18,
+                alignment=1,  # 居中
+                spaceAfter=20
+            )
+            heading_style = ParagraphStyle(
+                'ChineseHeading',
+                parent=styles['Heading2'],
+                fontName='ChineseFont',
+                fontSize=14,
+                textColor=colors.HexColor('#1e3a8a'),
+                spaceBefore=15,
+                spaceAfter=10
+            )
+            normal_style = ParagraphStyle(
+                'ChineseNormal',
+                parent=styles['Normal'],
+                fontName='ChineseFont',
+                fontSize=10,
+                leading=14
+            )
+        except Exception:
+            # 如果中文字体注册失败，使用默认样式
+            title_style = styles['Title']
+            heading_style = styles['Heading2']
+            normal_style = styles['Normal']
+
+        # 构建PDF内容
+        story = []
+
+        # 标题
+        story.append(Paragraph("电池电压与温升测试分析报告", title_style))
+        story.append(Spacer(1, 10*mm))
+
+        # 基本信息表格
+        info_data = [
+            ["报告生成时间", datetime.now().strftime('%Y-%m-%d %H:%M:%S')],
+            ["产品型号", self.control.edit_model.text() or "-"],
+            ["产品流水号", self.control.edit_sn.text() or "-"],
+            ["测试员", self.control.edit_tester.text() or "-"],
+            ["测试时长", f"{report_data.get('测试时长', 0):.1f} 秒"],
+            ["数据点数", f"{report_data.get('数据点数', 0)} 个"],
+        ]
+        info_table = Table(info_data, colWidths=[50*mm, 100*mm])
+        info_table.setStyle(TableStyle([
+            ('BACKGROUND', (0, 0), (0, -1), colors.HexColor('#e0e7ff')),
+            ('TEXTCOLOR', (0, 0), (-1, -1), colors.black),
+            ('ALIGN', (0, 0), (-1, -1), 'LEFT'),
+            ('FONTNAME', (0, 0), (-1, -1), 'ChineseFont' if font_registered else 'Helvetica'),
+            ('FONTSIZE', (0, 0), (-1, -1), 10),
+            ('BOTTOMPADDING', (0, 0), (-1, -1), 8),
+            ('TOPPADDING', (0, 0), (-1, -1), 8),
+            ('GRID', (0, 0), (-1, -1), 0.5, colors.grey),
+        ]))
+        story.append(info_table)
+        story.append(Spacer(1, 10*mm))
+
+        # 三元电池测试结果
+        story.append(Paragraph("一、三元电池测试结果", heading_style))
+        ternary = report_data.get('三元电池', {})
+        temp_rise = ternary.get('温升分析', {})
+        voltage_drop = ternary.get('压降分析', {})
+
+        ternary_data = [
+            ["测试项目", "温升分析", "电压分析"],
+            ["初始值", f"{temp_rise.get('初始温度', 0):.2f} °C", f"{voltage_drop.get('初始电压', 0):.2f} V"],
+            ["当前值", f"{temp_rise.get('当前温度', 0):.2f} °C", f"{voltage_drop.get('当前电压', 0):.2f} V"],
+            ["最高值", f"{temp_rise.get('峰值温度', 0):.2f} °C", f"{voltage_drop.get('最高电压', 0):.2f} V"],
+            ["最低值", f"{temp_rise.get('最低温度', 0):.2f} °C", f"{voltage_drop.get('最低电压', 0):.2f} V"],
+            ["变化量", f"{temp_rise.get('温升', 0):.2f} °C", f"{voltage_drop.get('电压降', 0):.2f} V"],
+            ["平均值", f"{temp_rise.get('平均温度', 0):.2f} °C", f"{voltage_drop.get('平均电压', 0):.2f} V"],
+        ]
+        ternary_table = Table(ternary_data, colWidths=[40*mm, 55*mm, 55*mm])
+        ternary_table.setStyle(TableStyle([
+            ('BACKGROUND', (0, 0), (-1, 0), colors.HexColor('#3b82f6')),
+            ('TEXTCOLOR', (0, 0), (-1, 0), colors.white),
+            ('BACKGROUND', (0, 1), (0, -1), colors.HexColor('#dbeafe')),
+            ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+            ('FONTNAME', (0, 0), (-1, -1), 'ChineseFont' if font_registered else 'Helvetica'),
+            ('FONTSIZE', (0, 0), (-1, -1), 9),
+            ('BOTTOMPADDING', (0, 0), (-1, -1), 6),
+            ('TOPPADDING', (0, 0), (-1, -1), 6),
+            ('GRID', (0, 0), (-1, -1), 0.5, colors.grey),
+        ]))
+        story.append(ternary_table)
+        story.append(Spacer(1, 8*mm))
+
+        # 刀片电池测试结果
+        story.append(Paragraph("二、刀片电池测试结果", heading_style))
+        blade = report_data.get('刀片电池', {})
+        temp_rise_b = blade.get('温升分析', {})
+        voltage_drop_b = blade.get('压降分析', {})
+
+        blade_data = [
+            ["测试项目", "温升分析", "电压分析"],
+            ["初始值", f"{temp_rise_b.get('初始温度', 0):.2f} °C", f"{voltage_drop_b.get('初始电压', 0):.2f} V"],
+            ["当前值", f"{temp_rise_b.get('当前温度', 0):.2f} °C", f"{voltage_drop_b.get('当前电压', 0):.2f} V"],
+            ["最高值", f"{temp_rise_b.get('峰值温度', 0):.2f} °C", f"{voltage_drop_b.get('最高电压', 0):.2f} V"],
+            ["最低值", f"{temp_rise_b.get('最低温度', 0):.2f} °C", f"{voltage_drop_b.get('最低电压', 0):.2f} V"],
+            ["变化量", f"{temp_rise_b.get('温升', 0):.2f} °C", f"{voltage_drop_b.get('电压降', 0):.2f} V"],
+            ["平均值", f"{temp_rise_b.get('平均温度', 0):.2f} °C", f"{voltage_drop_b.get('平均电压', 0):.2f} V"],
+        ]
+        blade_table = Table(blade_data, colWidths=[40*mm, 55*mm, 55*mm])
+        blade_table.setStyle(TableStyle([
+            ('BACKGROUND', (0, 0), (-1, 0), colors.HexColor('#10b981')),
+            ('TEXTCOLOR', (0, 0), (-1, 0), colors.white),
+            ('BACKGROUND', (0, 1), (0, -1), colors.HexColor('#d1fae5')),
+            ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+            ('FONTNAME', (0, 0), (-1, -1), 'ChineseFont' if font_registered else 'Helvetica'),
+            ('FONTSIZE', (0, 0), (-1, -1), 9),
+            ('BOTTOMPADDING', (0, 0), (-1, -1), 6),
+            ('TOPPADDING', (0, 0), (-1, -1), 6),
+            ('GRID', (0, 0), (-1, -1), 0.5, colors.grey),
+        ]))
+        story.append(blade_table)
+        story.append(Spacer(1, 8*mm))
+
+        # 对比分析
+        story.append(Paragraph("三、对比分析", heading_style))
+        compare = report_data.get('对比分析', {}).get('对比', {})
+
+        compare_data = [
+            ["对比项目", "三元电池", "刀片电池", "差异"],
+            ["温升", f"{compare.get('三元温升', 0):.2f} °C", f"{compare.get('刀片温升', 0):.2f} °C", f"{compare.get('温升差异', 0):.2f} °C"],
+        ]
+        compare_table = Table(compare_data, colWidths=[35*mm, 40*mm, 40*mm, 35*mm])
+        compare_table.setStyle(TableStyle([
+            ('BACKGROUND', (0, 0), (-1, 0), colors.HexColor('#f59e0b')),
+            ('TEXTCOLOR', (0, 0), (-1, 0), colors.white),
+            ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+            ('FONTNAME', (0, 0), (-1, -1), 'ChineseFont' if font_registered else 'Helvetica'),
+            ('FONTSIZE', (0, 0), (-1, -1), 9),
+            ('BOTTOMPADDING', (0, 0), (-1, -1), 6),
+            ('TOPPADDING', (0, 0), (-1, -1), 6),
+            ('GRID', (0, 0), (-1, -1), 0.5, colors.grey),
+        ]))
+        story.append(compare_table)
+        story.append(Spacer(1, 5*mm))
+
+        # 结论
+        winner = compare.get('优势电池', '未知')
+        conclusion_text = f"<b>测试结论：</b>根据温升对比分析，<font color='#dc2626'><b>{winner}</b></font>在本次测试中表现更优。"
+        story.append(Paragraph(conclusion_text, normal_style))
+        story.append(Spacer(1, 8*mm))
+
+        # 容量测试
+        story.append(Paragraph("四、容量测试", heading_style))
+        capacity_data = [
+            ["测试项目", "数值"],
+            ["累计容量", f"{report_data.get('mAh容量', 0):.2f} mAh"],
+        ]
+        capacity_table = Table(capacity_data, colWidths=[50*mm, 100*mm])
+        capacity_table.setStyle(TableStyle([
+            ('BACKGROUND', (0, 0), (-1, 0), colors.HexColor('#8b5cf6')),
+            ('TEXTCOLOR', (0, 0), (-1, 0), colors.white),
+            ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+            ('FONTNAME', (0, 0), (-1, -1), 'ChineseFont' if font_registered else 'Helvetica'),
+            ('FONTSIZE', (0, 0), (-1, -1), 9),
+            ('BOTTOMPADDING', (0, 0), (-1, -1), 6),
+            ('TOPPADDING', (0, 0), (-1, -1), 6),
+            ('GRID', (0, 0), (-1, -1), 0.5, colors.grey),
+        ]))
+        story.append(capacity_table)
+        story.append(Spacer(1, 15*mm))
+
+        # 页脚
+        footer_style = ParagraphStyle(
+            'Footer',
+            parent=styles['Normal'],
+            fontName='ChineseFont' if font_registered else 'Helvetica',
+            fontSize=8,
+            textColor=colors.grey,
+            alignment=1
+        )
+        story.append(Paragraph("—— 电池电压与温升采集软件 v1.0 ——", footer_style))
+        story.append(Paragraph(f"报告生成时间: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}", footer_style))
+
+        # 生成PDF
+        doc.build(story)
+
+    def _export_txt_report(self, file_path: str, report_data: dict) -> None:
+        """导出TXT格式报告"""
         with open(file_path, 'w', encoding='utf-8') as f:
             f.write("=" * 60 + "\n")
             f.write("电池电压与温升测试分析报告\n")
@@ -1961,10 +2262,8 @@ class MainWindow(QMainWindow):
 
         wb.save(file_path)
 
-    def _export_html_report(self, file_path: str, result_text: str, report_data: dict) -> None:
+    def _export_html_report(self, file_path: str, report_data: dict) -> None:
         """导出HTML格式报告"""
-        from datetime import datetime
-
         html_content = f"""
 <!DOCTYPE html>
 <html lang="zh-CN">

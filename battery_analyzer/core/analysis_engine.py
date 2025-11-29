@@ -159,6 +159,14 @@ class BatteryAnalysisEngine:
     
     def generate_report_data(self) -> Dict[str, any]:
         """生成报告数据"""
+        # 计算测试时长（使用相对时间戳：最后一个 - 第一个）
+        if len(self.ternary_data.timestamps) >= 2:
+            test_duration = self.ternary_data.timestamps[-1] - self.ternary_data.timestamps[0]
+        elif len(self.ternary_data.timestamps) == 1:
+            test_duration = 0.0
+        else:
+            test_duration = 0.0
+
         return {
             '三元电池': {
                 '温升分析': self.ternary_data.get_temp_rise(),
@@ -170,7 +178,8 @@ class BatteryAnalysisEngine:
             },
             '对比分析': self.compare_temp_rise(),
             'mAh容量': self.mah_accumulated,
-            '测试时长': (time.time() - self.ternary_data.timestamps[0]) if self.ternary_data.timestamps else 0,
+            '测试时长': test_duration,
+            '数据点数': len(self.ternary_data.timestamps),
         }
 
 
