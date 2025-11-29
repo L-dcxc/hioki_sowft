@@ -329,7 +329,32 @@ class LR8450Client:
             if not enabled:
                 return True
 
-            # 2. 设置量程
+            # 2. 设置测量模式（VOLTAGE 或 TC）
+            if channel_type == "TEMPERATURE":
+                mode_cmd = f":UNIT:INMOde {channel},TC"
+                if not self.write(mode_cmd):
+                    print(f"⚠️ 设置通道 {channel} 测量模式失败")
+                    return False
+                print(f"✓ 通道 {channel} 测量模式设置为 TC (热电偶)")
+                time.sleep(0.1)
+            else:
+                mode_cmd = f":UNIT:INMOde {channel},VOLTAGE"
+                if not self.write(mode_cmd):
+                    print(f"⚠️ 设置通道 {channel} 测量模式失败")
+                    return False
+                print(f"✓ 通道 {channel} 测量模式设置为 VOLTAGE (电压)")
+                time.sleep(0.1)
+
+            # 3. 如果是温度通道，设置热电偶类型
+            if channel_type == "TEMPERATURE" and thermocouple_type:
+                tc_cmd = f":SCALing:UNIT {channel},TC_{thermocouple_type}"
+                if not self.write(tc_cmd):
+                    print(f"⚠️ 设置通道 {channel} 热电偶类型失败")
+                    return False
+                print(f"✓ 通道 {channel} 热电偶类型设置为 {thermocouple_type}")
+                time.sleep(0.1)
+
+            # 4. 设置量程
             if range_value is not None:
                 range_cmd = f":UNIT:RANGe {channel},{range_value}"
                 if not self.write(range_cmd):
@@ -340,23 +365,14 @@ class LR8450Client:
                     print(f"✓ 通道 {channel} 电压量程设置为 {range_value}V")
                 else:
                     print(f"✓ 通道 {channel} 温度量程设置为 {range_value}°C")
+                time.sleep(0.1)
 
-            # 3. 如果是温度通道，设置热电偶类型
-            if channel_type == "TEMPERATURE" and thermocouple_type:
-                tc_cmd = f":SCALing:UNIT {channel},TC_{thermocouple_type}"
-                if not self.write(tc_cmd):
-                    print(f"⚠️ 设置通道 {channel} 热电偶类型失败")
-                    return False
-                print(f"✓ 通道 {channel} 热电偶类型设置为 {thermocouple_type}")
-
-            # 4. 如果是温度通道，设置INT/EXT（内部/外部参考）
+            # 5. 如果是温度通道，设置INT/EXT（内部/外部参考）
             if channel_type == "TEMPERATURE" and int_ext:
-                # INT/EXT 通常用于设置参考端温度补偿方式
-                # 具体命令可能因设备而异，这里使用常见的SCPI命令
                 ref_cmd = f":SCALing:REFerence {channel},{int_ext}"
                 if self.write(ref_cmd):
                     print(f"✓ 通道 {channel} 参考设置为 {int_ext}")
-                # 如果命令不支持，不影响主要功能
+                time.sleep(0.1)
 
             return True
 
@@ -386,6 +402,11 @@ class LR8450Client:
             是否全部配置成功
         """
         print(f"\n🔧 开始配置 {len(channels)} 个通道...")
+
+        # 0. 先停止采集（确保配置生效）
+        print("⏸️  停止采集以应用新配置...")
+        self.write(":STOP")
+        time.sleep(0.5)
 
         # 1. 先禁用所有通道（防止数据错乱）
         if disable_others:
@@ -424,17 +445,103 @@ class LR8450Client:
                 ):
                     success_count += 1
 
-        print(f"\n✅ 通道配置完成: {success_count}/{len(channels)} 成功\n")
+        print(f"\n✅ 通道配置完成: {success_count}/{len(channels)} 成功")
+
+        # 重新启动采集，让设备重新组织数据缓冲区
+        print("▶️  重新启动采集...")
+        self.write(":STARt")
+        time.sleep(1.0)  # 等待设备准备数据缓冲区
+        print("✓ 采集已重新启动\n")
+
         return success_count == len(channels)
 
     def start_acquisition(self) -> bool:
         """启动数据采集"""
-        return self.write(":STARt")
+        print("▶️  发送 :STARt 命令...")
+        result = self.write(":STARt")
+        if result:
+            print("✓ 采集已启动")
+        else:
+            print("❌ 启动采集失败")
+        return result
 
     def stop_acquisition(self) -> bool:
         """停止数据采集"""
-        return self.write(":STOP")
-    
+        print("⏸️  发送 :STOP 命令...")
+        result = self.write(":STOP")
+        if result:
+            print("✓ 采集已停止")
+        else:
+            print("❌ 停止采集失败")
+        return result
+
+    def detect_installed_modules(self) -> List[int]:
+        """检测已安装的模块（通过查询单元ID）
+
+        Returns:
+            已安装模块的单元号列表，如 [1, 2] 表示UNIT1和UNIT2有模块
+        """
+        try:
+            installed_modules = []
+
+            print("\n🔍 开始检测已安装的模块...")
+            print("-" * 60)
+
+            # 使用 :UNIT:IDN? unit$ 命令查询每个单元的ID
+            # 如果单元有模块，会返回模块信息；如果没有模块，会返回错误或无响应
+            for unit_num in range(1, 5):  # UNIT1 到 UNIT4
+                unit_name = f"UNIT{unit_num}"
+
+                # 尝试查询该单元的ID（正确的命令格式：:UNIT:IDN? UNIT1）
+                response = self.query(f":UNIT:IDN? {unit_name}")
+
+                print(f"  查询 {unit_name}: ", end="")
+
+                if response:
+                    response = response.strip()
+
+                    # 如果返回的是有效的模块信息（包含逗号分隔的字段）
+                    # 响应格式：UNIT1,U8550,100000000,V 100 (headers OFF)
+                    # 或：:UNIT:IDN UNIT1,U8550,100000000,V 100 (headers ON)
+                    if ',' in response and unit_name in response:
+                        installed_modules.append(unit_num)
+                        # 解析模块信息：unit$,model,serial,version
+                        parts = response.split(',')
+                        if len(parts) >= 2:
+                            model = parts[1].strip() if len(parts) > 1 else "未知"
+                            print(f"响应='{response[:60]}...' → ✓ 检测到模块 (型号: {model})")
+                        else:
+                            print(f"响应='{response[:60]}...' → ✓ 检测到模块")
+                    else:
+                        print(f"响应='{response[:40]}...' → ✗ 无效响应（可能无模块）")
+                else:
+                    print(f"无响应 → ✗ 无模块")
+
+                time.sleep(0.1)
+
+            print("-" * 60)
+
+            if not installed_modules:
+                print("⚠ 未检测到任何已安装的模块")
+                print("\n提示：请确认：")
+                print("  1. 模块是否正确插入UNIT插槽")
+                print("  2. 设备是否已识别模块")
+                print("  3. 设备是否支持 :UNIT:IDN? UNITx 命令")
+            else:
+                print(f"✓ 已安装的模块: UNIT{installed_modules}")
+                for unit_num in installed_modules:
+                    print(f"  • UNIT{unit_num} 可用")
+
+            print()
+
+            return installed_modules
+
+        except Exception as e:
+            print(f"❌ 检测模块失败: {e}")
+            import traceback
+            traceback.print_exc()
+            return []
+
     def get_channel_data(self, channels: List[str]) -> Dict[str, float]:
         """获取指定通道的实时数据
 
@@ -449,17 +556,34 @@ class LR8450Client:
         time.sleep(0.3)
 
         data = {}
+
+        # 调试：打印请求的通道列表
+        if not hasattr(self, '_debug_printed'):
+            print(f"\n🔍 [调试] 请求读取通道: {channels}")
+
         for channel in channels:
             response = self.query(f":MEMory:VREAL? {channel}")
+
+            # 调试：打印原始响应
+            if not hasattr(self, '_debug_printed'):
+                print(f"  [调试] 查询 '{channel}' → 响应: '{response}'")
 
             if response and '9.99999' not in response:
                 try:
                     value = float(response)
                     data[channel] = value
+                    if not hasattr(self, '_debug_printed'):
+                        print(f"  [调试] 通道 {channel} = {value}")
                 except ValueError:
-                    pass
+                    if not hasattr(self, '_debug_printed'):
+                        print(f"  [调试] 通道 {channel} 无法转换为浮点数: '{response}'")
 
             time.sleep(0.01)
+
+        # 标记已打印调试信息
+        if not hasattr(self, '_debug_printed'):
+            self._debug_printed = True
+            print(f"  [调试] 最终返回的数据字典: {data}\n")
 
         return data
 

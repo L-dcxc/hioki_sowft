@@ -42,10 +42,13 @@ class ChannelConfigDialog(QDialog):
     # INT/EXT选项
     INT_EXT_OPTIONS = ["INT", "EXT"]
 
-    def __init__(self, parent: Optional[QDialog] = None, current_config: Dict = None):
+    def __init__(self, parent: Optional[QDialog] = None, current_config: Dict = None, installed_modules: List[int] = None):
         super().__init__(parent)
         self.setWindowTitle("通道配置")
         self.setMinimumSize(700, 600)
+
+        # 已安装的模块列表（如果未提供，默认显示所有模块）
+        self.installed_modules = installed_modules if installed_modules else [1, 2, 3, 4]
 
         # 当前配置（包含详细参数）
         self.config = current_config or {
@@ -240,11 +243,15 @@ class ChannelConfigDialog(QDialog):
         main_layout.addWidget(scroll)
 
     def _create_channel_combo(self) -> QComboBox:
-        """创建通道选择下拉框"""
+        """创建通道选择下拉框（根据已安装的模块动态生成）"""
         combo = QComboBox()
-        # 添加UNIT2的30个通道
-        for i in range(1, 31):
-            combo.addItem(f"CH2_{i}", f"CH2_{i}")
+
+        # 根据已安装的模块添加通道
+        for unit_num in self.installed_modules:
+            for ch_num in range(1, 31):  # 每个模块最多30个通道
+                channel_name = f"CH{unit_num}_{ch_num}"
+                combo.addItem(channel_name, channel_name)
+
         return combo
 
     def _create_voltage_range_combo(self) -> QComboBox:

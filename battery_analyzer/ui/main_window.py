@@ -12,7 +12,7 @@
 
 from __future__ import annotations
 
-from typing import Optional
+from typing import Optional, List
 
 from PySide6.QtCore import Qt, Signal, QTimer
 from PySide6.QtWidgets import (
@@ -476,29 +476,35 @@ class MainWindow(QMainWindow):
         # 分析引擎
         self.analysis_engine = BatteryAnalysisEngine()
 
+        # 已安装的模块列表（连接设备后自动检测）
+        self.installed_modules: List[int] = []
+
+        # 保存的连接配置（从文件加载）
+        self.saved_connection_config: dict = {}
+
         # 通道配置（包含详细参数）
         self.channel_config = {
             'ternary_voltage': {
-                'channel': 'CH2_1',
+                'channel': 'CH1_2',  # 三元电池电压
                 'type': 'VOLTAGE',
-                'range': 10.0,
+                'range': 20.0,
             },
             'ternary_temp': {
-                'channel': 'CH2_3',
+                'channel': 'CH1_1',  # 三元电池温度
                 'type': 'TEMPERATURE',
-                'range': 500,
+                'range': 100,
                 'thermocouple': 'K',
                 'int_ext': 'INT',
             },
             'blade_voltage': {
-                'channel': 'CH2_4',
+                'channel': 'CH1_3',  # 刀片电池电压
                 'type': 'VOLTAGE',
-                'range': 10.0,
+                'range': 20.0,
             },
             'blade_temp': {
-                'channel': 'CH2_5',
+                'channel': 'CH1_4',  # 刀片电池温度
                 'type': 'TEMPERATURE',
-                'range': 500,
+                'range': 100,
                 'thermocouple': 'K',
                 'int_ext': 'INT',
             },
@@ -530,8 +536,16 @@ class MainWindow(QMainWindow):
         # 预置示例波形（初始静态数据）
         self._plot_demo()
 
+        # 加载上次保存的配置（通道配置、连接配置、产品信息）
+        self._load_channel_config_from_file()
+
         # 初始化Y轴范围（根据配置的量程）
         self._update_plot_ranges()
+
+        # 连接产品信息字段的信号，自动保存配置（使用 editingFinished 而不是 textChanged 避免频繁保存）
+        self.control.edit_model.editingFinished.connect(self._save_channel_config_to_file)
+        self.control.edit_sn.editingFinished.connect(self._save_channel_config_to_file)
+        self.control.edit_tester.editingFinished.connect(self._save_channel_config_to_file)
 
     def _plot_demo(self) -> None:
         """绘制示例波形（电压在左Y轴，温度在右Y轴）。"""
@@ -642,7 +656,9 @@ class MainWindow(QMainWindow):
             "• 电池压降采集分析\n"
             "• mX+b 线性校准\n"
             "• mAh 容量测试\n\n"
-            "后续将接入 LR8450 设备进行实时数据采集。"
+            "开发定制请认准迅屿科技\n"
+            "https://www.xunyutek.com\n"
+            
         )
 
     def update_voltage_color(self, color_hex: str) -> None:
@@ -720,11 +736,51 @@ class MainWindow(QMainWindow):
             timestamp: 时间戳（秒）
             data: 通道数据字典
         """
+        # 调试输出（每10个数据点输出一次）
+        if self.data_index % 10 == 0:
+            print(f"\n📊 数据映射调试 (第 {self.data_index} 个数据点):")
+            print(f"  配置:")
+            print(f"    三元电池电压 ← {self.channel_config['ternary_voltage']['channel']}")
+            print(f"    三元电池温度 ← {self.channel_config['ternary_temp']['channel']}")
+            print(f"    刀片电池电压 ← {self.channel_config['blade_voltage']['channel']}")
+            print(f"    刀片电池温度 ← {self.channel_config['blade_temp']['channel']}")
+            print(f"  接收到的数据: {data}")
+            print(f"  提取结果:")
+            print(f"    三元电池电压: {data.get(self.channel_config['ternary_voltage']['channel'], 0.0)}")
+            print(f"    三元电池温度: {data.get(self.channel_config['ternary_temp']['channel'], 0.0)}")
+            print(f"    刀片电池电压: {data.get(self.channel_config['blade_voltage']['channel'], 0.0)}")
+            print(f"    刀片电池温度: {data.get(self.channel_config['blade_temp']['channel'], 0.0)}")
+
         # 提取数据（使用通道名称）
         v_ternary = data.get(self.channel_config['ternary_voltage']['channel'], 0.0)
         t_ternary = data.get(self.channel_config['ternary_temp']['channel'], 0.0)
         v_blade = data.get(self.channel_config['blade_voltage']['channel'], 0.0)
         t_blade = data.get(self.channel_config['blade_temp']['channel'], 0.0)
+
+        # 检测BURNOUT异常（温度超出量程1.5倍视为异常）
+        ternary_temp_range = self.channel_config['ternary_temp']['range']
+        blade_temp_range = self.channel_config['blade_temp']['range']
+
+        # 如果温度超出量程1.5倍，判定为BURNOUT异常，设置为0
+        if abs(t_ternary) > ternary_temp_range * 1.5:
+            print(f"⚠️ 三元电池温度异常 (BURNOUT): {t_ternary:.2f}°C (量程: {ternary_temp_range}°C)")
+            t_ternary = 0.0
+
+        if abs(t_blade) > blade_temp_range * 1.5:
+            print(f"⚠️ 刀片电池温度异常 (BURNOUT): {t_blade:.2f}°C (量程: {blade_temp_range}°C)")
+            t_blade = 0.0
+
+        # 检测电压异常（电压超出量程1.5倍视为异常）
+        ternary_volt_range = self.channel_config['ternary_voltage']['range']
+        blade_volt_range = self.channel_config['blade_voltage']['range']
+
+        if abs(v_ternary) > ternary_volt_range * 1.5:
+            print(f"⚠️ 三元电池电压异常: {v_ternary:.2f}V (量程: {ternary_volt_range}V)")
+            v_ternary = 0.0
+
+        if abs(v_blade) > blade_volt_range * 1.5:
+            print(f"⚠️ 刀片电池电压异常: {v_blade:.2f}V (量程: {blade_volt_range}V)")
+            v_blade = 0.0
 
         # 添加到分析引擎
         self.analysis_engine.add_data_point(v_ternary, t_ternary, v_blade, t_blade, timestamp)
@@ -841,13 +897,16 @@ class MainWindow(QMainWindow):
 
             # 如果设备已连接，使用后台线程采集真实数据
             if self.device_connected and self.device_client:
-                # 获取通道列表（使用通道名称）
-                channels = [
-                    self.channel_config['ternary_voltage']['channel'],
-                    self.channel_config['ternary_temp']['channel'],
-                    self.channel_config['blade_voltage']['channel'],
-                    self.channel_config['blade_temp']['channel'],
-                ]
+                # 获取通道列表（按通道号排序，确保与设备内部顺序一致）
+                channel_map = {
+                    self.channel_config['ternary_voltage']['channel']: 'ternary_voltage',
+                    self.channel_config['ternary_temp']['channel']: 'ternary_temp',
+                    self.channel_config['blade_voltage']['channel']: 'blade_voltage',
+                    self.channel_config['blade_temp']['channel']: 'blade_temp',
+                }
+                channels = sorted(channel_map.keys())  # 按通道号排序
+
+                print(f"📋 通道读取顺序（已排序）: {channels}")
 
                 # 创建并启动采集线程
                 self.acquisition_thread = DataAcquisitionThread(
@@ -862,7 +921,22 @@ class MainWindow(QMainWindow):
                 self.acquisition_thread.status_changed.connect(self._on_acquisition_status)
 
                 # 启动设备采集
-                self.device_client.start_acquisition()
+                print("\n🚀 发送 :STARt 命令启动采集...")
+                result = self.device_client.start_acquisition()
+                print(f"   :STARt 命令{'成功' if result else '失败'}")
+
+                # 等待设备准备就绪
+                print("   等待设备准备数据...")
+                import time
+                time.sleep(1.0)
+
+                # 测试读取一次数据
+                print("   测试读取数据...")
+                test_data = self.device_client.get_channel_data(channels)
+                print(f"   测试结果: {len(test_data)} 个通道有数据")
+                if test_data:
+                    for ch, val in test_data.items():
+                        print(f"     • {ch}: {val}")
 
                 # 启动线程
                 self.acquisition_thread.start()
@@ -902,7 +976,8 @@ class MainWindow(QMainWindow):
     
     def _show_device_connect_dialog(self) -> None:
         """显示设备连接对话框"""
-        dialog = DeviceConnectDialog(self)
+        # 传递保存的连接配置作为默认值
+        dialog = DeviceConnectDialog(self, saved_config=self.saved_connection_config)
 
         if dialog.exec() == QDialog.DialogCode.Accepted:
             params = dialog.get_connection_params()
@@ -958,40 +1033,66 @@ class MainWindow(QMainWindow):
                 self.device_connected = True
                 conn_method = "TCP/IP" if connection_type == "TCP" else "USB串口"
 
-                # 更新进度对话框
-                progress.setLabelText(f"✓ 设备已连接，正在配置通道...")
+                # 更新进度对话框 - 检测模块
+                progress.setLabelText(f"✓ 设备已连接，正在检测已安装的模块...")
                 QApplication.processEvents()
 
-                # 准备通道配置（使用当前配置的详细参数）
-                channel_configs = [
-                    {
+                # 检测已安装的模块
+                self.installed_modules = self.device_client.detect_installed_modules()
+
+                # 如果没有检测到任何模块，提示用户
+                if not self.installed_modules:
+                    progress.close()
+                    QMessageBox.warning(
+                        self,
+                        "未检测到模块",
+                        f"设备已通过{conn_method}连接成功，但未检测到任何已安装的模块。\n\n"
+                        f"请检查：\n"
+                        f"1. 模块是否正确插入设备的UNIT插槽\n"
+                        f"2. 设备是否已识别模块\n\n"
+                        f"设备已连接，但无法进行数据采集。"
+                    )
+                    self.statusBar().showMessage("⚠️ 设备已连接，但未检测到模块")
+                    return
+
+                # 更新进度对话框 - 配置通道
+                progress.setLabelText(f"✓ 检测到模块 UNIT{self.installed_modules}，正在配置通道...")
+                QApplication.processEvents()
+
+                # 准备通道配置（按通道号排序，确保与设备内部顺序一致）
+                channel_configs_dict = {
+                    self.channel_config['ternary_voltage']['channel']: {
                         'channel': self.channel_config['ternary_voltage']['channel'],
                         'type': self.channel_config['ternary_voltage']['type'],
                         'range': self.channel_config['ternary_voltage']['range'],
                     },
-                    {
+                    self.channel_config['ternary_temp']['channel']: {
                         'channel': self.channel_config['ternary_temp']['channel'],
                         'type': self.channel_config['ternary_temp']['type'],
                         'range': self.channel_config['ternary_temp']['range'],
                         'thermocouple': self.channel_config['ternary_temp']['thermocouple'],
                         'int_ext': self.channel_config['ternary_temp']['int_ext'],
                     },
-                    {
+                    self.channel_config['blade_voltage']['channel']: {
                         'channel': self.channel_config['blade_voltage']['channel'],
                         'type': self.channel_config['blade_voltage']['type'],
                         'range': self.channel_config['blade_voltage']['range'],
                     },
-                    {
+                    self.channel_config['blade_temp']['channel']: {
                         'channel': self.channel_config['blade_temp']['channel'],
                         'type': self.channel_config['blade_temp']['type'],
                         'range': self.channel_config['blade_temp']['range'],
                         'thermocouple': self.channel_config['blade_temp']['thermocouple'],
                         'int_ext': self.channel_config['blade_temp']['int_ext'],
                     },
-                ]
+                }
 
-                # 提取通道列表
-                channels = [cfg['channel'] for cfg in channel_configs]
+                # 按通道号排序
+                sorted_channels = sorted(channel_configs_dict.keys())
+                channel_configs = [channel_configs_dict[ch] for ch in sorted_channels]
+                channels = sorted_channels
+
+                print(f"📋 通道配置顺序（已排序）: {channels}")
 
                 # 配置通道（先禁用所有通道，然后只启用需要的通道）
                 config_success = self.device_client.configure_channels(
@@ -1005,18 +1106,36 @@ class MainWindow(QMainWindow):
 
                 if config_success:
                     self.statusBar().showMessage(f"✓ 设备已通过{conn_method}连接，通道已配置")
+
+                    # 构建通道配置信息（按实际配置顺序）
+                    channel_info_lines = []
+                    for ch in channels:
+                        if ch == self.channel_config['ternary_voltage']['channel']:
+                            channel_info_lines.append(
+                                f"• {ch} - 三元电池电压 ({self.channel_config['ternary_voltage']['range']}V)"
+                            )
+                        elif ch == self.channel_config['ternary_temp']['channel']:
+                            channel_info_lines.append(
+                                f"• {ch} - 三元电池温度 ({self.channel_config['ternary_temp']['range']}°C, "
+                                f"{self.channel_config['ternary_temp']['thermocouple']}型)"
+                            )
+                        elif ch == self.channel_config['blade_voltage']['channel']:
+                            channel_info_lines.append(
+                                f"• {ch} - 刀片电池电压 ({self.channel_config['blade_voltage']['range']}V)"
+                            )
+                        elif ch == self.channel_config['blade_temp']['channel']:
+                            channel_info_lines.append(
+                                f"• {ch} - 刀片电池温度 ({self.channel_config['blade_temp']['range']}°C, "
+                                f"{self.channel_config['blade_temp']['thermocouple']}型)"
+                            )
+
                     QMessageBox.information(
                         self,
                         "连接成功",
                         f"成功通过{conn_method}连接到LR8450设备\n\n"
                         f"{connection_info}\n\n"
                         f"已自动配置以下通道：\n"
-                        f"• {channels[0]} - 三元电池电压 ({self.channel_config['ternary_voltage']['range']}V)\n"
-                        f"• {channels[1]} - 三元电池温度 ({self.channel_config['ternary_temp']['range']}°C, "
-                        f"{self.channel_config['ternary_temp']['thermocouple']}型)\n"
-                        f"• {channels[2]} - 刀片电池电压 ({self.channel_config['blade_voltage']['range']}V)\n"
-                        f"• {channels[3]} - 刀片电池温度 ({self.channel_config['blade_temp']['range']}°C, "
-                        f"{self.channel_config['blade_temp']['thermocouple']}型)\n\n"
+                        + "\n".join(channel_info_lines) + "\n\n"
                         f"现在可以开始测试了！"
                     )
                 else:
@@ -1069,7 +1188,13 @@ class MainWindow(QMainWindow):
     
     def _show_channel_config_dialog(self) -> None:
         """显示通道配置对话框"""
-        dialog = ChannelConfigDialog(self, current_config=self.channel_config)
+        # 如果设备已连接且检测到模块，传递模块信息；否则显示所有模块
+        installed_modules = self.installed_modules if self.installed_modules else None
+        dialog = ChannelConfigDialog(
+            self,
+            current_config=self.channel_config,
+            installed_modules=installed_modules
+        )
 
         if dialog.exec() == QDialog.DialogCode.Accepted:
             self.channel_config = dialog.get_config()
@@ -1094,27 +1219,31 @@ class MainWindow(QMainWindow):
                 f"{self.channel_config['blade_temp']['int_ext']})"
             )
 
-            # 如果设备已连接，立即应用新配置到设备
+            # 如果设备已连接，询问是否重新连接设备以应用新配置
             if self.device_connected and self.device_client:
                 reply = QMessageBox.question(
                     self,
                     "应用配置",
                     f"通道配置已更新：\n\n{config_info}\n\n"
-                    f"是否立即应用到已连接的设备？\n"
-                    f"（这将重新配置设备通道）",
+                    f"是否重新连接设备以应用新配置？\n"
+                    f"（推荐：这将确保通道配置正确生效）",
                     QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
                     QMessageBox.StandardButton.Yes
                 )
 
                 if reply == QMessageBox.StandardButton.Yes:
-                    self._apply_channel_config_to_device()
+                    # 重新连接设备以应用新配置
+                    self._reconnect_device_with_new_config()
             else:
                 QMessageBox.information(
                     self,
                     "配置成功",
                     f"通道配置已更新：\n\n{config_info}\n\n"
-                    f"注意：如果设备已连接，请重新连接以应用新配置。"
+                    f"下次连接设备时将自动应用此配置。"
                 )
+
+            # 保存配置到本地文件
+            self._save_channel_config_to_file()
 
     def _apply_channel_config_to_device(self) -> None:
         """应用通道配置到已连接的设备"""
@@ -1132,35 +1261,40 @@ class MainWindow(QMainWindow):
             progress.show()
             QApplication.processEvents()
 
-            # 准备通道配置
-            channel_configs = [
-                {
+            # 准备通道配置（按通道号排序，确保与设备内部顺序一致）
+            channel_configs_dict = {
+                self.channel_config['ternary_voltage']['channel']: {
                     'channel': self.channel_config['ternary_voltage']['channel'],
                     'type': self.channel_config['ternary_voltage']['type'],
                     'range': self.channel_config['ternary_voltage']['range'],
                 },
-                {
+                self.channel_config['ternary_temp']['channel']: {
                     'channel': self.channel_config['ternary_temp']['channel'],
                     'type': self.channel_config['ternary_temp']['type'],
                     'range': self.channel_config['ternary_temp']['range'],
                     'thermocouple': self.channel_config['ternary_temp']['thermocouple'],
                     'int_ext': self.channel_config['ternary_temp']['int_ext'],
                 },
-                {
+                self.channel_config['blade_voltage']['channel']: {
                     'channel': self.channel_config['blade_voltage']['channel'],
                     'type': self.channel_config['blade_voltage']['type'],
                     'range': self.channel_config['blade_voltage']['range'],
                 },
-                {
+                self.channel_config['blade_temp']['channel']: {
                     'channel': self.channel_config['blade_temp']['channel'],
                     'type': self.channel_config['blade_temp']['type'],
                     'range': self.channel_config['blade_temp']['range'],
                     'thermocouple': self.channel_config['blade_temp']['thermocouple'],
                     'int_ext': self.channel_config['blade_temp']['int_ext'],
                 },
-            ]
+            }
 
-            channels = [cfg['channel'] for cfg in channel_configs]
+            # 按通道号排序
+            sorted_channels = sorted(channel_configs_dict.keys())
+            channel_configs = [channel_configs_dict[ch] for ch in sorted_channels]
+            channels = sorted_channels
+
+            print(f"📋 通道配置顺序（已排序）: {channels}")
 
             # 配置通道
             config_success = self.device_client.configure_channels(
@@ -1192,6 +1326,60 @@ class MainWindow(QMainWindow):
         except Exception as e:
             QMessageBox.critical(self, "错误", f"应用配置时出错：{str(e)}")
 
+    def _reconnect_device_with_new_config(self) -> None:
+        """重新连接设备以应用新配置"""
+        if not self.device_client:
+            return
+
+        try:
+            # 显示加载对话框
+            from PySide6.QtWidgets import QProgressDialog
+            progress = QProgressDialog("正在重新连接设备以应用新配置...", None, 0, 0, self)
+            progress.setWindowTitle("重新连接中")
+            progress.setWindowModality(Qt.WindowModality.WindowModal)
+            progress.setMinimumDuration(0)
+            progress.setValue(0)
+            progress.show()
+            QApplication.processEvents()
+
+            # 保存当前连接参数
+            connection_type = self.device_client.connection_type
+            ip_address = self.device_client.ip_address
+            port = self.device_client.port
+            com_port = self.device_client.com_port
+
+            # 断开当前连接
+            progress.setLabelText("正在断开当前连接...")
+            QApplication.processEvents()
+            self.device_client.disconnect()
+            self.device_connected = False
+
+            import time
+            time.sleep(0.5)  # 等待设备完全断开
+
+            # 重新连接
+            progress.setLabelText("正在重新连接设备...")
+            QApplication.processEvents()
+
+            # 使用保存的连接参数重新连接
+            params = {
+                'connection_type': connection_type,
+                'ip_address': ip_address,
+                'port': port,
+                'com_port': com_port,
+            }
+
+            # 关闭进度对话框，让 _connect_to_device 显示自己的进度对话框
+            progress.close()
+
+            # 调用连接方法（会自动应用新配置）
+            self._connect_to_device(params)
+
+        except Exception as e:
+            progress.close()
+            QMessageBox.critical(self, "错误", f"重新连接设备时出错：{str(e)}")
+            self.statusBar().showMessage("✗ 重新连接失败")
+
     def _update_plot_ranges(self) -> None:
         """根据配置的量程更新Y轴范围"""
         # 获取电压量程（两个电池取最大值）
@@ -1221,6 +1409,110 @@ class MainWindow(QMainWindow):
         self.waveforms.right_plot.setLabel('right', f'温度 (°C, 量程: {temp_range}°C)', color=self.current_temp_color, **{'font-size': '11pt'})
 
         self.statusBar().showMessage(f"✓ Y轴范围已更新：电压 0-{voltage_range}V，温度 0-{temp_range}°C")
+
+    def _save_channel_config_to_file(self) -> None:
+        """保存所有配置到本地文件（通道配置、连接配置、产品信息）"""
+        try:
+            import json
+            import os
+
+            # 配置文件路径（保存在用户目录）
+            config_dir = os.path.expanduser("~/.battery_analyzer")
+            os.makedirs(config_dir, exist_ok=True)
+            config_file = os.path.join(config_dir, "app_config.json")
+
+            # 收集所有配置
+            all_config = {
+                # 通道配置
+                'channel_config': self.channel_config,
+
+                # 连接配置
+                'connection': {
+                    'ip_address': getattr(self.device_client, 'ip_address', '192.168.2.44') if self.device_client else '192.168.2.44',
+                    'port': getattr(self.device_client, 'port', 8802) if self.device_client else 8802,
+                    'com_port': getattr(self.device_client, 'com_port', 'COM3') if self.device_client else 'COM3',
+                },
+
+                # 产品信息
+                'product_info': {
+                    'model': self.control.edit_model.text(),
+                    'serial_number': self.control.edit_sn.text(),
+                    'tester': self.control.edit_tester.text(),
+                }
+            }
+
+            # 保存配置
+            with open(config_file, 'w', encoding='utf-8') as f:
+                json.dump(all_config, f, indent=4, ensure_ascii=False)
+
+            print(f"✓ 配置已保存到: {config_file}")
+
+        except Exception as e:
+            print(f"✗ 保存配置失败: {str(e)}")
+
+    def _load_channel_config_from_file(self) -> None:
+        """从本地文件加载所有配置（通道配置、连接配置、产品信息）"""
+        try:
+            import json
+            import os
+
+            # 配置文件路径
+            config_dir = os.path.expanduser("~/.battery_analyzer")
+            config_file = os.path.join(config_dir, "app_config.json")
+            old_config_file = os.path.join(config_dir, "channel_config.json")
+
+            # 优先加载新版配置文件
+            if os.path.exists(config_file):
+                with open(config_file, 'r', encoding='utf-8') as f:
+                    all_config = json.load(f)
+
+                    # 加载通道配置
+                    if 'channel_config' in all_config:
+                        self.channel_config = all_config['channel_config']
+
+                    # 加载连接配置（保存到实例变量，连接时使用）
+                    if 'connection' in all_config:
+                        self.saved_connection_config = all_config['connection']
+
+                    # 加载产品信息（阻止信号触发，避免重复保存）
+                    if 'product_info' in all_config:
+                        product_info = all_config['product_info']
+
+                        # 临时阻止信号
+                        self.control.edit_model.blockSignals(True)
+                        self.control.edit_sn.blockSignals(True)
+                        self.control.edit_tester.blockSignals(True)
+
+                        self.control.edit_model.setText(product_info.get('model', ''))
+                        self.control.edit_sn.setText(product_info.get('serial_number', ''))
+                        self.control.edit_tester.setText(product_info.get('tester', ''))
+
+                        # 恢复信号
+                        self.control.edit_model.blockSignals(False)
+                        self.control.edit_sn.blockSignals(False)
+                        self.control.edit_tester.blockSignals(False)
+
+                    print(f"✓ 已加载上次保存的配置")
+                    self.statusBar().showMessage("✓ 已加载上次保存的配置")
+
+            # 兼容旧版配置文件（只有通道配置）
+            elif os.path.exists(old_config_file):
+                with open(old_config_file, 'r', encoding='utf-8') as f:
+                    loaded_config = json.load(f)
+
+                    # 验证配置完整性
+                    required_keys = ['ternary_voltage', 'ternary_temp', 'blade_voltage', 'blade_temp']
+                    if all(key in loaded_config for key in required_keys):
+                        self.channel_config = loaded_config
+                        print(f"✓ 已加载上次保存的通道配置（旧版格式）")
+                        self.statusBar().showMessage("✓ 已加载上次保存的通道配置")
+                    else:
+                        print("✗ 配置文件格式不完整，使用默认配置")
+            else:
+                print("ℹ 未找到保存的配置文件，使用默认配置")
+
+        except Exception as e:
+            print(f"✗ 加载配置失败: {str(e)}")
 
     def _export_report(self) -> None:
         """导出测试报告"""

@@ -19,15 +19,22 @@ from battery_analyzer.core.lr8450_client import LR8450Client
 class DeviceConnectDialog(QDialog):
     """设备连接对话框 - 支持TCP/IP和USB两种连接方式"""
 
-    def __init__(self, parent: Optional[QDialog] = None):
+    def __init__(self, parent: Optional[QDialog] = None, saved_config: dict = None):
         super().__init__(parent)
         self.setWindowTitle("连接LR8450设备")
         self.setFixedSize(450, 400)
 
+        # 使用保存的配置作为默认值
+        if saved_config:
+            self.device_ip = saved_config.get('ip_address', '192.168.2.44')
+            self.device_port = saved_config.get('port', 8802)
+            self.com_port = saved_config.get('com_port', '')
+        else:
+            self.device_ip = "192.168.2.44"
+            self.device_port = 8802
+            self.com_port = ""
+
         self.connection_type: Literal["TCP", "USB"] = "TCP"
-        self.device_ip = "192.168.2.136"
-        self.device_port = 8802
-        self.com_port = ""
 
         layout = QVBoxLayout(self)
         layout.setSpacing(16)
