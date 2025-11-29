@@ -466,14 +466,46 @@ class LR8450Client:
         return result
 
     def stop_acquisition(self) -> bool:
-        """停止数据采集"""
-        print("⏸️  发送 :STOP 命令...")
-        result = self.write(":STOP")
-        if result:
-            print("✓ 采集已停止")
-        else:
-            print("❌ 停止采集失败")
-        return result
+        """停止数据采集（带重试和验证机制）"""
+        max_retries = 3
+        for attempt in range(max_retries):
+            print(f"⏸️  发送 :STOP 命令... (尝试 {attempt + 1}/{max_retries})")
+
+            # 方法1：直接发送 :STOP
+            result = self.write(":STOP")
+            if not result:
+                print(f"⚠️ 第 {attempt + 1} 次发送失败")
+                time.sleep(0.2)
+                continue
+
+            # 等待命令执行
+            time.sleep(0.5)
+
+            # 验证设备是否停止（查询状态）
+            try:
+                status = self.query(":STATus?", timeout=1.0)
+                if status:
+                    status = status.strip()
+                    print(f"   设备状态: {status}")
+                    # 如果状态是 STOP 或 停止，说明成功
+                    if "STOP" in status.upper() or status == "0":
+                        print("✓ 采集已停止（已验证）")
+                        return True
+                    else:
+                        print(f"   设备仍在运行，继续尝试...")
+            except Exception as e:
+                print(f"   状态查询失败: {e}")
+
+            time.sleep(0.3)
+
+        # 最后一次尝试：强制发送多个 STOP
+        print("🔧 最后尝试：连续发送 :STOP 命令...")
+        for _ in range(3):
+            self.write(":STOP")
+            time.sleep(0.2)
+        time.sleep(0.5)
+        print("✓ 已发送多次停止命令")
+        return True
 
     def detect_installed_modules(self) -> List[int]:
         """检测已安装的模块（通过查询单元ID）

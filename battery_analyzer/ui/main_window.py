@@ -226,7 +226,7 @@ class ControlPanel(QWidget):
         volt_row.addWidget(self.combo_volt_pix)
         self.volt_color_btn = QPushButton()
         self.volt_color_btn.setFixedSize(50, 22)
-        self.volt_color_btn.setStyleSheet("background-color: #ff9933; border: 1px solid #2b4b7d; border-radius: 3px;")
+        self.volt_color_btn.setStyleSheet("background-color: #33c1ff; border: 1px solid #2b4b7d; border-radius: 3px;")
         self.volt_color_btn.clicked.connect(lambda: self._choose_color("volt"))
         volt_row.addWidget(self.volt_color_btn)
         volt_row.addStretch()
@@ -245,15 +245,15 @@ class ControlPanel(QWidget):
         temp_row.addWidget(self.combo_temp_pix)
         self.temp_color_btn = QPushButton()
         self.temp_color_btn.setFixedSize(50, 22)
-        self.temp_color_btn.setStyleSheet("background-color: #66ccff; border: 1px solid #2b4b7d; border-radius: 3px;")
+        self.temp_color_btn.setStyleSheet("background-color: #ffb347; border: 1px solid #2b4b7d; border-radius: 3px;")
         self.temp_color_btn.clicked.connect(lambda: self._choose_color("temp"))
         temp_row.addWidget(self.temp_color_btn)
         temp_row.addStretch()
         vis_layout.addLayout(temp_row)
-        
-        # 存储当前颜色
-        self.volt_color = "#ff9933"
-        self.temp_color = "#66ccff"
+
+        # 存储当前颜色（与Y轴颜色一致）
+        self.volt_color = "#33c1ff"   # 电压：青蓝色
+        self.temp_color = "#ffb347"   # 温度：橙色
 
         # 产品信息（上下排列，紧凑布局）
         info = QGroupBox("产品信息")
@@ -565,8 +565,9 @@ class MainWindow(QMainWindow):
         self.blade_temp_data = []
 
         # 当前颜色和线宽（从控制面板获取）
-        self.current_volt_color = "#ff9933"
-        self.current_temp_color = "#66ccff"
+        # 注意：这些颜色必须与 _create_dual_axis_plot() 中的Y轴颜色一致
+        self.current_volt_color = "#33c1ff"  # 电压：青蓝色（与左Y轴一致）
+        self.current_temp_color = "#ffb347"  # 温度：橙色（与右Y轴一致）
         self.current_volt_width = 3  # 默认3像素
         self.current_temp_width = 3  # 默认3像素
 
@@ -581,6 +582,10 @@ class MainWindow(QMainWindow):
         self.time_display_timer.timeout.connect(self._update_time_display)
         self.time_display_timer.start(1000)  # 每秒更新一次
         self._update_time_display()  # 立即更新一次
+
+        # 标记通道是否已配置（避免每次开始都重新配置）
+        self._channels_configured = False
+        self._last_channel_config_hash = None
 
         # 预置示例波形（初始静态数据）
         self._plot_demo()
@@ -969,7 +974,42 @@ class MainWindow(QMainWindow):
                 }
                 channels = sorted(channel_map.keys())  # 按通道号排序
 
+                print(f"\n🚀 开始数据采集...")
                 print(f"📋 通道读取顺序（已排序）: {channels}")
+
+                # 计算当前配置的哈希值，判断是否需要重新配置
+                current_config_hash = str(sorted(channels)) + str(self.channel_config)
+                need_reconfigure = (
+                    not self._channels_configured or
+                    self._last_channel_config_hash != current_config_hash
+                )
+
+                if need_reconfigure:
+                    # 首次或配置变化时，重新配置通道
+                    print("🔧 配置通道（首次或配置已变化）...")
+                    channel_configs = []
+                    for ch in channels:
+                        for key in ['ternary_voltage', 'ternary_temp', 'blade_voltage', 'blade_temp']:
+                            if self.channel_config[key]['channel'] == ch:
+                                channel_configs.append(self.channel_config[key])
+                                break
+
+                    config_success = self.device_client.configure_channels(
+                        channels,
+                        disable_others=True,
+                        channel_configs=channel_configs
+                    )
+                    if config_success:
+                        self._channels_configured = True
+                        self._last_channel_config_hash = current_config_hash
+                    else:
+                        print("⚠️ 通道配置可能不完整，继续尝试采集...")
+                else:
+                    # 配置未变化，只需要启动采集
+                    print("⏩ 通道配置未变化，快速启动...")
+                    self.device_client.start_acquisition()
+                    import time
+                    time.sleep(0.3)  # 短暂等待
 
                 # 创建并启动采集线程
                 self.acquisition_thread = DataAcquisitionThread(
@@ -982,24 +1022,6 @@ class MainWindow(QMainWindow):
                 self.acquisition_thread.data_acquired.connect(self._on_data_acquired)
                 self.acquisition_thread.error_occurred.connect(self._on_acquisition_error)
                 self.acquisition_thread.status_changed.connect(self._on_acquisition_status)
-
-                # 启动设备采集
-                print("\n🚀 发送 :STARt 命令启动采集...")
-                result = self.device_client.start_acquisition()
-                print(f"   :STARt 命令{'成功' if result else '失败'}")
-
-                # 等待设备准备就绪
-                print("   等待设备准备数据...")
-                import time
-                time.sleep(1.0)
-
-                # 测试读取一次数据
-                print("   测试读取数据...")
-                test_data = self.device_client.get_channel_data(channels)
-                print(f"   测试结果: {len(test_data)} 个通道有数据")
-                if test_data:
-                    for ch, val in test_data.items():
-                        print(f"     • {ch}: {val}")
 
                 # 启动线程
                 self.acquisition_thread.start()
@@ -1018,21 +1040,47 @@ class MainWindow(QMainWindow):
         """停止数据采集"""
         if self.is_running:
             self.is_running = False
+            print("\n🛑 停止数据采集...")
 
-            # 停止采集线程
-            if self.acquisition_thread and self.acquisition_thread.is_running():
-                self.acquisition_thread.stop()
-                self.acquisition_thread = None
+            # 1. 先断开信号连接，防止停止过程中还有数据回调
+            if self.acquisition_thread:
+                print("   断开信号连接...")
+                try:
+                    self.acquisition_thread.data_acquired.disconnect(self._on_data_acquired)
+                    self.acquisition_thread.error_occurred.disconnect(self._on_acquisition_error)
+                    self.acquisition_thread.status_changed.disconnect(self._on_acquisition_status)
+                except Exception:
+                    pass  # 信号可能已断开
 
-            # 停止虚拟数据定时器
+            # 2. 停止设备采集（最重要）
+            if self.device_connected and self.device_client:
+                print("   发送 :STOP 命令到设备...")
+                try:
+                    self.device_client.stop_acquisition()
+                    print("   ✓ 设备停止命令已发送")
+                except Exception as e:
+                    print(f"   ⚠️ 设备停止失败: {e}")
+
+            # 3. 停止采集线程
+            if self.acquisition_thread:
+                print("   停止采集线程...")
+                try:
+                    if self.acquisition_thread.is_running():
+                        self.acquisition_thread.stop()
+                    print("   ✓ 采集线程已停止")
+                except Exception as e:
+                    print(f"   ⚠️ 线程停止异常: {e}")
+                finally:
+                    self.acquisition_thread = None
+
+            # 4. 停止虚拟数据定时器
             if self.update_timer.isActive():
                 self.update_timer.stop()
-
-            # 停止设备采集
-            if self.device_connected and self.device_client:
-                self.device_client.stop_acquisition()
+                print("   ✓ 虚拟数据定时器已停止")
 
             self.statusBar().showMessage("数据采集已停止")
+            print("✓ 数据采集已完全停止\n")
+
             self.control.btn_start.setText("开始")
             self.control.btn_start.clicked.disconnect()
             self.control.btn_start.clicked.connect(self._on_start)
@@ -1168,6 +1216,9 @@ class MainWindow(QMainWindow):
                 progress.close()
 
                 if config_success:
+                    # 标记通道已配置，后续开始采集时无需重新配置
+                    self._channels_configured = True
+                    self._last_channel_config_hash = str(sorted(channels)) + str(self.channel_config)
                     self.statusBar().showMessage(f"✓ 设备已通过{conn_method}连接，通道已配置")
 
                     # 构建通道配置信息（按实际配置顺序）
@@ -1262,6 +1313,10 @@ class MainWindow(QMainWindow):
         if dialog.exec() == QDialog.DialogCode.Accepted:
             self.channel_config = dialog.get_config()
             self.statusBar().showMessage("✓ 通道配置已更新")
+
+            # 标记需要重新配置通道
+            self._channels_configured = False
+            self._last_channel_config_hash = None
 
             # 更新Y轴范围（根据新的量程配置）
             self._update_plot_ranges()

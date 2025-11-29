@@ -1,0 +1,5 @@
+git commit -m "新增pdf导出"
+git add . 
+git push -u origin main
+
+git commit -m "修复停止失败的bug,修正Y轴默认显示颜色"
