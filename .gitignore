@@ -25,3 +25,8 @@ Thumbs.db
 # Project specific
 *.log
 *.tmp
+
+# PyInstaller
+dist/
+build/
+*.spec

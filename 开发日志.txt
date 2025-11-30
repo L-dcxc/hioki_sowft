@@ -3,3 +3,9 @@ git add .
 git push -u origin main
 
 git commit -m "修复停止失败的bug,修正Y轴默认显示颜色"
+
+
+git commit -m "修改TCP通信为多线程，解决UI卡顿问题/修复通道数据错乱bug/完善容量测试和mx+b校准功能"
+
+
+git commit -m "新增exe图标和生成exe程序"
