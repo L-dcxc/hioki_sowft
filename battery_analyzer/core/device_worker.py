@@ -121,32 +121,34 @@ class DeviceStopWorker(QThread):
         self.device_client = device_client
 
     def run(self):
-        """执行停止操作 - 使用多次重试和验证确保停止成功"""
+        """执行停止操作 - 调用客户端自带的停止逻辑并验证状态"""
         try:
-            max_retries = 5
-            success = False
+            # 优先使用 LR8450Client.stop_acquisition()，该方法内置重试与状态查询
+            if hasattr(self.device_client, 'stop_acquisition'):
+                result = self.device_client.stop_acquisition()
+                if result:
+                    self.stop_finished.emit(True, "✓ 设备已停止采集")
+                    return
+                else:
+                    # 兜底：再发送数次 :STOP 尝试
+                    for _ in range(3):
+                        self.device_client.write(":STOP")
+                        time.sleep(0.2)
+                    self.stop_finished.emit(True, "✓ 已多次发送停止命令（可能需等待设备响应）")
+                    return
 
+            # 如果没有 stop_acquisition 方法，退回到简单重试
+            max_retries = 5
             for attempt in range(max_retries):
                 print(f"   尝试停止设备 (第 {attempt + 1}/{max_retries} 次)...")
-
-                # 发送停止命令
-                result = self.device_client.write(":STOP")
+                ok = self.device_client.write(":STOP")
                 time.sleep(0.3)
-
-                # 再发送一次确保命令到达
-                self.device_client.write(":STOP")
+                if ok:
+                    self.stop_finished.emit(True, "✓ 设备已停止采集")
+                    return
                 time.sleep(0.2)
 
-                if result:
-                    success = True
-                    break
-
-                time.sleep(0.2)
-
-            if success:
-                self.stop_finished.emit(True, "✓ 设备已停止采集")
-            else:
-                self.stop_finished.emit(False, "⚠️ 停止命令发送失败，请手动检查设备")
+            self.stop_finished.emit(False, "⚠️ 停止命令发送失败，请手动检查设备")
 
         except Exception as e:
             self.stop_finished.emit(False, f"❌ 停止失败: {str(e)}")

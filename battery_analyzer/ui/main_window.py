@@ -730,8 +730,8 @@ class MainWindow(QMainWindow):
             "• 电池压降采集分析\n"
             "• mX+b 线性校准\n"
             "• mAh 容量测试\n\n"
-            "开发定制请认准迅屿科技\n"
-            "https://www.xunyutek.com\n"
+            # "开发定制请认准迅屿科技\n"
+            # "https://www.xunyutek.com\n"
             
         )
 
