@@ -35,6 +35,9 @@ from PySide6.QtWidgets import (
     QDialog,
     QRadioButton,
     QMessageBox,
+    QScrollArea,
+    QFrame,
+    QSizePolicy,
 )
 
 import pyqtgraph as pg
@@ -265,21 +268,22 @@ class ControlPanel(QWidget):
         info_layout.addWidget(QLabel("产品型号"))
         self.edit_model = QLineEdit("5mm")
         self.edit_model.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.edit_model.setStyleSheet("font-size: 18px; font-weight: bold; color: #33c1ff; padding: 6px;")
+        # 略微减小字号和内边距，使其在窄侧边栏和高DPI下不易被裁切
+        self.edit_model.setStyleSheet("font-size: 14px; font-weight: bold; color: #33c1ff; padding: 4px;")
         info_layout.addWidget(self.edit_model)
         
         # 产品流水号
         info_layout.addWidget(QLabel("产品流水号"))
         self.edit_sn = QLineEdit("25mm/s")
         self.edit_sn.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.edit_sn.setStyleSheet("font-size: 18px; font-weight: bold; color: #33c1ff; padding: 6px;")
+        self.edit_sn.setStyleSheet("font-size: 14px; font-weight: bold; color: #33c1ff; padding: 4px;")
         info_layout.addWidget(self.edit_sn)
         
         # 测试员
         info_layout.addWidget(QLabel("测试员"))
         self.edit_tester = QLineEdit("1dot/s")
         self.edit_tester.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.edit_tester.setStyleSheet("font-size: 18px; font-weight: bold; color: #33c1ff; padding: 6px;")
+        self.edit_tester.setStyleSheet("font-size: 14px; font-weight: bold; color: #33c1ff; padding: 4px;")
         info_layout.addWidget(self.edit_tester)
 
         # 时间信息区域
@@ -293,13 +297,13 @@ class ControlPanel(QWidget):
         self.lbl_system_time.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.lbl_system_time.setStyleSheet("""
             QLabel {
-                font-size: 20px;
+                font-size: 16px;
                 font-weight: bold;
                 color: #00ff88;
                 background-color: #1a1a2e;
                 border: 1px solid #00ff88;
                 border-radius: 4px;
-                padding: 8px;
+                padding: 4px;
             }
         """)
         time_info_layout.addWidget(self.lbl_system_time)
@@ -310,13 +314,13 @@ class ControlPanel(QWidget):
         self.lbl_running_time.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.lbl_running_time.setStyleSheet("""
             QLabel {
-                font-size: 20px;
+                font-size: 16px;
                 font-weight: bold;
                 color: #ffaa00;
                 background-color: #1a1a2e;
                 border: 1px solid #ffaa00;
                 border-radius: 4px;
-                padding: 8px;
+                padding: 4px;
             }
         """)
         time_info_layout.addWidget(self.lbl_running_time)
@@ -444,7 +448,24 @@ class MainWindow(QMainWindow):
 
         # 左侧控制
         self.control = ControlPanel()
-        self.control.setFixedWidth(260)
+        # 使用自适应宽度，并限制一个最大宽度，避免在小分辨率下被裁切
+        self.control.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Expanding)
+        self.control.setMaximumWidth(360)
+
+        # 将左侧控制面板放入可滚动区域，避免在1600×900等小分辨率下底部控件被裁切
+        control_scroll = QScrollArea()
+        control_scroll.setWidgetResizable(True)
+        control_scroll.setFrameShape(QFrame.NoFrame)
+        control_scroll.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        # 使用一条很细的右侧滚动条，既不明显遮挡内容，又能看出可滚动
+        control_scroll.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)
+        control_scroll.verticalScrollBar().setStyleSheet(
+            "QScrollBar:vertical { width: 6px; background: transparent; margin: 0px; } "
+            "QScrollBar::handle:vertical { background: #27496d; border-radius: 3px; } "
+            "QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical { height: 0px; }"
+        )
+        control_scroll.setWidget(self.control)
+
         self.control.start_requested.connect(self._on_start)
         self.control.voltage_color_changed.connect(self.update_voltage_color)
         self.control.temp_color_changed.connect(self.update_temp_color)
@@ -495,7 +516,7 @@ class MainWindow(QMainWindow):
         center_layout.addWidget(self.waveforms, 1)
         center_layout.addWidget(bottom, 0)
 
-        hbox.addWidget(self.control, 0)
+        hbox.addWidget(control_scroll, 0)
         hbox.addWidget(center_col, 1)
 
         main_layout.addWidget(content, 1)
