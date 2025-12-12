@@ -21,7 +21,8 @@ class DeviceConnectDialog(QDialog):
 
     def __init__(self, parent: Optional[QDialog] = None, saved_config: dict = None):
         super().__init__(parent)
-        self.setWindowTitle("连接LR8450设备")
+        # 界面上不再显示具体设备型号，使用中性文案
+        self.setWindowTitle("连接采集设备")
         self.setFixedSize(450, 400)
 
         # 使用保存的配置作为默认值
@@ -39,8 +40,8 @@ class DeviceConnectDialog(QDialog):
         layout = QVBoxLayout(self)
         layout.setSpacing(16)
 
-        # 标题
-        title = QLabel("LR8450设备连接设置")
+        # 标题（不带设备型号）
+        title = QLabel("设备连接设置")
         title.setStyleSheet("color: #6dd5ed; font-size: 16px; font-weight: bold;")
         title.setAlignment(Qt.AlignmentFlag.AlignCenter)
         layout.addWidget(title)
@@ -99,7 +100,8 @@ class DeviceConnectDialog(QDialog):
             usb_layout.addRow("", usb_hint)
             self.radio_usb.setEnabled(False)
         else:
-            usb_hint = QLabel("提示：请先安装HIOKI USB驱动")
+            # 不在界面上出现品牌名称，使用通用描述
+            usb_hint = QLabel("提示：请先安装设备USB驱动")
             usb_hint.setStyleSheet("color: #7fb6ff; font-size: 11px;")
             usb_layout.addRow("", usb_hint)
 
@@ -184,7 +186,8 @@ class DeviceConnectDialog(QDialog):
 
             else:  # USB连接验证
                 if self.com_combo.count() == 0 or self.com_combo.currentText() == "未检测到COM端口":
-                    QMessageBox.warning(self, "输入错误", "未检测到可用的COM端口\n\n请确保：\n1. 已安装HIOKI USB驱动\n2. 设备已通过USB连接到电脑")
+                    # 提示信息中不出现品牌名，使用“设备USB驱动”代替
+                    QMessageBox.warning(self, "输入错误", "未检测到可用的COM端口\n\n请确保：\n1. 已安装设备USB驱动\n2. 设备已通过USB连接到电脑")
                     return
 
                 # 获取实际的COM端口名（从userData或文本中提取）

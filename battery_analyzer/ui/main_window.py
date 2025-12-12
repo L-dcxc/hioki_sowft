@@ -1208,7 +1208,7 @@ class MainWindow(QMainWindow):
             if self.device_client:
                 self.device_client.disconnect()
 
-            # 创建新客户端
+            # 创建新客户端（内部仍使用LR8450Client，但界面文案不带型号）
             self.device_client = LR8450Client(
                 connection_type=connection_type,
                 ip_address=params['ip_address'],
@@ -1323,14 +1323,14 @@ class MainWindow(QMainWindow):
                     QMessageBox.information(
                         self,
                         "连接成功",
-                        f"成功通过{conn_method}连接到LR8450设备\n\n"
+                        f"成功通过{conn_method}连接到采集设备\n\n"
                         f"{connection_info}\n\n"
                         f"已自动配置以下通道：\n"
                         + "\n".join(channel_info_lines) + "\n\n"
-                        f"现在可以开始测试了！"
+                        f"可以在\"通道配置\"对话框中进一步调整通道和量程设置。"
                     )
                 else:
-                    self.statusBar().showMessage(f"⚠️ 设备已连接，但通道配置失败")
+                    self.statusBar().showMessage(f"设备已连接，但通道配置失败")
                     QMessageBox.warning(
                         self,
                         "通道配置警告",
@@ -1364,7 +1364,7 @@ class MainWindow(QMainWindow):
                         f"请检查：\n"
                         f"1. 设备电源是否开启\n"
                         f"2. USB线是否连接\n"
-                        f"3. 是否已安装HIOKI USB驱动\n"
+                        f"3. 是否已安装设备USB驱动\n"
                         f"4. COM端口是否正确"
                     )
 

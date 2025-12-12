@@ -14,3 +14,5 @@ git commit -m "新增exe图标和生成exe程序"
 usb模式已实现，但是选项未启用
 
 git commit -m "修复了低分辨率以及高缩放下显示不全的问题"
+
+git commit -m "去除了所有界面的品牌和型号信息" 
